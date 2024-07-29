@@ -1,0 +1,547 @@
+2024-07-12 13:06:13,686 INFO ipython === bench console session ===
+2024-07-12 13:06:13,686 INFO ipython frappe.get_doc("Sales Invoice", "BATU/V/2400001").cancel()
+2024-07-12 13:06:13,686 INFO ipython === session end ===
+2024-07-12 13:21:11,689 INFO ipython === bench console session ===
+2024-07-12 13:21:11,689 INFO ipython === session end ===
+2024-07-15 13:32:08,263 INFO ipython === bench console session ===
+2024-07-15 13:32:08,264 INFO ipython from integracion.integracion.employee_status_update import update_employee_status, disable_inactive_employee_users
+2024-07-15 13:32:08,264 INFO ipython update_employee_status()
+2024-07-15 13:32:08,264 INFO ipython disable_inactive_employee_users()
+2024-07-15 13:32:08,264 INFO ipython === session end ===
+2024-07-24 14:17:32,377 INFO ipython === bench console session ===
+2024-07-24 14:17:32,377 INFO ipython import os
+import logging
+from urllib.parse import quote
+from office365.runtime.auth.user_credential import UserCredential
+from office365.sharepoint.client_context import ClientContext
+import frappe
+
+# Configurar el logger
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler('/path/to/your/log/upload_sp.log')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+
+def get_parent_folder_name(doctype, docname):
+    fields_to_check = ['company', 'empresa', 'custom_empresa', 'curso', 'proyecto', 'departamento']
+    logger.info(f"Obteniendo campos del documento {doctype} con nombre {docname}")
+    try:
+        related_doc = frappe.get_doc(doctype, docname)
+        logger.info(f"Campos del documento {doctype}: {related_doc.as_dict()}")
+        for field in fields_to_check:
+            if field in related_doc.as_dict():
+                logger.info(f"Campo {field} encontrado con valor {related_doc.get(field)}")
+                return related_doc.get(field)
+    except Exception as e:
+        logger.error(f"Error obteniendo el documento {doctype} con nombre {docname}: {e}")
+        return None
+
+def create_folder_if_not_exists(ctx, site_relative_url, folder_relative_url):
+    try:
+        folder_full_relative_url = f"{site_relative_url}/{folder_relative_url}".strip('/')
+        logger.info(f"Ruta relativa {site_relative_url}")
+        logger.info(f"Ruta carpeta relativa {folder_relative_url}")
+        parent_folder_url = '/'.join(folder_full_relative_url.split('/')[:-1])
+        logger.info(f"Ruta padre relativa {parent_folder_url}")
+        logger.info(f"Comprobando existencia de carpeta en la ruta: /{folder_full_relative_url}")
+        try:
+            folder = ctx.web.get_folder_by_server_relative_url(f"/{folder_full_relative_url}")
+            ctx.execute_query()
+            logger.info(f"La carpeta ya existe: {folder_full_relative_url}")
+        except Exception as e:
+            logger.info(f"La carpeta no existe, procediendo a crearla. Error al comprobar existencia: {e}")
+            parent_folder = ctx.web.get_folder_by_server_relative_url(f"/{parent_folder_url}")
+            ctx.execute_query()
+            new_folder = parent_folder.folders.add(folder_full_relative_url.split('/')[-1]).execute_query()
+            logger.info(f"Carpeta creada: {new_folder.serverRelativeUrl}")
+    except Exception as e:
+        logger.error(f"Error creando carpeta en {folder_full_relative_url}: {e}")
+
+def upload_file_to_sharepoint(file_doc):
+    logger.info(f"Procesando archivo: {file_doc.name}")
+    try:
+        file_path = frappe.get_site_path(file_doc.file_url.strip("/"))
+        logger.info(f"Archivo encontrado: {file_path}")
+
+        if not file_path or not os.path.isfile(file_path):
+            logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
+            return
+
+        doctype_name = file_doc.attached_to_doctype
+        docname = file_doc.attached_to_name
+        user_email = 'erp@grupoatu.com'
+        user_password = 'D/888592322871uy'
+
+        try:
+            doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
+        except frappe.DoesNotExistError:
+            logger.error(f"No se encontró un documento para el doctype {doctype_name} en Bibliotecas SP. Terminando la ejecución.")
+            return
+
+        parent_folder_full_url = doc_biblioteca.url_sp
+        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
+
+        start_idx = parent_folder_full_url.find('/sites/')
+        if start_idx == -1:
+            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
+            return
+        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
+        site_relative_url = parent_folder_full_url[start_idx:]
+        relative_path = parent_folder_full_url[start_idx + len('/sites/'):].lstrip('/')
+        logger.info(f"Ruta relativa calculada: {relative_path}")
+        logger.info(f"Conectando al contexto del sitio: {site_url}")
+
+        credentials = UserCredential(user_email, user_password)
+        ctx = ClientContext(site_url).with_credentials(credentials)
+
+        parent_folder_name = get_parent_folder_name(doctype_name, docname)
+        if not parent_folder_name:
+            logger.error(f"No se encontró el nombre de la carpeta padre para {doctype_name} con nombre {docname}")
+            return
+        parent_folder_name_encoded = quote(parent_folder_name)
+        logger.info(f"Nombre de la carpeta padre: {parent_folder_name}")
+
+        first_folder_relative_url = f"{relative_path}/{parent_folder_name_encoded}".strip('/')
+        second_folder_relative_url = f"{first_folder_relative_url}/{docname}".strip('/')
+        logger.info(f"URL de la primera carpeta: {first_folder_relative_url}")
+        logger.info(f"URL completa de la carpeta del documento: {second_folder_relative_url}")
+
+        create_folder_if_not_exists(ctx, site_relative_url, first_folder_relative_url)
+        create_folder_if_not_exists(ctx, site_relative_url, second_folder_relative_url)
+
+        with open(file_path, 'rb') as file_content:
+            content = file_content.read()
+
+        file_name = os.path.basename(file_path)
+        second_folder_relative_url_trimmed = '/'.join(second_folder_relative_url.split('/')[1:])
+        file_url = f"/{second_folder_relative_url_trimmed}/{file_name}"
+        target_folder = ctx.web.get_folder_by_server_relative_url(f"{second_folder_relative_url_trimmed}")
+
+        ctx.execute_query()
+
+        try:
+            target_folder.upload_file(file_name, content).execute_query()
+            logger.info(f"Archivo subido: {file_url}")
+        except Exception as e:
+            logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+        return file_url
+    except Exception as e:
+        logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+
+def process_all_files():
+    logger.info("Iniciando procesamiento de todos los archivos de tipo File.")
+    all_files = frappe.get_all('File', filters={'attached_to_doctype': ['is', 'set']}, fields=['name', 'attached_to_doctype'])
+    for file_entry in all_files:
+        try:
+            file_doc = frappe.get_doc('File', file_entry['name'])
+            upload_file_to_sharepoint(file_doc)
+        except Exception as e:
+            logger.error(f"Error procesando archivo {file_entry['name']}: {e}")
+
+if __name__ == "__main__":
+    process_all_files()
+2024-07-24 14:17:32,377 INFO ipython import os
+import logging
+from urllib.parse import quote
+from office365.runtime.auth.user_credential import UserCredential
+from office365.sharepoint.client_context import ClientContext
+import frappe
+
+# Configurar el logger
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/upload_sp_ejec.log')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+
+def get_parent_folder_name(doctype, docname):
+    fields_to_check = ['company', 'empresa', 'custom_empresa', 'curso', 'proyecto', 'departamento']
+    logger.info(f"Obteniendo campos del documento {doctype} con nombre {docname}")
+    try:
+        related_doc = frappe.get_doc(doctype, docname)
+        logger.info(f"Campos del documento {doctype}: {related_doc.as_dict()}")
+        for field in fields_to_check:
+            if field in related_doc.as_dict():
+                logger.info(f"Campo {field} encontrado con valor {related_doc.get(field)}")
+                return related_doc.get(field)
+    except Exception as e:
+        logger.error(f"Error obteniendo el documento {doctype} con nombre {docname}: {e}")
+        return None
+
+def create_folder_if_not_exists(ctx, site_relative_url, folder_relative_url):
+    try:
+        folder_full_relative_url = f"{site_relative_url}/{folder_relative_url}".strip('/')
+        logger.info(f"Ruta relativa {site_relative_url}")
+        logger.info(f"Ruta carpeta relativa {folder_relative_url}")
+        parent_folder_url = '/'.join(folder_full_relative_url.split('/')[:-1])
+        logger.info(f"Ruta padre relativa {parent_folder_url}")
+        logger.info(f"Comprobando existencia de carpeta en la ruta: /{folder_full_relative_url}")
+        try:
+            folder = ctx.web.get_folder_by_server_relative_url(f"/{folder_full_relative_url}")
+            ctx.execute_query()
+            logger.info(f"La carpeta ya existe: {folder_full_relative_url}")
+        except Exception as e:
+            logger.info(f"La carpeta no existe, procediendo a crearla. Error al comprobar existencia: {e}")
+            parent_folder = ctx.web.get_folder_by_server_relative_url(f"/{parent_folder_url}")
+            ctx.execute_query()
+            new_folder = parent_folder.folders.add(folder_full_relative_url.split('/')[-1]).execute_query()
+            logger.info(f"Carpeta creada: {new_folder.serverRelativeUrl}")
+    except Exception as e:
+        logger.error(f"Error creando carpeta en {folder_full_relative_url}: {e}")
+
+def upload_file_to_sharepoint(file_doc):
+    logger.info(f"Procesando archivo: {file_doc.name}")
+    try:
+        file_path = frappe.get_site_path(file_doc.file_url.strip("/"))
+        logger.info(f"Archivo encontrado: {file_path}")
+
+        if not file_path or not os.path.isfile(file_path):
+            logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
+            return
+
+        doctype_name = file_doc.attached_to_doctype
+        docname = file_doc.attached_to_name
+        user_email = 'erp@grupoatu.com'
+        user_password = 'D/888592322871uy'
+
+        try:
+            doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
+        except frappe.DoesNotExistError:
+            logger.error(f"No se encontró un documento para el doctype {doctype_name} en Bibliotecas SP. Terminando la ejecución.")
+            return
+
+        parent_folder_full_url = doc_biblioteca.url_sp
+        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
+
+        start_idx = parent_folder_full_url.find('/sites/')
+        if start_idx == -1:
+            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
+            return
+        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
+        site_relative_url = parent_folder_full_url[start_idx:]
+        relative_path = parent_folder_full_url[start_idx + len('/sites/'):].lstrip('/')
+        logger.info(f"Ruta relativa calculada: {relative_path}")
+        logger.info(f"Conectando al contexto del sitio: {site_url}")
+
+        credentials = UserCredential(user_email, user_password)
+        ctx = ClientContext(site_url).with_credentials(credentials)
+
+        parent_folder_name = get_parent_folder_name(doctype_name, docname)
+        if not parent_folder_name:
+            logger.error(f"No se encontró el nombre de la carpeta padre para {doctype_name} con nombre {docname}")
+            return
+        parent_folder_name_encoded = quote(parent_folder_name)
+        logger.info(f"Nombre de la carpeta padre: {parent_folder_name}")
+
+        first_folder_relative_url = f"{relative_path}/{parent_folder_name_encoded}".strip('/')
+        second_folder_relative_url = f"{first_folder_relative_url}/{docname}".strip('/')
+        logger.info(f"URL de la primera carpeta: {first_folder_relative_url}")
+        logger.info(f"URL completa de la carpeta del documento: {second_folder_relative_url}")
+
+        create_folder_if_not_exists(ctx, site_relative_url, first_folder_relative_url)
+        create_folder_if_not_exists(ctx, site_relative_url, second_folder_relative_url)
+
+        with open(file_path, 'rb') as file_content:
+            content = file_content.read()
+
+        file_name = os.path.basename(file_path)
+        second_folder_relative_url_trimmed = '/'.join(second_folder_relative_url.split('/')[1:])
+        file_url = f"/{second_folder_relative_url_trimmed}/{file_name}"
+        target_folder = ctx.web.get_folder_by_server_relative_url(f"{second_folder_relative_url_trimmed}")
+
+        ctx.execute_query()
+
+        try:
+            target_folder.upload_file(file_name, content).execute_query()
+            logger.info(f"Archivo subido: {file_url}")
+        except Exception as e:
+            logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+        return file_url
+    except Exception as e:
+        logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+
+def process_all_files():
+    logger.info("Iniciando procesamiento de todos los archivos de tipo File.")
+    all_files = frappe.get_all('File', filters={'attached_to_doctype': ['is', 'set']}, fields=['name', 'attached_to_doctype'])
+    for file_entry in all_files:
+        try:
+            file_doc = frappe.get_doc('File', file_entry['name'])
+            upload_file_to_sharepoint(file_doc)
+        except Exception as e:
+            logger.error(f"Error procesando archivo {file_entry['name']}: {e}")
+
+if __name__ == "__main__":
+    process_all_files()
+import os
+import logging
+from urllib.parse import quote
+from office365.runtime.auth.user_credential import UserCredential
+from office365.sharepoint.client_context import ClientContext
+import frappe
+
+# Configurar el logger
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/upload_sp_ejec.log')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+
+def get_parent_folder_name(doctype, docname):
+    fields_to_check = ['company', 'empresa', 'custom_empresa', 'curso', 'proyecto', 'departamento']
+    logger.info(f"Obteniendo campos del documento {doctype} con nombre {docname}")
+    try:
+        related_doc = frappe.get_doc(doctype, docname)
+        logger.info(f"Campos del documento {doctype}: {related_doc.as_dict()}")
+        for field in fields_to_check:
+            if field in related_doc.as_dict():
+                logger.info(f"Campo {field} encontrado con valor {related_doc.get(field)}")
+                return related_doc.get(field)
+    except Exception as e:
+        logger.error(f"Error obteniendo el documento {doctype} con nombre {docname}: {e}")
+        return None
+
+def create_folder_if_not_exists(ctx, site_relative_url, folder_relative_url):
+    try:
+        folder_full_relative_url = f"{site_relative_url}/{folder_relative_url}".strip('/')
+        logger.info(f"Ruta relativa {site_relative_url}")
+        logger.info(f"Ruta carpeta relativa {folder_relative_url}")
+        parent_folder_url = '/'.join(folder_full_relative_url.split('/')[:-1])
+        logger.info(f"Ruta padre relativa {parent_folder_url}")
+        logger.info(f"Comprobando existencia de carpeta en la ruta: /{folder_full_relative_url}")
+        try:
+            folder = ctx.web.get_folder_by_server_relative_url(f"/{folder_full_relative_url}")
+            ctx.execute_query()
+            logger.info(f"La carpeta ya existe: {folder_full_relative_url}")
+        except Exception as e:
+            logger.info(f"La carpeta no existe, procediendo a crearla. Error al comprobar existencia: {e}")
+            parent_folder = ctx.web.get_folder_by_server_relative_url(f"/{parent_folder_url}")
+            ctx.execute_query()
+            new_folder = parent_folder.folders.add(folder_full_relative_url.split('/')[-1]).execute_query()
+            logger.info(f"Carpeta creada: {new_folder.serverRelativeUrl}")
+    except Exception as e:
+        logger.error(f"Error creando carpeta en {folder_full_relative_url}: {e}")
+
+def upload_file_to_sharepoint(file_doc):
+    logger.info(f"Procesando archivo: {file_doc.name}")
+    try:
+        file_path = frappe.get_site_path(file_doc.file_url.strip("/"))
+        logger.info(f"Archivo encontrado: {file_path}")
+
+        if not file_path or not os.path.isfile(file_path):
+            logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
+            return
+
+        doctype_name = file_doc.attached_to_doctype
+        docname = file_doc.attached_to_name
+        user_email = 'erp@grupoatu.com'
+        user_password = 'D/888592322871uy'
+
+        try:
+            doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
+        except frappe.DoesNotExistError:
+            logger.error(f"No se encontró un documento para el doctype {doctype_name} en Bibliotecas SP. Terminando la ejecución.")
+            return
+
+        parent_folder_full_url = doc_biblioteca.url_sp
+        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
+
+        start_idx = parent_folder_full_url.find('/sites/')
+        if start_idx == -1:
+            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
+            return
+        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
+        site_relative_url = parent_folder_full_url[start_idx:]
+        relative_path = parent_folder_full_url[start_idx + len('/sites/'):].lstrip('/')
+        logger.info(f"Ruta relativa calculada: {relative_path}")
+        logger.info(f"Conectando al contexto del sitio: {site_url}")
+
+        credentials = UserCredential(user_email, user_password)
+        ctx = ClientContext(site_url).with_credentials(credentials)
+
+        parent_folder_name = get_parent_folder_name(doctype_name, docname)
+        if not parent_folder_name:
+            logger.error(f"No se encontró el nombre de la carpeta padre para {doctype_name} con nombre {docname}")
+            return
+        parent_folder_name_encoded = quote(parent_folder_name)
+        logger.info(f"Nombre de la carpeta padre: {parent_folder_name}")
+
+        first_folder_relative_url = f"{relative_path}/{parent_folder_name_encoded}".strip('/')
+        second_folder_relative_url = f"{first_folder_relative_url}/{docname}".strip('/')
+        logger.info(f"URL de la primera carpeta: {first_folder_relative_url}")
+        logger.info(f"URL completa de la carpeta del documento: {second_folder_relative_url}")
+
+        create_folder_if_not_exists(ctx, site_relative_url, first_folder_relative_url)
+        create_folder_if_not_exists(ctx, site_relative_url, second_folder_relative_url)
+
+        with open(file_path, 'rb') as file_content:
+            content = file_content.read()
+
+        file_name = os.path.basename(file_path)
+        second_folder_relative_url_trimmed = '/'.join(second_folder_relative_url.split('/')[1:])
+        file_url = f"/{second_folder_relative_url_trimmed}/{file_name}"
+        target_folder = ctx.web.get_folder_by_server_relative_url(f"{second_folder_relative_url_trimmed}")
+
+        ctx.execute_query()
+
+        try:
+            target_folder.upload_file(file_name, content).execute_query()
+            logger.info(f"Archivo subido: {file_url}")
+        except Exception as e:
+            logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+        return file_url
+    except Exception as e:
+        logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+
+def process_all_files():
+    logger.info("Iniciando procesamiento de todos los archivos de tipo File.")
+    all_files = frappe.get_all('File', filters={'attached_to_doctype': ['is', 'set']}, fields=['name', 'attached_to_doctype'])
+    for file_entry in all_files:
+        try:
+            file_doc = frappe.get_doc('File', file_entry['name'])
+            upload_file_to_sharepoint(file_doc)
+        except Exception as e:
+            logger.error(f"Error procesando archivo {file_entry['name']}: {e}")
+
+if __name__ == "__main__":
+    process_all_files()
+2024-07-24 14:17:32,378 INFO ipython import os
+import logging
+from urllib.parse import quote
+from office365.runtime.auth.user_credential import UserCredential
+from office365.sharepoint.client_context import ClientContext
+import frappe
+
+# Configurar el logger
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/upload_sp_ejec.log')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levellevel)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+
+def get_parent_folder_name(doctype, docname):
+    fields_to_check = ['company', 'empresa', 'custom_empresa', 'curso', 'proyecto', 'departamento']
+    logger.info(f"Obteniendo campos del documento {doctype} con nombre {docname}")
+    try:
+        related_doc = frappe.get_doc(doctype, docname)
+        logger.info(f"Campos del documento {doctype}: {related_doc.as_dict()}")
+        for field in fields_to_check:
+            if field in related_doc.as_dict():
+                logger.info(f"Campo {field} encontrado con valor {related_doc.get(field)}")
+                return related_doc.get(field)
+    except Exception as e:
+        logger.error(f"Error obteniendo el documento {doctype} con nombre {docname}: {e}")
+        return None
+
+def create_folder_if_not_exists(ctx, site_relative_url, folder_relative_url):
+    try:
+        folder_full_relative_url = f"{site_relative_url}/{folder_relative_url}".strip('/')
+        logger.info(f"Ruta relativa {site_relative_url}")
+        logger.info(f"Ruta carpeta relativa {folder_relative_url}")
+        parent_folder_url = '/'.join(folder_full_relative_url.split('/')[:-1])
+        logger.info(f"Ruta padre relativa {parent_folder_url}")
+        logger.info(f"Comprobando existencia de carpeta en la ruta: /{folder_full_relative_url}")
+        try:
+            folder = ctx.web.get_folder_by_server_relative_url(f"/{folder_full_relative_url}")
+            ctx.execute_query()
+            logger.info(f"La carpeta ya existe: {folder_full_relative_url}")
+        except Exception as e:
+            logger.info(f"La carpeta no existe, procediendo a crearla. Error al comprobar existencia: {e}")
+            parent_folder = ctx.web.get_folder_by_server_relative_url(f"/{parent_folder_url}")
+            ctx.execute_query()
+            new_folder = parent_folder.folders.add(folder_full_relative_url.split('/')[-1]).execute_query()
+            logger.info(f"Carpeta creada: {new_folder.serverRelativeUrl}")
+    except Exception as e:
+        logger.error(f"Error creando carpeta en {folder_full_relative_url}: {e}")
+
+def upload_file_to_sharepoint(file_doc):
+    logger.info(f"Procesando archivo: {file_doc.name}")
+    try:
+        file_path = frappe.get_site_path(file_doc.file_url.strip("/"))
+        logger.info(f"Archivo encontrado: {file_path}")
+
+        if not file_path or not os.path.isfile(file_path):
+            logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
+            return
+
+        doctype_name = file_doc.attached_to_doctype
+        docname = file_doc.attached_to_name
+        user_email = 'erp@grupoatu.com'
+        user_password = 'D/888592322871uy'
+
+        try:
+            doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
+        except frappe.DoesNotExistError:
+            logger.error(f"No se encontró un documento para el doctype {doctype_name} en Bibliotecas SP. Terminando la ejecución.")
+            return
+
+        parent_folder_full_url = doc_biblioteca.url_sp
+        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
+
+        start_idx = parent_folder_full_url.find('/sites/')
+        if start_idx == -1:
+            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
+            return
+        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
+        site_relative_url = parent_folder_full_url[start_idx:]
+        relative_path = parent_folder_full_url[start_idx + len('/sites/'):].lstrip('/')
+        logger.info(f"Ruta relativa calculada: {relative_path}")
+        logger.info(f"Conectando al contexto del sitio: {site_url}")
+
+        credentials = UserCredential(user_email, user_password)
+        ctx = ClientContext(site_url).with_credentials(credentials)
+
+        parent_folder_name = get_parent_folder_name(doctype_name, docname)
+        if not parent_folder_name:
+            logger.error(f"No se encontró el nombre de la carpeta padre para {doctype_name} con nombre {docname}")
+            return
+        parent_folder_name_encoded = quote(parent_folder_name)
+        logger.info(f"Nombre de la carpeta padre: {parent_folder_name}")
+
+        first_folder_relative_url = f"{relative_path}/{parent_folder_name_encoded}".strip('/')
+        second_folder_relative_url = f"{first_folder_relative_url}/{docname}".strip('/')
+        logger.info(f"URL de la primera carpeta: {first_folder_relative_url}")
+        logger.info(f"URL completa de la carpeta del documento: {second_folder_relative_url}")
+
+        create_folder_if_not_exists(ctx, site_relative_url, first_folder_relative_url)
+        create_folder_if_not_exists(ctx, site_relative_url, second_folder_relative_url)
+
+        with open(file_path, 'rb') as file_content:
+            content = file_content.read()
+
+        file_name = os.path.basename(file_path)
+        second_folder_relative_url_trimmed = '/'.join(second_folder_relative_url.split('/')[1:])
+        file_url = f"/{second_folder_relative_url_trimmed}/{file_name}"
+        target_folder = ctx.web.get_folder_by_server_relative_url(f"{second_folder_relative_url_trimmed}")
+
+        logger.info(f"Verificando existencia de carpeta destino: {second_folder_relative_url_trimmed}")
+        ctx.execute_query()
+
+        try:
+            logger.info(f"Subiendo archivo {file_name} a {second_folder_relative_url_trimmed}")
+            target_folder.upload_file(file_name, content).execute_query()
+            logger.info(f"Archivo subido: {file_url}")
+        except Exception as e:
+            logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+        return file_url
+    except Exception as e:
+        logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+
+def process_all_files():
+    logger.info("Iniciando procesamiento de todos los archivos de tipo File.")
+    all_files = frappe.get_all('File', filters={'attached_to_doctype': ['is', 'set']}, fields=['name', 'attached_to_doctype'])
+    for file_entry in all_files:
+        try:
+            logger.info(f"Procesando archivo: {file_entry['name']} con doctype {file_entry['attached_to_doctype']}")
+            file_doc = frappe.get_doc('File', file_entry['name'])
+            upload_file_to_sharepoint(file_doc)
+        except Exception as e:
+            logger.error(f"Error procesando archivo {file_entry['name']}: {e}")
+
+if __name__ == "__main__":
+    process_all_files()
+2024-07-24 14:17:32,378 INFO ipython === session end ===

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001642",
+    "esbuild": "^0.23.0",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "ws": "^8.18.0"
+  }
+}

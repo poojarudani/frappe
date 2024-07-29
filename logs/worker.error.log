@@ -1,0 +1,1623 @@
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+2024-05-07 17:47:37,860 [Job erp.grupoatu.com::4feae0c8-eb1d-4bfa-be91-5f4541d006db]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 220, in execute_job
+    retval = method(**kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/client.py", line 180, in set_value
+    doc = frappe.get_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 172, in load_from_db
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 645, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 610, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 561, in _raise_exception
+    raise exc
+frappe.exceptions.DoesNotExistError: Employee Health Insurance Seguridad Social not found
+
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+ERROR	PropertyValue: Missing token for production Choice(ColorValue, Dimension, URIValue, Value, variable, MSValue, CSSCalc, function): ('HASH', '#0000001a', 1, 3215)
+ERROR	PropertyValue: Unknown syntax or no value: 0 3px 6px #0000001a
+ERROR	CSSStyleDeclaration: Syntax Error in Property: box-shadow:0 3px 6px #0000001a
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1799, in run
+    self.run()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1799, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1690, in get_message
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1690, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1542, in parse_response
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    response = self._execute(conn, try_read)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1536, in try_read
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    if not conn.can_read(timeout=timeout):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 861, in can_read
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    return self._parser.can_read(timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 455, in read_from_socket
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1536, in try_read
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+    if not conn.can_read(timeout=timeout):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 444, in can_read
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise err
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    sock = self.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    sock.connect(socket_address)
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 202, in start_worker
+    start_worker(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 296, in start_worker
+    worker.work(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 456, in work
+    self.teardown()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 624, in unsubscribe
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    self.pubsub.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1659, in unsubscribe
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    return self.execute_command("UNSUBSCRIBE", *args)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1479, in execute_command
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 847, in send_command
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 202, in start_worker
+    start_worker(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 296, in start_worker
+    self.send_packed_command(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    worker.work(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 456, in work
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+    self.teardown()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 624, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1659, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1799, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1690, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1536, in try_read
+    if not conn.can_read(timeout=timeout):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 202, in start_worker
+    start_worker(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 296, in start_worker
+    worker.work(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 456, in work
+    self.teardown()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 624, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1659, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1799, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1690, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1536, in try_read
+    if not conn.can_read(timeout=timeout):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 202, in start_worker
+    start_worker(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 296, in start_worker
+    worker.work(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 456, in work
+    self.teardown()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 624, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1659, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1799, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1690, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1536, in try_read
+    if not conn.can_read(timeout=timeout):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 202, in start_worker
+    start_worker(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 296, in start_worker
+    worker.work(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 456, in work
+    self.teardown()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 624, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1659, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+2024-06-28 09:44:31,509 [Job erp.grupoatu.com::ed7d8b40-dc79-46bb-96f1-aa2b39f778fd]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1667, in execute_action
+    getattr(doc, __action)(**kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/role_profile/role_profile.py", line 57, in update_all_users
+    user.add_roles(*role_profile_roles)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 612, in add_roles
+    self.save()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 337, in save
+    return self._save(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 373, in _save
+    self.run_before_save_methods()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1091, in run_before_save_methods
+    self.run_method("validate")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 962, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1322, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1306, in runner
+    add_to_return_value(self, f(self, method, *args, **kwargs))
+  File "/home/frappe/frappe-bench/apps/frappe_whatsapp/frappe_whatsapp/utils/__init__.py", line 17, in run_server_script_for_doc_event
+    notification = get_notifications_map().get(
+  File "/home/frappe/frappe-bench/apps/frappe_whatsapp/frappe_whatsapp/utils/__init__.py", line 36, in get_notifications_map
+    enabled_whatsapp_notifications = frappe.get_all(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 580, in build_conditions
+    self.build_filter_conditions(self.filters, self.conditions)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 601, in build_filter_conditions
+    conditions.append(self.prepare_filter_condition(f))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 712, in prepare_filter_condition
+    f = get_filter(self.doctype, f, additional_filters_config)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/data.py", line 1832, in get_filter
+    meta = frappe.get_meta(f.doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1356, in get_meta
+    return frappe.model.meta.get_meta(doctype, cached=cached)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/meta.py", line 63, in get_meta
+    meta = Meta(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/meta.py", line 119, in __init__
+    self.process()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/meta.py", line 143, in process
+    self.add_custom_links_and_actions()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/meta.py", line 414, in add_custom_links_and_actions
+    for d in frappe.get_all(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
+    return frappe.db.sql(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
+    self._cursor.execute(query, values)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1207, in read
+    self._read_result_packet(first_packet)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1283, in _read_result_packet
+    self._get_descriptions()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1368, in _get_descriptions
+    field = self.connection._read_packet(FieldDescriptorPacket)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 768, in _read_packet
+    packet = packet_type(bytes(buff), self.encoding)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 236, in __init__
+    self._parse_field_descriptor(encoding)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 255, in _parse_field_descriptor
+    ) = self.read_struct("<xHIBHBxx")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 178, in read_struct
+    s = struct.Struct(fmt)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/timeouts.py", line 63, in handle_death_penalty
+    raise self._exception('Task exceeded maximum timeout value ({0} seconds)'.format(self._timeout))
+rq.timeouts.JobTimeoutException: Task exceeded maximum timeout value (300 seconds)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 220, in execute_job
+    retval = method(**kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 1669, in execute_action
+    frappe.db.rollback()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1061, in rollback
+    self.sql("rollback")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
+    self._cursor.execute(query, values)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 752, in _read_packet
+    raise err.InternalError(
+pymysql.err.InternalError: Packet sequence number wrong - got 5 expected 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 223, in execute_job
+    frappe.db.rollback()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1061, in rollback
+    self.sql("rollback")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
+    self._cursor.execute(query, values)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 557, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 840, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+2024-07-01 14:57:02,356 [Job erp.grupoatu.com::scheduled_job::hrms.hr.doctype.interview.interview.send_interview_reminder]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 250, in execute_job
+    frappe.db.commit()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1046, in commit
+    self.sql("commit")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
+    self._cursor.execute(query, values)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 557, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 840, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+2024-07-01 14:57:02,359 [Job erp.grupoatu.com::scheduled_job::frappe.automation.doctype.reminder.reminder.send_reminders]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 250, in execute_job
+    frappe.db.commit()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1046, in commit
+    self.sql("commit")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
+    self._cursor.execute(query, values)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 557, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 840, in _execute_command
+    raise err.InterfaceError(0, "")
+pymysql.err.InterfaceError: (0, '')
+
+2024-07-01 14:57:02,547 [Job erp.grupoatu.com::scheduled_job::frappe.utils.global_search.sync_global_search]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 250, in execute_job
+    frappe.db.commit()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1046, in commit
+    self.sql("commit")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
+    self.connect()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2024-07-01 14:57:02,548 [Job erp.grupoatu.com::scheduled_job::frappe.monitor.flush]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 250, in execute_job
+    frappe.db.commit()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1046, in commit
+    self.sql("commit")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
+    self.connect()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2024-07-01 14:57:02,649 [Job erp.grupoatu.com::scheduled_job::frappe.email.queue.flush]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 250, in execute_job
+    frappe.db.commit()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1046, in commit
+    self.sql("commit")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
+    self.connect()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2024-07-01 14:57:02,688 [Job erp.grupoatu.com::scheduled_job::frappe.email.doctype.email_account.email_account.notify_unreplied]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 250, in execute_job
+    frappe.db.commit()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1046, in commit
+    self.sql("commit")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
+    self.connect()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+2024-07-12 13:53:04,070 [Job erp.grupoatu.com::c7414003-884f-4cb3-b749-305ae596fc84]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 220, in execute_job
+    retval = method(**kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/client.py", line 180, in set_value
+    doc = frappe.get_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 172, in load_from_db
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 645, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 610, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 561, in _raise_exception
+    raise exc
+frappe.exceptions.DoesNotExistError: Sales Taxes and Charges Template IVA - NAS not found
+
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+2024-07-18 11:45:02,500 [Job erp.grupoatu.com::a8dc4157-fa7c-46c4-9965-7b57162ca642]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 220, in execute_job
+    retval = method(**kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/print_format.py", line 206, in _download_multi_pdf
+    _file = frappe.get_doc(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
+    result = self.get_values(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
+    out = self._get_values_from_table(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
+    self.connect()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.db.rollback()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1061, in rollback
+    self.sql("rollback")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
+    self.connect()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+2024-07-18 11:45:06,153 [Job erp.grupoatu.com::cb3526c6-339d-4bb2-874b-3324868d6852]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 220, in execute_job
+    retval = method(**kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/print_format.py", line 206, in _download_multi_pdf
+    _file = frappe.get_doc(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
+    result = self.get_values(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
+    out = self._get_values_from_table(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
+    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
+    self.connect()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1428, in perform_job
+    rv = job.perform()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1278, in perform
+    self._result = self._execute()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/job.py", line 1315, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 243, in execute_job
+    frappe.db.rollback()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 1061, in rollback
+    self.sql("rollback")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
+    self.connect()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1799, in run
+    self.run()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1799, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1690, in get_message
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1690, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1536, in try_read
+    if not conn.can_read(timeout=timeout):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 861, in can_read
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+    return self._parser.can_read(timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1536, in try_read
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    if not conn.can_read(timeout=timeout):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 202, in start_worker
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    start_worker(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 296, in start_worker
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 202, in start_worker
+    start_worker(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 296, in start_worker
+    worker.work(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 456, in work
+    worker.work(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 456, in work
+    self.teardown()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 624, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1659, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    self.teardown()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1047, in teardown
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    self.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 624, in unsubscribe
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.pubsub.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1659, in unsubscribe
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+    return self.execute_command("UNSUBSCRIBE", *args)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1799, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1690, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1542, in parse_response
+    response = self._execute(conn, try_read)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1536, in try_read
+    if not conn.can_read(timeout=timeout):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 861, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 444, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 455, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 699, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 700, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 1002, in _connect
+    raise err
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 990, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 202, in start_worker
+    start_worker(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 296, in start_worker
+    worker.work(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 456, in work
+    self.teardown()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 1047, in teardown
+    self.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/rq/worker.py", line 624, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1659, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1479, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1518, in _execute
+    return conn.retry.call_with_retry(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1520, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1507, in _disconnect_raise_connect
+    raise error
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/client.py", line 1519, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 847, in send_command
+    self.send_packed_command(
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 817, in send_packed_command
+    self.connect()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/redis/connection.py", line 705, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:11000. Connection refused.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+ERROR	Property: Invalid value for "CSS Level 2.1" property: var(--gray-900) [14:3: color]
+WARNING	Property: Unknown Property name. [64:2: word-wrap]
+WARNING	Property: Unknown Property name. [83:2: columns]
+WARNING	Property: Unknown Property name. [90:2: background-size]
+WARNING	Property: Unknown Property name. [98:2: object-fit]
+WARNING	Property: Unknown Property name. [110:2: -webkit-print-color-adjust]
+WARNING	Property: Unknown Property name. [158:2: word-break]
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
+fatal: No remote configured to list refs from.
