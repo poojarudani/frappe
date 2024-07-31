@@ -1,0 +1,5 @@
+# Excluir todos los directorios privados en todos los sitios
+sites/*/private/
+
+# Excluir todos los directorios públicos de archivos en todos los sitios
+sites/*/public/files/
