@@ -612,3 +612,246 @@ pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn
 2024-07-28 00:10:54,068 ERROR scheduler Skipped queueing hrms.hr.doctype.shift_type.shift_type.process_auto_attendance_for_all_shifts because it was found in queue for erp.grupoatu.com
 2024-07-28 00:10:54,085 ERROR scheduler Skipped queueing frappe.integrations.doctype.dropbox_settings.dropbox_settings.take_backups_weekly because it was found in queue for erp.grupoatu.com
 2024-07-28 00:10:54,086 ERROR scheduler Skipped queueing frappe.integrations.doctype.s3_backup_settings.s3_backup_settings.take_backups_daily because it was found in queue for erp.grupoatu.com
+2024-07-31 09:41:43,680 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
+    if is_scheduler_inactive():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
+    ).run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
+    self._cursor.execute(query, values)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
+2024-07-31 09:52:33,765 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 91, in enqueue_events
+    for job_type in frappe.get_all("Scheduled Job Type", filters={"stopped": 0}, fields="*"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 580, in build_conditions
+    self.build_filter_conditions(self.filters, self.conditions)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 601, in build_filter_conditions
+    conditions.append(self.prepare_filter_condition(f))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 711, in prepare_filter_condition
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/boot.py", line 364, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:53:33,812 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 91, in enqueue_events
+    for job_type in frappe.get_all("Scheduled Job Type", filters={"stopped": 0}, fields="*"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 580, in build_conditions
+    self.build_filter_conditions(self.filters, self.conditions)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 601, in build_filter_conditions
+    conditions.append(self.prepare_filter_condition(f))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 711, in prepare_filter_condition
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/boot.py", line 364, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:55:46,777 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 91, in enqueue_events
+    for job_type in frappe.get_all("Scheduled Job Type", filters={"stopped": 0}, fields="*"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 580, in build_conditions
+    self.build_filter_conditions(self.filters, self.conditions)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 601, in build_filter_conditions
+    conditions.append(self.prepare_filter_condition(f))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 711, in prepare_filter_condition
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/boot.py", line 364, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:46,798 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 91, in enqueue_events
+    for job_type in frappe.get_all("Scheduled Job Type", filters={"stopped": 0}, fields="*"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
+    result = self.build_and_run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 206, in build_and_run
+    args = self.prepare_args()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 246, in prepare_args
+    self.build_conditions()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 580, in build_conditions
+    self.build_filter_conditions(self.filters, self.conditions)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 601, in build_filter_conditions
+    conditions.append(self.prepare_filter_condition(f))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 711, in prepare_filter_condition
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/boot.py", line 364, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax

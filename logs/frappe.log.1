@@ -1,334 +1,10 @@
-2024-07-19 12:04:36,261 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-07-31 09:56:33,121 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all("Website Route Redirect", ["source", "target"], order_by=None)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 167, in execute
-    if is_virtual_doctype(self.doctype):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 119, in site_cache_wrapper
-    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/utils/__init__.py", line 133, in is_virtual_doctype
-    return frappe.db.get_value("DocType", doctype, "is_virtual")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 119, in application
-    response = get_response()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 179, in get_boot_data
-    "user": frappe.db.get_value("User", frappe.session.user, "time_zone") or get_system_timezone(),
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:04:36,600 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all("Website Route Redirect", ["source", "target"], order_by=None)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 167, in execute
-    if is_virtual_doctype(self.doctype):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 119, in site_cache_wrapper
-    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/utils/__init__.py", line 133, in is_virtual_doctype
-    return frappe.db.get_value("DocType", doctype, "is_virtual")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 119, in application
-    response = get_response()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 179, in get_boot_data
-    "user": frappe.db.get_value("User", frappe.session.user, "time_zone") or get_system_timezone(),
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:04:36,801 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {'sid': '3f9f2a9842741dbcd3f3166f10aea210dbb8ca46042ee0c0c70d1656'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -361,92 +37,37 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:04:36,830 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -455,58 +76,45 @@ Traceback (most recent call last):
     endpoint, renderer_instance = path_resolver.resolve()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
     resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all("Website Route Redirect", ["source", "target"], order_by=None)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 167, in execute
-    if is_virtual_doctype(self.doctype):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 119, in site_cache_wrapper
-    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/utils/__init__.py", line 133, in is_virtual_doctype
-    return frappe.db.get_value("DocType", doctype, "is_virtual")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 119, in application
-    response = get_response()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
     response = ErrorPage(exception=e).render()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
@@ -519,414 +127,64 @@ Traceback (most recent call last):
     super().init_context()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
     self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 179, in get_boot_data
-    "user": frappe.db.get_value("User", frappe.session.user, "time_zone") or get_system_timezone(),
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:04:39,949 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 272, in resume
-    data = self.get_session_record()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 289, in get_session_record
-    r = self.get_session_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 305, in get_session_data
-    data = self.get_session_data_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 334, in get_session_data_from_db
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:04:40,028 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 272, in resume
-    data = self.get_session_record()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 289, in get_session_record
-    r = self.get_session_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 305, in get_session_data
-    data = self.get_session_data_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 334, in get_session_data_from_db
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:14:04,721 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"EDU-CSH-2024-00001","owner":"Administrator","creation":"2024-07-19 09:57:54.438140","modified":"2024-07-19 09:57:54.438140","modified_by":"Administrator","docstatus":0,"idx":0,"course":"Este curso de prueba","naming_series":"EDU-CSH-.YYYY.-","color":"#EDF6FD","class_schedule_color":"red","schedule_date":"2024-07-19","start_date":"2024-07-18","end_date":"2024-07-31","theory_start_date":"2024-07-19","theory_end_date":"2024-07-24","title":"Este curso de prueba","from_time":"8:00:00","to_time":"15:00:00","practical_start_date":"2024-07-25","practical_end_date":"2024-07-31","doctype":"Course Schedule","__last_sync_on":"2024-07-19T10:14:01.647Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-07-19 13:01:52,536 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00067', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-19 13:01:52,593 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00067', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-19 13:01:52,600 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00067', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-19 13:01:52,605 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00067', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-19 13:01:52,610 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00067', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-19 16:13:17,607 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"HR-OFF-2024-00045","owner":"sonia@grupoatu.com","creation":"2024-07-18 12:48:46.306238","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":2,"custom_empleado":"71311430E","job_applicant":"adrian.gonzalez@grupoatu.com","applicant_name":"Adrian Gonzalez Rodrigues","applicant_email":"adrian.gonzalez@grupoatu.com","custom_dninie":"71311430E","custom_no_seguridad_social":"091026384130","custom_fecha_de_nacimiento":"2000-10-26","custom_dirección_de_contacto":"adrian.gonzalez@grupoatu.com","custom_categoría_profesional":"Auxiliar Administrativo","custom_discapacidad":0,"status":"Accepted","offer_date":"2024-07-18","custom_fecha_inicio":"2024-08-01","custom_fecha_fin":"2024-11-30","designation":"Aux. Admín.","custom_tipo_de_contrato":"Fijo Discontinuo","company":"Tierra más ecológica S COOP","custom_código_postal":"09005","custom_iban":"ES5830600078122384820011","custom_provincia":"Burgos","custom_numero_de_movil":"","job_offer_term_template":"Administrativo/a","select_terms":"Administrativo","terms":"<div class=\\"ql-editor read-mode\\"><p>Tramitacion documentacion Planes de Formacion Castilla y Leon</p></div>","doctype":"Job Offer","offer_terms":[{"name":"ivkfvr0k80","owner":"Administrator","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":1,"offer_term":"Días de la semana","value":"Lunes a Viernes","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkf81mlnb","owner":"Administrator","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":2,"offer_term":"Jornada","value":"35 h/semana","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkf7dg5sh","owner":"Administrator","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":3,"offer_term":"Horario","value":"8:00 a 15:00","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkfrra9i4","owner":"sonia@grupoatu.com","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":4,"offer_term":"Horas a la semana","value":"35 horas","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkfd9l8rg","owner":"sonia@grupoatu.com","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":5,"offer_term":"Retención","value":"2%","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkfrakjq4","owner":"sonia@grupoatu.com","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":6,"offer_term":"Salario","value":"Convenio","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"9uqi4f1d6h","owner":"sonia@grupoatu.com","creation":"2024-07-18 12:48:46.306238","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":7,"offer_term":"Centro de Trabajo","value":"Avda Cantabria","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"}],"registro_horas":[],"__onload":{"employee":""},"__last_sync_on":"2024-07-19T14:13:17.038Z"}', 'print_format': 'Formato Asesoría', 'no_letterhead': '0', 'letterhead': 'Burgos ATU', 'settings': '{}', '_lang': 'es', 'cmd': 'frappe.www.printview.get_html_and_style'}
-2024-07-19 16:13:27,637 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"HR-OFF-2024-00045","owner":"sonia@grupoatu.com","creation":"2024-07-18 12:48:46.306238","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":2,"custom_empleado":"71311430E","job_applicant":"adrian.gonzalez@grupoatu.com","applicant_name":"Adrian Gonzalez Rodrigues","applicant_email":"adrian.gonzalez@grupoatu.com","custom_dninie":"71311430E","custom_no_seguridad_social":"091026384130","custom_fecha_de_nacimiento":"2000-10-26","custom_dirección_de_contacto":"adrian.gonzalez@grupoatu.com","custom_categoría_profesional":"Auxiliar Administrativo","custom_discapacidad":0,"status":"Accepted","offer_date":"2024-07-18","custom_fecha_inicio":"2024-08-01","custom_fecha_fin":"2024-11-30","designation":"Aux. Admín.","custom_tipo_de_contrato":"Fijo Discontinuo","company":"Tierra más ecológica S COOP","custom_código_postal":"09005","custom_iban":"ES5830600078122384820011","custom_provincia":"Burgos","custom_numero_de_movil":"","job_offer_term_template":"Administrativo/a","select_terms":"Administrativo","terms":"<div class=\\"ql-editor read-mode\\"><p>Tramitacion documentacion Planes de Formacion Castilla y Leon</p></div>","doctype":"Job Offer","offer_terms":[{"name":"ivkfvr0k80","owner":"Administrator","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":1,"offer_term":"Días de la semana","value":"Lunes a Viernes","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkf81mlnb","owner":"Administrator","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":2,"offer_term":"Jornada","value":"35 h/semana","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkf7dg5sh","owner":"Administrator","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":3,"offer_term":"Horario","value":"8:00 a 15:00","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkfrra9i4","owner":"sonia@grupoatu.com","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":4,"offer_term":"Horas a la semana","value":"35 horas","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkfd9l8rg","owner":"sonia@grupoatu.com","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":5,"offer_term":"Retención","value":"2%","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ivkfrakjq4","owner":"sonia@grupoatu.com","creation":"2024-06-18 09:42:57.609612","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":6,"offer_term":"Salario","value":"Convenio","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"9uqi4f1d6h","owner":"sonia@grupoatu.com","creation":"2024-07-18 12:48:46.306238","modified":"2024-07-19 09:43:42.364208","modified_by":"sonia@grupoatu.com","docstatus":1,"idx":7,"offer_term":"Centro de Trabajo","value":"Avda Cantabria","parent":"HR-OFF-2024-00045","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"}],"registro_horas":[],"__onload":{"employee":""},"__last_sync_on":"2024-07-19T14:13:25.949Z"}', 'print_format': 'Formato Asesoría', 'no_letterhead': '0', 'letterhead': 'Burgos ATU', 'settings': '{}', '_lang': 'es', 'cmd': 'frappe.www.printview.get_html_and_style'}
-2024-07-22 10:01:21,854 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'tag': 'RRHH', 'dt': 'Program', 'dn': '2023/993', 'cmd': 'frappe.desk.doctype.tag.tag.add_tag'}
-2024-07-22 10:01:30,790 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'tag': 'RRHH', 'dt': 'Program', 'dn': '2023/993', 'cmd': 'frappe.desk.doctype.tag.tag.remove_tag'}
-2024-07-22 11:13:18,257 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Sales Invoice', 'docname': 'TBC/V/2400017', 'title': 'ATU Seguridad y Salud SL', 'enqueue': 'true', 'merge': 'false', 'freeze': 'true', 'freeze_message': 'Updating related fields...', 'cmd': 'frappe.model.rename_doc.update_document_title'}
-2024-07-22 17:14:27,353 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"ACC-PINV-2024-00049","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.570735","modified":"2024-07-19 14:54:07.570735","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":1,"title":"UNIVERSITATES S.L.","naming_series":"ACC-PINV-.YYYY.-","supplier":"UNIVERSITATES S.L.","supplier_name":"UNIVERSITATES S.L.","tax_id":"B40114951","company":"ATU Asesoría de Formación SL","posting_date":"2024-07-12","posting_time":"14:37:56","set_posting_time":1,"due_date":"2024-07-12","is_paid":0,"is_return":0,"update_outstanding_for_self":1,"update_billed_amount_in_purchase_order":0,"update_billed_amount_in_purchase_receipt":1,"apply_tds":0,"bill_no":"A 27","bill_date":"2024-07-12","currency":"EUR","conversion_rate":1,"use_transaction_date_exchange_rate":0,"buying_price_list":"Compra estandar","price_list_currency":"EUR","plc_conversion_rate":1,"ignore_pricing_rule":0,"update_stock":0,"is_subcontracted":0,"total_qty":20,"total_net_weight":0,"base_total":25748.8,"base_net_total":25748.8,"total":25748.8,"net_total":25748.8,"tax_withholding_net_total":25748.8,"base_tax_withholding_net_total":25748.8,"tax_category":"","base_taxes_and_charges_added":0,"base_taxes_and_charges_deducted":0,"base_total_taxes_and_charges":0,"taxes_and_charges_added":0,"taxes_and_charges_deducted":0,"total_taxes_and_charges":0,"base_grand_total":25748.8,"base_rounding_adjustment":0,"base_rounded_total":25748.8,"base_in_words":"","grand_total":25748.8,"rounding_adjustment":0,"use_company_roundoff_cost_center":0,"rounded_total":25748.8,"in_words":"","total_advance":0,"outstanding_amount":25748.8,"disable_rounded_total":0,"apply_discount_on":"Grand Total","base_discount_amount":0,"additional_discount_percentage":0,"discount_amount":0,"base_paid_amount":0,"paid_amount":0,"allocate_advances_automatically":0,"only_include_allocated_payments":0,"write_off_amount":0,"base_write_off_amount":0,"contact_person":"UNIVERSITATES S.L.-UNIVERSITATES S.L.","contact_display":"UNIVERSITATES S.L.","contact_mobile":"921442516","contact_email":"administracion@logosformacion.com","shipping_address":"ATU ASESORIA DE FORMACION-Facturación","shipping_address_display":"C/ LEGION ESPAÑOLA, 17 <br>\\nBURGOS<br>\\n09001<br>España<br>\\n<br>\\n","billing_address":"ATU ASESORIA DE FORMACION-Facturación","billing_address_display":"C/ LEGION ESPAÑOLA, 17 <br>\\nBURGOS<br>\\n09001<br>España<br>\\n<br>\\n","ignore_default_payment_terms_template":0,"status":"Draft","per_received":0,"credit_to":"40000013 - UNIVERSITATES SL - ASF","party_account_currency":"EUR","is_opening":"No","against_expense_account":"62100000 - ARRENDAMIENTOS Y CÁNONES - ASF","repost_required":0,"letter_head":"Burgos ATU","group_same_items":0,"language":"es","on_hold":0,"is_internal_supplier":0,"represents_company":"","supplier_group":"Todos los grupos de proveedores","is_old_subcontracting_flow":0,"remarks":"Contra factura de proveedor A 27 con fecha12/07/2024","doctype":"Purchase Invoice","taxes":[],"items":[{"name":"fkqst3ugqs","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.570735","modified":"2024-07-19 14:54:07.570735","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":1,"item_code":"Alquiler","item_name":"Alquiler","description":"Material de aula","item_group":"Todos los grupos de artículos","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":1616.56,"amount":1616.56,"base_rate":1616.56,"base_amount":1616.56,"pricing_rules":"","stock_uom_rate":1616.56,"is_free_item":0,"apply_tds":1,"net_rate":1616.56,"net_amount":1616.56,"base_net_rate":1616.56,"base_net_amount":1616.56,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"62100000 - ARRENDAMIENTOS Y CÁNONES - ASF","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ASF","page_break":0,"parent":"ACC-PINV-2024-00049","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"},{"name":"fkqs1kujqq","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.570735","modified":"2024-07-19 14:54:07.570735","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":2,"item_code":"Alquiler","item_name":"Alquiler","description":"Rotafolios","item_group":"Todos los grupos de artículos","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":1616.56,"amount":1616.56,"base_rate":1616.56,"base_amount":1616.56,"pricing_rules":"","stock_uom_rate":1616.56,"is_free_item":0,"apply_tds":1,"net_rate":1616.56,"net_amount":1616.56,"base_net_rate":1616.56,"base_net_amount":1616.56,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"62100000 - ARRENDAMIENTOS Y CÁNONES - ASF","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ASF","page_break":0,"parent":"ACC-PINV-2024-00049","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"},{"name":"fkqsthpehc","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.570735","modified":"2024-07-19 14:54:07.570735","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":3,"item_code":"Alquiler","item_name":"Alquiler","description":"Equipos audiovisuales","item_group":"Todos los grupos de artículos","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":1606.88,"amount":1606.88,"base_rate":1606.88,"base_amount":1606.88,"pricing_rules":"","stock_uom_rate":1606.88,"is_free_item":0,"apply_tds":1,"net_rate":1606.88,"net_amount":1606.88,"base_net_rate":1606.88,"base_net_amount":1606.88,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"62100000 - ARRENDAMIENTOS Y CÁNONES - ASF","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ASF","page_break":0,"parent":"ACC-PINV-2024-00049","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"},{"name":"fkqsasm4oi","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.570735","modified":"2024-07-19 14:54:07.570735","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":4,"item_code":"Alquiler","item_name":"Alquiler","description":"Cañón vidoproyector","item_group":"Todos los grupos de artículos","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":2904,"amount":2904,"base_rate":2904,"base_amount":2904,"pricing_rules":"","stock_uom_rate":2904,"is_free_item":0,"apply_tds":1,"net_rate":2904,"net_amount":2904,"base_net_rate":2904,"base_net_amount":2904,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"62100000 - ARRENDAMIENTOS Y CÁNONES - ASF","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ASF","page_break":0,"parent":"ACC-PINV-2024-00049","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"},{"name":"fkqsd6erik","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.570735","modified":"2024-07-19 14:54:07.570735","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":5,"item_code":"Alquiler","item_name":"Alquiler","description":"Pantalla de proyección","item_group":"Todos los grupos de artículos","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":2904,"amount":2904,"base_rate":2904,"base_amount":2904,"pricing_rules":"","stock_uom_rate":2904,"is_free_item":0,"apply_tds":1,"net_rate":2904,"net_amount":2904,"base_net_rate":2904,"base_net_amount":2904,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"62100000 - ARRENDAMIENTOS Y CÁNONES - ASF","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ASF","page_break":0,"parent":"ACC-PINV-2024-00049","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"},{"name":"fkqs8pr7t3","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.570735","modified":"2024-07-19 14:54:07.570735","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":6,"item_code":"Alquiler","item_name":"Alquiler","description":"Ordenador del formador","item_group":"Todos los grupos de artículos","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":2904,"amount":2904,"base_rate":2904,"base_amount":2904,"pricing_rules":"","stock_uom_rate":2904,"is_free_item":0,"apply_tds":1,"net_rate":2904,"net_amount":2904,"base_net_rate":2904,"base_net_amount":2904,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"62100000 - ARRENDAMIENTOS Y CÁNONES - ASF","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ASF","page_break":0,"parent":"ACC-PINV-2024-00049","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"},{"name":"fkqss3e55c","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.570735","modified":"2024-07-19 14:54:07.570735","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":7,"item_code":"Alquiler","item_name":"Alquiler","description":"Ordenador de los alumnos","item_group":"Todos los grupos de artículos","image":"","received_qty":0,"qty":14,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":14,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":871.2,"amount":12196.8,"base_rate":871.2,"base_amount":12196.8,"pricing_rules":"","stock_uom_rate":871.2,"is_free_item":0,"apply_tds":1,"net_rate":871.2,"net_amount":12196.8,"base_net_rate":871.2,"base_net_amount":12196.8,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"62100000 - ARRENDAMIENTOS Y CÁNONES - ASF","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ASF","page_break":0,"parent":"ACC-PINV-2024-00049","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"}],"pricing_rules":[],"payment_schedule":[{"name":"fkqtd289pp","owner":"margarita.alamo@grupoatu.com","creation":"2024-07-19 14:54:07.799540","modified":"2024-07-19 14:54:07.799540","modified_by":"margarita.alamo@grupoatu.com","docstatus":0,"idx":1,"due_date":"2024-07-12","invoice_portion":100,"discount":0,"payment_amount":25748.8,"outstanding":25748.8,"paid_amount":0,"discounted_amount":0,"base_payment_amount":25748.8,"parent":"ACC-PINV-2024-00049","parentfield":"payment_schedule","parenttype":"Purchase Invoice","doctype":"Payment Schedule"}],"advances":[],"advance_tax":[],"supplied_items":[],"custom_porcentaje_expediente":[],"tax_withheld_vouchers":[],"__onload":{"make_payment_via_journal_entry":0,"backflush_based_on":"BOM","supplier_tds":null},"__last_sync_on":"2024-07-22T15:14:02.782Z","__unsaved":1,"change_amount":0,"base_change_amount":0}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-07-22 17:17:49,519 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"ACC-PINV-2024-00024","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.192337","modified":"2024-07-15 18:21:43.192337","modified_by":"sonia@grupoatu.com","docstatus":0,"idx":1,"title":"CASTELOR S.L.","naming_series":"ACC-PINV-.YYYY.-","supplier":"CASTELOR S.L.","supplier_name":"CASTELOR S.L.","tax_id":"B09350463","company":"Academia Técnica Universitaria SL","posting_date":"2024-07-04","posting_time":"18:12:55","set_posting_time":1,"due_date":"2024-07-04","is_paid":0,"is_return":0,"update_outstanding_for_self":1,"update_billed_amount_in_purchase_order":0,"update_billed_amount_in_purchase_receipt":1,"apply_tds":0,"cost_center":"Principal - ATUSL","bill_no":"16981","bill_date":"2024-07-04","currency":"EUR","conversion_rate":1,"use_transaction_date_exchange_rate":0,"buying_price_list":"Compra estandar","price_list_currency":"EUR","plc_conversion_rate":1,"ignore_pricing_rule":0,"update_stock":0,"is_subcontracted":0,"total_qty":1,"total_net_weight":0,"base_total":0,"base_net_total":0,"total":0,"net_total":0,"tax_withholding_net_total":0,"base_tax_withholding_net_total":0,"tax_category":"","base_taxes_and_charges_added":0,"base_taxes_and_charges_deducted":0,"base_total_taxes_and_charges":0,"taxes_and_charges_added":0,"taxes_and_charges_deducted":0,"total_taxes_and_charges":0,"base_grand_total":0,"base_rounding_adjustment":0,"base_rounded_total":0,"base_in_words":"","grand_total":0,"rounding_adjustment":0,"use_company_roundoff_cost_center":0,"rounded_total":0,"in_words":"","total_advance":0,"outstanding_amount":0,"disable_rounded_total":0,"apply_discount_on":"Grand Total","base_discount_amount":0,"additional_discount_percentage":0,"discount_amount":0,"base_paid_amount":0,"paid_amount":0,"allocate_advances_automatically":0,"only_include_allocated_payments":0,"write_off_amount":0,"base_write_off_amount":0,"contact_person":"CASTELOR S.L.-CASTELOR S.L.","contact_display":"CASTELOR S.L.","contact_mobile":"947 216246","contact_email":"castelor@castelor.com","ignore_default_payment_terms_template":0,"status":"Draft","per_received":0,"credit_to":"46500000 - REMUNERACIONES PENDIENTES DE P - ATUSL","party_account_currency":"EUR","is_opening":"No","against_expense_account":"60000000 - COMPRAS DE MERCADERÍAS - ATUSL","repost_required":0,"letter_head":"Burgos ATU","group_same_items":0,"language":"es","on_hold":0,"is_internal_supplier":0,"represents_company":"","supplier_group":"Todos los grupos de proveedores","is_old_subcontracting_flow":0,"remarks":"Contra factura de proveedor 16981 con fecha04/07/2024","doctype":"Purchase Invoice","advances":[],"pricing_rules":[],"items":[{"name":"9vf8qd6fdj","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.192337","modified":"2024-07-15 18:21:43.192337","modified_by":"sonia@grupoatu.com","docstatus":0,"idx":1,"item_code":"Cartucho Toner","item_name":"Cartucho Toner","description":"Cartucho Toner","item_group":"Consumible","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":0,"amount":0,"base_rate":0,"base_amount":0,"pricing_rules":"","stock_uom_rate":0,"is_free_item":0,"apply_tds":1,"net_rate":0,"net_amount":0,"base_net_rate":0,"base_net_amount":0,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"60000000 - COMPRAS DE MERCADERÍAS - ATUSL","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ATUSL","page_break":0,"parent":"ACC-PINV-2024-00024","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"}],"custom_porcentaje_expediente":[],"taxes":[],"payment_schedule":[{"name":"9vfaa26c9t","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.439919","modified":"2024-07-15 18:21:43.439919","modified_by":"sonia@grupoatu.com","docstatus":0,"idx":1,"due_date":"2024-07-04","invoice_portion":100,"discount":0,"payment_amount":0,"outstanding":0,"paid_amount":0,"discounted_amount":0,"base_payment_amount":0,"parent":"ACC-PINV-2024-00024","parentfield":"payment_schedule","parenttype":"Purchase Invoice","doctype":"Payment Schedule"}],"supplied_items":[],"tax_withheld_vouchers":[],"advance_tax":[],"__onload":{"make_payment_via_journal_entry":0,"backflush_based_on":"BOM","supplier_tds":null},"__last_sync_on":"2024-07-22T15:17:40.979Z","__unsaved":1,"change_amount":0,"base_change_amount":0}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-07-22 17:21:25,342 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"ACC-PINV-2024-00024","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.192337","modified":"2024-07-15 18:21:43.192337","modified_by":"sonia@grupoatu.com","docstatus":0,"idx":1,"title":"CASTELOR S.L.","naming_series":"ACC-PINV-.YYYY.-","supplier":"CASTELOR S.L.","supplier_name":"CASTELOR S.L.","tax_id":"B09350463","company":"Academia Técnica Universitaria SL","posting_date":"2024-07-04","posting_time":"18:12:55","set_posting_time":1,"due_date":"2024-07-04","is_paid":0,"is_return":0,"update_outstanding_for_self":1,"update_billed_amount_in_purchase_order":0,"update_billed_amount_in_purchase_receipt":1,"apply_tds":0,"cost_center":"Principal - ATUSL","bill_no":"16981","bill_date":"2024-07-04","currency":"EUR","conversion_rate":1,"use_transaction_date_exchange_rate":0,"buying_price_list":"Compra estandar","price_list_currency":"EUR","plc_conversion_rate":1,"ignore_pricing_rule":0,"update_stock":0,"is_subcontracted":0,"total_qty":1,"total_net_weight":0,"base_total":0,"base_net_total":0,"total":0,"net_total":0,"tax_withholding_net_total":0,"base_tax_withholding_net_total":0,"tax_category":"","base_taxes_and_charges_added":0,"base_taxes_and_charges_deducted":0,"base_total_taxes_and_charges":0,"taxes_and_charges_added":0,"taxes_and_charges_deducted":0,"total_taxes_and_charges":0,"base_grand_total":0,"base_rounding_adjustment":0,"base_rounded_total":0,"base_in_words":"","grand_total":0,"rounding_adjustment":0,"use_company_roundoff_cost_center":0,"rounded_total":0,"in_words":"","total_advance":0,"outstanding_amount":0,"disable_rounded_total":0,"apply_discount_on":"Grand Total","base_discount_amount":0,"additional_discount_percentage":0,"discount_amount":0,"base_paid_amount":0,"paid_amount":0,"allocate_advances_automatically":0,"only_include_allocated_payments":0,"write_off_amount":0,"base_write_off_amount":0,"contact_person":"CASTELOR S.L.-CASTELOR S.L.","contact_display":"CASTELOR S.L.","contact_mobile":"947 216246","contact_email":"castelor@castelor.com","ignore_default_payment_terms_template":0,"status":"Draft","per_received":0,"credit_to":"46500000 - REMUNERACIONES PENDIENTES DE P - ATUSL","party_account_currency":"EUR","is_opening":"No","against_expense_account":"60000000 - COMPRAS DE MERCADERÍAS - ATUSL","repost_required":0,"letter_head":"Burgos ATU","group_same_items":0,"language":"es","on_hold":0,"is_internal_supplier":0,"represents_company":"","supplier_group":"Todos los grupos de proveedores","is_old_subcontracting_flow":0,"remarks":"Contra factura de proveedor 16981 con fecha04/07/2024","doctype":"Purchase Invoice","custom_porcentaje_expediente":[],"items":[{"name":"9vf8qd6fdj","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.192337","modified":"2024-07-15 18:21:43.192337","modified_by":"sonia@grupoatu.com","docstatus":0,"idx":1,"item_code":"Cartucho Toner","item_name":"Cartucho Toner","description":"Cartucho Toner","item_group":"Consumible","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":0,"amount":0,"base_rate":0,"base_amount":0,"pricing_rules":"","stock_uom_rate":0,"is_free_item":0,"apply_tds":1,"net_rate":0,"net_amount":0,"base_net_rate":0,"base_net_amount":0,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"60000000 - COMPRAS DE MERCADERÍAS - ATUSL","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ATUSL","page_break":0,"parent":"ACC-PINV-2024-00024","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"}],"tax_withheld_vouchers":[],"payment_schedule":[{"name":"9vfaa26c9t","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.439919","modified":"2024-07-15 18:21:43.439919","modified_by":"sonia@grupoatu.com","docstatus":0,"idx":1,"due_date":"2024-07-04","invoice_portion":100,"discount":0,"payment_amount":0,"outstanding":0,"paid_amount":0,"discounted_amount":0,"base_payment_amount":0,"parent":"ACC-PINV-2024-00024","parentfield":"payment_schedule","parenttype":"Purchase Invoice","doctype":"Payment Schedule"}],"supplied_items":[],"taxes":[],"advances":[],"advance_tax":[],"pricing_rules":[],"__onload":{"make_payment_via_journal_entry":0,"backflush_based_on":"BOM","supplier_tds":null},"__last_sync_on":"2024-07-22T15:21:17.528Z","__unsaved":1,"change_amount":0,"base_change_amount":0}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-07-22 20:09:56,582 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'cmd': 'lms.lms.utils.get_chart_data'}
-2024-07-22 20:09:56,643 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'cmd': 'lms.lms.utils.get_chart_data'}
-2024-07-22 20:09:56,747 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'cmd': 'lms.lms.utils.get_chart_data'}
-2024-07-23 10:46:00,338 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00009', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-23 10:46:00,400 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00009', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-23 10:46:00,408 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00009', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-23 10:46:05,214 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-00009', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-23 11:00:41,193 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Job Offer', 'name': 'HR-OFF-2024-00078', 'cmd': 'frappe.desk.form.save.cancel'}
-2024-07-24 08:18:14,673 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00024', 'cmd': 'upload_file'}
-2024-07-24 08:18:40,719 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:18:40,971 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:18:41,008 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:18:41,327 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:18:54,821 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:18:54,903 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:18:55,003 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:18:55,043 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:18:58,516 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00024', 'cmd': 'upload_file'}
-2024-07-24 08:19:14,098 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:19:14,216 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:19:14,352 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:19:14,370 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '37/30211', 'cmd': 'upload_file'}
-2024-07-24 08:19:48,744 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00024', 'cmd': 'upload_file'}
-2024-07-24 08:20:50,227 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00024', 'cmd': 'upload_file'}
-2024-07-24 08:26:54,395 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"ACC-PINV-2024-00024","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.192337","modified":"2024-07-23 14:25:57.233101","modified_by":"Administrator","docstatus":0,"idx":1,"title":"CASTELOR S.L.","naming_series":"ACC-PINV-.YYYY.-","supplier":"CASTELOR S.L.","supplier_name":"CASTELOR S.L.","tax_id":"B09350463","company":"Academia Técnica Universitaria SL","posting_date":"2024-07-04","posting_time":"18:12:51","set_posting_time":1,"due_date":"2024-07-04","is_paid":0,"is_return":0,"update_outstanding_for_self":1,"update_billed_amount_in_purchase_order":0,"update_billed_amount_in_purchase_receipt":1,"apply_tds":0,"cost_center":"Principal - ATUSL","bill_no":"16981","bill_date":"2024-07-04","currency":"EUR","conversion_rate":1,"use_transaction_date_exchange_rate":0,"buying_price_list":"Compra estandar","price_list_currency":"EUR","plc_conversion_rate":1,"ignore_pricing_rule":0,"update_stock":0,"is_subcontracted":0,"total_qty":1,"total_net_weight":0,"base_total":0,"base_net_total":0,"total":0,"net_total":0,"tax_withholding_net_total":0,"base_tax_withholding_net_total":0,"tax_category":"","base_taxes_and_charges_added":0,"base_taxes_and_charges_deducted":0,"base_total_taxes_and_charges":0,"taxes_and_charges_added":0,"taxes_and_charges_deducted":0,"total_taxes_and_charges":0,"base_grand_total":0,"base_rounding_adjustment":0,"base_rounded_total":0,"base_in_words":"","grand_total":0,"rounding_adjustment":0,"use_company_roundoff_cost_center":0,"rounded_total":0,"in_words":"","total_advance":0,"outstanding_amount":0,"disable_rounded_total":0,"apply_discount_on":"Grand Total","base_discount_amount":0,"additional_discount_percentage":0,"discount_amount":0,"base_paid_amount":0,"paid_amount":0,"allocate_advances_automatically":0,"only_include_allocated_payments":0,"write_off_amount":0,"base_write_off_amount":0,"contact_person":"CASTELOR S.L.-CASTELOR S.L.","contact_display":"CASTELOR S.L.","contact_mobile":"947 216246","contact_email":"castelor@castelor.com","ignore_default_payment_terms_template":0,"status":"Draft","per_received":0,"credit_to":"46500000 - REMUNERACIONES PENDIENTES DE P - ATUSL","party_account_currency":"EUR","is_opening":"No","against_expense_account":"60000000 - COMPRAS DE MERCADERÍAS - ATUSL","repost_required":0,"letter_head":"Burgos ATU","group_same_items":0,"language":"es","on_hold":0,"is_internal_supplier":0,"represents_company":"","supplier_group":"Todos los grupos de proveedores","is_old_subcontracting_flow":0,"remarks":"Contra factura de proveedor 16981 con fecha04/07/2024","doctype":"Purchase Invoice","payment_schedule":[{"name":"9vfaa26c9t","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.439919","modified":"2024-07-23 14:25:57.233101","modified_by":"Administrator","docstatus":0,"idx":1,"due_date":"2024-07-04","invoice_portion":100,"discount":0,"payment_amount":0,"outstanding":0,"paid_amount":0,"discounted_amount":0,"base_payment_amount":0,"parent":"ACC-PINV-2024-00024","parentfield":"payment_schedule","parenttype":"Purchase Invoice","doctype":"Payment Schedule"}],"pricing_rules":[],"items":[{"name":"9vf8qd6fdj","owner":"sonia@grupoatu.com","creation":"2024-07-15 18:21:43.192337","modified":"2024-07-23 14:25:57.233101","modified_by":"Administrator","docstatus":0,"idx":1,"item_code":"Cartucho Toner","item_name":"Cartucho Toner","description":"Cartucho Toner","item_group":"Consumible","image":"","received_qty":0,"qty":1,"rejected_qty":0,"uom":"Nos.","conversion_factor":1,"stock_uom":"Nos.","stock_qty":1,"price_list_rate":0,"base_price_list_rate":0,"margin_type":"","margin_rate_or_amount":0,"rate_with_margin":0,"discount_percentage":0,"discount_amount":0,"base_rate_with_margin":0,"rate":0,"amount":0,"base_rate":0,"base_amount":0,"pricing_rules":"","stock_uom_rate":0,"is_free_item":0,"apply_tds":1,"net_rate":0,"net_amount":0,"base_net_rate":0,"base_net_amount":0,"valuation_rate":0,"item_tax_amount":0,"landed_cost_voucher_amount":0,"rm_supp_cost":0,"use_serial_batch_fields":0,"expense_account":"60000000 - COMPRAS DE MERCADERÍAS - ATUSL","is_fixed_asset":0,"enable_deferred_expense":0,"allow_zero_valuation_rate":0,"item_tax_rate":"{}","include_exploded_items":0,"weight_per_unit":0,"total_weight":0,"cost_center":"Principal - ATUSL","page_break":0,"parent":"ACC-PINV-2024-00024","parentfield":"items","parenttype":"Purchase Invoice","doctype":"Purchase Invoice Item"}],"tax_withheld_vouchers":[],"supplied_items":[],"taxes":[],"advances":[],"advance_tax":[],"custom_porcentaje_expediente":[],"__onload":{"make_payment_via_journal_entry":0,"backflush_based_on":"BOM","supplier_tds":null},"__last_sync_on":"2024-07-24T06:26:47.435Z","__unsaved":1,"change_amount":0,"base_change_amount":0}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-07-24 16:11:31,443 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00024', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
-2024-07-25 09:44:12,446 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'Este curso de prueba', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-25 09:44:22,967 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01417', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax

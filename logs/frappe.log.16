@@ -1,76 +1,237 @@
-2024-07-19 12:00:42,422 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2024-07-31 09:56:03,501 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '300001327', 'cmd': 'upload_file'}
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 178, in upload_file
-    user: "User" = frappe.get_doc("User", frappe.session.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:10,788 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
     doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
-    return controller(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
-    self.load_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 167, in load_from_db
-    d = frappe.db.get_value(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -85,104 +246,290 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:00:43,696 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:10,793 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '300001327', 'optimize': 'true', 'cmd': 'upload_file'}
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 178, in upload_file
-    user: "User" = frappe.get_doc("User", frappe.session.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
     doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
-    return controller(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
-    self.load_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 167, in load_from_db
-    d = frappe.db.get_value(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:10,893 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -197,104 +544,290 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:00:43,971 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:10,897 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '300001327', 'optimize': 'true', 'cmd': 'upload_file'}
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 178, in upload_file
-    user: "User" = frappe.get_doc("User", frappe.session.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
     doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
-    return controller(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
-    self.load_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 167, in load_from_db
-    d = frappe.db.get_value(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:11,267 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -309,104 +842,290 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:00:44,018 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:11,272 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '300001327', 'cmd': 'upload_file'}
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 178, in upload_file
-    user: "User" = frappe.get_doc("User", frappe.session.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
     doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
-    return controller(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
-    self.load_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 167, in load_from_db
-    d = frappe.db.get_value(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:11,463 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -421,104 +1140,290 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:00:44,215 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:11,471 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '300001327', 'cmd': 'upload_file'}
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 178, in upload_file
-    user: "User" = frappe.get_doc("User", frappe.session.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
     doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
-    return controller(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
-    self.load_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 167, in load_from_db
-    d = frappe.db.get_value(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:11,921 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -533,880 +1438,217 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:00:44,323 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:56:11,926 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Room', 'docname': '300001327', 'cmd': 'upload_file'}
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 178, in upload_file
-    user: "User" = frappe.get_doc("User", frappe.session.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
-    return controller(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
-    self.load_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 167, in load_from_db
-    d = frappe.db.get_value(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
+    frappe.local.http_request = HTTPRequest()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
+    self.set_session()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
+    frappe.local.login_manager = LoginManager()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
+    self.make_session(resume=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
+    frappe.local.session_obj = Session(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
+    self.resume()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
+    validate_ip_address(self.user)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
+    frappe.get_cached_value("User", user, user_fields, as_dict=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
+    doc = get_cached_doc(doctype, name)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
+    doc = get_doc(*args, **kwargs)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
     doc = frappe.model.document.get_doc(*args, **kwargs)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:00:55,457 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Sales Order', 'filters': '{"company":["like","%Grupo ATU%"],"status":["in",["To Deliver","To Deliver and Bill"]]}', 'fields': '[]', 'distinct': 'false', 'cmd': 'frappe.desk.reportview.get_count'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 921, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/reportview.py", line 72, in get_count
-    count = execute(**args)[0].get("total_count")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:01:15,370 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {'txt': '', 'doctype': 'Customer', 'ignore_user_permissions': '0', 'reference_doctype': 'Sales Invoice', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 47, in search_link
-    results = search_widget(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 193, in search_widget
-    values = frappe.get_list(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
+    response = ErrorPage(exception=e).render()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
+    html = self.get_html()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
+    html = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
+    self.init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
+    super().init_context()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
+    self.context.update(get_website_settings())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:01:27,497 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {'txt': '', 'doctype': 'Company', 'reference_doctype': 'Account', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 47, in search_link
-    results = search_widget(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 193, in search_widget
-    values = frappe.get_list(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:01:28,554 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {'txt': 'atu', 'doctype': 'Company', 'reference_doctype': 'Account', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 47, in search_link
-    results = search_widget(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 193, in search_widget
-    values = frappe.get_list(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:01:33,847 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {'txt': 'TORRENOVA ', 'doctype': 'Supplier', 'ignore_user_permissions': '0', 'reference_doctype': 'Room', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 47, in search_link
-    results = search_widget(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 193, in search_widget
-    values = frappe.get_list(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:01:35,285 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {'txt': 'TORRENOVA TORRE', 'doctype': 'Supplier', 'ignore_user_permissions': '0', 'reference_doctype': 'Room', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 47, in search_link
-    results = search_widget(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 193, in search_widget
-    values = frappe.get_list(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:01:38,640 ERROR frappe Could not take error snapshot: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-Site: erp.grupoatu.com
-Form Dict: {'txt': 'TORRENOVA TORREVIEJA', 'doctype': 'Supplier', 'ignore_user_permissions': '0', 'reference_doctype': 'Room', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 47, in search_link
-    results = search_widget(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/search.py", line 193, in search_widget
-    values = frappe.get_list(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax

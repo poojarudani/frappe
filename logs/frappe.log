@@ -1,198 +1,47 @@
-2024-07-25 10:42:00,510 ERROR frappe New Exception collected in error log
+2024-07-31 09:57:14,100 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'Este curso de prueba', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-25 14:48:35,789 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'Este curso de prueba', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 07:42:06,828 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'course': 'CUR-2024-00158', 'cmd': 'education.education.doctype.course.course.get_programs_without_course'}
-2024-07-26 07:49:23,844 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01407', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 07:49:23,852 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01407', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 07:49:23,854 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01407', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 07:49:23,956 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01407', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 07:49:23,987 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01407', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 07:49:42,377 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01407', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 08:04:48,867 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'Este curso de prueba', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 08:13:18,739 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01350', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 08:46:42,462 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Course', 'name': 'CUR-2024-01417', 'items': '["Program","Course Enrollment","Course Schedule","Student Group","Assessment Plan","Assessment Result"]', 'cmd': 'frappe.desk.notifications.get_open_count'}
-2024-07-26 08:46:47,893 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'course': 'CUR-2024-01417', 'cmd': 'education.education.doctype.course.course.get_programs_without_course'}
-2024-07-26 10:15:32,172 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'cmd': 'filtrar_empleado'}
-2024-07-26 10:45:36,637 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'cmd': 'restringir_empleados'}
-2024-07-26 17:54:10,410 ERROR frappe Could not take error snapshot: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
-Site: erp.grupoatu.com
-Form Dict: {'name': 'user-profile'}
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
     init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 272, in resume
-    data = self.get_session_record()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 289, in get_session_record
-    r = self.get_session_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 305, in get_session_data
-    data = self.get_session_data_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 334, in get_session_data_from_db
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSessions' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabDocType' doesn't exist")
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 648, in get_values
-    out = self.get_values_from_single(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 685, in get_values_from_single
-    values = self.get_singles_dict(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 733, in get_singles_dict
-    queried_result = frappe.qb.get_query(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
-2024-07-26 17:54:14,840 ERROR frappe Could not take error snapshot: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
-Site: erp.grupoatu.com
-Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabDocType' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -201,80 +50,45 @@ Traceback (most recent call last):
     endpoint, renderer_instance = path_resolver.resolve()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
     resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all("Website Route Redirect", ["source", "target"], order_by=None)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 167, in execute
-    if is_virtual_doctype(self.doctype):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 119, in site_cache_wrapper
-    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/utils/__init__.py", line 133, in is_virtual_doctype
-    return frappe.db.get_value("DocType", doctype, "is_virtual")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 648, in get_values
-    out = self.get_values_from_single(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 698, in get_values_from_single
-    r = frappe.qb.get_query(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabUser' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 119, in application
-    response = get_response()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
     response = ErrorPage(exception=e).render()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
@@ -287,66 +101,111 @@ Traceback (most recent call last):
     super().init_context()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
     self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 179, in get_boot_data
-    "user": frappe.db.get_value("User", frappe.session.user, "time_zone") or get_system_timezone(),
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 648, in get_values
-    out = self.get_values_from_single(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 698, in get_values_from_single
-    r = frappe.qb.get_query(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabDocType' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:57:14,214 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -361,66 +220,74 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 648, in get_values
-    out = self.get_values_from_single(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 685, in get_values_from_single
-    values = self.get_singles_dict(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 733, in get_singles_dict
-    queried_result = frappe.qb.get_query(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
-2024-07-26 17:54:15,170 ERROR frappe Could not take error snapshot: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:57:14,221 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabDocType' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -429,80 +296,45 @@ Traceback (most recent call last):
     endpoint, renderer_instance = path_resolver.resolve()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
     resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 118, in resolve_redirect
-    redirects += frappe.get_all("Website Route Redirect", ["source", "target"], order_by=None)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2050, in get_all
-    return get_list(doctype, *args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 2025, in get_list
-    return frappe.model.db_query.DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 167, in execute
-    if is_virtual_doctype(self.doctype):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 119, in site_cache_wrapper
-    _SITE_CACHE[func_key][frappe.local.site][func_call_key] = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/utils/__init__.py", line 133, in is_virtual_doctype
-    return frappe.db.get_value("DocType", doctype, "is_virtual")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 648, in get_values
-    out = self.get_values_from_single(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 698, in get_values_from_single
-    r = frappe.qb.get_query(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabUser' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 119, in application
-    response = get_response()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
+    response = handle_exception(e)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
     response = ErrorPage(exception=e).render()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
@@ -515,108 +347,67 @@ Traceback (most recent call last):
     super().init_context()
   File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
     self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 263, in get_website_settings
-    context.boot = get_boot_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 179, in get_boot_data
-    "user": frappe.db.get_value("User", frappe.session.user, "time_zone") or get_system_timezone(),
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 648, in get_values
-    out = self.get_values_from_single(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 698, in get_values_from_single
-    r = frappe.qb.get_query(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
+    hooks = frappe.get_hooks()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabDocType' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 648, in get_values
-    out = self.get_values_from_single(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 685, in get_values_from_single
-    values = self.get_singles_dict(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 733, in get_singles_dict
-    queried_result = frappe.qb.get_query(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
+    s2^u^%MdGESf
+         ^
+SyntaxError: invalid syntax
+2024-07-31 09:58:53,289 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'docnames': 'ACC-PINV-2024-00025', 'cmd': 'integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper'}
