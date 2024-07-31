@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-09 08:11:51.402346",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "mes",
+  "horas",
+  "horas_extras"
+ ],
+ "fields": [
+  {
+   "fieldname": "mes",
+   "fieldtype": "Select",
+   "label": "Mes",
+   "options": "Enero\nFebrero\nMarzo\nAbril\nMayo\nJunio\nJulio\nAgosto\nSeptiembre\nOctubre\nNoviembre\nDiciembre"
+  },
+  {
+   "fieldname": "horas",
+   "fieldtype": "Float",
+   "label": "Horas Normales"
+  },
+  {
+   "fieldname": "horas_extras",
+   "fieldtype": "Float",
+   "label": "Horas Extras"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-09 08:13:51.755139",
+ "modified_by": "Administrator",
+ "module": "HR",
+ "name": "Hoja de Contratacion Horas",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-03 10:21:17.462827",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "requisito",
+  "fecha_requisito",
+  "estado_requisito"
+ ],
+ "fields": [
+  {
+   "fieldname": "requisito",
+   "fieldtype": "Link",
+   "label": "Requisito",
+   "options": "Requisitos Centros"
+  },
+  {
+   "fieldname": "fecha_requisito",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "fieldname": "estado_requisito",
+   "fieldtype": "Select",
+   "label": "Estado",
+   "options": "Pendiente\nCompletado"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-03 10:22:44.304907",
+ "modified_by": "Administrator",
+ "module": "Education",
+ "name": "Requisitos Centros Estados",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

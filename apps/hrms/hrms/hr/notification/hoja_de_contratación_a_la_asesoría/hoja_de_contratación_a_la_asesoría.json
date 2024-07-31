@@ -1,0 +1,39 @@
+{
+ "attach_print": 1,
+ "channel": "Email",
+ "condition": "doc.status==\"Accepted\"",
+ "creation": "2024-06-28 11:38:01.092890",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Job Offer",
+ "enabled": 1,
+ "event": "Submit",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<h3>Hoja de Contrataci\u00f3n Validada</h3>\n\n<p>Hola,</p>\n\n<p>Se ha validado una nueva Hoja de Contrataci\u00f3n con los siguientes detalles:</p>\n\n<h4>Detalles de la Hoja de Contrataci\u00f3n:</h4>\n<ul>\n    <li><strong>Acci\u00f3n/Curso:</strong> {{ doc.curso }}</li>\n    <li><strong>Expediente:</strong> {{ doc.expediente }}</li>\n    <li><strong>Email del Solicitante:</strong> {{ doc.applicant_email }}</li>\n    <li><strong>Status:</strong> {{ doc.status }}</li>\n    <li><strong>T\u00e9rminos y Condiciones:</strong> {{ doc.select_terms }}</li>\n    <li><strong>Detalles de Impresi\u00f3n:</strong> {{ doc.printing_details }}</li>\n    <li><strong>Encabezado de Impresi\u00f3n:</strong> {{ doc.select_print_heading }}</li>\n    <li><strong>Compa\u00f1\u00eda:</strong> {{ doc.company }}</li>\n    <li><strong>Centro de Formaci\u00f3n:</strong> {{ doc.centro_formacion }}</li>\n    <li><strong>Registro de Horas:</strong> {{ doc.registro_horas }}</li>\n    <li><strong>Plantilla de T\u00e9rminos de la Oferta de Trabajo:</strong> {{ doc.job_offer_term_template }}</li>\n    <li><strong>T\u00e9rminos de la Oferta de Trabajo:</strong> {{ doc.offer_terms }}</li>\n    <li><strong>Cabeza de Carta:</strong> {{ doc.letter_head }}</li>\n</ul>\n\n<p>Adjuntamos el documento en PDF para su revisi\u00f3n.</p>\n\n<p>Saludos,</p>\n<p>Equipo de Recursos Humanos</p>",
+ "message_type": "Markdown",
+ "modified": "2024-07-25 16:25:14.349537",
+ "modified_by": "Administrator",
+ "module": "HR",
+ "name": "Hoja de Contrataci\u00f3n a la Asesor\u00eda",
+ "owner": "Administrator",
+ "print_format": "Job Offer",
+ "recipients": [
+  {
+   "receiver_by_document_field": "",
+   "receiver_by_role": "Asesor\u00eda"
+  },
+  {
+   "receiver_by_document_field": "validated_by"
+  },
+  {
+   "receiver_by_document_field": "owner"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Notificaciones_ERP",
+ "sender_email": "no_responder@grupoatu.com",
+ "subject": "Hoja de Contratacion {{ doc.applicant_name }}"
+}

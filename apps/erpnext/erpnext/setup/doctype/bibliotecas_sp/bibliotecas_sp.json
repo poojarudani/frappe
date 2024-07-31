@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:documento",
+ "creation": "2024-06-25 09:09:25.725537",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "detalles_section",
+  "documento",
+  "column_break_ltnv",
+  "url_sp"
+ ],
+ "fields": [
+  {
+   "fieldname": "documento",
+   "fieldtype": "Link",
+   "label": "Documento",
+   "options": "DocType",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_ltnv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "url_sp",
+   "fieldtype": "Data",
+   "label": "URL Biblioteca"
+  },
+  {
+   "fieldname": "detalles_section",
+   "fieldtype": "Section Break",
+   "label": "Detalles"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-25 09:32:36.638889",
+ "modified_by": "Administrator",
+ "module": "Setup",
+ "name": "Bibliotecas SP",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

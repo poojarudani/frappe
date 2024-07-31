@@ -1,0 +1,19 @@
+2024-07-31 10:03:19,447 - integracion.integracion.sii.method.facturas_recibidas - INFO - Iniciando el proceso de envío de facturas recibidas
+2024-07-31 10:03:19,479 - integracion.integracion.sii.method.facturas_recibidas - INFO - Construyendo el XML de las facturas recibidas
+2024-07-31 10:03:19,486 - integracion.integracion.sii.method.facturas_recibidas - INFO - NIF del titular: B09318916
+2024-07-31 10:03:19,486 - integracion.integracion.sii.method.facturas_recibidas - INFO - XML construido con éxito
+2024-07-31 10:03:19,487 - integracion.integracion.sii.method.facturas_recibidas - ERROR - Error en la validación del XML: name 'xsd_path' is not defined
+2024-07-31 10:06:45,872 - integracion.integracion.sii.method.facturas_recibidas - INFO - Iniciando el proceso de envío de facturas recibidas
+2024-07-31 10:06:45,894 - integracion.integracion.sii.method.facturas_recibidas - INFO - Construyendo el XML de las facturas recibidas
+2024-07-31 10:06:45,898 - integracion.integracion.sii.method.facturas_recibidas - INFO - NIF del titular: B09318916
+2024-07-31 10:06:45,899 - integracion.integracion.sii.method.facturas_recibidas - INFO - XML construido con éxito
+2024-07-31 10:06:45,899 - integracion.integracion.sii.method.facturas_recibidas - INFO - Validando el XML contra el esquema XSD
+2024-07-31 10:06:45,904 - integracion.integracion.sii.method.facturas_recibidas - INFO - XML válido según el esquema XSD
+2024-07-31 10:06:45,905 - integracion.integracion.sii.method.facturas_recibidas - INFO - Empresa detectada: Academia Técnica Universitaria SL
+2024-07-31 10:06:45,905 - integracion.integracion.sii.method.facturas_recibidas - INFO - Cargando el certificado desde /home/frappe/frappe-bench/apps/integracion/integracion/integracion/sii/certificate/ACADEMIA TECNICA.pfx
+2024-07-31 10:06:45,963 - integracion.integracion.sii.method.facturas_recibidas - INFO - Certificado cargado con éxito
+2024-07-31 10:06:45,964 - integracion.integracion.sii.method.facturas_recibidas - INFO - Firmando el XML
+2024-07-31 10:06:46,015 - integracion.integracion.sii.method.facturas_recibidas - INFO - XML firmado con éxito
+2024-07-31 10:06:46,015 - integracion.integracion.sii.method.facturas_recibidas - INFO - Guardando el XML firmado en /home/frappe/frappe-bench/apps/integracion/integracion/integracion/sii/method/facturas_recibidas_firmadas_Academia Técnica Universitaria SL_20240731100645.xml
+2024-07-31 10:06:46,015 - integracion.integracion.sii.method.facturas_recibidas - INFO - XML guardado con éxito
+2024-07-31 10:06:46,015 - integracion.integracion.sii.method.facturas_recibidas - INFO - Proceso de envío de facturas recibidas finalizado

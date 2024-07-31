@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-01 10:53:32.758299",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informaci\u00f3n_section",
+  "numero",
+  "tipo_linea",
+  "column_break_rywq",
+  "numero_corto",
+  "empleado"
+ ],
+ "fields": [
+  {
+   "fieldname": "informaci\u00f3n_section",
+   "fieldtype": "Section Break",
+   "label": "Informaci\u00f3n"
+  },
+  {
+   "fieldname": "numero",
+   "fieldtype": "Data",
+   "label": "N\u00famero"
+  },
+  {
+   "fieldname": "tipo_linea",
+   "fieldtype": "Select",
+   "label": "Tipo de L\u00ednea",
+   "options": "Voz\nDatos\nCentralita"
+  },
+  {
+   "fieldname": "column_break_rywq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "numero_corto",
+   "fieldtype": "Data",
+   "label": "N\u00famero Corto"
+  },
+  {
+   "fieldname": "empleado",
+   "fieldtype": "Link",
+   "label": "Empleado/a",
+   "options": "Employee"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-01 12:00:59.796290",
+ "modified_by": "Administrator",
+ "module": "Assets",
+ "name": "Cellular Lines",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

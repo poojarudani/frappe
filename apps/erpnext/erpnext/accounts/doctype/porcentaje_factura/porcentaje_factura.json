@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-04 08:16:27.371162",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "expediente",
+  "plan",
+  "curso",
+  "column_break_kodh",
+  "porcentaje",
+  "importe"
+ ],
+ "fields": [
+  {
+   "fieldname": "expediente",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Expediente",
+   "options": "Program",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "porcentaje",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Porcentaje"
+  },
+  {
+   "fieldname": "plan",
+   "fieldtype": "Link",
+   "label": "Plan",
+   "options": "Planes Formativos"
+  },
+  {
+   "fieldname": "curso",
+   "fieldtype": "Link",
+   "label": "Curso",
+   "options": "Course"
+  },
+  {
+   "fieldname": "column_break_kodh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "importe",
+   "fieldtype": "Currency",
+   "label": "Importe",
+   "options": "currency"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-29 15:13:36.384281",
+ "modified_by": "Administrator",
+ "module": "Accounts",
+ "name": "Porcentaje Factura",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
