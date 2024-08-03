@@ -9,7 +9,7 @@
    "label": "Incidencias por Tipo"
   }
  ],
- "content": "[{\"id\":\"IdiIHUJTlJ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incidencias Mensuales\",\"col\":6}},{\"id\":\"Jzwq6s21si\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incidencias por Tipo\",\"col\":6}},{\"id\":\"LKmaa3B0nL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incidencias en Proceso\",\"col\":3}},{\"id\":\"me1aJmdzsb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Incidencias sin Tratamiento\",\"col\":3}},{\"id\":\"dqYA3VQquB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Incidencias Le\u00eddas\",\"col\":3}},{\"id\":\"iF8RmFf5o3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Incidencias Respondidas\",\"col\":3}},{\"id\":\"qzP2mZrGOu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"Fkdjo6bJ7A\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Issue\",\"col\":3}},{\"id\":\"OTS8kx2f3x\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Maintenance Visit\",\"col\":3}},{\"id\":\"smDTSjBR3Z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Level Agreement\",\"col\":3}},{\"id\":\"WCqL_gBYGU\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oxhWhXp9b2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"Ff8Ab3nLLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Issues\",\"col\":4}},{\"id\":\"_lndiuJTVP\",\"type\":\"card\",\"data\":{\"card_name\":\"Maintenance\",\"col\":4}},{\"id\":\"R_aNO5ESzJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Service Level Agreement\",\"col\":4}},{\"id\":\"N8aA2afWfi\",\"type\":\"card\",\"data\":{\"card_name\":\"Warranty\",\"col\":4}},{\"id\":\"M5fxGuFwUR\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"xKH0kO9q4P\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"IdiIHUJTlJ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incidencias Mensuales\",\"col\":6}},{\"id\":\"Jzwq6s21si\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incidencias por Tipo\",\"col\":6}},{\"id\":\"LKmaa3B0nL\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Incidencias en Proceso\",\"col\":3}},{\"id\":\"me1aJmdzsb\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Incidencias sin Tratamiento\",\"col\":3}},{\"id\":\"dqYA3VQquB\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Incidencias Le\u00eddas\",\"col\":3}},{\"id\":\"iF8RmFf5o3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Incidencias Respondidas\",\"col\":3}},{\"id\":\"qzP2mZrGOu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"Fkdjo6bJ7A\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Issue\",\"col\":3}},{\"id\":\"OTS8kx2f3x\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Maintenance Visit\",\"col\":3}},{\"id\":\"smDTSjBR3Z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Level Agreement\",\"col\":3}},{\"id\":\"WCqL_gBYGU\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"oxhWhXp9b2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"Ff8Ab3nLLN\",\"type\":\"card\",\"data\":{\"card_name\":\"Issues\",\"col\":4}},{\"id\":\"_lndiuJTVP\",\"type\":\"card\",\"data\":{\"card_name\":\"Maintenance\",\"col\":4}},{\"id\":\"R_aNO5ESzJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Service Level Agreement\",\"col\":4}},{\"id\":\"N8aA2afWfi\",\"type\":\"card\",\"data\":{\"card_name\":\"Warranty\",\"col\":4}},{\"id\":\"M5fxGuFwUR\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuraci\u00f3n\",\"col\":4}},{\"id\":\"xKH0kO9q4P\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
  "creation": "2020-03-02 15:48:23.224699",
  "custom_blocks": [],
  "docstatus": 0,
@@ -142,14 +142,6 @@
    "type": "Link"
   },
   {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Settings",
-   "link_count": 0,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
@@ -178,10 +170,50 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuraci\u00f3n",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuraci\u00f3n de respaldo",
+   "link_count": 0,
+   "link_to": "Support Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Certificados Digitales",
+   "link_count": 0,
+   "link_to": "Certificados Digitales",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Certificados Instalados",
+   "link_count": 0,
+   "link_to": "Certificados Instalados",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-07-16 06:14:45.381519",
- "modified_by": "tania@grupoatu.com",
+ "modified": "2024-07-31 14:12:43.646526",
+ "modified_by": "maarlin@xappiens.com",
  "module": "Support",
  "name": "Support",
  "number_cards": [

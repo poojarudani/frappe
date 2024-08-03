@@ -2080,3 +2080,75 @@ Backup Summary for erp.grupoatu.com at 2024-07-30 06:00:12.844540
 Config  : ./erp.grupoatu.com/private/backups/20240730_060001-erp_grupoatu_com-site_config_backup.json 402.0B
 Database: ./erp.grupoatu.com/private/backups/20240730_060001-erp_grupoatu_com-database.sql.gz         44.2MiB
 Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240731_120001-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-07-31 12:00:14.971989
+Config  : ./erp.grupoatu.com/private/backups/20240731_120001-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240731_120001-erp_grupoatu_com-database.sql.gz         70.0MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240731_180001-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-07-31 18:00:17.226333
+Config  : ./erp.grupoatu.com/private/backups/20240731_180001-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240731_180001-erp_grupoatu_com-database.sql.gz         70.4MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240801_000002-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-01 00:00:15.097517
+Config  : ./erp.grupoatu.com/private/backups/20240801_000002-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240801_000002-erp_grupoatu_com-database.sql.gz         70.4MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240801_060001-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-01 06:00:16.508115
+Config  : ./erp.grupoatu.com/private/backups/20240801_060001-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240801_060001-erp_grupoatu_com-database.sql.gz         70.5MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240801_120002-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-01 12:00:23.894358
+Config  : ./erp.grupoatu.com/private/backups/20240801_120002-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240801_120002-erp_grupoatu_com-database.sql.gz         70.6MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240801_180001-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-01 18:00:17.396622
+Config  : ./erp.grupoatu.com/private/backups/20240801_180001-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240801_180001-erp_grupoatu_com-database.sql.gz         70.8MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240802_000002-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-02 00:00:17.576409
+Config  : ./erp.grupoatu.com/private/backups/20240802_000002-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240802_000002-erp_grupoatu_com-database.sql.gz         70.8MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240802_060002-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-02 06:00:15.500686
+Config  : ./erp.grupoatu.com/private/backups/20240802_060002-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240802_060002-erp_grupoatu_com-database.sql.gz         66.9MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240802_120002-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-02 12:00:28.635249
+Config  : ./erp.grupoatu.com/private/backups/20240802_120002-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240802_120002-erp_grupoatu_com-database.sql.gz         67.2MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240802_180002-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-02 18:00:17.367426
+Config  : ./erp.grupoatu.com/private/backups/20240802_180002-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240802_180002-erp_grupoatu_com-database.sql.gz         67.4MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240803_000002-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-03 00:00:16.717310
+Config  : ./erp.grupoatu.com/private/backups/20240803_000002-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240803_000002-erp_grupoatu_com-database.sql.gz         67.4MiB
+Backup for Site erp.grupoatu.com has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_098c566c1373ba13 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _098c566c1373ba13 | /usr/bin/gzip >> ./erp.grupoatu.com/private/backups/20240803_060002-erp_grupoatu_com-database.sql.gz
+
+Backup Summary for erp.grupoatu.com at 2024-08-03 06:00:14.779339
+Config  : ./erp.grupoatu.com/private/backups/20240803_060002-erp_grupoatu_com-site_config_backup.json 402.0B
+Database: ./erp.grupoatu.com/private/backups/20240803_060002-erp_grupoatu_com-database.sql.gz         65.9MiB
+Backup for Site erp.grupoatu.com has been successfully completed

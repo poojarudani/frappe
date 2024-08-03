@@ -120,9 +120,18 @@ def generate_c34(selected_invoices):
             dbtr_acct_iban.text = frappe.get_value("Company", company, "default_bank_account")
             dbtr_agt = etree.SubElement(pmt_inf, "DbtrAgt")
             dbtr_fin_instn_id = etree.SubElement(dbtr_agt, "FinInstnId")
+            # dbtr_bic = etree.SubElement(dbtr_fin_instn_id, "BIC")
+            # dbtr_bic.text = frappe.get_value("Company", company, "bic")
 
             for invoice in invoices:
                 try:
+                    # Obtener la cuenta bancaria del proveedor
+                    default_bank_account = frappe.get_value("Supplier", invoice.supplier, "default_bank_account")
+                    
+                    # Obtener los datos bancarios desde la tabla de cuentas bancarias
+                    supplier_iban = frappe.get_value("Bank Account", default_bank_account, "iban")
+                    #supplier_bic = frappe.get_value("Bank Account", default_bank_account, "bic")
+                    
                     cdt_trf_tx_inf = etree.SubElement(pmt_inf, "CdtTrfTxInf")
                     pmt_id = etree.SubElement(cdt_trf_tx_inf, "PmtId")
                     instr_id = etree.SubElement(pmt_id, "InstrId")
@@ -134,15 +143,15 @@ def generate_c34(selected_invoices):
                     instd_amt.text = str(invoice.grand_total)
                     cdtr_agt = etree.SubElement(cdt_trf_tx_inf, "CdtrAgt")
                     cdtr_fin_instn_id = etree.SubElement(cdtr_agt, "FinInstnId")
-                    cdtr_bic = etree.SubElement(cdtr_fin_instn_id, "BIC")
-                    cdtr_bic.text = frappe.get_value("Supplier", invoice.supplier, "bic")
+                    # cdtr_bic = etree.SubElement(cdtr_fin_instn_id, "BIC")
+                    # cdtr_bic.text = supplier_bic  # Usar el BIC obtenido de la cuenta bancaria
                     cdtr = etree.SubElement(cdt_trf_tx_inf, "Cdtr")
                     cdtr_nm = etree.SubElement(cdtr, "Nm")
                     cdtr_nm.text = invoice.supplier_name
                     cdtr_acct = etree.SubElement(cdt_trf_tx_inf, "CdtrAcct")
                     cdtr_acct_id = etree.SubElement(cdtr_acct, "Id")
                     cdtr_acct_iban = etree.SubElement(cdtr_acct_id, "IBAN")
-                    cdtr_acct_iban.text = frappe.get_value("Supplier", invoice.supplier, "default_bank_account")
+                    cdtr_acct_iban.text = supplier_iban  # Usar el IBAN obtenido de la cuenta bancaria
                     rmt_inf = etree.SubElement(cdt_trf_tx_inf, "RmtInf")
                     ustrd = etree.SubElement(rmt_inf, "Ustrd")
                     ustrd.text = invoice.remarks or "Pago de factura"

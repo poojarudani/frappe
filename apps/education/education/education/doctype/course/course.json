@@ -39,8 +39,7 @@
    "fieldname": "course_name",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Course Name",
-   "reqd": 1
+   "label": "Course Name"
   },
   {
    "fieldname": "department",
@@ -184,7 +183,7 @@
  ],
  "image_field": "hero_image",
  "links": [],
- "modified": "2024-07-09 11:38:42.713145",
+ "modified": "2024-07-31 15:13:14.864736",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Course",

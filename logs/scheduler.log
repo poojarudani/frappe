@@ -855,3 +855,13 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
+2024-08-01 00:02:13,798 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for erp.grupoatu.com
+2024-08-01 00:04:14,110 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.repost_entries because it was found in queue for erp.grupoatu.com
+2024-08-01 00:04:14,111 ERROR scheduler Skipped queueing erpnext.accounts.deferred_revenue.process_deferred_accounting because it was found in queue for erp.grupoatu.com
+2024-08-01 00:04:14,114 ERROR scheduler Skipped queueing erpnext.accounts.doctype.process_subscription.process_subscription.create_subscription_process because it was found in queue for erp.grupoatu.com
+2024-08-01 00:05:14,257 ERROR scheduler Skipped queueing hrms.hr.utils.allocate_earned_leaves because it was found in queue for erp.grupoatu.com
+2024-08-01 00:05:14,258 ERROR scheduler Skipped queueing hrms.hr.doctype.leave_ledger_entry.leave_ledger_entry.process_expired_allocation because it was found in queue for erp.grupoatu.com
+2024-08-01 00:05:14,263 ERROR scheduler Skipped queueing erpnext.crm.utils.open_leads_opportunities_based_on_todays_event because it was found in queue for erp.grupoatu.com
+2024-08-01 00:05:14,274 ERROR scheduler Skipped queueing frappe.email.doctype.auto_email_report.auto_email_report.send_daily because it was found in queue for erp.grupoatu.com
+2024-08-01 00:05:14,275 ERROR scheduler Skipped queueing frappe.integrations.doctype.s3_backup_settings.s3_backup_settings.take_backups_daily because it was found in queue for erp.grupoatu.com
+2024-08-01 00:05:14,276 ERROR scheduler Skipped queueing frappe.integrations.doctype.dropbox_settings.dropbox_settings.take_backups_daily because it was found in queue for erp.grupoatu.com

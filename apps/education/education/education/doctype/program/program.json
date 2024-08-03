@@ -13,6 +13,7 @@
   "column_break_3",
   "program_abbreviation",
   "grouped_entity",
+  "courses",
   "connections_tab"
  ],
  "fields": [
@@ -57,6 +58,12 @@
    "fieldname": "grouped_entity",
    "fieldtype": "Data",
    "label": "Entidad Agrupada"
+  },
+  {
+   "fieldname": "courses",
+   "fieldtype": "Table",
+   "label": "Cursos",
+   "options": "Program Course Link"
   }
  ],
  "image_field": "hero_image",
@@ -102,7 +109,7 @@
    "link_fieldname": "program"
   }
  ],
- "modified": "2024-07-09 17:25:35.238669",
+ "modified": "2024-08-02 11:33:13.678201",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Program",

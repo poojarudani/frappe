@@ -27,6 +27,9 @@ override_whitelisted_methods = {
     "integracion.integracion.generate_c34": "integracion.integracion.generate_c34.generate_c34",
     "integracion.integracion.sii.sii_integracion.enviar_facturas_emitidas_wrapper": "integracion.integracion.sii.sii_integracion.enviar_facturas_emitidas_wrapper",
     "integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper": "integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper",
+    "education.education.doctype.course.course.add_course_to_programs": "integracion.integracion.sii.sii_integracion.custom_add_course_to_programs",
+    "education.education.doctype.course.course.get_programs_without_course": "integracion.integracion.sii.sii_integracion.custom_get_programs_without_course",
+
 }
 
 scheduler_events = {
@@ -41,7 +44,10 @@ scheduler_events = {
 ]
 }
 
-
+# Añadir el enlace de Font Awesome al encabezado de HTML
+app_include_css = [
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+]
 
 # required_apps = []
 
