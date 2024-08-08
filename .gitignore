@@ -3,3 +3,10 @@ sites/*/private/
 
 # Excluir todos los directorios públicos de archivos en todos los sitios
 sites/*/public/files/
+# Excluir logs
+logs/
+apps/integracion/integracion/integracion/logs/
+sites/erp.grupoatu.com/logs/
+# Excluir importacion
+importacion/
+

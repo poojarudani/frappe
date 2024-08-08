@@ -230,3 +230,27 @@
 1076:M 02 Aug 2024 12:47:36.669 # Server initialized
 1076:M 02 Aug 2024 12:47:36.669 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
 1076:M 02 Aug 2024 12:47:36.670 * Ready to accept connections
+1076:signal-handler (1722861096) Received SIGTERM scheduling shutdown...
+1076:M 05 Aug 2024 14:31:36.995 # User requested shutdown...
+1076:M 05 Aug 2024 14:31:36.995 * Removing the pid file.
+1076:M 05 Aug 2024 14:31:36.996 # Redis is now ready to exit, bye bye...
+59886:C 05 Aug 2024 14:31:38.432 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+59886:C 05 Aug 2024 14:31:38.432 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=59886, just started
+59886:C 05 Aug 2024 14:31:38.432 # Configuration loaded
+59886:M 05 Aug 2024 14:31:38.433 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+59886:M 05 Aug 2024 14:31:38.433 * Running mode=standalone, port=11000.
+59886:M 05 Aug 2024 14:31:38.433 # Server initialized
+59886:M 05 Aug 2024 14:31:38.433 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+59886:M 05 Aug 2024 14:31:38.434 * Ready to accept connections
+59886:signal-handler (1722861193) Received SIGTERM scheduling shutdown...
+59886:M 05 Aug 2024 14:33:13.758 # User requested shutdown...
+59886:M 05 Aug 2024 14:33:13.758 * Removing the pid file.
+59886:M 05 Aug 2024 14:33:13.758 # Redis is now ready to exit, bye bye...
+1070:C 05 Aug 2024 14:33:27.939 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1070:C 05 Aug 2024 14:33:27.939 # Redis version=6.0.16, bits=64, commit=00000000, modified=0, pid=1070, just started
+1070:C 05 Aug 2024 14:33:27.939 # Configuration loaded
+1070:M 05 Aug 2024 14:33:27.940 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+1070:M 05 Aug 2024 14:33:27.942 * Running mode=standalone, port=11000.
+1070:M 05 Aug 2024 14:33:27.942 # Server initialized
+1070:M 05 Aug 2024 14:33:27.942 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1070:M 05 Aug 2024 14:33:27.943 * Ready to accept connections

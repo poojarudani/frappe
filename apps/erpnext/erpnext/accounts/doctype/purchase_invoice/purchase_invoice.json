@@ -1271,7 +1271,7 @@
    "fieldtype": "Select",
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "\nDraft\nReturn\nDebit Note Issued\nSubmitted\nPaid\nPartly Paid\nUnpaid\nOverdue\nCancelled\nInternal Transfer",
+   "options": "\nDraft\nReturn\nDebit Note Issued\nSubmitted\nPaid\nPartly Paid\nUnpaid\nOverdue\nCancelled\nInternal Transfer\nAprobada para pago\nRemesa Emitida",
    "print_hide": 1
   },
   {
@@ -1639,7 +1639,7 @@
  "idx": 204,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-11 11:28:42.802211",
+ "modified": "2024-08-07 12:07:09.206521",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Purchase Invoice",
@@ -1698,7 +1698,16 @@
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Pink",
+   "title": "Aprobada para pago"
+  },
+  {
+   "color": "Purple",
+   "title": "Remesa Emitida"
+  }
+ ],
  "timeline_field": "supplier",
  "title_field": "title",
  "track_changes": 1

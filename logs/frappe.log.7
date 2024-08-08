@@ -1,4 +1,4 @@
-2024-07-31 09:56:14,726 ERROR frappe Failed to run after request hook
+2024-07-31 09:56:15,637 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -188,7 +188,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:14,824 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-07-31 09:56:23,893 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -296,7 +296,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:14,829 ERROR frappe Failed to run after request hook
+2024-07-31 09:56:23,898 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -486,7 +486,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:15,045 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-07-31 09:56:24,055 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -594,7 +594,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:15,051 ERROR frappe Failed to run after request hook
+2024-07-31 09:56:24,061 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -784,7 +784,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:15,112 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-07-31 09:56:24,157 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -892,7 +892,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:15,117 ERROR frappe Failed to run after request hook
+2024-07-31 09:56:24,165 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -1082,7 +1082,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:15,787 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-07-31 09:56:24,460 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -1190,7 +1190,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:15,793 ERROR frappe Failed to run after request hook
+2024-07-31 09:56:24,464 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -1380,9 +1380,9 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:18,295 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-07-31 09:56:52,132 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Letter Head', 'fieldname': 'name', 'filters': '{"disabled":0,"is_default":1}'}
+Form Dict: {'doctype': 'Webs Comerciales', 'fields': '["`tabWebs Comerciales`.`name`","`tabWebs Comerciales`.`owner`","`tabWebs Comerciales`.`creation`","`tabWebs Comerciales`.`modified`","`tabWebs Comerciales`.`modified_by`","`tabWebs Comerciales`.`_user_tags`","`tabWebs Comerciales`.`_comments`","`tabWebs Comerciales`.`_assign`","`tabWebs Comerciales`.`_liked_by`","`tabWebs Comerciales`.`docstatus`","`tabWebs Comerciales`.`idx`","`tabWebs Comerciales`.`url`"]', 'filters': '[]', 'order_by': '`tabWebs Comerciales`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1'}
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
     return frappe.local.request_cache[func][args_key]
@@ -1393,34 +1393,8 @@ During handling of the above exception, another exception occurred:
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
     init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
     hooks = _dict(_load_app_hooks())
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
@@ -1488,9 +1462,9 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:18,297 ERROR frappe Failed to run after request hook
+2024-07-31 09:56:52,136 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Letter Head', 'fieldname': 'name', 'filters': '{"disabled":0,"is_default":1}'}
+Form Dict: {'doctype': 'Webs Comerciales', 'fields': '["`tabWebs Comerciales`.`name`","`tabWebs Comerciales`.`owner`","`tabWebs Comerciales`.`creation`","`tabWebs Comerciales`.`modified`","`tabWebs Comerciales`.`modified_by`","`tabWebs Comerciales`.`_user_tags`","`tabWebs Comerciales`.`_comments`","`tabWebs Comerciales`.`_assign`","`tabWebs Comerciales`.`_liked_by`","`tabWebs Comerciales`.`docstatus`","`tabWebs Comerciales`.`idx`","`tabWebs Comerciales`.`url`"]', 'filters': '[]', 'order_by': '`tabWebs Comerciales`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1'}
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
     return frappe.local.request_cache[func][args_key]
@@ -1525,7 +1499,7 @@ Traceback (most recent call last):
     s2^u^%MdGESf
          ^
 SyntaxError: invalid syntax
-2024-07-31 09:56:24,330 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-07-31 09:57:14,095 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
@@ -1538,34 +1512,8 @@ During handling of the above exception, another exception occurred:
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
     init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
     hooks = _dict(_load_app_hooks())
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper

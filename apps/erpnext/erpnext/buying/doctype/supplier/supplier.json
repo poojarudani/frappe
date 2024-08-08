@@ -13,6 +13,7 @@
   "naming_series",
   "supplier_name",
   "country",
+  "mode_of_payment",
   "column_break0",
   "supplier_group",
   "supplier_type",
@@ -475,6 +476,12 @@
   {
    "fieldname": "column_break_mglr",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Link",
+   "label": "Modo de Pago",
+   "options": "Mode of Payment"
   }
  ],
  "icon": "fa fa-user",
@@ -487,10 +494,11 @@
    "link_fieldname": "party"
   }
  ],
- "modified": "2024-07-16 11:20:10.229436",
+ "modified": "2024-08-06 16:04:38.344996",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Supplier",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

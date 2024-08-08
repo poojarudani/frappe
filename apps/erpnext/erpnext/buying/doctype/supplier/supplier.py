@@ -48,6 +48,7 @@ class Supplier(TransactionBase):
 		is_transporter: DF.Check
 		language: DF.Link | None
 		mobile_no: DF.ReadOnly | None
+		mode_of_payment: DF.Link | None
 		naming_series: DF.Literal["SUP-.YYYY.-"]
 		on_hold: DF.Check
 		payment_terms: DF.Link | None

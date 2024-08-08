@@ -9,7 +9,6 @@
   "job_offer",
   "fecha_inicio",
   "contract_type",
-  "employee",
   "column_break_rlvt",
   "fecha_fin",
   "position",
@@ -51,19 +50,12 @@
    "fieldtype": "Link",
    "label": "Empresa",
    "options": "Company"
-  },
-  {
-   "fieldname": "employee",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Empleado",
-   "options": "Employee"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-17 10:45:28.163766",
+ "modified": "2024-08-06 13:52:17.400450",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Empleado Historial Trabajo",
