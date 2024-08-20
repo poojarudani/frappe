@@ -1,0 +1,18 @@
+{
+ "allow_server_script": 1,
+ "db_name": "_098c566c1373ba13",
+ "db_password": "Ucy4m3XvrxOcRaY7",
+ "db_type": "mariadb",
+ "developer_mode": 1,
+ "domains": [
+  "erp.grupoatu.com",
+  "app.grupoatu.com"
+ ],
+ "encryption_key": "FCfUm2UcOixVkUq1G3AFE5NKNGpaOt9EAtM4SyXIf68=",
+ "maintenance_mode": 0,
+ "pass_sp": "D/888592322871uy",
+ "user_sp": "erp@grupoatu.com",
+ "user_type_doctype_limit": {
+  "employee_self_service": 30
+ }
+}

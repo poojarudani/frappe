@@ -1,0 +1,111 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "15.25.0"
+    },
+    "payments": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "1d19233157fad72314e65e5d9dcab95e0f471a38",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "0.0.1"
+    },
+    "erpnext": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "f62762b4d146f325b33cdba0ac9bb96596e31c50",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 3,
+        "version": "15.22.0"
+    },
+    "hrms": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "80d25f134fd6e715fc7d41d75c77b2c149e5b3ce",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 4,
+        "version": "16.0.0-dev"
+    },
+    "frappe_whatsapp": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "3926ea55973c844f7808d64b34c56782b057a041",
+            "branch": "master"
+        },
+        "required": [],
+        "idx": 5,
+        "version": "0.0.2"
+    },
+    "crm": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "b0bf281007ac5e57ac64744ed23189241c632ab6",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 6,
+        "version": "2.0.0-dev"
+    },
+    "lms": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "8e1b871f8748c2f0ca907b2fa40b96c72ebdd223",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 7,
+        "version": "1.0.0"
+    },
+    "education": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "7c8ad4840ede8244110743237d993b80e44ab80a",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 8,
+        "version": "15.3.2"
+    },
+    "integracion": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "a8f80175a14fc1aa9818f358d3a44e02a8e203db",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 9,
+        "version": "0.0.1"
+    },
+    "wiki": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "df7b115378575d33677adefc86daf1ee26729005",
+            "branch": "master"
+        },
+        "required": [],
+        "idx": 10,
+        "version": "2.0.0"
+    },
+    "print_designer": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "154d30bfb867eab987cd810ebd6a48edd2e29332",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 11,
+        "version": "1.2.0"
+    }
+}

@@ -1,24 +1,21 @@
-2024-08-07 15:25:16,767 - integracion.integracion.sii.method.facturas_emitidas - INFO - Iniciando el proceso de envío de facturas emitidas
-2024-08-07 15:25:16,768 - integracion.integracion.sii.method.facturas_emitidas - INFO - Obteniendo la factura de venta: ATUSL/L/2400017-1
-2024-08-07 15:25:16,870 - integracion.integracion.sii.method.facturas_emitidas - INFO - Construyendo el XML de las facturas emitidas
-2024-08-07 15:25:16,878 - integracion.integracion.sii.method.facturas_emitidas - INFO - NIF del titular: B09318916
-2024-08-07 15:25:16,878 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML construido con éxito
-2024-08-07 15:25:16,878 - integracion.integracion.sii.method.facturas_emitidas - INFO - Validando el XML contra el esquema XSD
-2024-08-07 15:25:16,883 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML válido según el esquema XSD
-2024-08-07 15:25:16,884 - integracion.integracion.sii.method.facturas_emitidas - INFO - Empresa detectada: Academia Técnica Universitaria SL
-2024-08-07 15:25:16,884 - integracion.integracion.sii.method.facturas_emitidas - INFO - Cargando el certificado desde /home/frappe/frappe-bench/apps/integracion/integracion/integracion/sii/certificate/ACADEMIA TECNICA.pfx
-2024-08-07 15:25:16,943 - integracion.integracion.sii.method.facturas_emitidas - INFO - Certificado cargado con éxito
-2024-08-07 15:25:16,944 - integracion.integracion.sii.method.facturas_emitidas - INFO - Firmando el XML
-2024-08-07 15:25:17,000 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML firmado con éxito
-2024-08-07 15:25:17,001 - integracion.integracion.sii.method.facturas_emitidas - INFO - Guardando el XML firmado en /home/frappe/frappe-bench/apps/integracion/integracion/integracion/sii/method/facturas_emitidas_firmadas_Academia Técnica Universitaria SL_20240807152516.xml
-2024-08-07 15:25:17,001 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML guardado con éxito
-2024-08-07 15:25:17,001 - integracion.integracion.sii.method.facturas_emitidas - INFO - Enviando XML firmado a la AEAT
-2024-08-07 15:25:17,557 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML enviado con éxito
-2024-08-07 15:25:17,557 - integracion.integracion.sii.method.facturas_emitidas - INFO - Respuesta de la AEAT: {
-    'CSV': 'KGQ75ZM3JUL3AA2S',
+2024-08-14 17:03:27,630 - integracion.integracion.sii.method.facturas_emitidas - INFO - Iniciando el proceso de envío de facturas emitidas
+2024-08-14 17:03:27,658 - integracion.integracion.sii.method.facturas_emitidas - INFO - Construyendo el XML de las facturas emitidas
+2024-08-14 17:03:27,668 - integracion.integracion.sii.method.facturas_emitidas - INFO - NIF del titular: B09318916
+2024-08-14 17:03:27,686 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML construido con éxito
+2024-08-14 17:03:27,686 - integracion.integracion.sii.method.facturas_emitidas - INFO - Validando el XML contra el esquema XSD
+2024-08-14 17:03:27,692 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML válido según el esquema XSD
+2024-08-14 17:03:27,693 - integracion.integracion.sii.method.facturas_emitidas - INFO - Empresa detectada: Academia Técnica Universitaria SL
+2024-08-14 17:03:27,693 - integracion.integracion.sii.method.facturas_emitidas - INFO - Cargando el certificado desde /home/frappe/frappe-bench/apps/integracion/integracion/integracion/sii/certificate/ACADEMIA TECNICA.pfx
+2024-08-14 17:03:27,754 - integracion.integracion.sii.method.facturas_emitidas - INFO - Certificado cargado con éxito
+2024-08-14 17:03:27,754 - integracion.integracion.sii.method.facturas_emitidas - INFO - Firmando el XML
+2024-08-14 17:03:27,811 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML firmado con éxito
+2024-08-14 17:03:27,812 - integracion.integracion.sii.method.facturas_emitidas - INFO - Enviando XML firmado a la AEAT
+2024-08-14 17:03:28,272 - integracion.integracion.sii.method.facturas_emitidas - INFO - XML enviado con éxito
+2024-08-14 17:03:28,273 - integracion.integracion.sii.method.facturas_emitidas - INFO - Respuesta de la AEAT: {
+    'CSV': 'T9KQCKZVDH5R6BYX',
     'DatosPresentacion': {
         'NIFPresentador': 'B09318916',
-        'TimestampPresentacion': '07-08-2024 15:25:17'
+        'TimestampPresentacion': '14-08-2024 17:03:28'
     },
     'Cabecera': {
         'IDVersionSii': '1.1',
@@ -36,9 +33,9 @@
                 'IDEmisorFactura': {
                     'NIF': 'B09318916'
                 },
-                'NumSerieFacturaEmisor': 'ATUSL/L/2400017-1',
+                'NumSerieFacturaEmisor': 'ATUSL/AR/2400005',
                 'NumSerieFacturaEmisorResumenFin': None,
-                'FechaExpedicionFacturaEmisor': '06-08-2024'
+                'FechaExpedicionFacturaEmisor': '08-08-2024'
             },
             'RefExterna': None,
             'EstadoRegistro': 'Correcto',
@@ -49,11 +46,11 @@
         }
     ]
 }
-2024-08-07 15:25:17,557 - integracion.integracion.sii.method.facturas_emitidas - INFO - Respuesta de la AEAT: {
-    'CSV': 'KGQ75ZM3JUL3AA2S',
+2024-08-14 17:03:28,273 - integracion.integracion.sii.method.facturas_emitidas - INFO - Respuesta de la AEAT: {
+    'CSV': 'T9KQCKZVDH5R6BYX',
     'DatosPresentacion': {
         'NIFPresentador': 'B09318916',
-        'TimestampPresentacion': '07-08-2024 15:25:17'
+        'TimestampPresentacion': '14-08-2024 17:03:28'
     },
     'Cabecera': {
         'IDVersionSii': '1.1',
@@ -71,9 +68,9 @@
                 'IDEmisorFactura': {
                     'NIF': 'B09318916'
                 },
-                'NumSerieFacturaEmisor': 'ATUSL/L/2400017-1',
+                'NumSerieFacturaEmisor': 'ATUSL/AR/2400005',
                 'NumSerieFacturaEmisorResumenFin': None,
-                'FechaExpedicionFacturaEmisor': '06-08-2024'
+                'FechaExpedicionFacturaEmisor': '08-08-2024'
             },
             'RefExterna': None,
             'EstadoRegistro': 'Correcto',
@@ -84,4 +81,4 @@
         }
     ]
 }
-2024-08-07 15:25:17,557 - integracion.integracion.sii.method.facturas_emitidas - INFO - Proceso de envío de facturas emitidas finalizado
+2024-08-14 17:03:28,273 - integracion.integracion.sii.method.facturas_emitidas - INFO - Proceso de envío de facturas emitidas finalizado

@@ -1,352 +1,4 @@
-2024-07-18 11:41:54,589 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-18 11:42:54,651 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-18 11:43:54,756 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-18 11:44:54,821 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-18 11:45:54,912 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 11:00:12,803 ERROR scheduler Skipped queueing hrms.hr.doctype.interview.interview.send_interview_reminder because it was found in queue for erp.grupoatu.com
-2024-07-19 11:00:12,908 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for erp.grupoatu.com
-2024-07-19 11:00:12,911 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for erp.grupoatu.com
-2024-07-19 11:00:12,918 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for erp.grupoatu.com
-2024-07-19 11:00:12,920 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.notify_unreplied because it was found in queue for erp.grupoatu.com
-2024-07-19 11:00:12,928 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for erp.grupoatu.com
-2024-07-19 12:01:19,688 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:02:19,793 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:03:19,853 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-19 12:04:19,910 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 644, in connect
-    sock = socket.create_connection(
-  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
-    raise err
-  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
-    if is_scheduler_inactive():
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
-    if is_scheduler_disabled(verbose=verbose):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
-    frappe.db.get_single_value("System Settings", "enable_scheduler")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 711, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
-2024-07-25 17:35:18,143 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:50:24,881 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -359,7 +11,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:36:18,206 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:51:24,991 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -372,7 +24,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:40:18,635 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:52:25,054 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -385,7 +37,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:41:18,700 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:53:25,159 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -398,7 +50,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:42:18,751 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:54:25,186 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -411,7 +63,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:43:18,807 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:55:25,249 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -424,7 +76,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:44:18,903 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:56:25,362 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -437,7 +89,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:45:18,956 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:57:25,443 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -450,7 +102,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:46:19,020 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:58:25,542 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -463,7 +115,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:47:19,071 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 18:59:25,655 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -476,7 +128,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:48:19,191 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:00:25,768 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -489,7 +141,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:49:19,213 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:01:25,865 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -502,7 +154,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:50:19,234 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:02:25,977 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -515,7 +167,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:51:19,329 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:03:26,061 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -528,7 +180,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:52:19,376 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:04:26,132 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -541,7 +193,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:53:19,497 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:05:26,209 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -554,7 +206,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:54:19,521 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:06:26,305 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -567,7 +219,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:55:19,589 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:07:26,338 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -580,7 +232,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:56:19,682 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:08:26,433 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -593,7 +245,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:57:19,792 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:09:26,550 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -606,7 +258,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:58:19,915 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:10:26,592 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -619,7 +271,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 17:59:20,001 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:11:26,710 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -632,7 +284,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:00:20,125 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:12:26,830 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -645,7 +297,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:01:20,171 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:13:26,952 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -658,7 +310,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:02:20,293 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:14:27,067 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -671,7 +323,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:03:20,379 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:15:27,162 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -684,7 +336,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:04:20,443 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:16:27,268 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -697,7 +349,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:05:20,562 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:17:27,352 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -710,7 +362,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:06:20,646 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:18:27,397 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -723,7 +375,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:07:20,726 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:19:27,517 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -736,7 +388,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:08:20,812 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:20:27,636 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -749,7 +401,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:09:20,864 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:21:27,697 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -762,7 +414,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:10:20,984 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:22:27,760 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -775,7 +427,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:11:21,081 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:23:27,877 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -788,7 +440,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:12:21,189 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:24:27,996 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -801,7 +453,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:13:21,305 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:25:28,103 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -814,7 +466,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:14:21,433 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:26:28,218 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -827,7 +479,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:15:21,508 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:27:28,325 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -840,7 +492,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:16:21,617 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:28:28,345 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -853,7 +505,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:17:21,735 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:29:28,452 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -866,7 +518,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:18:21,854 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:30:28,499 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -879,7 +531,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:19:21,973 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:31:28,563 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -892,7 +544,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:20:22,052 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:32:28,631 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -905,7 +557,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:21:22,145 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:33:28,682 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -918,7 +570,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:22:22,207 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:34:28,741 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -931,7 +583,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:23:22,313 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:35:28,810 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -944,7 +596,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:24:22,332 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:36:28,870 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -957,7 +609,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:25:22,433 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:37:28,944 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -970,7 +622,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:26:22,554 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:38:29,025 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -983,7 +635,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:27:22,673 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:39:29,144 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -996,7 +648,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:28:22,779 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:40:29,221 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1009,7 +661,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:29:22,825 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:41:29,305 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1022,7 +674,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:30:22,942 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:42:29,378 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1035,7 +687,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:31:23,059 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:43:29,450 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1048,7 +700,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:32:23,138 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:44:29,527 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1061,7 +713,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:33:23,258 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:45:29,613 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1074,7 +726,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:34:23,367 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:46:29,721 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1087,7 +739,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:35:23,486 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:47:29,838 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1100,7 +752,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:36:23,574 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:48:29,932 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1113,7 +765,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:37:23,667 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:49:30,051 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1126,7 +778,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:38:23,753 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:50:30,154 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1139,7 +791,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:39:23,882 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:51:30,215 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1152,7 +804,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:40:23,937 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:52:30,305 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1165,7 +817,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:41:24,055 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:53:30,406 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1178,7 +830,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:42:24,122 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:54:30,525 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1191,7 +843,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:43:24,187 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:55:30,607 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1204,7 +856,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:44:24,248 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:56:30,726 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1217,7 +869,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:45:24,365 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:57:30,827 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1230,7 +882,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:46:24,482 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:58:30,945 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1243,7 +895,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:47:24,543 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 19:59:31,012 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1256,7 +908,7 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:48:24,659 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 20:00:31,041 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)
@@ -1269,7 +921,293 @@ Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
     "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
 TypeError: unsupported operand type(s) for //: 'str' and 'int'
-2024-07-25 18:49:24,764 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+2024-07-25 20:01:31,110 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:02:31,218 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:03:31,318 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:04:31,435 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:05:31,554 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:06:31,633 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:07:31,729 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:08:31,847 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:09:31,879 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:10:31,998 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:11:32,050 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:12:32,090 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:13:32,203 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:14:32,298 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:15:32,403 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:16:32,434 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:17:32,535 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:18:32,620 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:19:32,741 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:20:32,859 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:21:32,954 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:22:33,072 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
+    enqueue_events(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 93, in enqueue_events
+    if job_type.enqueue():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 71, in enqueue
+    if self.is_event_due() or force:
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 90, in is_event_due
+    return self.get_next_execution() <= (current_time or now_datetime())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 116, in get_next_execution
+    "All": f"*/{(frappe.get_conf().scheduler_interval or 240) // 60} * * * *",
+TypeError: unsupported operand type(s) for //: 'str' and 'int'
+2024-07-25 20:23:33,177 ERROR scheduler Exception in Enqueue Events for Site erp.grupoatu.com
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 76, in enqueue_events_for_site
     enqueue_events(site=site)

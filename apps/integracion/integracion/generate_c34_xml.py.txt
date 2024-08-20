@@ -24,7 +24,6 @@ logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
 
 def get_company_address(company):
-    # Consultar la dirección que tiene un enlace a la compañía y es de tipo 'Billing'
     address_links = frappe.get_all("Dynamic Link", filters={
         "link_doctype": "Company",
         "link_name": company,
@@ -34,7 +33,6 @@ def get_company_address(company):
     if not address_links:
         raise ValueError(f"No se encontró ninguna dirección enlazada para la empresa {company}")
 
-    # Filtrar la dirección de tipo 'Billing'
     for link in address_links:
         address = frappe.get_doc("Address", link.parent)
         if address.address_type == "Billing":
@@ -43,19 +41,17 @@ def get_company_address(company):
     raise ValueError(f"No se encontró ninguna dirección de facturación para la empresa {company}")
 
 def get_supplier_iban(supplier_name):
-    # Consultar la cuenta bancaria que tiene un enlace al proveedor
     bank_accounts = frappe.get_all("Bank Account", filters={
         "party_type": "Supplier",
         "party": supplier_name
     }, fields=["iban"])
     
     if not bank_accounts:
-        return ""  # Devolver un valor vacío si no se encuentra el IBAN
+        return ""
     
     return bank_accounts[0].iban
 
 def get_company_iban(company_name):
-    # Consultar la cuenta bancaria que tiene un enlace a la compañía
     bank_accounts = frappe.get_all("Bank Account", filters={
         "company": company_name,
         "is_default": 1,
@@ -63,14 +59,14 @@ def get_company_iban(company_name):
     }, fields=["iban"])
     
     if not bank_accounts:
-        return ""  # Devolver un valor vacío si no se encuentra el IBAN
+        return ""
     
     return bank_accounts[0].iban
 
 def get_country_code(country_name):
     if country_name and len(country_name) >= 2:
         return country_name[:2].upper()
-    return "ES"  # Código predeterminado en caso de que no haya país
+    return "ES"
 
 @frappe.whitelist()
 def generate_c34(selected_invoices):
@@ -78,7 +74,6 @@ def generate_c34(selected_invoices):
     selected_invoices = frappe.parse_json(selected_invoices)
     invoices_by_company = {}
 
-    # Agrupar facturas por empresa
     for invoice_id in selected_invoices:
         try:
             invoice = frappe.get_doc("Purchase Invoice", invoice_id)
@@ -95,14 +90,12 @@ def generate_c34(selected_invoices):
         try:
             abbr = frappe.get_value("Company", company, "abbr")
             now = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-            now_dt = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")  # Formato correcto para CreDtTm
+            now_dt = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
             fichero_id_value = f"C34-{abbr}-{now}"
             
-            # Crear el elemento principal del XML conforme al estándar SEPA
             root = etree.Element("Document", xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03")
             cstmr_cdt_trf_initn = etree.SubElement(root, "CstmrCdtTrfInitn")
 
-            # Crear el header del grupo
             grp_hdr = etree.SubElement(cstmr_cdt_trf_initn, "GrpHdr")
             msg_id = etree.SubElement(grp_hdr, "MsgId")
             msg_id.text = fichero_id_value
@@ -115,13 +108,17 @@ def generate_c34(selected_invoices):
             initg_pty = etree.SubElement(grp_hdr, "InitgPty")
             nm = etree.SubElement(initg_pty, "Nm")
             nm.text = company
+
+            # Asegúrate de que el NIF-sufijo es correcto y tiene la longitud adecuada
+            tax_id_value = frappe.get_value("Company", company, "tax_id")
+            if len(tax_id_value) != 12:
+                raise ValueError(f"El identificador del presentador {tax_id_value} tiene una longitud incorrecta.")
             id_elem = etree.SubElement(initg_pty, "Id")
             org_id = etree.SubElement(id_elem, "OrgId")
             othr = etree.SubElement(org_id, "Othr")
             othr_id = etree.SubElement(othr, "Id")
-            othr_id.text = frappe.get_value("Company", company, "tax_id")
+            othr_id.text = tax_id_value
 
-            # Información de pago
             pmt_inf = etree.SubElement(cstmr_cdt_trf_initn, "PmtInf")
             pmt_inf_id = etree.SubElement(pmt_inf, "PmtInfId")
             pmt_inf_id.text = f"PMT-{abbr}-{now}"
@@ -142,12 +139,10 @@ def generate_c34(selected_invoices):
             reqd_exctn_dt = etree.SubElement(pmt_inf, "ReqdExctnDt")
             reqd_exctn_dt.text = frappe.utils.nowdate()
 
-            # Ordenante
             dbtr = etree.SubElement(pmt_inf, "Dbtr")
             dbtr_nm = etree.SubElement(dbtr, "Nm")
             dbtr_nm.text = company
 
-            # Extraer la dirección de la empresa desde el DocType "Address"
             try:
                 address = get_company_address(company)
                 dbtr_pstl_adr = etree.SubElement(dbtr, "PstlAdr")
@@ -181,19 +176,16 @@ def generate_c34(selected_invoices):
             dbtr_org_id = etree.SubElement(dbtr_id, "OrgId")
             dbtr_othr = etree.SubElement(dbtr_org_id, "Othr")
             dbtr_othr_id = etree.SubElement(dbtr_othr, "Id")
-            dbtr_othr_id.text = frappe.get_value("Company", company, "tax_id")
+            dbtr_othr_id.text = tax_id_value
             dbtr_acct = etree.SubElement(pmt_inf, "DbtrAcct")
             dbtr_acct_id = etree.SubElement(dbtr_acct, "Id")
             dbtr_acct_iban = etree.SubElement(dbtr_acct_id, "IBAN")
             dbtr_acct_iban.text = get_company_iban(company)
             dbtr_agt = etree.SubElement(pmt_inf, "DbtrAgt")
             dbtr_fin_instn_id = etree.SubElement(dbtr_agt, "FinInstnId")
-            # dbtr_bic = etree.SubElement(dbtr_fin_instn_id, "BIC")
-            # dbtr_bic.text = frappe.get_value("Company", company, "bic")
 
             for invoice in invoices:
                 try:
-                    # Obtener la cuenta bancaria del proveedor
                     supplier_iban = get_supplier_iban(invoice.supplier)
                     logger.debug(f"IBAN encontrado para el proveedor {invoice.supplier}: {supplier_iban}")
 
@@ -208,15 +200,13 @@ def generate_c34(selected_invoices):
                     instd_amt.text = str(invoice.grand_total)
                     cdtr_agt = etree.SubElement(cdt_trf_tx_inf, "CdtrAgt")
                     cdtr_fin_instn_id = etree.SubElement(cdtr_agt, "FinInstnId")
-                    # cdtr_bic = etree.SubElement(cdtr_fin_instn_id, "BIC")
-                    # cdtr_bic.text = supplier_bic  # Usar el BIC obtenido de la cuenta bancaria
                     cdtr = etree.SubElement(cdt_trf_tx_inf, "Cdtr")
                     cdtr_nm = etree.SubElement(cdtr, "Nm")
                     cdtr_nm.text = invoice.supplier_name
                     cdtr_acct = etree.SubElement(cdt_trf_tx_inf, "CdtrAcct")
                     cdtr_acct_id = etree.SubElement(cdtr_acct, "Id")
                     cdtr_acct_iban = etree.SubElement(cdtr_acct_id, "IBAN")
-                    cdtr_acct_iban.text = supplier_iban  # Usar el IBAN obtenido de la cuenta bancaria
+                    cdtr_acct_iban.text = supplier_iban
                     rmt_inf = etree.SubElement(cdt_trf_tx_inf, "RmtInf")
                     ustrd = etree.SubElement(rmt_inf, "Ustrd")
                     ustrd.text = invoice.remarks or "Pago de factura"
@@ -240,7 +230,6 @@ def generate_c34(selected_invoices):
         try:
             sharepoint_url = upload_file_to_sharepoint(file_path, company, fichero_id_value)
             sharepoint_urls.append(sharepoint_url)
-            # Eliminar el archivo local después de subirlo a SharePoint
             if os.path.exists(file_path):
                 os.remove(file_path)
                 logger.info(f"Archivo local {file_path} eliminado después de subirlo a SharePoint")
@@ -279,7 +268,6 @@ def upload_file_to_sharepoint(file_path, company, fichero_id_value):
             logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
             return
 
-        # Extraer la ruta relativa y el nombre del sitio desde la URL completa
         start_idx = sharepoint_base_url.find('/sites/')
         if (start_idx == -1):
             logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
@@ -296,10 +284,8 @@ def upload_file_to_sharepoint(file_path, company, fichero_id_value):
         company_folder_name = quote(company)
         cuaderno_folder_name = quote(fichero_id_value)
 
-        # Crear la carpeta de la compañía si no existe
         create_folder_if_not_exists(ctx, relative_path, company_folder_name)
 
-        # Crear la carpeta del Cuaderno 34 dentro de la carpeta de la compañía
         company_folder_relative_url = f"{relative_path}/{company_folder_name}".strip('/')
         create_folder_if_not_exists(ctx, company_folder_relative_url, cuaderno_folder_name)
 
@@ -318,7 +304,6 @@ def upload_file_to_sharepoint(file_path, company, fichero_id_value):
             target_folder.upload_file(file_name, content).execute_query()
             logger.info(f"Archivo subido: {file_url}")
 
-            # Devolver la URL de SharePoint
             sharepoint_url = f"{site_url}/{file_url}"
             return sharepoint_url
 

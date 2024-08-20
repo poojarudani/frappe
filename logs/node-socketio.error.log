@@ -1,0 +1,315 @@
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0
+node:internal/process/promises:391
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+Error: connect ECONNREFUSED 127.0.0.1:11001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)
+Emitted 'error' event on RedisClient instance at:
+    at RedisSocket.<anonymous> (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:412:14)
+    at RedisSocket.emit (node:events:519:28)
+    at RedisSocket._RedisSocket_connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/socket.js:166:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async RedisClient.connect (/home/frappe/frappe-bench/apps/frappe/node_modules/@redis/client/dist/lib/client/index.js:185:9)
+    at async /home/frappe/frappe-bench/apps/frappe/realtime/index.js:44:2 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 11001
+}
+
+Node.js v20.16.0

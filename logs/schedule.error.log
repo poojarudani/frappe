@@ -74,3 +74,79 @@
     result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
   File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 262, in sql
     traceback.print_stack()
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 179, in start_scheduler
+    start_scheduler()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 43, in start_scheduler
+    enqueue_events_for_all_sites()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 61, in enqueue_events_for_all_sites
+    enqueue_events_for_site(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
+    if is_scheduler_inactive():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
+    ).run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 262, in sql
+    traceback.print_stack()
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 114, in <module>
+    main()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 20, in main
+    click.Group(commands=commands)(prog_name="bench")
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 179, in start_scheduler
+    start_scheduler()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 43, in start_scheduler
+    enqueue_events_for_all_sites()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 61, in enqueue_events_for_all_sites
+    enqueue_events_for_site(site=site)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 73, in enqueue_events_for_site
+    if is_scheduler_inactive():
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 110, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 123, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 841, in get_single_value
+    ).run()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 262, in sql
+    traceback.print_stack()

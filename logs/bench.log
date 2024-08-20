@@ -3160,3 +3160,172 @@
 2024-08-07 18:00:01,660 INFO /usr/local/bin/bench --verbose --site all backup
 2024-08-08 00:00:02,015 INFO /usr/local/bin/bench --verbose --site all backup
 2024-08-08 06:00:02,035 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-14 10:01:16,564 INFO /usr/local/bin/bench restart
+2024-08-14 10:01:23,822 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-14 10:01:26,934 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-14 10:01:27,528 INFO /usr/local/bin/bench schedule
+2024-08-14 10:01:27,543 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:01:27,554 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:05:19,785 INFO /usr/local/bin/bench stop
+2024-08-14 10:05:44,264 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_14_08.gz
+2024-08-14 10:06:20,766 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_14_08.gz
+2024-08-14 10:06:28,683 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_14_08.gz
+2024-08-14 10:06:33,814 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_14_08.gz
+2024-08-14 10:30:41,850 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_14_08.gz
+2024-08-14 10:32:02,457 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-14 10:32:10,618 INFO /usr/local/bin/bench start
+2024-08-14 10:32:11,079 INFO /usr/local/bin/bench worker
+2024-08-14 10:32:11,081 INFO /usr/local/bin/bench watch
+2024-08-14 10:32:11,353 INFO /usr/local/bin/bench schedule
+2024-08-14 10:32:11,403 INFO /usr/local/bin/bench serve --port 8001
+2024-08-14 10:32:13,866 INFO /usr/local/bin/bench start
+2024-08-14 10:32:14,243 INFO /usr/local/bin/bench serve --port 8001
+2024-08-14 10:32:14,283 INFO /usr/local/bin/bench worker
+2024-08-14 10:32:14,299 INFO /usr/local/bin/bench schedule
+2024-08-14 10:32:14,377 INFO /usr/local/bin/bench watch
+2024-08-14 10:32:30,231 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:32:30,291 INFO /usr/local/bin/bench schedule
+2024-08-14 10:32:30,364 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:32:35,191 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:32:35,566 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:32:40,201 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:32:40,203 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:32:42,563 INFO /usr/local/bin/bench setup socketio
+2024-08-14 10:32:44,800 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:32:46,197 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:32:47,532 INFO /usr/local/bin/bench setup supervisor
+2024-08-14 10:32:47,797 LOG Updated supervisord.conf: 'chmod' changed from '0700                       ; sockef file mode (default 0700)' to '0760'
+2024-08-14 10:32:47,797 LOG Updated supervisord.conf: 'chown' changed from '' to 'frappe:frappe'
+2024-08-14 10:32:50,358 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:32:51,752 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:32:52,139 INFO /usr/local/bin/bench setup redis
+2024-08-14 10:32:55,898 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:32:56,288 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:33:00,795 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:33:00,816 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:33:06,008 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:33:06,109 INFO /usr/local/bin/bench schedule
+2024-08-14 10:33:06,163 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:33:08,247 INFO /usr/local/bin/bench restart
+2024-08-14 10:33:08,847 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-14 10:33:11,523 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-14 10:33:12,089 INFO /usr/local/bin/bench schedule
+2024-08-14 10:33:12,092 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:33:12,098 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:33:18,117 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-14 10:33:55,739 INFO /usr/local/bin/bench restart
+2024-08-14 10:33:56,288 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-14 10:33:58,955 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-14 10:34:04,513 INFO /usr/local/bin/bench schedule
+2024-08-14 10:34:04,515 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:34:04,519 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:38:47,073 INFO /usr/local/bin/bench restart
+2024-08-14 10:38:47,686 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-14 10:38:50,527 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-14 10:38:52,111 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 10:38:52,120 INFO /usr/local/bin/bench schedule
+2024-08-14 10:38:52,135 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 10:46:37,834 INFO /usr/local/bin/bench build
+2024-08-14 11:00:15,924 INFO /usr/local/bin/bench restart
+2024-08-14 11:00:21,404 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-14 11:00:24,428 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-14 11:00:24,975 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 11:00:24,978 INFO /usr/local/bin/bench schedule
+2024-08-14 11:00:24,979 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 12:00:02,172 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-14 12:42:37,655 INFO /usr/local/bin/bench restart
+2024-08-14 12:43:04,722 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-14 12:43:07,522 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-14 12:43:07,986 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-14 12:43:07,995 INFO /usr/local/bin/bench schedule
+2024-08-14 12:43:08,015 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-14 13:43:11,224 INFO /usr/local/bin/bench config dns_multitenant on
+2024-08-14 13:43:29,616 INFO /usr/local/bin/bench setup add-domain erp.grupoatu.com --site erp.grupoatu.com
+2024-08-14 13:48:07,925 INFO /usr/local/bin/bench setup nginx
+2024-08-14 13:48:17,786 INFO /usr/local/bin/bench config dns_multitenant on
+2024-08-14 13:48:35,948 INFO /usr/local/bin/bench setup add-domain erp.grupoatu.com --site erp.grupoatu.com
+2024-08-14 13:48:41,469 INFO /usr/local/bin/bench setup add-domain app.grupoatu.com --site erp.grupoatu.com
+2024-08-14 13:48:46,623 INFO /usr/local/bin/bench setup nginx
+2024-08-14 13:50:20,664 INFO /usr/local/bin/bench setup nginx
+2024-08-14 15:14:15,929 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_14_08_2.gz
+2024-08-14 15:15:56,175 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-14 18:00:01,914 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-15 00:00:01,542 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-15 06:00:01,972 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-15 12:00:02,095 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-15 18:00:02,121 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-16 00:00:01,837 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-16 06:00:01,401 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-16 12:00:01,362 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-16 18:00:02,187 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-17 04:48:20,466 INFO /usr/local/bin/bench schedule
+2024-08-17 04:48:20,466 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-17 04:48:20,476 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-17 06:00:01,601 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-17 12:00:02,104 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-17 18:00:01,832 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-18 00:00:02,049 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-18 06:00:01,395 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-18 12:00:01,741 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-18 18:00:02,031 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-19 00:00:01,828 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-19 06:00:01,227 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-19 10:02:19,758 INFO /usr/local/bin/bench restart
+2024-08-19 10:02:22,699 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-19 10:02:25,467 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-19 10:02:26,043 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-19 10:02:26,076 INFO /usr/local/bin/bench schedule
+2024-08-19 10:02:26,111 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-19 10:07:28,545 INFO /usr/local/bin/bench restart
+2024-08-19 10:07:29,165 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-19 10:07:31,832 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-19 10:07:33,566 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-19 10:07:33,574 INFO /usr/local/bin/bench schedule
+2024-08-19 10:07:33,580 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-19 10:07:58,843 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-19 12:00:02,178 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-19 14:35:58,742 INFO /usr/local/bin/bench get-app https://github.com/frappe/print_designer
+2024-08-19 14:35:58,754 LOG Getting print_designer
+2024-08-19 14:35:58,754 DEBUG cd ./apps && git clone https://github.com/frappe/print_designer  --depth 1 --origin upstream
+2024-08-19 14:35:59,487 LOG Installing print_designer
+2024-08-19 14:35:59,487 DEBUG cd /home/frappe/frappe-bench && /home/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/frappe/frappe-bench/apps/print_designer 
+2024-08-19 14:36:03,436 DEBUG cd /home/frappe/frappe-bench/apps/print_designer && yarn install --check-files
+2024-08-19 14:36:11,659 DEBUG bench build --app print_designer
+2024-08-19 14:36:11,841 INFO /usr/local/bin/bench build --app print_designer
+2024-08-19 14:36:17,433 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-19 14:36:20,249 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-19 14:36:20,809 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-19 14:36:20,819 INFO /usr/local/bin/bench schedule
+2024-08-19 14:36:20,826 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-19 14:36:37,261 INFO /usr/local/bin/bench --site erp.grupoatu.com install-app print_designer
+2024-08-19 14:36:54,200 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-19 14:59:35,223 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_19_08.gz
+2024-08-19 15:01:03,662 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_19_08.gz
+2024-08-19 15:01:32,995 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-19 15:02:35,151 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-19 15:04:22,685 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-19 15:04:52,870 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_19_08.gz
+2024-08-19 15:06:05,763 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-19 15:06:44,564 INFO /usr/local/bin/bench --site erp.grupoatu.com install-app print_designer
+2024-08-19 15:06:52,209 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-19 18:00:01,696 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-19 21:50:29,784 INFO /usr/local/bin/bench restart
+2024-08-19 21:50:30,369 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-19 21:50:33,139 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-19 21:50:33,761 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-19 21:50:33,779 INFO /usr/local/bin/bench schedule
+2024-08-19 21:50:33,792 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-19 21:52:13,742 INFO /usr/local/bin/bench schedule
+2024-08-19 21:52:13,744 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-19 21:52:13,770 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-19 21:52:18,983 INFO /usr/local/bin/bench schedule
+2024-08-19 21:52:19,065 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-19 21:52:19,146 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-19 21:52:58,182 INFO /usr/local/bin/bench config dns_multitenant on
+2024-08-19 21:53:25,567 INFO /usr/local/bin/bench setup add-domain erp.grupoatu.com --site erp.grupoatu.com
+2024-08-19 21:53:34,271 INFO /usr/local/bin/bench setup nginx
+2024-08-20 00:00:01,551 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-20 05:34:47,873 INFO /usr/local/bin/bench --site erp.grupoatu.com restore /home/frappe/frappe-bench/sites/erp.grupoatu.com/private/backups/copia_20_08.gz
+2024-08-20 05:36:07,817 INFO /usr/local/bin/bench --site erp.grupoatu.com install-app print_designer
+2024-08-20 05:36:23,924 INFO /usr/local/bin/bench --site erp.grupoatu.com migrate
+2024-08-20 06:00:01,826 INFO /usr/local/bin/bench --verbose --site all backup

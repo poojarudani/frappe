@@ -1,0 +1,11 @@
+frappe
+integracion
+erpnext
+lms
+education
+crm
+print_designer
+payments
+frappe_whatsapp
+wiki
+hrms
