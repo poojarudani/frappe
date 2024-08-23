@@ -19,6 +19,7 @@
   "column_break0",
   "full_name",
   "username",
+  "instructor",
   "column_break_11",
   "language",
   "time_zone",
@@ -726,6 +727,13 @@
    "fieldtype": "Check",
    "hidden": 1,
    "label": "CRM User Created"
+  },
+  {
+   "depends_on": "eval:doc.instructor",
+   "fieldname": "instructor",
+   "fieldtype": "Link",
+   "label": "Instructor",
+   "options": "Instructor"
   }
  ],
  "force_re_route_to_default_view": 1,
@@ -789,7 +797,7 @@
    "link_fieldname": "user"
   }
  ],
- "modified": "2024-07-23 16:44:10.988258",
+ "modified": "2024-08-20 13:57:28.000730",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "User",

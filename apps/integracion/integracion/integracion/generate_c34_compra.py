@@ -18,7 +18,7 @@ sharepoint_base_url = "https://grupoatu365.sharepoint.com/sites/DepartamentodeAd
 
 # Configurar el logger
 logger = logging.getLogger(__name__)
-handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/generate_c34.log')
+handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/generate_c34_compra.log')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
@@ -94,7 +94,7 @@ def change_status_to_remesa_emitida(purchase_invoice_name, remesa_name):
 
 
 @frappe.whitelist()
-def generate_c34(invoice_data=None):
+def generate_c34_compra(invoice_data=None):
     logger.info("Inicio de la generación de Cuaderno 34")
 
     try:
@@ -282,6 +282,7 @@ def create_remesa(company, invoices, sharepoint_url):
         remesa_doc = frappe.get_doc({
             "doctype": "Remesa Registro",
             "company": company,
+            "remesa_de": "Purchase Invoice",
             "fecha": frappe.utils.nowdate(),
             "url": sharepoint_url,
             "facturas": [{"factura": inv.name, "importe": inv.outstanding_amount} for inv in invoices]

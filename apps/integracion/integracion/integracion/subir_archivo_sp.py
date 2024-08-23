@@ -2,7 +2,7 @@ import os
 import json
 import logging
 from logging.handlers import RotatingFileHandler
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit, urlunsplit, urlencode, parse_qs
 from office365.runtime.auth.user_credential import UserCredential
 from office365.sharepoint.client_context import ClientContext
 import frappe
@@ -35,7 +35,8 @@ folder_structure_map = {
     "Purchase Invoice": ["company", "name"],
     "Sales Invoice": ["company", "customer", "name"],
     "Company": ["name"],
-    # Añade aquí más doctypes y su estructura de carpetas deseada
+    "Job Offer": ["applicant_name - custom_dninie", "name"],
+    # Añade aquí más doctypes y su estructura de carpetas 
 }
 
 def sanitize_name(name):
@@ -45,6 +46,27 @@ def sanitize_name(name):
     return name.translate(str.maketrans({
         '*': '-', '"': '-', ':': '-', '<': '-', '>': '-', '?': '-', '/': '-', '\\': '-', '|': '-', ',': '-', '.': '-'
     }))
+
+def sanitize_url(url):
+    """
+    Sanitiza la URL codificando los caracteres especiales, incluidos en el path, query y fragment.
+    """
+    # Divide la URL en sus componentes
+    split_url = urlsplit(url)
+    
+    # Sanitiza el path, que es la parte que suele tener caracteres especiales
+    sanitized_path = quote(split_url.path, safe='/')
+    
+    # Sanitiza la query si existe
+    sanitized_query = urlencode({k: quote(v[0], safe='') for k, v in parse_qs(split_url.query).items()})
+    
+    # Sanitiza el fragmento si existe
+    sanitized_fragment = quote(split_url.fragment, safe='')
+
+    # Vuelve a ensamblar la URL completa con el path, query y fragmento sanitizados
+    sanitized_url = urlunsplit((split_url.scheme, split_url.netloc, sanitized_path, sanitized_query, sanitized_fragment))
+    
+    return sanitized_url
 
 def get_folder_structure(doctype, docname, foldername):
     """
@@ -60,7 +82,13 @@ def get_folder_structure(doctype, docname, foldername):
         # Crear la estructura utilizando los campos del documento, sanitizando cada nombre
         structure = []
         for field in fields:
-            if field == "name":
+            if ' - ' in field:
+                # Si el campo es una combinación, dividirlo y combinar los valores
+                parts = field.split(' - ')
+                combined_field_value = ' - '.join(sanitize_name(document.get(part)) for part in parts if document.get(part))
+                if combined_field_value:
+                    structure.append(combined_field_value)
+            elif field == "name":
                 structure.append(sanitize_name(foldername))  # Usa el docname directamente
             elif document.get(field):
                 structure.append(sanitize_name(document.get(field)))
@@ -74,6 +102,7 @@ def get_folder_structure(doctype, docname, foldername):
 def create_folder_if_not_exists(ctx, folder_relative_url, folder_name):
     try:
         logger.info(f"Comprobando existencia de carpeta en la ruta: {folder_relative_url}/{folder_name}")
+        logger.info(f"Ruta relativa de carpeta: {folder_relative_url}")
         parent_folder = ctx.web.get_folder_by_server_relative_url(f"{folder_relative_url}")
         ctx.load(parent_folder)
         ctx.execute_query()
@@ -108,6 +137,12 @@ def upload_file_to_sharepoint(doc, method):
         doctype_name = file_doc.attached_to_doctype
         docname = file_doc.attached_to_name
         foldername = sanitize_name(docname)
+
+        if doctype_name == "Job Offer":
+            job_offer_doc = frappe.get_doc('Job Offer', docname)
+            if job_offer_doc.status != "Accepted":
+                logger.info(f"El estado de la oferta de trabajo no es 'Accepted', no se subirá el archivo.")
+                return
 
         doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
         if not doc_biblioteca:

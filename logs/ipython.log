@@ -545,3 +545,286 @@ def process_all_files():
 if __name__ == "__main__":
     process_all_files()
 2024-07-24 14:17:32,378 INFO ipython === session end ===
+2024-08-21 06:17:52,467 INFO ipython === bench console session ===
+2024-08-21 06:17:52,468 INFO ipython def remove_quotes_from_course_name_and_code():
+    # Consulta todos los registros de Course
+    courses = frappe.get_all('Course', fields=['name', 'code'])
+
+    for course in courses:
+        # Elimina comillas del campo name y code
+        clean_name = course['name'].replace('"', '')
+        clean_code = course['code'].replace('"', '')
+
+        # Actualiza el documento si alguno de los campos fue modificado
+        if clean_name != course['name'] or clean_code != course['code']:
+            frappe.db.set_value('Course', course['name'], 'name', clean_name)
+            frappe.db.set_value('Course', course['name'], 'code', clean_code)
+
+    frappe.db.commit()
+
+# Ejecuta la función
+remove_quotes_from_course_name_and_code()
+2024-08-21 06:17:52,468 INFO ipython def remove_quotes_from_course_name_and_code():
+    # Consulta todos los registros de Course
+    courses = frappe.get_all('Course', fields=['name', 'code'])
+
+    for course in courses:
+        # Verifica si los campos no son None antes de reemplazar
+        clean_name = course['name'].replace('"', '') if course['name'] is not None else None
+        clean_code = course['code'].replace('"', '') if course['code'] is not None else None
+
+        # Actualiza el documento si alguno de los campos fue modificado
+        if (clean_name is not None and clean_name != course['name']) or (clean_code is not None and clean_code != course['code']):
+            if clean_name is not None:
+                frappe.db.set_value('Course', course['name'], 'name', clean_name)
+            if clean_code is not None:
+                frappe.db.set_value('Course', course['name'], 'code', clean_code)
+
+    frappe.db.commit()
+
+# Ejecuta la función
+remove_quotes_from_course_name_and_code()
+2024-08-21 06:17:52,469 INFO ipython def remove_quotes_from_course_name_and_code():
+    # Consulta todos los registros de Course
+    courses = frappe.get_all('Course', fields=['name', 'code'])
+    
+    modified_count = 0  # Contador de cursos modificados
+
+    for course in courses:
+        # Verifica si los campos no son None antes de reemplazar
+        clean_name = course['name'].replace('"', '') if course['name'] is not None else None
+        clean_code = course['code'].replace('"', '') if course['code'] is not None else None
+
+        # Actualiza el documento si alguno de los campos fue modificado
+        if (clean_name is not None and clean_name != course['name']) or (clean_code is not None and clean_code != course['code']):
+            if clean_name is not None:
+                frappe.db.set_value('Course', course['name'], 'name', clean_name)
+            if clean_code is not None:
+                frappe.db.set_value('Course', course['name'], 'code', clean_code)
+            
+            modified_count += 1  # Incrementa el contador si se modifica algún curso
+
+    frappe.db.commit()
+    
+    print(f"Número de cursos modificados: {modified_count}")
+
+# Ejecuta la función
+remove_quotes_from_course_name_and_code()
+2024-08-21 06:17:52,469 INFO ipython === session end ===
+2024-08-21 14:04:52,757 INFO ipython === bench console session ===
+2024-08-21 14:04:52,758 INFO ipython from integracion.integracion.invoice_from_email import invoice_from_email
+
+
+# Ejecutar la función con datos de prueba('Test Subject', 'Test Content', 'test@example.com', None)
+2024-08-21 14:04:52,758 INFO ipython from integracion.integracion.invoice_from_email import invoice_from_email 
+
+# Ejecutar la función con datos de prueba
+invoice_from_email('Test Subject', 'Test Content', 'test@example.com', None)
+2024-08-21 14:04:52,758 INFO ipython === session end ===
+2024-08-22 10:03:42,252 INFO ipython === bench console session ===
+2024-08-22 10:03:42,253 INFO ipython import csv
+from frappe import _
+
+# Ruta al archivo CSV
+csv_file_path = "/home/frappe/frappe-bench/importacion/burgos_atu.csv"
+
+# Nombre de la compañía
+company_name = "Burgos atu SL"
+company_abbr = frappe.get_value("Company", company_name, "abbr")
+
+# Leer el archivo CSV
+with open(csv_file_path, mode='r', encoding='utf-8') as file:
+    csv_reader = csv.DictReader(file)
+    
+    # Contador para limitar a las primeras 10 cuentas
+    count = 0
+    
+    for row in csv_reader:
+        if count >= 10:
+            break
+
+        account_number = row['account_number']
+        account_name = row['account_name']
+
+        # Crear el nombre completo de la cuenta
+        account_full_name = f"{account_number} - {account_name} - {company_abbr}"
+
+        # Verificar si la cuenta ya existe
+        if frappe.db.exists("Account", {"account_number": account_number, "company": company_name}):
+            print(f"La cuenta ya existe: {account_full_name}. Saltando creación.")
+            continue
+
+        # Inicialmente asumimos que la cuenta no tiene padre
+        parent_account = None
+
+        # Recorrer los dígitos de la cuenta para encontrar la cuenta padre
+        for i in range(1, len(account_number) + 1):
+            parent_account_candidate = account_number[:i]
+            # Buscar la cuenta grupo que coincida con el prefijo actual
+            possible_parent_account = frappe.db.exists(
+                "Account",
+                {
+                    "account_number": parent_account_candidate,
+                    "company": company_name,
+                    "is_group": 1
+                }
+            )
+            if possible_parent_account:
+                parent_account = possible_parent_account  # Machacar con la cuenta grupo más específica
+
+        # Si se encontró un padre, traer tipo de root y tipo de reporte de la cuenta principal
+        if parent_account:
+            parent_account_doc = frappe.get_doc("Account", parent_account)
+            root_type = parent_account_doc.root_type
+            report_type = parent_account_doc.report_type
+        else:
+            root_type = "Liability"  # Asume un tipo por defecto si no se encuentra un padre
+            report_type = "Balance Sheet"  # Asume un tipo por defecto si no se encuentra un padre
+
+        # Mostrar información y pedir confirmación
+        print(f"Preparado para añadir la cuenta: {account_full_name}")
+        print(f"  - Número de cuenta: {account_number}")
+        print(f"  - Nombre de cuenta: {account_name}")
+        print(f"  - Cuenta padre: {parent_account if parent_account else 'Ninguna'}")
+        print(f"  - Root Type: {root_type}")
+        print(f"  - Report Type: {report_type}")
+        
+        confirm = input("¿Desea añadir esta cuenta? (S/N): ").strip().upper()
+        if confirm != 'S':
+            print(f"Cuenta omitida: {account_full_name}")
+            continue
+
+        # Crear la cuenta
+        account_doc = frappe.get_doc({
+            "doctype": "Account",
+            "company": company_name,
+            "parent_account": parent_account if parent_account else "",
+            "account_number": account_number,
+            "account_name": account_name,
+            "root_type": root_type,
+            "report_type": report_type,
+            "is_group": 0,  # Asume que la nueva cuenta no es un grupo
+        })
+
+        try:
+            account_doc.insert(ignore_permissions=True)
+            frappe.db.commit()
+            print(f"Cuenta creada: {account_full_name}")
+        except frappe.DuplicateEntryError:
+            print(f"Cuenta ya existente: {account_full_name}")
+        except Exception as e:
+            print(f"Error creando la cuenta {account_full_name}: {e}")
+
+        count += 1
+2024-08-22 10:03:42,254 INFO ipython import csv
+from frappe import _
+
+# Ruta al archivo CSV
+csv_file_path = "/home/frappe/frappe-bench/importacion/burgos_atu.csv"
+
+# Nombre de la compañía
+company_name = "Burgos atu SL"
+company_abbr = frappe.get_value("Company", company_name, "abbr")
+
+# Lista para almacenar los detalles de las cuentas creadas
+created_accounts = []
+
+# Leer el archivo CSV
+with open(csv_file_path, mode='r', encoding='utf-8') as file:
+    csv_reader = csv.DictReader(file)
+    
+    for row in csv_reader:
+        account_number = row['account_number']
+        account_name = row['account_name']
+
+        # Crear el nombre completo de la cuenta
+        account_full_name = f"{account_number} - {account_name} - {company_abbr}"
+
+        # Verificar si la cuenta ya existe
+        if frappe.db.exists("Account", {"account_number": account_number, "company": company_name}):
+            print(f"La cuenta ya existe: {account_full_name}. Saltando creación.")
+            continue
+
+        # Inicialmente asumimos que la cuenta no tiene padre
+        parent_account = None
+
+        # Recorrer los dígitos de la cuenta para encontrar la cuenta padre
+        for i in range(1, len(account_number) + 1):
+            parent_account_candidate = account_number[:i]
+            # Buscar la cuenta grupo que coincida con el prefijo actual
+            possible_parent_account = frappe.db.exists(
+                "Account",
+                {
+                    "account_number": parent_account_candidate,
+                    "company": company_name,
+                    "is_group": 1
+                }
+            )
+            if possible_parent_account:
+                parent_account = possible_parent_account  # Machacar con la cuenta grupo más específica
+
+        # Si se encontró un padre, traer tipo de root y tipo de reporte de la cuenta principal
+        if parent_account:
+            parent_account_doc = frappe.get_doc("Account", parent_account)
+            root_type = parent_account_doc.root_type
+            report_type = parent_account_doc.report_type
+
+        # Crear la cuenta
+        account_doc = frappe.get_doc({
+            "doctype": "Account",
+            "company": company_name,
+            "parent_account": parent_account if parent_account else "",
+            "account_number": account_number,
+            "account_name": account_name,
+            "root_type": root_type,
+            "report_type": report_type,
+            "is_group": 0,  # Asume que la nueva cuenta no es un grupo
+        })
+
+        try:
+            account_doc.insert(ignore_permissions=True)
+            frappe.db.commit()
+            print(f"Cuenta creada: {account_full_name}")
+
+            # Añadir detalles a la lista de cuentas creadas
+            created_accounts.append({
+                "account_number": account_number,
+                "account_name": account_name,
+                "parent_account": parent_account_doc.name if parent_account else "Ninguna"
+            })
+        except frappe.DuplicateEntryError:
+            print(f"Cuenta ya existente: {account_full_name}")
+        except Exception as e:
+            print(f"Error creando la cuenta {account_full_name}: {e}")
+
+# Mostrar resumen de cuentas creadas
+print("\nResumen de cuentas creadas:")
+for account in created_accounts:
+    print(f"  - {account['account_number']} - {account['account_name']} (Padre: {account['parent_account']})")
+2024-08-22 10:03:42,254 INFO ipython === session end ===
+2024-08-22 10:16:00,965 INFO ipython === bench console session ===
+2024-08-22 10:16:00,965 INFO ipython # Obtener todas las hojas de contratación
+job_offers = frappe.get_all('Job Offer', filters={}, fields=['name', 'custom_dninie', 'custom_empleado'])
+
+# Recorrer cada hoja de contratación
+for job_offer in job_offers:
+    # Inicialmente, se asume que no se ha encontrado un empleado
+    employee_exists = False
+    
+    # Comprobar si existe un empleado con el mismo custom_dninie
+    if job_offer.custom_dninie:
+        employee_exists = frappe.db.exists('Employee', {'custom_dninie_id': job_offer.custom_dninie})
+    
+    # Si no se encontró por custom_dninie, comprobar si el empleado en custom_empleado existe
+    if not employee_exists and job_offer.custom_empleado:
+        employee_exists = frappe.db.exists('Employee', {'name': job_offer.custom_empleado})
+    
+    # Si se encontró un empleado, actualizar custom_tiene_empleado a 1
+    if employee_exists:
+        frappe.db.set_value('Job Offer', job_offer.name, 'custom_tiene_empleado', 1)
+
+# Confirmar los cambios
+frappe.db.commit()
+
+print("Actualización completada.")
+2024-08-22 10:16:00,966 INFO ipython === session end ===

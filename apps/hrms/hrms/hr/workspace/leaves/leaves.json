@@ -185,13 +185,13 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-16 06:14:45.067849",
- "modified_by": "tania@grupoatu.com",
+ "modified": "2024-08-20 13:21:31.258700",
+ "modified_by": "Administrator",
  "module": "HR",
  "name": "Leaves",
  "number_cards": [],
  "owner": "Administrator",
- "parent_page": "HR",
+ "parent_page": "RRHH",
  "public": 1,
  "quick_lists": [],
  "roles": [],

@@ -211,13 +211,13 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-16 06:14:44.913990",
- "modified_by": "tania@grupoatu.com",
+ "modified": "2024-08-20 13:21:31.496730",
+ "modified_by": "Administrator",
  "module": "HR",
  "name": "Shift & Attendance",
  "number_cards": [],
  "owner": "Administrator",
- "parent_page": "HR",
+ "parent_page": "RRHH",
  "public": 1,
  "quick_lists": [],
  "roles": [],

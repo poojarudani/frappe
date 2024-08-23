@@ -54,13 +54,14 @@
    "reqd": 1
   },
   {
+   "allow_on_submit": 1,
    "fetch_from": "job_applicant.email_id",
+   "fetch_if_empty": 1,
    "fieldname": "applicant_email",
    "fieldtype": "Data",
    "in_global_search": 1,
    "label": "Applicant Email Address",
-   "options": "Email",
-   "read_only": 1
+   "options": "Email"
   },
   {
    "fieldname": "column_break_3",
@@ -226,7 +227,7 @@
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-25 14:51:02.638321",
+ "modified": "2024-08-22 11:50:56.377432",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Job Offer",

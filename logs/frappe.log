@@ -1,185 +1,47 @@
-2024-08-07 09:14:36,663 ERROR frappe New Exception collected in error log
+2024-08-23 11:21:20,636 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 28)
 Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"HR-OFF-2024-00141","owner":"luz.dolera@grupoatu.com","creation":"2024-08-02 09:19:24.035033","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":5,"custom_empleado":"21511493F","job_applicant":"laura.pastor@nuestrared.net","applicant_name":"LAURA TERESA PASTOR BOTELLA","applicant_email":"laura.pastor@nuestrared.net","custom_dninie":"21511493F","custom_no_seguridad_social":"03/1027291885","custom_fecha_de_nacimiento":"1970-01-01","custom_dirección_de_contacto":"laura.pastor@nuestrared.net","custom_direccion":"CL/ASTRONOMO COMAS SOLA 4 (03007) ALICANTE/ALACANT","custom_categoría_profesional":"Profesor/a","custom_discapacidad":0,"status":"Accepted","offer_date":"2024-08-02","custom_fecha_inicio":"2024-08-08","custom_fecha_fin":"2024-08-22","custom_necesaria_confirmación_de_baja":"No","designation":"Profesor/a Titulado/a","custom_tipo_de_contrato":"Fijo Discontinuo","company":"Academia Técnica Universitaria SL","centro_formacion":"300001262","custom_código_postal":"03007","custom_iban":"ES5721002363882200102869","custom_provincia":"Alicante/Alacant","custom_numero_de_movil":"629 51 08 86","job_offer_term_template":"Docentes Presencial/Aula Virtual","terms":"<div class=\\"ql-editor read-mode\\"><p><strong style=\\"color: rgb(230, 0, 0);\\"><u>LLAMAMIENTO </u></strong></p></div>","doctype":"Job Offer","registro_horas":[{"name":"r7i1svs2vn","owner":"luz.dolera@grupoatu.com","creation":"2024-08-02 09:19:24.035033","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":1,"mes":"Agosto","horas":50,"horas_extras":0,"parent":"HR-OFF-2024-00141","parentfield":"registro_horas","parenttype":"Job Offer","doctype":"Hoja de Contratacion Horas"}],"offer_terms":[{"name":"ql6pk1dj3s","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":1,"offer_term":"PLAN FORMATIVO","value":"Plan Comunidad Valenciana","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pjo87tc","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":2,"offer_term":"Curso","value":"SEAG026PO: GESTION DE RESIDUOS INDUSTRIALES","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pg25e7m","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":3,"offer_term":"Nº EXPEDIENTE","value":"FFS15/2023/139 5.3","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pi96p70","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":4,"offer_term":"Lugar de impartición","value":"ACADEMÍA TÉCNICA UNIVERSITARIA\\nC/LOS DOSCIENTOS, 8 esq C/GENERAL BONANZA, 1\\n03007. ALICANTE","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6p3o68r6","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":5,"offer_term":"Comienzo del contrato","value":"De 08/08/2024","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pjptfap","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":6,"offer_term":"Fin del contrato","value":"Hasta 22/08/2024","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6plkahj4","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":7,"offer_term":"Horario","value":"15:30 horas a 20:30 horas","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6p9baj2c","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":8,"offer_term":"Días de la semana","value":"Lunes a viernes","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6psqj2lp","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":9,"offer_term":"Horas mensuales","value":" Agosto 50h","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pfig6t9","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":10,"offer_term":"Horas Totales","value":"50 HORAS","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6peg6koo","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":11,"offer_term":"Precio/hora/bruto","value":"23€h/brutos","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6p2cl6fd","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":12,"offer_term":"Retención","value":"20%","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"}],"__onload":{"employee":""},"__last_sync_on":"2024-08-07T07:12:42.990Z"}', 'action': 'Submit', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-08-07 09:39:46,695 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"docstatus":0,"doctype":"Workflow","name":"new-workflow-upamabcttd","__islocal":1,"__unsaved":1,"owner":"Administrator","is_active":0,"override_status":0,"send_email_alert":0,"states":[{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-ejuilllpww","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","update_field":"status","update_value":"Borrador","allow_edit":"All"},{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-pdqsswbmlz","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":2,"__unedited":false,"state":"Aprobada para pago","update_field":"status","update_value":"Aprobada para pago","allow_edit":"All"}],"transitions":[{"docstatus":0,"doctype":"Workflow Transition","name":"new-workflow-transition-ifkhvfyeod","__islocal":1,"__unsaved":1,"owner":"Administrator","allow_self_approval":1,"parent":"new-workflow-upamabcttd","parentfield":"transitions","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","action":"Aprobada para pago","next_state":"Aprobada para pago","allowed":"All"}],"workflow_state_field":"workflow_state","workflow_name":"Aprobada para pago","document_type":"Purchase Invoice"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-08-07 09:41:01,189 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"docstatus":0,"doctype":"Workflow","name":"new-workflow-upamabcttd","__islocal":1,"__unsaved":1,"owner":"Administrator","is_active":0,"override_status":0,"send_email_alert":0,"states":[{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-ejuilllpww","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","update_field":"status","update_value":"Draft","allow_edit":"All"},{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-pdqsswbmlz","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":2,"__unedited":false,"state":"Aprobada para pago","update_field":"status","update_value":"Aprobada para pago","allow_edit":"All"}],"transitions":[{"docstatus":0,"doctype":"Workflow Transition","name":"new-workflow-transition-ifkhvfyeod","__islocal":1,"__unsaved":1,"owner":"Administrator","allow_self_approval":1,"parent":"new-workflow-upamabcttd","parentfield":"transitions","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","action":"Aprobada para pago","next_state":"Aprobada para pago","allowed":"All"}],"workflow_state_field":"workflow_state","workflow_name":"Aprobada para pago","document_type":"Purchase Invoice"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-08-07 09:41:11,709 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"docstatus":0,"doctype":"Workflow","name":"new-workflow-upamabcttd","__islocal":1,"__unsaved":1,"owner":"Administrator","is_active":0,"override_status":0,"send_email_alert":0,"states":[{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-ejuilllpww","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","update_field":"status","update_value":"","allow_edit":"All"},{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-pdqsswbmlz","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":2,"__unedited":false,"state":"Aprobada para pago","update_field":"status","update_value":"Aprobada para pago","allow_edit":"All"}],"transitions":[{"docstatus":0,"doctype":"Workflow Transition","name":"new-workflow-transition-ifkhvfyeod","__islocal":1,"__unsaved":1,"owner":"Administrator","allow_self_approval":1,"parent":"new-workflow-upamabcttd","parentfield":"transitions","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","action":"Aprobada para pago","next_state":"Aprobada para pago","allowed":"All"}],"workflow_state_field":"workflow_state","workflow_name":"Aprobada para pago","document_type":"Purchase Invoice"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-08-07 09:41:19,093 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"docstatus":0,"doctype":"Workflow","name":"new-workflow-upamabcttd","__islocal":1,"__unsaved":1,"owner":"Administrator","is_active":0,"override_status":0,"send_email_alert":0,"states":[{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-ejuilllpww","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","update_field":"status","update_value":"","allow_edit":"All"},{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-pdqsswbmlz","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":2,"__unedited":false,"state":"Aprobada para pago","update_field":"status","update_value":"Aprobada para pago","allow_edit":"All"}],"transitions":[{"docstatus":0,"doctype":"Workflow Transition","name":"new-workflow-transition-ifkhvfyeod","__islocal":1,"__unsaved":1,"owner":"Administrator","allow_self_approval":1,"parent":"new-workflow-upamabcttd","parentfield":"transitions","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","action":"Aprobada para pago","next_state":"Aprobada para pago","allowed":"All"}],"workflow_state_field":"workflow_state","workflow_name":"Aprobada para pago","document_type":"Purchase Invoice"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-08-07 09:41:51,234 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"docstatus":0,"doctype":"Workflow","name":"new-workflow-upamabcttd","__islocal":1,"__unsaved":1,"owner":"Administrator","is_active":0,"override_status":0,"send_email_alert":0,"states":[{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-ejuilllpww","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","update_field":"status","update_value":"Draft","allow_edit":"All"},{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-pdqsswbmlz","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":2,"__unedited":false,"state":"Aprobada para pago","update_field":"status","update_value":"Aprobada para pago","allow_edit":"All"}],"transitions":[{"docstatus":0,"doctype":"Workflow Transition","name":"new-workflow-transition-ifkhvfyeod","__islocal":1,"__unsaved":1,"owner":"Administrator","allow_self_approval":1,"parent":"new-workflow-upamabcttd","parentfield":"transitions","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","action":"Aprobada para pago","next_state":"Aprobada para pago","allowed":"All"}],"workflow_state_field":"workflow_state","workflow_name":"Aprobada para pago","document_type":"Purchase Invoice"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-08-07 09:42:30,121 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"docstatus":0,"doctype":"Workflow","name":"new-workflow-upamabcttd","__islocal":1,"__unsaved":1,"owner":"Administrator","is_active":0,"override_status":0,"send_email_alert":0,"states":[{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-ejuilllpww","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","update_field":"status","update_value":"0","allow_edit":"All"},{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-pdqsswbmlz","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":2,"__unedited":false,"state":"Aprobada para pago","update_field":"status","update_value":"Aprobada para pago","allow_edit":"All"}],"transitions":[{"docstatus":0,"doctype":"Workflow Transition","name":"new-workflow-transition-ifkhvfyeod","__islocal":1,"__unsaved":1,"owner":"Administrator","allow_self_approval":1,"parent":"new-workflow-upamabcttd","parentfield":"transitions","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","action":"Aprobada para pago","next_state":"Aprobada para pago","allowed":"All"}],"workflow_state_field":"workflow_state","workflow_name":"Aprobada para pago","document_type":"Purchase Invoice"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-08-07 09:42:43,529 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'doc': '{"docstatus":0,"doctype":"Workflow","name":"new-workflow-upamabcttd","__islocal":1,"__unsaved":1,"owner":"Administrator","is_active":0,"override_status":0,"send_email_alert":0,"states":[{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-ejuilllpww","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Draft","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","update_field":"status","update_value":"0","allow_edit":"All"},{"docstatus":0,"doctype":"Workflow Document State","name":"new-workflow-document-state-pdqsswbmlz","__islocal":1,"__unsaved":1,"owner":"Administrator","doc_status":"Cancelled","is_optional_state":0,"avoid_status_override":0,"parent":"new-workflow-upamabcttd","parentfield":"states","parenttype":"Workflow","idx":2,"__unedited":false,"state":"Aprobada para pago","update_field":"status","update_value":"Aprobada para pago","allow_edit":"All"}],"transitions":[{"docstatus":0,"doctype":"Workflow Transition","name":"new-workflow-transition-ifkhvfyeod","__islocal":1,"__unsaved":1,"owner":"Administrator","allow_self_approval":1,"parent":"new-workflow-upamabcttd","parentfield":"transitions","parenttype":"Workflow","idx":1,"__unedited":false,"state":"Borrador","action":"Aprobada para pago","next_state":"Aprobada para pago","allowed":"All"}],"workflow_state_field":"workflow_state","workflow_name":"Aprobada para pago","document_type":"Purchase Invoice"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
-2024-08-07 09:54:50,526 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'cmd': 'integracion.integracion.generate_c34'}
-2024-08-07 14:52:22,096 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'docnames': 'TBC/V/2400021', 'cmd': 'integracion.integracion.sii.sii_integracion.enviar_facturas_emitidas_wrapper'}
-2024-08-07 19:35:49,512 ERROR frappe New Exception collected in error log
-Site: erp.grupoatu.com
-Form Dict: {'cmd': 'frappe.www.login.login_via_key'}
-2024-08-19 15:00:00,616 ERROR frappe Could not take error snapshot: (1045, "Access denied for user '_098c566c1373ba13'@'localhost' (using password: YES)")
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Print Format', 'fields': '["`tabPrint Format`.`name`","`tabPrint Format`.`owner`","`tabPrint Format`.`creation`","`tabPrint Format`.`modified`","`tabPrint Format`.`modified_by`","`tabPrint Format`.`_user_tags`","`tabPrint Format`.`_comments`","`tabPrint Format`.`_assign`","`tabPrint Format`.`_liked_by`","`tabPrint Format`.`docstatus`","`tabPrint Format`.`idx`","`tabPrint Format`.`doc_type`","`tabPrint Format`.`disabled`"]', 'filters': '[]', 'order_by': '`tabPrint Format`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'sid': 'a72267cb1160aaaff294bf90fceba92562a133690f8dd75c297b085a'}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 921, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 664, in connect
-    self._request_authentication()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 954, in _request_authentication
-    auth_packet = self._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_098c566c1373ba13'@'localhost' (using password: YES)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 664, in connect
-    self._request_authentication()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 954, in _request_authentication
-    auth_packet = self._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_098c566c1373ba13'@'localhost' (using password: YES)")
-2024-08-19 15:05:00,621 ERROR frappe Could not take error snapshot: (1045, "Access denied for user '_098c566c1373ba13'@'localhost' (using password: YES)")
-Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Print Format', 'fields': '["`tabPrint Format`.`name`","`tabPrint Format`.`owner`","`tabPrint Format`.`creation`","`tabPrint Format`.`modified`","`tabPrint Format`.`modified_by`","`tabPrint Format`.`_user_tags`","`tabPrint Format`.`_comments`","`tabPrint Format`.`_assign`","`tabPrint Format`.`_liked_by`","`tabPrint Format`.`docstatus`","`tabPrint Format`.`idx`","`tabPrint Format`.`doc_type`","`tabPrint Format`.`disabled`"]', 'filters': '[]', 'order_by': '`tabPrint Format`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1'}
 Traceback (most recent call last):
   File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
     init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 272, in resume
-    data = self.get_session_record()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 289, in get_session_record
-    r = self.get_session_data()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 305, in get_session_data
-    data = self.get_session_data_from_db()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 334, in get_session_data_from_db
-    ).run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 664, in connect
-    self._request_authentication()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 954, in _request_authentication
-    auth_packet = self._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_098c566c1373ba13'@'localhost' (using password: YES)")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -194,115 +56,111 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 211, in sql
-    self.connect()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 117, in connect
-    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
-    conn = self._get_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
-    return self.create_connection()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
-    return pymysql.connect(**self.get_connection_settings())
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 358, in __init__
-    self.connect()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 664, in connect
-    self._request_authentication()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 954, in _request_authentication
-    auth_packet = self._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.OperationalError: (1045, "Access denied for user '_098c566c1373ba13'@'localhost' (using password: YES)")
-2024-08-20 05:35:16,549 ERROR frappe Could not take error snapshot: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax
+2024-08-23 11:21:20,646 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Room', 'fields': '["`tabRoom`.`name`","`tabRoom`.`owner`","`tabRoom`.`creation`","`tabRoom`.`modified`","`tabRoom`.`modified_by`","`tabRoom`.`_user_tags`","`tabRoom`.`_comments`","`tabRoom`.`_assign`","`tabRoom`.`_liked_by`","`tabRoom`.`docstatus`","`tabRoom`.`idx`","`tabRoom`.`custom_provincia`","`tabRoom`.`custom_municipio`","`tabRoom`.`custom_acreditado`","`tabRoom`.`custom_inscrito`","`tabRoom`.`room_name`"]', 'filters': '[["Room","room_name","like","%civico%"]]', 'order_by': '`tabRoom`.`custom_acreditado` asc', 'start': '0', 'page_length': '100', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'sid': 'a72267cb1160aaaff294bf90fceba92562a133690f8dd75c297b085a'}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
-    response = frappe.api.handle(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
-    data = endpoint(**arguments)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
-    return frappe.handler.handle()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
-    data = execute_cmd(cmd)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
-    return frappe.call(method, **frappe.form_dict)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
-    return fn(*args, **newargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
-    return func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 921, in wrapper_fn
-    retval = fn(*args, **get_newargs(fn, kwargs))
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/reportview.py", line 32, in get
-    data = compress(execute(**args), args=args)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/desk/reportview.py", line 78, in execute
-    return DatabaseQuery(doctype).execute(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 191, in execute
-    result = self.build_and_run()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/db_query.py", line 232, in build_and_run
-    return frappe.db.sql(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabRoom' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 623, in get_values
-    out = self._get_values_from_table(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 896, in _get_values_from_table
-    return query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabDocType' doesn't exist")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax
+2024-08-23 11:21:21,261 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 28)
+Site: erp.grupoatu.com
+Form Dict: {'sid': 'a72267cb1160aaaff294bf90fceba92562a133690f8dd75c297b085a'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
 
 During handling of the above exception, another exception occurred:
 
@@ -317,37 +175,183 @@ Traceback (most recent call last):
     controller = get_controller(doctype)
   File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
     site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 81, in import_controller
-    doctype_info = frappe.db.get_value("DocType", doctype, fieldname="*")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 519, in get_value
-    result = self.get_values(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 648, in get_values
-    out = self.get_values_from_single(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 685, in get_values_from_single
-    values = self.get_singles_dict(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 733, in get_singles_dict
-    queried_result = frappe.qb.get_query(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
-    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 234, in sql
-    self._cursor.execute(query, values)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 153, in execute
-    result = self._query(query)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/cursors.py", line 322, in _query
-    conn.query(q)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 558, in query
-    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 822, in _read_query_result
-    result.read()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 1200, in read
-    first_packet = self.connection._read_packet()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/connections.py", line 772, in _read_packet
-    packet.raise_for_error()
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/protocol.py", line 221, in raise_for_error
-    err.raise_mysql_exception(self._data)
-  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
-    raise errorclass(errno, errval)
-pymysql.err.ProgrammingError: (1146, "Table '_098c566c1373ba13.tabSingles' doesn't exist")
-2024-08-20 05:35:37,475 ERROR frappe New Exception collected in error log
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax
+2024-08-23 11:21:21,265 ERROR frappe Failed to run after request hook
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Issue', 'fields': '["`tabIssue`.`name`","`tabIssue`.`owner`","`tabIssue`.`creation`","`tabIssue`.`modified`","`tabIssue`.`modified_by`","`tabIssue`.`_user_tags`","`tabIssue`.`_comments`","`tabIssue`.`_assign`","`tabIssue`.`_liked_by`","`tabIssue`.`docstatus`","`tabIssue`.`idx`","`tabIssue`.`raised_by`","`tabIssue`.`status`","`tabIssue`.`priority`","`tabIssue`.`subject`","`tabIssue`.`_seen`"]', 'filters': '[["Issue","status","!=","Cerrado"]]', 'order_by': '`tabIssue`.`creation` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+Form Dict: {'sid': 'a72267cb1160aaaff294bf90fceba92562a133690f8dd75c297b085a'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax
+2024-08-23 11:21:38,640 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 28)
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Job Offer', 'filters': '{"status":["=","Accepted"]}', 'fields': '[]', 'distinct': 'false'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
+    init_request(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax
+2024-08-23 11:21:38,643 ERROR frappe Failed to run after request hook
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Job Offer', 'filters': '{"status":["=","Accepted"]}', 'fields': '[]', 'distinct': 'false'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
+    return frappe.local.request_cache[func][args_key]
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
+    hooks = _dict(_load_app_hooks())
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
+    return importlib.import_module(modulename)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
+                                                                                                            ^
+SyntaxError: invalid syntax

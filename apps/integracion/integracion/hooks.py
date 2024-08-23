@@ -24,18 +24,23 @@ override_whitelisted_methods = {
     "integracion.create_purchase_invoice": "integracion.integracion.create_purchase_invoice.create_purchase_invoice",
     "integracion.integracion.employee_link_override.filter_employees": "integracion.integracion.employee_link_override.filter_employees",
     "integracion.integracion.subir_archivo_sp.get_sharepoint_structure" : "integracion.integracion.subir_archivo_sp.get_sharepoint_structure",
-    "integracion.integracion.generate_c34": "integracion.integracion.generate_c34.generate_c34",
+    "integracion.integracion.generate_c34_compra": "integracion.integracion.generate_c34_compra.generate_c34_compra",
+    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34_venta.generate_c34_venta",
     "integracion.integracion.sii.sii_integracion.enviar_facturas_emitidas_wrapper": "integracion.integracion.sii.sii_integracion.enviar_facturas_emitidas_wrapper",
     "integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper": "integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper",
     "education.education.doctype.course.course.add_course_to_programs": "integracion.integracion.sii.sii_integracion.custom_add_course_to_programs",
     "education.education.doctype.course.course.get_programs_without_course": "integracion.integracion.sii.sii_integracion.custom_get_programs_without_course",
-    "integracion.integracion.custom_pdf_make.custom_download_and_attach_pdf": "integracion.integracion.custom_pdf_make.custom_download_and_attach_pdf"
+    "integracion.integracion.custom_pdf_make.custom_download_and_attach_pdf": "integracion.integracion.custom_pdf_make.custom_download_and_attach_pdf",
+    "integracion.invoice_from_email": "integracion.integracion.invoice_from_email.invoice_from_email"
+
 }
+
 
 
 override_doctype_class = {
     "Purchase Invoice": "integracion.integracion.purchase_invoice_override.CustomPurchaseInvoice"
 }
+
 
 scheduler_events = {
     "cron": {

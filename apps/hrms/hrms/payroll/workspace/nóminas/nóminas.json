@@ -5,7 +5,7 @@
    "label": "Outgoing Salary"
   }
  ],
- "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Payroll\",\"col\":12}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Outgoing Salary\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salary Register\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Quick Links\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+ "content": "[{\"id\":\"yecnO1h98Y\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Outgoing Salary\",\"col\":12}},{\"id\":\"g0TqdSaZ5B\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"40SCkjyEhk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"t0N8c_pRAD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salary Register\",\"col\":3}},{\"id\":\"ACWnz_yUDW\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"DKGBIribIw\",\"type\":\"card\",\"data\":{\"card_name\":\"Quick Links\",\"col\":4}},{\"id\":\"SV2yCpC3e7\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
  "creation": "2020-05-27 19:54:23.405607",
  "custom_blocks": [],
  "docstatus": 0,
@@ -14,8 +14,9 @@
  "hide_custom": 0,
  "icon": "money-coins-1",
  "idx": 0,
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "Payroll",
+ "label": "N\u00f3minas",
  "links": [
   {
    "hidden": 0,
@@ -64,10 +65,10 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-16 06:14:45.574483",
- "modified_by": "tania@grupoatu.com",
+ "modified": "2024-08-20 13:21:35.105575",
+ "modified_by": "Administrator",
  "module": "Payroll",
- "name": "Payroll",
+ "name": "N\u00f3minas",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -90,5 +91,5 @@
    "type": "Report"
   }
  ],
- "title": "Payroll"
+ "title": "N\u00f3minas"
 }

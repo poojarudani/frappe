@@ -9,8 +9,9 @@
  "hide_custom": 0,
  "icon": "hr",
  "idx": 0,
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "HR",
+ "label": "RRHH",
  "links": [
   {
    "hidden": 0,
@@ -382,10 +383,10 @@
    "type": "Link"
   }
  ],
- "modified": "2024-08-07 08:00:38.047976",
+ "modified": "2024-08-20 13:21:27.530936",
  "modified_by": "Administrator",
  "module": "HR",
- "name": "HR",
+ "name": "RRHH",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -459,5 +460,5 @@
    "type": "Dashboard"
   }
  ],
- "title": "HR"
+ "title": "RRHH"
 }

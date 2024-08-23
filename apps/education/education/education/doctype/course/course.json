@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "format:{expediente}-{code}-{group}",
  "creation": "2015-09-07 12:39:55.181893",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -138,7 +138,7 @@
    "fieldname": "state",
    "fieldtype": "Select",
    "label": "State",
-   "options": "\nPlanificado\nEn Curso\nAnulado\nPrevisto\nEjecutado"
+   "options": "\nPlanificado\nEn Curso\nAnulado\nPrevisto\nEjecutado\nIncidentado"
   },
   {
    "default": "No",
@@ -151,7 +151,7 @@
    "fieldname": "responsible",
    "fieldtype": "Link",
    "label": "Responsible",
-   "options": "Employee"
+   "options": "User"
   },
   {
    "fieldname": "city",
@@ -178,16 +178,16 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "CUR-.YYYY.-"
+   "options": ".{expediente}.-.{code}.-.{group}."
   }
  ],
  "image_field": "hero_image",
  "links": [],
- "modified": "2024-07-31 15:13:14.864736",
+ "modified": "2024-08-23 10:34:18.248747",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Course",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
