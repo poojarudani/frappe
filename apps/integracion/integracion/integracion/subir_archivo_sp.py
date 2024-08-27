@@ -36,6 +36,8 @@ folder_structure_map = {
     "Sales Invoice": ["company", "customer", "name"],
     "Company": ["name"],
     "Job Offer": ["applicant_name - custom_dninie", "name"],
+    "Program": ["name"],
+    "Project": ["name"],
     # Añade aquí más doctypes y su estructura de carpetas 
 }
 
@@ -137,6 +139,7 @@ def upload_file_to_sharepoint(doc, method):
         doctype_name = file_doc.attached_to_doctype
         docname = file_doc.attached_to_name
         foldername = sanitize_name(docname)
+        project_type = None
 
         if doctype_name == "Job Offer":
             job_offer_doc = frappe.get_doc('Job Offer', docname)
@@ -144,20 +147,65 @@ def upload_file_to_sharepoint(doc, method):
                 logger.info(f"El estado de la oferta de trabajo no es 'Accepted', no se subirá el archivo.")
                 return
 
-        doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
-        if not doc_biblioteca:
-            return
-        parent_folder_full_url = doc_biblioteca.url_sp
-        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
+        if doctype_name == "Project":
+            project_doc = frappe.get_doc('Project', docname)
+            if project_doc.project_type:
+                project_type = project_doc.project_type
+            else:
+                logger.info(f"El proyecto no tiene Project type seleccionado")
+                return
 
-        # Extraer la ruta relativa y el nombre del sitio desde la URL completa
+        # Primera Verificación: Consultar directamente en la tabla hija si existe un registro con docname igual a doc.name
+        parent_folder_full_url = None
+        if project_type:
+            biblioteca_name = frappe.db.get_value(
+                'Bibliotecas SP Docnames',
+                {'docname': project_type},
+                'parent'
+            )
+            logger.info(f"Tabla hija: {biblioteca_name}")
+        else:
+            biblioteca_name = frappe.db.get_value(
+                'Bibliotecas SP Docnames', 
+                {'docname': docname}, 
+                'parent'
+            )
+            logger.info(f"Tabla hija: {biblioteca_name}")
+
+        if biblioteca_name:
+            # Si existe, obtener la URL del registro padre
+            parent_folder_full_url = frappe.db.get_value('Bibliotecas SP', biblioteca_name, 'url_sp')
+            logger.info(f"URL encontrada en la tabla hija para {doctype_name} con docname {docname}: {parent_folder_full_url}")
+        else:
+            # Segunda Verificación: Buscar en 'Bibliotecas SP' por doctype_name
+            biblioteca_name = frappe.db.get_value('Bibliotecas SP', {'documento': doctype_name}, 'name')
+            if not biblioteca_name:
+                logger.info(f"No se encontró ningún documento en 'Bibliotecas SP' para {doctype_name}.")
+                return
+            
+            doc_biblioteca = frappe.get_doc('Bibliotecas SP', biblioteca_name)
+
+            if doc_biblioteca.docnames:
+                # Si la tabla hija no está vacía, pero no se encontró coincidencia en la búsqueda anterior
+                logger.info(f"Tabla hija no vacía, verificando si {docname} está en la tabla hija.")
+                matching_entry = next((entry for entry in doc_biblioteca.docnames if entry.docname == docname), None)
+                if matching_entry:
+                    parent_folder_full_url = doc_biblioteca.url_sp
+                else:
+                    logger.info(f"No se encontró una coincidencia en la tabla hija para {docname}, cancelando la ejecución.")
+                    return
+            else:
+                # Si la tabla hija está vacía, usamos la URL general
+                parent_folder_full_url = doc_biblioteca.url_sp
+                logger.info(f"Tabla hija vacía, usando la URL general para {doctype_name}: {parent_folder_full_url}")
+
+        # Continuar con la lógica de conexión a SharePoint y subida de archivo
         start_idx = parent_folder_full_url.find('/sites/')
         if start_idx == -1:
             logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
             return
         
         site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
-        # Ajuste aquí para obtener la ruta correcta sin el nombre del sitio
         site_relative_path = parent_folder_full_url[start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/') + 1:]
         logger.info(f"Ruta relativa calculada: {site_relative_path}")
         logger.info(f"Conectando al contexto del sitio: {site_url}")
@@ -165,13 +213,11 @@ def upload_file_to_sharepoint(doc, method):
         credentials = UserCredential(user_email, user_password)
         ctx = ClientContext(site_url).with_credentials(credentials)
 
-        # Obtener la estructura de carpetas
         folder_structure = get_folder_structure(doctype_name, docname, foldername)
         if not folder_structure:
             logger.error(f"No se encontró la estructura de carpetas para {doctype_name} con nombre {docname}")
             return
-        
-        # Crear carpetas según la estructura
+
         current_relative_path = site_relative_path.strip('/')
         for folder_name in folder_structure:
             folder_name_sanitized = sanitize_name(folder_name)
@@ -179,7 +225,6 @@ def upload_file_to_sharepoint(doc, method):
             create_folder_if_not_exists(ctx, current_relative_path, folder_name_encoded)
             current_relative_path = f"{current_relative_path}/{folder_name_encoded}".strip('/')
 
-        # Última carpeta creada es donde se sube el archivo
         with open(file_path, 'rb') as file_content:
             content = file_content.read()
 
@@ -202,20 +247,75 @@ def upload_file_to_sharepoint(doc, method):
     except Exception as e:
         logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
 
+
 def on_update_or_create(doc, method):
     upload_file_to_sharepoint(doc, method)
+
 
 @frappe.whitelist(allow_guest=True)
 def get_sharepoint_structure(doctype, docname):
     foldername = sanitize_name(docname)
     lista = []
-    try:
-        doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype)
-    except frappe.DoesNotExistError:
-        logger.error(f"No se encontró un documento para el doctype {doctype} en Bibliotecas SP. Terminando la ejecución.")
-        return json.dumps([])
+    project_type = None
+    
+    if doctype == "Project":
+        project_doc = frappe.get_doc('Project', docname)
+        if project_doc.project_type:
+            project_type = project_doc.project_type
+        else:
+            logger.info(f"El proyecto no tiene Project type seleccionado")
+            return
 
-    parent_folder_full_url = doc_biblioteca.url_sp
+    # Primera Verificación: Consultar directamente en la tabla hija si existe un registro con docname igual a docname
+    parent_folder_full_url = None
+    if project_type:
+        biblioteca_name = frappe.db.get_value(
+            'Bibliotecas SP Docnames',
+            {'docname': project_type},
+            'parent'
+        )
+        logger.info(f"Tabla hija: {biblioteca_name}")
+    else:
+
+        biblioteca_name = frappe.db.get_value(
+            'Bibliotecas SP Docnames', 
+            {'docname': docname}, 
+            'parent'
+        )
+        logger.info(f"Tabla hija: {biblioteca_name}")
+
+    if biblioteca_name:
+        # Si existe, obtener la URL del registro padre
+        parent_folder_full_url = frappe.db.get_value('Bibliotecas SP', biblioteca_name, 'url_sp')
+        logger.info(f"URL encontrada en la tabla hija para {doctype} con docname {docname}: {parent_folder_full_url}")
+    else:
+        # Segunda Verificación: Buscar en 'Bibliotecas SP' por doctype_name
+        try:
+            biblioteca_name = frappe.db.get_value('Bibliotecas SP', {'documento': doctype}, 'name')
+
+            if not biblioteca_name:
+                logger.info(f"No se encontró ningún documento en 'Bibliotecas SP' con documento {doctype}.")
+                return json.dumps([])
+
+            doc_biblioteca = frappe.get_doc('Bibliotecas SP', biblioteca_name)
+        except frappe.DoesNotExistError:
+            logger.error(f"No se encontró un documento para el doctype {doctype} en Bibliotecas SP. Terminando la ejecución.")
+            return json.dumps([])
+
+        if doc_biblioteca.docnames:
+            # Si la tabla hija no está vacía, pero no se encontró coincidencia en la búsqueda anterior
+            logger.info(f"Tabla hija no vacía, verificando si {docname} está en la tabla hija.")
+            matching_entry = next((entry for entry in doc_biblioteca.docnames if entry.docname == docname), None)
+            if matching_entry:
+                parent_folder_full_url = doc_biblioteca.url_sp
+            else:
+                logger.info(f"No se encontró una coincidencia en la tabla hija para {docname}, terminando la ejecución.")
+                return json.dumps([])
+        else:
+            # Si la tabla hija está vacía, usamos la URL general
+            parent_folder_full_url = doc_biblioteca.url_sp
+            logger.info(f"Tabla hija vacía, usando la URL general para {doctype}: {parent_folder_full_url}")
+
     logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
 
     start_idx = parent_folder_full_url.find('/sites/')
@@ -276,6 +376,7 @@ def get_sharepoint_structure(doctype, docname):
 
     logger.info(f"Lista: {json.dumps(lista)}")
     return json.dumps(lista)
+
 
 def procesa_carpeta(ctx, share, ruta, carpeta_actual):
     try:

@@ -403,7 +403,8 @@
    "no_copy": 1,
    "oldfieldname": "bill_date",
    "oldfieldtype": "Date",
-   "print_hide": 1
+   "print_hide": 1,
+   "reqd": 1
   },
   {
    "depends_on": "return_against",
@@ -1639,7 +1640,7 @@
  "idx": 204,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-07 12:07:09.206521",
+ "modified": "2024-08-26 15:18:01.811407",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Purchase Invoice",

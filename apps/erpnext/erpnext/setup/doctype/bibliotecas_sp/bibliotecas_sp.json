@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:documento",
+ "autoname": "format:{documento}-{####}",
  "creation": "2024-06-25 09:09:25.725537",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,13 +9,15 @@
   "detalles_section",
   "documento",
   "column_break_ltnv",
-  "url_sp"
+  "url_sp",
+  "section_break_ckza",
+  "docnames"
  ],
  "fields": [
   {
    "fieldname": "documento",
    "fieldtype": "Link",
-   "label": "Documento",
+   "label": "Doctype",
    "options": "DocType",
    "unique": 1
   },
@@ -32,15 +34,27 @@
    "fieldname": "detalles_section",
    "fieldtype": "Section Break",
    "label": "Detalles"
+  },
+  {
+   "fieldname": "section_break_ckza",
+   "fieldtype": "Section Break"
+  },
+  {
+   "columns": 1,
+   "depends_on": "eval:doc.documento",
+   "fieldname": "docnames",
+   "fieldtype": "Table",
+   "label": "Documentos",
+   "options": "Bibliotecas SP Docnames"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-25 09:32:36.638889",
+ "modified": "2024-08-27 13:36:14.617537",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Bibliotecas SP",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

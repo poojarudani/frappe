@@ -355,3 +355,33 @@ Traceback (most recent call last):
     "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
                                                                                                             ^
 SyntaxError: invalid syntax
+2024-08-26 13:54:06,812 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'docnames': '["ACC-PINV-2024-00030"]', 'cmd': 'integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper'}
+2024-08-26 13:54:18,329 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'docnames': '["ACC-PINV-2024-00030"]', 'cmd': 'integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper'}
+2024-08-27 11:06:49,742 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00567', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
+2024-08-27 11:07:06,607 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00567', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
+2024-08-27 11:07:17,115 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00566', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
+2024-08-27 11:07:17,598 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00566', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
+2024-08-27 11:07:45,081 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Sales Invoice', 'docname': 'BATU/AL/2400003-2', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
+2024-08-27 11:07:45,177 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Sales Invoice', 'docname': 'BATU/AL/2400003-2', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
+2024-08-27 11:08:03,786 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Job Offer', 'docname': 'HR-OFF-2024-00187', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
+2024-08-27 11:08:03,866 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Job Offer', 'docname': 'HR-OFF-2024-00187', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}

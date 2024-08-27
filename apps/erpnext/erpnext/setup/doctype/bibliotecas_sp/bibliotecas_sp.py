@@ -13,7 +13,9 @@ class BibliotecasSP(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+		from integracion.integracion.doctype.bibliotecas_sp_docnames.bibliotecas_sp_docnames import BibliotecasSPDocnames
 
+		docnames: DF.Table[BibliotecasSPDocnames]
 		documento: DF.Link | None
 		url_sp: DF.Data | None
 	# end: auto-generated types

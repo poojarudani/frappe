@@ -3803,3 +3803,146 @@
 2024-08-23 13:18:27,949 INFO /usr/local/bin/bench worker --queue long,default,short
 2024-08-23 13:18:28,025 INFO /usr/local/bin/bench schedule
 2024-08-23 13:18:29,549 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-23 18:00:01,819 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-24 00:00:01,837 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-24 06:00:01,387 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-24 12:00:01,829 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-24 18:00:01,659 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-25 00:00:01,301 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-25 06:00:01,845 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-25 12:00:01,210 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-25 18:00:01,756 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-26 00:00:01,452 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-26 06:00:02,196 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-26 08:19:17,358 INFO /usr/local/bin/bench restart
+2024-08-26 08:20:10,596 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 08:20:13,878 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 08:20:15,323 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 08:20:15,425 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 08:20:15,550 INFO /usr/local/bin/bench schedule
+2024-08-26 08:20:16,737 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 10:26:30,853 INFO /usr/local/bin/bench
+2024-08-26 10:26:34,702 INFO /usr/local/bin/bench restart
+2024-08-26 10:26:43,555 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 10:26:46,712 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 10:26:48,415 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 10:26:48,418 INFO /usr/local/bin/bench schedule
+2024-08-26 10:26:48,513 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 10:26:50,135 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 10:29:47,786 INFO /usr/local/bin/bench restart
+2024-08-26 10:29:48,435 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 10:29:51,204 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 10:29:52,003 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 10:29:52,004 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 10:29:52,015 INFO /usr/local/bin/bench schedule
+2024-08-26 10:29:53,076 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 10:30:19,807 INFO /usr/local/bin/bench restart
+2024-08-26 10:30:20,346 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 10:30:23,027 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 10:30:24,820 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 10:30:24,846 INFO /usr/local/bin/bench schedule
+2024-08-26 10:30:24,875 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 10:30:26,506 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 12:00:01,697 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-26 13:22:02,693 INFO /usr/local/bin/bench restart
+2024-08-26 13:22:11,383 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 13:22:14,701 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 13:22:15,330 INFO /usr/local/bin/bench schedule
+2024-08-26 13:22:15,366 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 13:22:15,442 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 13:22:16,440 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 13:25:01,371 INFO /usr/local/bin/bench restart
+2024-08-26 13:25:01,979 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 13:25:04,753 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 13:25:05,398 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 13:25:05,406 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 13:25:05,410 INFO /usr/local/bin/bench schedule
+2024-08-26 13:25:07,088 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 14:15:57,124 INFO /usr/local/bin/bench restart
+2024-08-26 14:16:08,124 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 14:16:11,319 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 14:16:12,282 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 14:16:12,391 INFO /usr/local/bin/bench schedule
+2024-08-26 14:16:12,524 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 14:16:13,151 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 14:18:51,377 INFO /usr/local/bin/bench restart
+2024-08-26 14:18:51,944 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 14:18:54,724 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 14:18:56,457 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 14:18:56,517 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 14:18:56,581 INFO /usr/local/bin/bench schedule
+2024-08-26 14:18:58,136 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 14:24:29,162 INFO /usr/local/bin/bench restart
+2024-08-26 14:24:29,779 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-26 14:24:32,579 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-26 14:24:34,213 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-26 14:24:34,214 INFO /usr/local/bin/bench schedule
+2024-08-26 14:24:34,232 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-26 14:24:35,852 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-26 18:00:01,620 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-27 00:00:02,163 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-27 06:00:02,161 INFO /usr/local/bin/bench --verbose --site all backup
+2024-08-27 10:33:46,999 INFO /usr/local/bin/bench restart
+2024-08-27 10:33:54,704 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 10:33:58,092 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 10:33:58,882 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 10:33:58,910 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 10:33:58,931 INFO /usr/local/bin/bench schedule
+2024-08-27 10:34:00,697 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 10:38:49,613 INFO /usr/local/bin/bench restart
+2024-08-27 10:38:50,177 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 10:38:53,027 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 10:38:54,706 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 10:38:54,740 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 10:38:54,754 INFO /usr/local/bin/bench schedule
+2024-08-27 10:38:56,333 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 10:45:38,999 INFO /usr/local/bin/bench restart
+2024-08-27 10:45:39,564 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 10:45:42,422 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 10:45:44,024 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 10:45:44,101 INFO /usr/local/bin/bench schedule
+2024-08-27 10:45:44,104 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 10:45:45,724 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 10:48:36,721 INFO /usr/local/bin/bench restart
+2024-08-27 10:48:37,308 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 10:48:39,959 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 10:48:41,521 INFO /usr/local/bin/bench schedule
+2024-08-27 10:48:41,549 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 10:48:41,604 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 10:48:43,206 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 10:52:11,592 INFO /usr/local/bin/bench restart
+2024-08-27 10:52:12,148 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 10:52:14,802 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 10:52:16,457 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 10:52:16,527 INFO /usr/local/bin/bench schedule
+2024-08-27 10:52:16,540 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 10:52:18,174 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 11:06:22,231 INFO /usr/local/bin/bench restart
+2024-08-27 11:06:22,828 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 11:06:25,748 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 11:06:27,440 INFO /usr/local/bin/bench schedule
+2024-08-27 11:06:27,441 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 11:06:27,499 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 11:06:29,186 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 11:08:24,601 INFO /usr/local/bin/bench restart
+2024-08-27 11:08:25,158 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 11:08:27,920 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 11:08:28,539 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 11:08:28,570 INFO /usr/local/bin/bench schedule
+2024-08-27 11:08:28,941 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 11:08:29,642 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 11:11:05,041 INFO /usr/local/bin/bench restart
+2024-08-27 11:11:05,618 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 11:11:08,344 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 11:11:10,037 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 11:11:10,074 INFO /usr/local/bin/bench schedule
+2024-08-27 11:11:10,098 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 11:11:11,725 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 11:25:38,823 INFO /usr/local/bin/bench restart
+2024-08-27 11:25:39,432 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-web:
+2024-08-27 11:25:42,364 DEBUG cd /home/frappe/frappe-bench && sudo supervisorctl restart frappe-bench-workers:
+2024-08-27 11:25:44,167 INFO /usr/local/bin/bench worker --queue long,default,short
+2024-08-27 11:25:44,253 INFO /usr/local/bin/bench schedule
+2024-08-27 11:25:44,352 INFO /usr/local/bin/bench worker --queue short,default
+2024-08-27 11:25:46,082 INFO A newer version of bench is available: 5.22.6 → 5.22.8
+2024-08-27 12:00:02,054 INFO /usr/local/bin/bench --verbose --site all backup
