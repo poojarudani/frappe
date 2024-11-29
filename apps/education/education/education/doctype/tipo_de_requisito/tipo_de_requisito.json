@@ -6,7 +6,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "requisito"
+  "requisito",
+  "column_break_rhcl",
+  "descripcion"
  ],
  "fields": [
   {
@@ -18,11 +20,21 @@
    "label": "Tipo de requisito",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_rhcl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Descripci\u00f3n del Requisito"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-18 15:16:44.423083",
+ "modified": "2024-10-09 11:46:45.359370",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Tipo de Requisito",

@@ -15,7 +15,7 @@ class PorcentajeFactura(Document):
 		from frappe.types import DF
 
 		curso: DF.Link | None
-		expediente: DF.Link
+		expediente: DF.Link | None
 		importe: DF.Currency
 		parent: DF.Data
 		parentfield: DF.Data

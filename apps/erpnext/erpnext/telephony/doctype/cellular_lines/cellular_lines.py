@@ -17,6 +17,6 @@ class CellularLines(Document):
 		empleado: DF.Link | None
 		numero: DF.Data | None
 		numero_corto: DF.Data | None
-		tipo_linea: DF.Literal["Voz", "Datos", "Centralita"]
+		tipo_linea: DF.Literal["Voz", "Datos", "Centralita", "TalkDesk"]
 	# end: auto-generated types
 	pass

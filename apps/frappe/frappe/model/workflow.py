@@ -103,7 +103,6 @@ def apply_workflow(doc, action):
 	workflow = get_workflow(doc.doctype)
 	transitions = get_transitions(doc, workflow)
 	user = frappe.session.user
-
 	# find the transition
 	transition = None
 	for t in transitions:

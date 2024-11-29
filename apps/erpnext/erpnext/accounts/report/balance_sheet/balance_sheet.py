@@ -5,6 +5,16 @@
 import frappe
 from frappe import _
 from frappe.utils import cint, flt
+from datetime import datetime
+import logging
+
+# Configurar el logger
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/balance_sheet_og.log')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 from erpnext.accounts.report.financial_statements import (
 	get_columns,
@@ -40,6 +50,7 @@ def execute(filters=None):
 		filters=filters,
 		accumulated_values=filters.accumulated_values,
 	)
+	# logger.info(f"asset: {asset}")
 
 	liability = get_data(
 		filters.company,
@@ -100,6 +111,7 @@ def execute(filters=None):
 	report_summary, primitive_summary = get_report_summary(
 		period_list, asset, liability, equity, provisional_profit_loss, currency, filters
 	)
+	# logger.info(f"data: {data}")
 
 	return columns, data, message, chart, report_summary, primitive_summary
 

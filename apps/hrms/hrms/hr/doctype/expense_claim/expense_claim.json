@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2013-01-10 16:34:14",
  "doctype": "DocType",
@@ -211,7 +212,6 @@
    "label": "Accounting Details"
   },
   {
-   "fetch_from": "employee.company",
    "fieldname": "company",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -219,7 +219,6 @@
    "oldfieldname": "company",
    "oldfieldtype": "Link",
    "options": "Company",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -387,7 +386,7 @@
  "idx": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-17 19:38:30.373122",
+ "modified": "2024-10-25 09:41:30.424461",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Expense Claim",
@@ -401,6 +400,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "if_owner": 1,
    "print": 1,
    "read": 1,
    "report": 1,
@@ -412,6 +412,7 @@
   {
    "create": 1,
    "email": 1,
+   "if_owner": 1,
    "print": 1,
    "read": 1,
    "report": 1,
@@ -439,6 +440,7 @@
    "create": 1,
    "delete": 1,
    "email": 1,
+   "if_owner": 1,
    "print": 1,
    "read": 1,
    "report": 1,

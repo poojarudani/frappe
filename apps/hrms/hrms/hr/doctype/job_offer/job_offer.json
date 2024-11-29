@@ -50,8 +50,7 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "label": "Applicant Name",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "allow_on_submit": 1,
@@ -80,16 +79,15 @@
   {
    "fieldname": "offer_date",
    "fieldtype": "Date",
-   "label": "Offer Date",
-   "reqd": 1
+   "label": "Offer Date"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "designation",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Designation",
-   "options": "Designation",
-   "reqd": 1
+   "options": "Designation"
   },
   {
    "fieldname": "company",
@@ -98,8 +96,7 @@
    "label": "Company",
    "options": "Company",
    "print_hide": 1,
-   "remember_last_selected_value": 1,
-   "reqd": 1
+   "remember_last_selected_value": 1
   },
   {
    "fieldname": "section_break_4",
@@ -191,12 +188,12 @@
    "options": "Course"
   },
   {
+   "allow_on_submit": 1,
    "fetch_from": "curso.expediente",
    "fieldname": "expediente",
    "fieldtype": "Link",
    "label": "Expediente",
-   "options": "Program",
-   "read_only": 1
+   "options": "Program"
   },
   {
    "fieldname": "centro_formacion",
@@ -205,12 +202,14 @@
    "options": "Room"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "validator_email",
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Email Validador"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "validated_by",
    "fieldtype": "Link",
    "hidden": 1,
@@ -218,6 +217,7 @@
    "options": "User"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "owner_email",
    "fieldtype": "Data",
    "hidden": 1,
@@ -227,7 +227,7 @@
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-22 11:50:56.377432",
+ "modified": "2024-11-26 12:04:08.218893",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Job Offer",
@@ -254,6 +254,27 @@
  "show_name_in_global_search": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Borrador"
+  },
+  {
+   "color": "Green",
+   "title": "Validado"
+  },
+  {
+   "color": "Red",
+   "title": "Baja"
+  },
+  {
+   "color": "Yellow",
+   "title": "Anula"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelado"
+  }
+ ],
  "title_field": "applicant_name"
 }

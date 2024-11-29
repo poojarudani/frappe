@@ -690,6 +690,7 @@
    "label": "References"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "sales_order",
    "fieldtype": "Link",
    "label": "Sales Order",
@@ -698,7 +699,6 @@
    "oldfieldtype": "Link",
    "options": "Sales Order",
    "print_hide": 1,
-   "read_only": 1,
    "search_index": 1
   },
   {
@@ -941,7 +941,7 @@
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-19 10:13:21.483332",
+ "modified": "2024-10-15 08:29:02.830275",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales Invoice Item",

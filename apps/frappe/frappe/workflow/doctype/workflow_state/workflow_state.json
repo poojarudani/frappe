@@ -34,13 +34,13 @@
    "fieldname": "style",
    "fieldtype": "Select",
    "label": "Style",
-   "options": "\nPrimary\nInfo\nSuccess\nWarning\nDanger\nInverse"
+   "options": "\nPrimary\nInfo\nSuccess\nWarning\nDanger\nInverse\nBorradorStyle"
   }
  ],
  "icon": "fa fa-flag",
  "idx": 1,
  "links": [],
- "modified": "2023-12-08 15:52:37.525003",
+ "modified": "2024-11-18 09:10:40.829625",
  "modified_by": "Administrator",
  "module": "Workflow",
  "name": "Workflow State",

@@ -4,7 +4,7 @@
 		<td width="15"></td>
 		<td>
 			<div class="text-medium text-muted">
-				<h2>{{_("Exit Interview Scheduled:")}} {{ doc.name }}</h2>
+				<span>{{_("Exit Interview Scheduled:")}} {{ doc.name }}</span>
 			</div>
 		</td>
 		<td width="15"></td>
@@ -19,15 +19,15 @@
 		<td>
 			<div>
 				<ul class="list-unstyled" style="line-height: 1.7">
-					<li><b>{{_("Employee")}}: </b>{{ doc.employee }} - {{ doc.employee_name }}</li>
-					<li><b>{{_("Date")}}: </b>{{ frappe.utils.formatdate(doc.date) }}</li>
-					<li><b>{{_("Interviewers")}}:</b> </li>
+					<li>{{_("Employee")}}: <b>{{ doc.employee }} - {{ doc.employee_name }}</b></li>
+					<li>{{_("Date")}}: <b>{{ doc.date }}</b></li>
+					<li> {{_("Interviewers")}}: </li>
 					{% for entry in doc.interviewers %}
 						<ul>
 							<li>{{ entry.user }}</li>
 						</ul>
 					{% endfor %}
-					<li><b>{{ _("Interview Document") }}:</b> {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</li>
+					<li>{{ _("Interview Document") }}: {{ frappe.utils.get_link_to_form(doc.doctype, doc.name) }}</li>
 				</ul>
 			</div>
 		</td>

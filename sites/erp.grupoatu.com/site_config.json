@@ -1,5 +1,9 @@
 {
  "allow_server_script": 1,
+ "cert_finger": "B0:6A:FA:76:97:7D:28:22:C2:D2:DD:0E:F6:84:B9:69:82:86:52:93",
+ "cert_key": "/home/frappe/frappe-bench/certificate/private.key",
+ "cert_path": "/home/frappe/frappe-bench/certificate/certificate.pem",
+ "contrase\u00f1a_cert": "^i@tHcno3$2e$QNUrqvM5U",
  "db_name": "_098c566c1373ba13",
  "db_password": "Ucy4m3XvrxOcRaY7",
  "db_type": "mariadb",
@@ -9,8 +13,13 @@
   "app.grupoatu.com"
  ],
  "encryption_key": "FCfUm2UcOixVkUq1G3AFE5NKNGpaOt9EAtM4SyXIf68=",
+ "id_sp_client": "29eecb58-f8df-4adc-8137-0e524c3362ca",
  "maintenance_mode": 0,
+ "max_file_size": 524288000,
  "pass_sp": "D/888592322871uy",
+ "pause_scheduler": 0,
+ "secret_sp": "Mb58Q~N0G9sNWSUa4~FEgt-F0_Aa.Wfm8alrQaJ9",
+ "tenant_sp": "b9e05df3-745f-4ea8-8299-b7b0d5f15ad3",
  "user_sp": "erp@grupoatu.com",
  "user_type_doctype_limit": {
   "employee_self_service": 30

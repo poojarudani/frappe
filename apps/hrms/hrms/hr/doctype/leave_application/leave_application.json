@@ -78,7 +78,6 @@
    "in_standard_filter": 1,
    "label": "Leave Type",
    "options": "Leave Type",
-   "reqd": 1,
    "search_index": 1
   },
   {
@@ -255,7 +254,7 @@
  "is_submittable": 1,
  "links": [],
  "max_attachments": 3,
- "modified": "2024-04-08 13:56:03.818019",
+ "modified": "2024-10-09 11:05:23.040526",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Leave Application",

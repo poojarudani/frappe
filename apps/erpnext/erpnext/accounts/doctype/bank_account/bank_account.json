@@ -3,6 +3,7 @@
  "allow_import": 1,
  "allow_rename": 1,
  "creation": "2017-05-29 21:35:13.136357",
+ "default_view": "List",
  "doctype": "DocType",
  "document_type": "Setup",
  "engine": "InnoDB",
@@ -208,8 +209,9 @@
    "label": "Disabled"
   }
  ],
+ "force_re_route_to_default_view": 1,
  "links": [],
- "modified": "2023-09-22 21:31:34.763977",
+ "modified": "2024-09-10 05:19:20.355268",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Bank Account",

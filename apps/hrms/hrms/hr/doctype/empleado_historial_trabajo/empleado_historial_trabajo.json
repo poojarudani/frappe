@@ -18,6 +18,7 @@
   {
    "fieldname": "fecha_inicio",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Fecha Inicio"
   },
   {
@@ -32,6 +33,7 @@
   {
    "fieldname": "fecha_fin",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Fecha Fin"
   },
   {
@@ -42,12 +44,14 @@
   {
    "fieldname": "job_offer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Hoja de contratacion",
    "options": "Job Offer"
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Empresa",
    "options": "Company"
   }
@@ -55,7 +59,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-06 13:52:17.400450",
+ "modified": "2024-11-06 12:05:15.255820",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Empleado Historial Trabajo",

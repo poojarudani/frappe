@@ -1,11 +1,6 @@
 {
- "charts": [
-  {
-   "chart_name": "Job Applicant Pipeline",
-   "label": "Pipeline Solicitantes"
-  }
- ],
- "content": "[{\"id\":\"ZEoAw35RfK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"mHm8_aYhSs\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Pipeline Solicitantes\",\"col\":12}},{\"id\":\"pDZ0Pk8sNk\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Candidatos este mes\",\"col\":4}},{\"id\":\"TSd7p4UCsH\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Personas con Discapacidad\",\"col\":4}},{\"id\":\"T8KjtYnpsi\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sin contactar\",\"col\":4}},{\"id\":\"xepXoykemN\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"LMnFL-FVNb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Opening\",\"col\":3}},{\"id\":\"BOczA5gAXn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Applicant\",\"col\":3}},{\"id\":\"h6LkcOPQpV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Offer\",\"col\":3}},{\"id\":\"TrRgFLeATn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"VqqHZk5Ymw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"B0A1wqOP8R\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Interviews (This Week)\",\"col\":6}},{\"id\":\"BSfCSxeOZN\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ouzRaGAJJl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"id\":\"0akZyj1E4k\",\"type\":\"card\",\"data\":{\"card_name\":\"Jobs\",\"col\":4}},{\"id\":\"3Q-ITUYR-W\",\"type\":\"card\",\"data\":{\"card_name\":\"Interviews\",\"col\":4}},{\"id\":\"06gIuB5svR\",\"type\":\"card\",\"data\":{\"card_name\":\"Appointment\",\"col\":4}},{\"id\":\"Q4msp7F8vF\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "charts": [],
+ "content": "[{\"id\":\"ZEoAw35RfK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"xepXoykemN\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"LMnFL-FVNb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Opening\",\"col\":3}},{\"id\":\"BOczA5gAXn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Applicant\",\"col\":3}},{\"id\":\"h6LkcOPQpV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Offer\",\"col\":3}},{\"id\":\"TrRgFLeATn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"ouzRaGAJJl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Maestros y Reportes</span>\",\"col\":12}},{\"id\":\"0akZyj1E4k\",\"type\":\"card\",\"data\":{\"card_name\":\"Trabajos\",\"col\":4}},{\"id\":\"06gIuB5svR\",\"type\":\"card\",\"data\":{\"card_name\":\"Appointment\",\"col\":4}}]",
  "creation": "2022-08-20 13:28:59.962164",
  "custom_blocks": [],
  "docstatus": 0,
@@ -17,56 +12,6 @@
  "is_hidden": 0,
  "label": "Recruitment",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Interviews",
-   "link_count": 4,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Interview Type",
-   "link_count": 0,
-   "link_to": "Interview Type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Interview Round",
-   "link_count": 0,
-   "link_to": "Interview Round",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Interview Type, Interview Round",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Interview",
-   "link_count": 0,
-   "link_to": "Interview",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Interview",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Interview Feedback",
-   "link_count": 0,
-   "link_to": "Interview Feedback",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -99,33 +44,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Reports",
-   "link_count": 1,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Recruitment Analytics",
-   "link_count": 0,
-   "link_to": "Recruitment Analytics",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Jobs",
-   "link_count": 6,
+   "label": "Trabajos",
+   "link_count": 7,
+   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Staffing Plan",
+   "label": "Plan de Personal",
    "link_count": 0,
    "link_to": "Staffing Plan",
    "link_type": "DocType",
@@ -135,7 +63,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Job Requisition",
+   "label": "Solicitud de Vacante",
    "link_count": 0,
    "link_to": "Job Requisition",
    "link_type": "DocType",
@@ -145,7 +73,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Job Opening",
+   "label": "Oportunidad de empleo",
    "link_count": 0,
    "link_to": "Job Opening",
    "link_type": "DocType",
@@ -155,7 +83,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Job Applicant",
+   "label": "Solicitante de empleo",
    "link_count": 0,
    "link_to": "Job Applicant",
    "link_type": "DocType",
@@ -165,7 +93,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Job Offer",
+   "label": "Hoja de Contrataci\u00f3n",
    "link_count": 0,
    "link_to": "Job Offer",
    "link_type": "DocType",
@@ -175,44 +103,35 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Employee Referral",
+   "label": "Recomendaci\u00f3n de empleados",
    "link_count": 0,
    "link_to": "Employee Referral",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Anexos y Llamamientos",
+   "link_count": 0,
+   "link_to": "Modificaciones RRHH",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-08-20 13:21:30.442769",
+ "modified": "2024-11-04 09:44:16.013922",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Recruitment",
- "number_cards": [
-  {
-   "label": "Candidatos este mes",
-   "number_card_name": "Total Applicants (This month)"
-  },
-  {
-   "label": "Personas con Discapacidad",
-   "number_card_name": "Discapacidad"
-  },
-  {
-   "label": "Sin contactar",
-   "number_card_name": "Total Candidatos sin Contactar"
-  }
- ],
+ "number_cards": [],
  "owner": "Administrator",
  "parent_page": "RRHH",
  "public": 1,
- "quick_lists": [
-  {
-   "document_type": "Interview",
-   "label": "Interviews (This Week)",
-   "quick_list_filter": "{\"scheduled_on\":[\"Timespan\",\"this week\"],\"docstatus\":[\"!=\",\"2\"]}"
-  }
- ],
+ "quick_lists": [],
  "roles": [],
- "sequence_id": 14.0,
+ "sequence_id": 17.0,
  "shortcuts": [
   {
    "color": "Grey",

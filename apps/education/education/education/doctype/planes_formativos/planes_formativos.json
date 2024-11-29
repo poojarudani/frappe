@@ -6,10 +6,15 @@
  "engine": "InnoDB",
  "field_order": [
   "detalles_section",
+  "n_plan_formativo",
   "plan_formativo",
   "convocatoria",
   "estado",
+  "abreviatura_categoria",
+  "numero_incremento",
+  "year",
   "column_break_adih",
+  "tipo_de_plan",
   "cat_plan",
   "empresa",
   "fecha_limite"
@@ -18,7 +23,7 @@
   {
    "fieldname": "plan_formativo",
    "fieldtype": "Data",
-   "label": "N\u00ba de Plan Formativo"
+   "label": "Nombre Plan Formativo"
   },
   {
    "fieldname": "convocatoria",
@@ -39,7 +44,7 @@
   {
    "fieldname": "cat_plan",
    "fieldtype": "Link",
-   "label": "Categor\u00eda",
+   "label": "Categor\u00eda de Plan",
    "options": "Planes"
   },
   {
@@ -57,14 +62,61 @@
    "fieldname": "detalles_section",
    "fieldtype": "Section Break",
    "label": "Detalles"
+  },
+  {
+   "fieldname": "n_plan_formativo",
+   "fieldtype": "Data",
+   "label": "N\u00ba Plan Formativo",
+   "length": 30
+  },
+  {
+   "fieldname": "tipo_de_plan",
+   "fieldtype": "Select",
+   "label": "Tipo de Plan",
+   "options": "PB\nPV"
+  },
+  {
+   "fieldname": "abreviatura_categoria",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Abreviatura Plan Formativo"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "A\u00f1o"
+  },
+  {
+   "fieldname": "numero_incremento",
+   "fieldtype": "Data",
+   "label": "Numero Plan Formativo"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-07-16 15:41:54.489983",
+ "is_calendar_and_gantt": 1,
+ "links": [
+  {
+   "group": "Educacion",
+   "link_doctype": "Program",
+   "link_fieldname": "custom_plan"
+  },
+  {
+   "group": "Educacion",
+   "link_doctype": "Course",
+   "link_fieldname": "custom_plan"
+  },
+  {
+   "group": "Educacion",
+   "link_doctype": "Student Group",
+   "link_fieldname": "custom_plan"
+  }
+ ],
+ "modified": "2024-11-22 08:30:48.798092",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Planes Formativos",
+ "naming_rule": "By script",
  "owner": "Administrator",
  "permissions": [
   {

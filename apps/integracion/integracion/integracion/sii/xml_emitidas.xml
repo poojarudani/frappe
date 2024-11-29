@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:siiLR="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroLR.xsd" xmlns:sii="https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii/fact/ws/SuministroInformacion.xsd">
+  <soapenv:Body>
+    <siiLR:SuministroLRFacturasEmitidas>
+      <sii:Cabecera>
+        <sii:IDVersionSii>1.1</sii:IDVersionSii>
+        <sii:Titular>
+          <sii:NombreRazon>Academia Técnica Universitaria SL</sii:NombreRazon>
+          <sii:NIF>B09318916</sii:NIF>
+        </sii:Titular>
+        <sii:TipoComunicacion>A0</sii:TipoComunicacion>
+      </sii:Cabecera>
+      <siiLR:RegistroLRFacturasEmitidas>
+        <sii:PeriodoLiquidacion>
+          <sii:Ejercicio>2024</sii:Ejercicio>
+          <sii:Periodo>11</sii:Periodo>
+        </sii:PeriodoLiquidacion>
+        <siiLR:IDFactura>
+          <sii:IDEmisorFactura>
+            <sii:NIF>B09318916</sii:NIF>
+          </sii:IDEmisorFactura>
+          <sii:NumSerieFacturaEmisor>ATUSL/AR/2400280</sii:NumSerieFacturaEmisor>
+          <sii:FechaExpedicionFacturaEmisor>28-11-2024</sii:FechaExpedicionFacturaEmisor>
+        </siiLR:IDFactura>
+        <siiLR:FacturaExpedida>
+          <sii:TipoFactura>F1</sii:TipoFactura>
+          <sii:ClaveRegimenEspecialOTrascendencia>01</sii:ClaveRegimenEspecialOTrascendencia>
+          <sii:ImporteTotal>1000.00</sii:ImporteTotal>
+          <sii:DescripcionOperacion>Venta de Producto/Servicio</sii:DescripcionOperacion>
+          <sii:Contraparte>
+            <sii:NombreRazon>EL MAHJOUB ZAYD</sii:NombreRazon>
+            <sii:IDOtro>
+              <sii:CodigoPais>MA</sii:CodigoPais>
+              <sii:IDType>04</sii:IDType>
+              <sii:ID>Z1469694E</sii:ID>
+            </sii:IDOtro>
+          </sii:Contraparte>
+          <sii:TipoDesglose>
+            <sii:DesgloseTipoOperacion>
+              <sii:PrestacionServicios>
+                <sii:Sujeta>
+                  <sii:Exenta>
+                    <sii:DetalleExenta>
+                      <sii:CausaExencion>E1</sii:CausaExencion>
+                      <sii:BaseImponible>1000.00</sii:BaseImponible>
+                    </sii:DetalleExenta>
+                  </sii:Exenta>
+                </sii:Sujeta>
+              </sii:PrestacionServicios>
+            </sii:DesgloseTipoOperacion>
+          </sii:TipoDesglose>
+        </siiLR:FacturaExpedida>
+      </siiLR:RegistroLRFacturasEmitidas>
+    </siiLR:SuministroLRFacturasEmitidas>
+  </soapenv:Body>
+</soapenv:Envelope>

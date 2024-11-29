@@ -1281,8 +1281,7 @@
    "label": "Inter Company Invoice Reference",
    "no_copy": 1,
    "options": "Sales Invoice",
-   "print_hide": 1,
-   "read_only": 1
+   "print_hide": 1
   },
   {
    "fieldname": "remarks",
@@ -1639,8 +1638,14 @@
  "icon": "fa fa-file-text",
  "idx": 204,
  "is_submittable": 1,
- "links": [],
- "modified": "2024-08-26 15:18:01.811407",
+ "links": [
+  {
+   "group": "Correcciones",
+   "link_doctype": "Purchase Invoice",
+   "link_fieldname": "amended_from"
+  }
+ ],
+ "modified": "2024-11-26 09:04:47.403930",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Purchase Invoice",

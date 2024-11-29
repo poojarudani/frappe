@@ -9,7 +9,8 @@ app_license = "mit"
 doc_events = {
     "User": {
         "on_update": "integracion.integracion.password_utils.create_user_in_crm",
-        "on_trash": "integracion.integracion.delete_user_crm.delete_user_in_crm"
+        "on_trash": "integracion.integracion.delete_user_crm.delete_user_in_crm",
+        "before_validate": "integracion.integracion.not_set_over.force_disable_user"
     },
     "__Auth": {
         "on_update": "integracion.integracion.password_update.update_password_in_crm"
@@ -17,6 +18,31 @@ doc_events = {
     "File": {
         "on_create" : "integracion.integracion.subir_archivo_sp.on_update_or_create",
         "on_update" : "integracion.integracion.subir_archivo_sp.on_update_or_create"
+    },
+    "Purchase Invoice": {
+        "before_save": "integracion.integracion.subir_archivo_sp.handle_structure_change"
+    },
+    "Sales Invoice": {
+        "before_save": "integracion.integracion.subir_archivo_sp.handle_structure_change",
+        "after_insert": "integracion.integracion.metodos_varios.copy_attachments_from_sales_order"
+    },
+    "Course": {
+        "on_trash": "integracion.integracion.courses_overrides.delete_course_link"
+    },
+    "ToDo":{
+        "after_insert": "integracion.integracion.metodos_varios.notify_on_assign"
+    },
+    "Course": {
+        "after_insert": "integracion.integracion.courses_overrides.send_course_to_crm"
+    },
+    "Project": {
+        "after_insert": "integracion.integracion.subir_archivo_sp.create_project_folder"
+    },
+    "Task": {
+        "on_update": "integracion.integracion.task_update.update_activity_state"
+    },
+    "Modificaciones RRHH": {
+        "on_submit": "integracion.integracion.renombrar_hoja.update_job_offer_and_employee"
     }
 }
 
@@ -31,38 +57,96 @@ override_whitelisted_methods = {
     "education.education.doctype.course.course.add_course_to_programs": "integracion.integracion.sii.sii_integracion.custom_add_course_to_programs",
     "education.education.doctype.course.course.get_programs_without_course": "integracion.integracion.sii.sii_integracion.custom_get_programs_without_course",
     "integracion.integracion.custom_pdf_make.custom_download_and_attach_pdf": "integracion.integracion.custom_pdf_make.custom_download_and_attach_pdf",
-    "integracion.invoice_from_email": "integracion.integracion.invoice_from_email.invoice_from_email"
+    "integracion.invoice_from_email": "integracion.integracion.invoice_from_email.invoice_from_email",
+    "integracion.make_employee": "integracion.integracion.make_employee.make_employee",
+    "integracion.subir_nominas": "integracion.integracion.subir_nominas.subir_nominas",
+    "integracion.import_journal_entries": "integracion.integracion.import_journal_entries.import_journal_entries",
+    "hrms.hr.doctype.employee_onboarding.employee_onboarding.make_employee": "integracion.integracion.employee_onboarding_overr.make_employee",
+    "integracion.chage_state_to_baja": "integracion.integracion.renombrar_hoja.change_state_to_baja",
+    "integracion.export_expense_claim_summary": "integracion.integracion.export_excel.export_expense_claim_summary",
+    "integracion.get_reconciled_transaction_count": "integracion.integracion.number_card_scripts.get_reconciled_transaction_count",
+    "integracion.get_prom_reconciled_transaction": "integracion.integracion.number_card_scripts.get_prom_reconciled_transaction"
+
+    #"erpnext.accounts.doctype.bank_transaction.bank_transaction.reconcile_vouchers": "integracion.integracion.bank_tool_over.reconcile_vouchers"
+
+    #"erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice": "integracion.integracion.metodos_varios.make_sales_invoice",
 
 }
 
+permission_query_conditions = {
+    "Job Offer": "integracion.integracion.permissions.job_offer_query",
+    "User": "integracion.integracion.permissions.user_query",
+    "Project": "integracion.integracion.permissions.project_query",
+    "Attendance": "integracion.integracion.permissions.attendance_query",
+    #"Course": "integracion.integracion.permissions.course_query"
+}
 
 
 override_doctype_class = {
     "Purchase Invoice": "integracion.integracion.purchase_invoice_override.CustomPurchaseInvoice",
-    "Job Offer": "integracion.integracion.job_offer_override.CustomJobOffer"
+    "Job Offer": "integracion.integracion.job_offer_override.CustomJobOffer",
+    "Opportunity": "integracion.integracion.opportunity_override.CustomOpportunity",
+    "Student": "integracion.integracion.student_override.CustomStudent",
+    "Employee Onboarding": "integracion.integracion.employee_onboarding_overr.CustomEmployeeOnboarding",
+    "Employee Onboarding Controller": "integracion.integracion.empl_onb_con_over.CustomEmployeeBoardingController",
+    "Program Enrollment": "integracion.integracion.program_override.CustomProgramEnrollment",
+    "Bank Statement Import": "integracion.integracion.bank_tool_over.CustomBankStatementImport",
+    "Account": "integracion.integracion.account_override.CustomAccount",
+    "Assignment Rule": "integracion.integracion.assignament_override.AssignmentRuleOverride",
+    "Employee Separation" : "integracion.integracion.employee_sep_over.CustomEmployeeSeparation",
+
+}
+
+override_doctype_dashboards = {
+   "Planes Formativos": "integracion.integracion.planes_formativos_dashboard.get_data"
 }
 
 
 scheduler_events = {
     "cron": {
-        "*/5 * * * *": [
-            "integracion.integracion.export_to_csv.export_web_form_data"
-        ]
+        "0 16 * * *":[
+            #"integracion.integracion.hc_diary_noti.enviar_notificacion_a_asesoria"
+        ],
+        
     },
     "daily": [
-        # "integracion.integracion.employee_status_update.update_employee_status",
-        # "integracion.integracion.employee_status_update.disable_inactive_employee_users"
+        "integracion.integracion.employee_status_update.check_contract_end"
+        "integracion.integracion.employee_status_update.update_employee_status",
+        "integracion.integracion.employee_status_update.disable_inactive_employee_users"
 ]
 }
 
 # Añadir el enlace de Font Awesome al encabezado de HTML
 app_include_css = [
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css",
+    "/assets/integracion/css/custom_styles.css"
 ]
 
 app_include_js = [
-    "/assets/integracion/js/custom_printview.js"
+    "/assets/integracion/js/custom_printview.js",
+    "/assets/integracion/js/custom_communication.js",
+    "/assets/integracion/js/custom_buttonsactu.js",
+    "/assets/integracion/js/custom_notify.js",
+    "/assets/integracion/js/custom_genlibmyr.js",
+    "/assets/integracion/js/custom_balanceshote.js",
+    "/assets/integracion/js/custom_profit_and_loss_statement.js",
+    "/assets/integracion/js/custom_mte_attendance.js",
+    "/assets/integracion/js/custom_indicator.js"
 ]
+
+page_js = {
+    "user-profile": "public/js/custom_user_p.js"
+}
+
+
+
+
+doctype_js = {
+    "Opportunity": "public/js/custom_opportunity.js",
+    "Program Enrollment": "public/js/program_enrollment.js",
+    "Student Applicant": "public/js/student_applicant.js",
+}
+
 
 # required_apps = []
 

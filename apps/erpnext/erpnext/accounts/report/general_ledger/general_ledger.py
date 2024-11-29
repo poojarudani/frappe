@@ -3,6 +3,7 @@
 
 
 from collections import OrderedDict
+from datetime import datetime
 
 import frappe
 from frappe import _, _dict
@@ -207,6 +208,20 @@ def get_gl_entries(filters, accounting_dimensions):
 		filters,
 		as_dict=1,
 	)
+
+	# Custom
+	# F. Proveedor
+	# Cargar en todas las GL Entry el campo bill_date, si el campo no está definido, saldrá vacío
+	for entry in gl_entries:
+		bill_date = frappe.db.get_value("Purchase Invoice", entry["voucher_no"], "bill_date")
+		entry["bill_date"] = bill_date
+
+	# HACK Si está el filtro, agregarlo despues de la consulta para no tener que rehacer el código
+
+	if filters.get("bill_date"):
+		gl_entries = list(filter(
+			lambda gle: gle["bill_date"] == datetime.strptime(filters["bill_date"], "%Y-%m-%d").date(), gl_entries
+		))
 
 	if filters.get("presentation_currency"):
 		return convert_to_presentation_currency(gl_entries, currency_map)
@@ -568,6 +583,7 @@ def get_columns(filters):
 			"hidden": 1,
 		},
 		{"label": _("Posting Date"), "fieldname": "posting_date", "fieldtype": "Date", "width": 100},
+		{"label": _("Bill Date"), "fieldname": "bill_date", "fieldtype": "Date", "width": 100},
 		{
 			"label": _("Account"),
 			"fieldname": "account",

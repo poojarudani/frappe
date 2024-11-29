@@ -1,6 +1,5 @@
 {
  "actions": [],
- "autoname": "DL.####",
  "creation": "2013-01-29 17:55:08",
  "doctype": "DocType",
  "document_type": "Document",
@@ -9,6 +8,7 @@
  "field_order": [
   "details_tab",
   "doc_type",
+  "exportar_telefonos",
   "properties",
   "label",
   "search_fields",
@@ -60,7 +60,8 @@
   "fields_section_break",
   "fields",
   "form_tab",
-  "form_builder"
+  "form_builder",
+  "prueba"
  ],
  "fields": [
   {
@@ -392,6 +393,17 @@
    "fieldname": "sender_name_field",
    "fieldtype": "Data",
    "label": "Sender Name Field"
+  },
+  {
+   "fieldname": "prueba",
+   "fieldtype": "Table",
+   "label": "prueba",
+   "options": "Contacto Centro Formativo"
+  },
+  {
+   "fieldname": "exportar_telefonos",
+   "fieldtype": "Button",
+   "label": "Exportar Telefonos"
   }
  ],
  "hide_toolbar": 1,
@@ -400,11 +412,10 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-06-27 16:23:50.567146",
+ "modified": "2024-11-15 12:15:45.991511",
  "modified_by": "Administrator",
  "module": "Custom",
  "name": "Customize Form",
- "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

@@ -4,31 +4,41 @@ import logging
 from logging.handlers import RotatingFileHandler
 from urllib.parse import quote, urlsplit, urlunsplit, urlencode, parse_qs
 from office365.runtime.auth.user_credential import UserCredential
+from office365.runtime.auth.client_credential import ClientCredential
 from office365.sharepoint.client_context import ClientContext
 import frappe
+from dataclasses import dataclass
+import requests
+import re
+import inspect
 from frappe import _
 
 # Leer credenciales desde el archivo de configuración del sitio
 site_config = frappe.get_site_config()
 user_email = site_config.get('user_sp')
 user_password = site_config.get('pass_sp')
+id_cliente = site_config.get('id_sp_client')
+secret_sp = site_config.get('secret_sp')
+tenant_id = site_config.get('tenant_sp')
+auth_url = f"https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token"
+cert_pass = site_config.get('cert_key')
+cert_path = site_config.get('cert_path')
+cert_finger = site_config.get('cert_finger')  # Huella digital del certificado
+
 
 # Configurar el logger
 logger = logging.getLogger(__name__)
-
-# Crear un RotatingFileHandler
-# maxBytes es el tamaño máximo del archivo en bytes antes de que se rote
-# backupCount es el número de archivos de respaldo que se conservarán
-handler = RotatingFileHandler(
-    '/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/upload_sp.log',
-    maxBytes=5 * 1024 * 1024,  # 5 MB
-    backupCount=3  # Mantener hasta 3 archivos de log antiguos
-)
-
+handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/sharepoint_subida.log')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
+# Crear un RotatingFileHandler
+handler = RotatingFileHandler(
+    '/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/sharepoint_subida.log',
+    maxBytes=5 * 1024 * 1024,  # 5 MB
+    backupCount=3  # Mantener hasta 3 archivos de log antiguos
+)
 
 # Mapeo de doctype a estructura de carpetas
 folder_structure_map = {
@@ -38,37 +48,63 @@ folder_structure_map = {
     "Job Offer": ["applicant_name - custom_dninie", "name"],
     "Program": ["name"],
     "Project": ["name"],
+    "Room": ["custom_modalidad", "name"],
+    "Modificaciones RRHH": ["applicant_name - dni" ,"job_offer","Anexos","name"],
     # Añade aquí más doctypes y su estructura de carpetas 
 }
 
+
+
+def connect_to_sharepoint_with_token(site_url):
+    try:
+        # Usar el certificado y la huella digital para autenticarse directamente
+        logger.info(f"Conectando al contexto del sitio: {site_url} con huella digital: {cert_finger} y ruta de certificado: {cert_path}")
+
+        # Configurar el contexto de cliente con el certificado
+        ctx = ClientContext(site_url).with_client_certificate(
+            client_id=id_cliente,
+            thumbprint=cert_finger.replace(":", "").upper(),
+            cert_path=cert_path,
+            tenant=tenant_id
+        )
+        
+        # Probar la conexión accediendo a algún recurso básico
+        web = ctx.web.get().execute_query()
+        logger.info(f"Conexión exitosa al sitio SharePoint: {web.properties['Title']}")
+        
+        return ctx
+    except Exception as e:
+        logger.error(f"Error al conectar a SharePoint con certificado: {e}")
+        return None
+
 def sanitize_name(name):
     """
-    Reemplaza caracteres prohibidos en SharePoint con un guion.
+    Reemplaza caracteres prohibidos en SharePoint con un guion, 
+    elimina dobles espacios, y quita espacios al inicio o final.
     """
-    return name.translate(str.maketrans({
+    # Reemplaza caracteres prohibidos
+    sanitized_name = name.translate(str.maketrans({
         '*': '-', '"': '-', ':': '-', '<': '-', '>': '-', '?': '-', '/': '-', '\\': '-', '|': '-', ',': '-', '.': '-'
     }))
+    
+    # Reemplaza dobles o más espacios por uno solo
+    sanitized_name = re.sub(r'\s+', ' ', sanitized_name)
+
+    # Elimina espacios al inicio y al final
+    sanitized_name = sanitized_name.strip()
+
+    return sanitized_name
 
 def sanitize_url(url):
     """
     Sanitiza la URL codificando los caracteres especiales, incluidos en el path, query y fragment.
     """
-    # Divide la URL en sus componentes
     split_url = urlsplit(url)
-    
-    # Sanitiza el path, que es la parte que suele tener caracteres especiales
     sanitized_path = quote(split_url.path, safe='/')
-    
-    # Sanitiza la query si existe
     sanitized_query = urlencode({k: quote(v[0], safe='') for k, v in parse_qs(split_url.query).items()})
-    
-    # Sanitiza el fragmento si existe
     sanitized_fragment = quote(split_url.fragment, safe='')
 
-    # Vuelve a ensamblar la URL completa con el path, query y fragmento sanitizados
-    sanitized_url = urlunsplit((split_url.scheme, split_url.netloc, sanitized_path, sanitized_query, sanitized_fragment))
-    
-    return sanitized_url
+    return urlunsplit((split_url.scheme, split_url.netloc, sanitized_path, sanitized_query, sanitized_fragment))
 
 def get_folder_structure(doctype, docname, foldername):
     """
@@ -81,11 +117,9 @@ def get_folder_structure(doctype, docname, foldername):
     fields = folder_structure_map[doctype]
     try:
         document = frappe.get_doc(doctype, docname)
-        # Crear la estructura utilizando los campos del documento, sanitizando cada nombre
         structure = []
         for field in fields:
             if ' - ' in field:
-                # Si el campo es una combinación, dividirlo y combinar los valores
                 parts = field.split(' - ')
                 combined_field_value = ' - '.join(sanitize_name(document.get(part)) for part in parts if document.get(part))
                 if combined_field_value:
@@ -94,21 +128,26 @@ def get_folder_structure(doctype, docname, foldername):
                 structure.append(sanitize_name(foldername))  # Usa el docname directamente
             elif document.get(field):
                 structure.append(sanitize_name(document.get(field)))
+            else:
+                structure.append(sanitize_name(field))
         
         logger.info(f"Estructura de carpetas para {doctype} {docname}: {structure}")
         return structure
     except Exception as e:
         logger.error(f"Error al obtener la estructura de carpetas para {doctype} {docname}: {e}")
         return []
+    
+
 
 def create_folder_if_not_exists(ctx, folder_relative_url, folder_name):
     try:
+        logger.info(f"ctx.web: {dir(ctx.web)}")
+
         logger.info(f"Comprobando existencia de carpeta en la ruta: {folder_relative_url}/{folder_name}")
-        logger.info(f"Ruta relativa de carpeta: {folder_relative_url}")
+        folder_relative_url = folder_relative_url.replace("%20", " ")
         parent_folder = ctx.web.get_folder_by_server_relative_url(f"{folder_relative_url}")
         ctx.load(parent_folder)
         ctx.execute_query()
-        logger.info(f"Conectado a parent {parent_folder}")
 
         folders = parent_folder.folders
         ctx.load(folders)
@@ -124,6 +163,190 @@ def create_folder_if_not_exists(ctx, folder_relative_url, folder_name):
     except Exception as e:
         logger.error(f"Error verificando/creando carpeta en {folder_relative_url}/{folder_name}: {e}")
         raise
+
+
+def handle_structure_change(doc, method):
+    try:
+        doctype = doc.doctype
+        docname = doc.name
+
+        logger.info(f"Verificando cambios estructurales en el documento {doctype} - {docname}")
+        
+        if doctype not in folder_structure_map:
+            logger.info(f"No hay estructura definida para el doctype {doctype}, omitiendo.")
+            return
+        
+        fields_to_check = folder_structure_map[doctype]
+        
+        # Compara los valores antiguos y los nuevos usando la base de datos directamente
+        changes_detected = False
+        old_values = {}
+        new_values = {}
+        
+        for field in fields_to_check:
+            if field == "name":
+                continue  # El nombre del documento no debería cambiar, omítelo
+            
+            # Obtener tanto el valor antiguo como el nuevo valor desde la base de datos directamente
+            old_value = frappe.db.get_value(doctype, docname, field)
+            new_value = doc.get(field)  # Valor del objeto actual antes de guardar
+
+            logger.info(f"Comprobando el campo {field}. Valor anterior: {old_value}, Valor nuevo: {new_value}")
+            
+            if old_value != new_value:
+                logger.info(f"Cambio detectado en el campo {field}: de {old_value} a {new_value}.")
+                old_values[field] = old_value
+                new_values[field] = new_value
+                changes_detected = True
+        
+        if changes_detected:
+            logger.info(f"Se han detectado cambios en los valores clave. Iniciando proceso de mover carpetas.")
+            
+            # Obtener la estructura de carpetas antigua
+            old_folder_structure = get_old_folder_structure(doctype, docname, old_values.get('name', docname))
+            
+            # Obtener la estructura de carpetas nueva basada en los valores "nuevos"
+            new_folder_structure = get_new_folder_structure(doctype, new_values, docname)
+
+            if not old_folder_structure or not new_folder_structure:
+                logger.error(f"Error al construir la estructura de carpetas. Estructura antigua: {old_folder_structure}, Estructura nueva: {new_folder_structure}")
+                return
+
+            logger.info(f"Estructura de carpetas anterior: {old_folder_structure}")
+            logger.info(f"Estructura de carpetas nueva: {new_folder_structure}")
+            
+            # Obtener la URL de SharePoint del documento
+            parent_folder_full_url = None
+            biblioteca_name = frappe.db.get_value('Bibliotecas SP Docnames', {'docname': docname}, 'parent')
+
+            if biblioteca_name:
+                parent_folder_full_url = frappe.db.get_value('Bibliotecas SP', biblioteca_name, 'url_sp')
+                logger.info(f"URL encontrada en la tabla hija para {doctype} con docname {docname}: {parent_folder_full_url}")
+            else:
+                biblioteca_name = frappe.db.get_value('Bibliotecas SP', {'documento': doctype}, 'name')
+                if not biblioteca_name:
+                    logger.info(f"No se encontró ningún documento en 'Bibliotecas SP' para {doctype}.")
+                    return
+                
+                doc_biblioteca = frappe.get_doc('Bibliotecas SP', biblioteca_name)
+
+                if doc_biblioteca.docnames:
+                    matching_entry = next((entry for entry in doc_biblioteca.docnames if entry.docname == docname), None)
+                    if matching_entry:
+                        parent_folder_full_url = doc_biblioteca.url_sp
+                    else:
+                        logger.info(f"No se encontró una coincidencia en la tabla hija para {docname}, cancelando la ejecución.")
+                        return
+                else:
+                    parent_folder_full_url = doc_biblioteca.url_sp
+                    logger.info(f"Usando la URL general para {doctype}: {parent_folder_full_url}")
+            
+            # Verificar que se obtuvo la URL correcta
+            if not parent_folder_full_url:
+                logger.error("No se pudo obtener la URL de la carpeta en SharePoint.")
+                return
+
+            # Obtener la ruta relativa en SharePoint
+            start_idx = parent_folder_full_url.find('/sites/')
+            if start_idx == -1:
+                logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
+                return
+            
+            site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
+            site_relative_path = parent_folder_full_url[start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/') + 1:]
+            logger.info(f"Ruta relativa calculada: {site_relative_path}")
+            logger.info(f"Conectando al contexto del sitio: {site_url}")
+
+            # Conectar a SharePoint
+            ctx = connect_to_sharepoint_with_token(site_url)
+
+            # Asegúrate de que las carpetas en la nueva ruta existan, como en el método `upload_file_to_sharepoint`
+            current_relative_path = site_relative_path.strip('/')
+            for folder_name in new_folder_structure[:-1]:
+                folder_name_sanitized = sanitize_name(folder_name)
+                logger.info(f"Verificando existencia o creando carpeta: {current_relative_path}/{folder_name_sanitized}")
+                create_folder_if_not_exists(ctx, current_relative_path, folder_name_sanitized)
+                current_relative_path = f"{current_relative_path}/{folder_name_sanitized}".strip('/')
+
+            # Ahora que las carpetas padre están creadas o verificadas, movemos la carpeta final
+            old_relative_path = f"{site_relative_path}/{'/'.join([sanitize_name(f) for f in old_folder_structure])}"
+            new_relative_path = f"{current_relative_path}/{sanitize_name(new_folder_structure[-1])}"
+
+            logger.info(f"Moviendo carpeta {old_relative_path} a {new_relative_path}")
+
+            try:
+                destination_parent_path = "/".join(new_relative_path.split('/')[:-1])
+                old_folder = ctx.web.get_folder_by_server_relative_url(old_relative_path)
+                old_folder.move_to(destination_parent_path).execute_query()
+                logger.info(f"Carpeta movida exitosamente de {old_relative_path} a {destination_parent_path}")
+            except Exception as e:
+                logger.error(f"Error al mover la carpeta de {old_relative_path} a {new_relative_path}: {e}")
+        else:
+            logger.info(f"No se detectaron cambios en los valores clave, no se requiere mover carpetas.")
+    except Exception as e:
+        logger.error(f"Error en handle_structure_change para {docname}: {e}")
+
+# Método para obtener la estructura antigua
+def get_old_folder_structure(doctype, docname, foldername):
+    """
+    Devuelve la estructura de carpetas basada en los valores antiguos de la base de datos.
+    """
+    if doctype not in folder_structure_map:
+        logger.error(f"No se encontró estructura de carpetas para el doctype {doctype}")
+        return []
+
+    fields = folder_structure_map[doctype]
+    try:
+        structure = []
+        for field in fields:
+            if ' - ' in field:
+                parts = field.split(' - ')
+                combined_field_value = ' - '.join(sanitize_name(frappe.db.get_value(doctype, docname, part)) for part in parts if frappe.db.get_value(doctype, docname, part))
+                if combined_field_value:
+                    structure.append(combined_field_value)
+            elif field == "name":
+                structure.append(sanitize_name(foldername))  # Usa el docname directamente
+            else:
+                value = frappe.db.get_value(doctype, docname, field)
+                if value:
+                    structure.append(sanitize_name(value))
+        
+        logger.info(f"Estructura de carpetas antigua para {doctype} {docname}: {structure}")
+        return structure
+    except Exception as e:
+        logger.error(f"Error al obtener la estructura de carpetas antigua para {doctype} {docname}: {e}")
+        return []
+
+# Método para obtener la estructura nueva basada en los valores nuevos detectados
+def get_new_folder_structure(doctype, new_values, foldername):
+    """
+    Devuelve la estructura de carpetas basada en los valores nuevos detectados.
+    """
+    if doctype not in folder_structure_map:
+        logger.error(f"No se encontró estructura de carpetas para el doctype {doctype}")
+        return []
+
+    fields = folder_structure_map[doctype]
+    try:
+        structure = []
+        for field in fields:
+            if ' - ' in field:
+                parts = field.split(' - ')
+                combined_field_value = ' - '.join(sanitize_name(new_values.get(part)) for part in parts if new_values.get(part))
+                if combined_field_value:
+                    structure.append(combined_field_value)
+            elif field == "name":
+                structure.append(sanitize_name(foldername))  # Usa el docname directamente
+            else:
+                value = new_values.get(field)
+                if value:
+                    structure.append(sanitize_name(value))
+        
+        logger.info(f"Estructura de carpetas nueva para {doctype}: {structure}")
+        return structure
+    except Exception as e:
+        logger.error(f"Error al obtener la estructura de carpetas nueva para {doctype}: {e}")
+        return []
 
 def upload_file_to_sharepoint(doc, method):
     logger.info(f"Hook llamado al subir File: {doc.name}")
@@ -210,8 +433,7 @@ def upload_file_to_sharepoint(doc, method):
         logger.info(f"Ruta relativa calculada: {site_relative_path}")
         logger.info(f"Conectando al contexto del sitio: {site_url}")
 
-        credentials = UserCredential(user_email, user_password)
-        ctx = ClientContext(site_url).with_credentials(credentials)
+        ctx = connect_to_sharepoint_with_token(site_url)
 
         folder_structure = get_folder_structure(doctype_name, docname, foldername)
         if not folder_structure:
@@ -258,6 +480,7 @@ def get_sharepoint_structure(doctype, docname):
     lista = []
     project_type = None
     
+    # Verificación específica para "Project"
     if doctype == "Project":
         project_doc = frappe.get_doc('Project', docname)
         if project_doc.project_type:
@@ -276,7 +499,6 @@ def get_sharepoint_structure(doctype, docname):
         )
         logger.info(f"Tabla hija: {biblioteca_name}")
     else:
-
         biblioteca_name = frappe.db.get_value(
             'Bibliotecas SP Docnames', 
             {'docname': docname}, 
@@ -328,17 +550,83 @@ def get_sharepoint_structure(doctype, docname):
     logger.info(f"Ruta relativa calculada: {site_relative_path}")
     logger.info(f"Conectando al contexto del sitio: {site_url}")
 
-    credentials = UserCredential(user_email, user_password)
-    ctx = ClientContext(site_url).with_credentials(credentials)
+    ctx = connect_to_sharepoint_with_token(site_url)
+    folder_check = ctx.web.get_folder_by_server_relative_url
 
-    def carpeta_existe(ctx, folder_relative_url, folder_name):
+
+    def carpeta_existe(ctx, folder_relative_url, folder_name, modalidad=None, doctype=None):
+        """
+        Modificado para buscar carpetas recursivamente y manejar modalidad.
+        La modalidad solo se usa si el doctype es "Room".
+        """
         try:
-            folder = ctx.web.get_folder_by_server_relative_url(f"{folder_relative_url}/{folder_name}")
-            ctx.load(folder)
-            ctx.execute_query()
-            return True
+            if doctype == "Room":
+                if modalidad:
+                    logger.info(f"Buscando carpeta por modalidad: {modalidad}")
+                    # Si hay modalidad, buscamos la carpeta exacta con ese nombre
+                    modalidad_folder_url = f"{folder_relative_url}/{sanitize_name(modalidad)}"
+                    modalidad_folder_url = modalidad_folder_url.replace("%20", " ")
+                    carpeta = ctx.web.get_folder_by_server_relative_url(modalidad_folder_url)
+                    ctx.load(carpeta)
+                    ctx.execute_query()
+                    logger.info(f"Carpeta modalidad encontrada: {modalidad_folder_url}")
+                    return modalidad_folder_url  # Retorna la URL si se encuentra la carpeta
+                else:
+                    # Si no hay modalidad o no existe, buscamos recursivamente carpetas que comiencen con folder_name
+                    logger.info("No hay modalidad, buscando recursivamente en subcarpetas.")
+                    return buscar_carpeta_en_subcarpetas(ctx, folder_relative_url, folder_name)
+            else:
+                try:
+                    carpeta_url = f"{folder_relative_url}/{folder_name}"
+                    carpeta_url = carpeta_url.replace("%20", " ")
+                    logger.info(f"Verificando existencia de carpeta en la ruta: {carpeta_url}")
+                    
+                    carpeta = ctx.web.get_folder_by_server_relative_url(carpeta_url)
+                    logger.info(f"Carpeta: {type(carpeta)}")
+                    ctx.load(carpeta)
+                    try:
+                        logger.debug(f"Contenido de pending_request antes de execute_query: {ctx.pending_request()}")
+                        ctx.execute_query()
+                    except Exception as e:
+                        logger.error(f"Error cargando carpeta: {e}")
+                    logger.info(f"Folder loaded: {ctx}")
+                    return True
+                except Exception as e:
+                    logger.error(f"Error verificando existencia de carpeta en {carpeta_url}: {e}")
+                    return False
+
         except Exception as e:
             logger.error(f"Error verificando existencia de carpeta en {folder_relative_url}/{folder_name}: {e}")
+            return False
+
+    def buscar_carpeta_en_subcarpetas(ctx, folder_relative_url, folder_name):
+        """
+        Función recursiva para buscar carpetas en todas las subcarpetas.
+        """
+        try:
+            root_folder = ctx.web.get_folder_by_server_relative_url(folder_relative_url)
+            folders = root_folder.folders
+            ctx.load(folders)
+            ctx.execute_query()
+
+            for folder in folders:
+                folder_name_in_sp = folder.properties['Name']
+                if folder_name_in_sp.startswith(folder_name):
+                    logger.info(f"Se encontró una carpeta que comienza con '{folder_name}': {folder_name_in_sp}")
+                    return f"{folder_relative_url}/{folder_name_in_sp}"  # Devuelve la ruta completa
+
+            for folder in folders:
+                folder_name_in_sp = folder.properties['Name']
+                subfolder_relative_url = f"{folder_relative_url}/{folder_name_in_sp}"
+                
+                result = buscar_carpeta_en_subcarpetas(ctx, subfolder_relative_url, folder_name)
+                if result:
+                    return result
+
+            return False
+
+        except Exception as e:
+            logger.error(f"Error buscando carpeta en subcarpetas desde {folder_relative_url}: {e}")
             return False
 
     # Obtener la estructura de carpetas
@@ -347,6 +635,11 @@ def get_sharepoint_structure(doctype, docname):
         logger.error(f"No se encontró la estructura de carpetas para {doctype} con nombre {docname}")
         return json.dumps([])
 
+    # Aplicar la modalidad solo si el doctype es "Room"
+    modalidad = None
+    if doctype == "Room":
+        modalidad = frappe.db.get_value(doctype, docname, 'custom_modalidad')  
+    logger.info(f"MODALIDAD: {modalidad}")
     # Verificar si existe la carpeta final basada en la estructura
     current_relative_path = site_relative_path.strip('/')
     carpeta_actual = None
@@ -354,7 +647,18 @@ def get_sharepoint_structure(doctype, docname):
         folder_name_sanitized = sanitize_name(folder_name)
         folder_name_encoded = quote(folder_name_sanitized)
         next_relative_path = f"{current_relative_path}/{folder_name_encoded}".strip('/')
-        if carpeta_existe(ctx, current_relative_path, folder_name_encoded):
+        logger.info(f"Verificando existencia de carpeta en la ruta: {current_relative_path}/{folder_name_encoded}")
+        
+        # Usar modalidad si está presente y es el primer nivel de la estructura
+        if i == 0 and modalidad:
+            modalidad_folder_url = carpeta_existe(ctx, current_relative_path, folder_name_encoded, modalidad,doctype)
+            modalidad = None  # Solo se usa la modalidad en el primer nivel
+            if modalidad_folder_url:
+                current_relative_path = modalidad_folder_url.strip('/')
+                logger.info(f"Carpeta modalidad utilizada: {modalidad_folder_url}")
+                continue
+
+        if carpeta_existe(ctx, current_relative_path, folder_name_encoded,modalidad,doctype):
             logger.info(f"La carpeta ya existe: {next_relative_path}")
             if i == len(folder_structure) - 1:
                 carpeta_raiz = {
@@ -376,6 +680,7 @@ def get_sharepoint_structure(doctype, docname):
 
     logger.info(f"Lista: {json.dumps(lista)}")
     return json.dumps(lista)
+
 
 
 def procesa_carpeta(ctx, share, ruta, carpeta_actual):
@@ -415,3 +720,96 @@ def procesa_carpeta(ctx, share, ruta, carpeta_actual):
         logger.info(f"Estructura obtenida: {json.dumps(carpeta_actual)}")
     except Exception as e:
         logger.error(f"Error procesando la carpeta {ruta}: {e}")
+
+
+def create_project_folder(doc, method):
+    """
+    Hook para crear la carpeta base automáticamente cuando se inserta un proyecto.
+    """
+    logger.info(f"Creando carpeta para el proyecto: {doc.name}")
+    
+    try:
+        doctype = "Project"
+        docname = doc.name
+        foldername = sanitize_name(docname)
+        
+        # Obtener la URL de SharePoint del documento
+        parent_folder_full_url = None
+        project_type = None
+        
+        if doc.project_type:
+            project_type = doc.project_type
+            biblioteca_name = frappe.db.get_value(
+                'Bibliotecas SP Docnames',
+                {'docname': project_type},
+                'parent'
+            )
+            logger.info(f"Tabla hija: {biblioteca_name}")
+        else:
+            biblioteca_name = frappe.db.get_value(
+                'Bibliotecas SP Docnames',
+                {'docname': docname},
+                'parent'
+            )
+            logger.info(f"Tabla hija: {biblioteca_name}")
+        
+        if biblioteca_name:
+            parent_folder_full_url = frappe.db.get_value('Bibliotecas SP', biblioteca_name, 'url_sp')
+            logger.info(f"URL encontrada en la tabla hija para Project con docname {docname}: {parent_folder_full_url}")
+        else:
+            # Si no se encuentra en la tabla hija, buscar en 'Bibliotecas SP' general
+            biblioteca_name = frappe.db.get_value('Bibliotecas SP', {'documento': doctype}, 'name')
+            if not biblioteca_name:
+                logger.info(f"No se encontró ningún documento en 'Bibliotecas SP' para {doctype}.")
+                return
+
+            doc_biblioteca = frappe.get_doc('Bibliotecas SP', biblioteca_name)
+
+            if doc_biblioteca.docnames:
+                matching_entry = next((entry for entry in doc_biblioteca.docnames if entry.docname == docname), None)
+                if matching_entry:
+                    parent_folder_full_url = doc_biblioteca.url_sp
+                else:
+                    logger.info(f"No se encontró una coincidencia en la tabla hija para {docname}, cancelando la ejecución.")
+                    return
+            else:
+                parent_folder_full_url = doc_biblioteca.url_sp
+                logger.info(f"Usando la URL general para {doctype}: {parent_folder_full_url}")
+
+        # Verificar que se obtuvo la URL correcta
+        if not parent_folder_full_url:
+            logger.error("No se pudo obtener la URL de la carpeta en SharePoint.")
+            return
+
+        # Obtener la ruta relativa en SharePoint
+        start_idx = parent_folder_full_url.find('/sites/')
+        if start_idx == -1:
+            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
+            return
+
+        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
+        site_relative_path = parent_folder_full_url[start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/') + 1:]
+        logger.info(f"Ruta relativa calculada: {site_relative_path}")
+        logger.info(f"Conectando al contexto del sitio: {site_url}")
+
+        # Conectar a SharePoint
+        ctx = connect_to_sharepoint_with_token(site_url)
+
+        # Obtener la estructura de carpetas del proyecto
+        folder_structure = get_folder_structure(doctype, docname, foldername)
+        if not folder_structure:
+            logger.error(f"No se encontró la estructura de carpetas para {doctype} con nombre {docname}")
+            return
+
+        # Crear la estructura de carpetas en SharePoint
+        current_relative_path = site_relative_path.strip('/')
+        for folder_name in folder_structure:
+            folder_name_sanitized = sanitize_name(folder_name)
+            logger.info(f"Verificando existencia o creando carpeta: {current_relative_path}/{folder_name_sanitized}")
+            create_folder_if_not_exists(ctx, current_relative_path, folder_name_sanitized)
+            current_relative_path = f"{current_relative_path}/{folder_name_sanitized}".strip('/')
+
+        logger.info(f"Carpeta creada exitosamente para el proyecto {docname}.")
+
+    except Exception as e:
+        logger.error(f"Error al crear la carpeta para el proyecto {docname}: {e}")

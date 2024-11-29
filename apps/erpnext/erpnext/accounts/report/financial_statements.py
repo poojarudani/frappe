@@ -6,6 +6,8 @@ import functools
 import math
 import re
 
+import logging 
+
 import frappe
 from frappe import _
 from frappe.utils import add_days, add_months, cint, cstr, flt, formatdate, get_first_day, getdate
@@ -16,6 +18,13 @@ from erpnext.accounts.doctype.accounting_dimension.accounting_dimension import (
 )
 from erpnext.accounts.report.utils import convert_to_presentation_currency, get_currency
 from erpnext.accounts.utils import get_fiscal_year
+# Configurar el logger
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/financial_statement_v1.log')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 
 def get_period_list(
@@ -151,66 +160,82 @@ def get_label(periodicity, from_date, to_date):
 
 
 def get_data(
-	company,
-	root_type,
-	balance_must_be,
-	period_list,
-	filters=None,
-	accumulated_values=1,
-	only_current_fiscal_year=True,
-	ignore_closing_entries=False,
-	ignore_accumulated_values_for_fy=False,
-	total=True,
+    company,
+    root_type,
+    balance_must_be,
+    period_list,
+    filters=None,
+    accumulated_values=1,
+    only_current_fiscal_year=True,
+    ignore_closing_entries=False,
+    ignore_accumulated_values_for_fy=False,
+    total=True,
 ):
-	accounts = get_accounts(company, root_type)
-	if not accounts:
-		return None
+    logger.info("Getting data for company: %s, root_type: %s, balance_must_be: %s, period_list: %s", company, root_type, balance_must_be, period_list)
+    logger.info("Filters: %s", filters)
 
-	accounts, accounts_by_name, parent_children_map = filter_accounts(accounts)
+    accounts = get_accounts(company, root_type)
+    if not accounts:
+        return None
 
-	company_currency = get_appropriate_currency(company, filters)
+    # logger.info("Accounts retrieved: %s", [account['name'] for account in accounts])
 
-	gl_entries_by_account = {}
-	for root in frappe.db.sql(
-		"""select lft, rgt from tabAccount
-			where root_type=%s and ifnull(parent_account, '') = ''""",
-		root_type,
-		as_dict=1,
-	):
-		set_gl_entries_by_account(
-			company,
-			period_list[0]["year_start_date"] if only_current_fiscal_year else None,
-			period_list[-1]["to_date"],
-			root.lft,
-			root.rgt,
-			filters,
-			gl_entries_by_account,
-			ignore_closing_entries=ignore_closing_entries,
-			root_type=root_type,
-		)
+    accounts, accounts_by_name, parent_children_map = filter_accounts(accounts)
+    # logger.info("Filtered Accounts by name: %s", list(accounts_by_name.keys()))
 
-	calculate_values(
-		accounts_by_name,
-		gl_entries_by_account,
-		period_list,
-		accumulated_values,
-		ignore_accumulated_values_for_fy,
-	)
-	accumulate_values_into_parents(accounts, accounts_by_name, period_list)
-	out = prepare_data(
-		accounts,
-		balance_must_be,
-		period_list,
-		company_currency,
-		accumulated_values=filters.accumulated_values,
-	)
-	out = filter_out_zero_value_rows(out, parent_children_map)
+    company_currency = get_appropriate_currency(company, filters)
+    logger.info("Company currency: %s", company_currency)
 
-	if out and total:
-		add_total_row(out, root_type, balance_must_be, period_list, company_currency)
+    gl_entries_by_account = {}
+    for root in frappe.db.sql(
+        """select lft, rgt from tabAccount
+            where root_type=%s and ifnull(parent_account, '') = ''""",
+        root_type,
+        as_dict=1,
+    ):
+        set_gl_entries_by_account(
+            company,
+            period_list[0]["year_start_date"] if only_current_fiscal_year else None,
+            period_list[-1]["to_date"],
+            root.lft,
+            root.rgt,
+            filters,
+            gl_entries_by_account,
+            ignore_closing_entries=ignore_closing_entries,
+            root_type=root_type,
+        )
+    # logger.info("GL entries by account: %s", gl_entries_by_account)
 
-	return out
+    calculate_values(
+        accounts_by_name,
+        gl_entries_by_account,
+        period_list,
+        accumulated_values,
+        ignore_accumulated_values_for_fy,
+    )
+    # logger.info("Accounts by name after calculation: %s", {k: v for k, v in accounts_by_name.items() if '430' in k})
 
+    accumulate_values_into_parents(accounts, accounts_by_name, period_list)
+    # logger.info("Accounts after accumulation: %s", [account['name'] for account in accounts if '430' in account['name']])
+    # logger.info("Accounts by name after accumulation step: %s", {k: v for k, v in accounts_by_name.items() if '430' in k})
+
+    out = prepare_data(
+        accounts,
+        balance_must_be,
+        period_list,
+        company_currency,
+        accumulated_values=filters.accumulated_values,
+    )
+    # logger.info("Data after preparation: %s", [row for row in out if '430' in row.get('account', '')])
+
+    out = filter_out_zero_value_rows(out, parent_children_map)
+    # logger.info("Data after filtering out zero value rows: %s", [row for row in out if '430' in row.get('account', '')])
+
+    if out and total:
+        add_total_row(out, root_type, balance_must_be, period_list, company_currency)
+
+    # logger.info("Final Data: %s", [row for row in out if '430' in row.get('account', '')])
+    return out
 
 def get_appropriate_currency(company, filters=None):
 	if filters and filters.get("presentation_currency"):
@@ -220,47 +245,47 @@ def get_appropriate_currency(company, filters=None):
 
 
 def calculate_values(
-	accounts_by_name,
-	gl_entries_by_account,
-	period_list,
-	accumulated_values,
-	ignore_accumulated_values_for_fy,
+    accounts_by_name,
+    gl_entries_by_account,
+    period_list,
+    accumulated_values,
+    ignore_accumulated_values_for_fy,
 ):
-	for entries in gl_entries_by_account.values():
-		for entry in entries:
-			d = accounts_by_name.get(entry.account)
-			if not d:
-				frappe.msgprint(
-					_("Could not retrieve information for {0}.").format(entry.account),
-					title="Error",
-					raise_exception=1,
-				)
-			for period in period_list:
-				# check if posting date is within the period
-
-				if entry.posting_date <= period.to_date:
-					if (accumulated_values or entry.posting_date >= period.from_date) and (
-						not ignore_accumulated_values_for_fy
-						or entry.fiscal_year == period.to_date_fiscal_year
-					):
-						d[period.key] = d.get(period.key, 0.0) + flt(entry.debit) - flt(entry.credit)
-
-			if entry.posting_date < period_list[0].year_start_date:
-				d["opening_balance"] = d.get("opening_balance", 0.0) + flt(entry.debit) - flt(entry.credit)
-
+    for entries in gl_entries_by_account.values():
+        for entry in entries:
+            d = accounts_by_name.get(entry.account)
+            if not d:
+                frappe.msgprint(
+                    _(f"Could not retrieve information for {entry.account}.").format(entry.account),
+                    title="Error",
+                    raise_exception=1,
+                )
+            # logger.info("Processing GL Entry for account: %s", entry.account)
+            for period in period_list:
+                # check if posting date is within the period
+                if entry.posting_date <= period.to_date:
+                    if (accumulated_values or entry.posting_date >= period.from_date) and (
+                        not ignore_accumulated_values_for_fy
+                        or entry.fiscal_year == period.to_date_fiscal_year
+                    ):
+                        d[period.key] = d.get(period.key, 0.0) + flt(entry.debit) - flt(entry.credit)
+            if entry.posting_date < period_list[0].year_start_date:
+                d["opening_balance"] = d.get("opening_balance", 0.0) + flt(entry.debit) - flt(entry.credit)
+    #logger.info("Accounts by name after calculate_values: %s", {k: v for k, v in accounts_by_name.items() if '430' in k})
 
 def accumulate_values_into_parents(accounts, accounts_by_name, period_list):
-	"""accumulate children's values in parent accounts"""
-	for d in reversed(accounts):
-		if d.parent_account:
-			for period in period_list:
-				accounts_by_name[d.parent_account][period.key] = accounts_by_name[d.parent_account].get(
-					period.key, 0.0
-				) + d.get(period.key, 0.0)
-
-			accounts_by_name[d.parent_account]["opening_balance"] = accounts_by_name[d.parent_account].get(
-				"opening_balance", 0.0
-			) + d.get("opening_balance", 0.0)
+    """accumulate children's values in parent accounts"""
+    for d in reversed(accounts):
+        if d.parent_account:
+            # logger.info("Accumulating values for account: %s into parent account: %s", d['name'], d.parent_account)
+            for period in period_list:
+                accounts_by_name[d.parent_account][period.key] = accounts_by_name[d.parent_account].get(
+                    period.key, 0.0
+                ) + d.get(period.key, 0.0)
+            accounts_by_name[d.parent_account]["opening_balance"] = accounts_by_name[d.parent_account].get(
+                "opening_balance", 0.0
+            ) + d.get("opening_balance", 0.0)
+    #logger.info("Accounts by name after accumulate_values_into_parents: %s", {k: v for k, v in accounts_by_name.items() if '430' in k})
 
 
 def prepare_data(accounts, balance_must_be, period_list, company_currency, accumulated_values):
@@ -416,88 +441,92 @@ def sort_accounts(accounts, is_root=False, key="name"):
 
 
 def set_gl_entries_by_account(
-	company,
-	from_date,
-	to_date,
-	root_lft,
-	root_rgt,
-	filters,
-	gl_entries_by_account,
-	ignore_closing_entries=False,
-	ignore_opening_entries=False,
-	root_type=None,
+    company,
+    from_date,
+    to_date,
+    root_lft,
+    root_rgt,
+    filters,
+    gl_entries_by_account,
+    ignore_closing_entries=False,
+    ignore_opening_entries=False,
+    root_type=None,
 ):
-	"""Returns a dict like { "account": [gl entries], ... }"""
-	gl_entries = []
+    """Returns a dict like { "account": [gl entries], ... }"""
+    logger.info("Setting GL entries for company: %s, root_lft: %s, root_rgt: %s", company, root_lft, root_rgt)
+    gl_entries = []
 
-	account_filters = {
-		"company": company,
-		"is_group": 0,
-		"lft": (">=", root_lft),
-		"rgt": ("<=", root_rgt),
-	}
+    account_filters = {
+        "company": company,
+        "is_group": 0,
+        "lft": (">=", root_lft),
+        "rgt": ("<=", root_rgt),
+    }
 
-	if root_type:
-		account_filters.update(
-			{
-				"root_type": root_type,
-			}
-		)
+    if root_type:
+        account_filters.update(
+            {
+                "root_type": root_type,
+            }
+        )
 
-	accounts_list = frappe.db.get_all(
-		"Account",
-		filters=account_filters,
-		pluck="name",
-	)
+    accounts_list = frappe.db.get_all(
+        "Account",
+        filters=account_filters,
+        pluck="name",
+    )
+    logger.info("Accounts list retrieved: %s", accounts_list)
 
-	if accounts_list:
-		# For balance sheet
-		ignore_closing_balances = frappe.db.get_single_value(
-			"Accounts Settings", "ignore_account_closing_balance"
-		)
-		if not from_date and not ignore_closing_balances:
-			last_period_closing_voucher = frappe.db.get_all(
-				"Period Closing Voucher",
-				filters={
-					"docstatus": 1,
-					"company": filters.company,
-					"posting_date": ("<", filters["period_start_date"]),
-				},
-				fields=["posting_date", "name"],
-				order_by="posting_date desc",
-				limit=1,
-			)
-			if last_period_closing_voucher:
-				gl_entries += get_accounting_entries(
-					"Account Closing Balance",
-					from_date,
-					to_date,
-					accounts_list,
-					filters,
-					ignore_closing_entries,
-					last_period_closing_voucher[0].name,
-				)
-				from_date = add_days(last_period_closing_voucher[0].posting_date, 1)
-				ignore_opening_entries = True
+    if accounts_list:
+        # For balance sheet
+        ignore_closing_balances = frappe.db.get_single_value(
+            "Accounts Settings", "ignore_account_closing_balance"
+        )
+        if not from_date and not ignore_closing_balances:
+            last_period_closing_voucher = frappe.db.get_all(
+                "Period Closing Voucher",
+                filters={
+                    "docstatus": 1,
+                    "company": filters.company,
+                    "posting_date": ("<", filters["period_start_date"]),
+                },
+                fields=["posting_date", "name"],
+                order_by="posting_date desc",
+                limit=1,
+            )
+            # logger.info("Last period closing voucher: %s", last_period_closing_voucher)
+            if last_period_closing_voucher:
+                gl_entries += get_accounting_entries(
+                    "Account Closing Balance",
+                    from_date,
+                    to_date,
+                    accounts_list,
+                    filters,
+                    ignore_closing_entries,
+                    last_period_closing_voucher[0].name,
+                )
+                from_date = add_days(last_period_closing_voucher[0].posting_date, 1)
+                ignore_opening_entries = True
 
-		gl_entries += get_accounting_entries(
-			"GL Entry",
-			from_date,
-			to_date,
-			accounts_list,
-			filters,
-			ignore_closing_entries,
-			ignore_opening_entries=ignore_opening_entries,
-		)
+        gl_entries += get_accounting_entries(
+            "GL Entry",
+            from_date,
+            to_date,
+            accounts_list,
+            filters,
+            ignore_closing_entries,
+            ignore_opening_entries=ignore_opening_entries,
+        )
+        # logger.info("GL entries retrieved: %s", gl_entries)
 
-		if filters and filters.get("presentation_currency"):
-			convert_to_presentation_currency(gl_entries, get_currency(filters))
+        if filters and filters.get("presentation_currency"):
+            convert_to_presentation_currency(gl_entries, get_currency(filters))
 
-		for entry in gl_entries:
-			gl_entries_by_account.setdefault(entry.account, []).append(entry)
+        for entry in gl_entries:
+            gl_entries_by_account.setdefault(entry.account, []).append(entry)
 
-		return gl_entries_by_account
-
+    # logger.info("GL entries by account after setting: %s", gl_entries_by_account)
+    return gl_entries_by_account
 
 def get_accounting_entries(
 	doctype,

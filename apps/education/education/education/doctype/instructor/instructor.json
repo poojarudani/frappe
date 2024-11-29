@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
- "autoname": "format:{instructor_name}",
+ "autoname": "naming_series:",
  "creation": "2015-11-04 15:56:30.004034",
  "doctype": "DocType",
  "document_type": "Other",
@@ -11,15 +11,14 @@
   "employee",
   "gender",
   "mail",
+  "dni",
   "column_break_5",
   "status",
   "naming_series",
   "department",
   "image",
   "log_details",
-  "instructor_log",
-  "grupos_section",
-  "groups"
+  "instructor_log"
  ],
  "fields": [
   {
@@ -99,24 +98,19 @@
    "label": "Email"
   },
   {
-   "fieldname": "grupos_section",
-   "fieldtype": "Section Break",
-   "label": "Grupos"
-  },
-  {
-   "fieldname": "groups",
-   "fieldtype": "Table",
-   "label": "Grupos",
-   "options": "Student Group Instructor"
+   "fieldname": "dni",
+   "fieldtype": "Data",
+   "label": "DNI",
+   "unique": 1
   }
  ],
  "image_field": "image",
  "links": [],
- "modified": "2024-08-21 14:59:23.991353",
+ "modified": "2024-11-14 13:19:09.103023",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Instructor",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

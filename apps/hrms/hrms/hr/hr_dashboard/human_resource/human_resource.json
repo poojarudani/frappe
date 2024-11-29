@@ -48,16 +48,20 @@
   {
    "chart": "Department Wise Employee Count",
    "width": "Half"
+  },
+  {
+   "chart": "Empleados sin Departamento",
+   "width": "Half"
   }
  ],
  "creation": "2023-11-17 14:10:56.741833",
  "dashboard_name": "Human Resource",
  "docstatus": 0,
  "doctype": "Dashboard",
- "idx": 0,
+ "idx": 14,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-01-08 14:06:32.104261",
+ "modified": "2024-10-09 12:59:58.677416",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Human Resource",

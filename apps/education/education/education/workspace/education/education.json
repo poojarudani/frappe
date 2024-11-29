@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"kPDXosF_36\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"M9f80RiBg-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"kjn-PeQqa1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student\",\"col\":3}},{\"id\":\"HkSo_TH74e\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructor\",\"col\":3}},{\"id\":\"PCMoc9tc_K\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Program\",\"col\":3}},{\"id\":\"Xq6CSAeATl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course\",\"col\":3}},{\"id\":\"xxjcSj__5e\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"VkVspJGqYQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student Monthly Attendance Sheet\",\"col\":3}},{\"id\":\"vfDR1CThl5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course Scheduling Tool\",\"col\":3}},{\"id\":\"25LD73fDQ5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student Attendance Tool\",\"col\":3}},{\"id\":\"syV1UYrgXd\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_iVVUE4qZL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Maestros y Reportes</b></span>\",\"col\":12}},{\"id\":\"WhCpeh8evz\",\"type\":\"card\",\"data\":{\"card_name\":\"Student and Instructor\",\"col\":4}},{\"id\":\"zuYoZvBO0_\",\"type\":\"card\",\"data\":{\"card_name\":\"Maestros\",\"col\":4}},{\"id\":\"3gGgyWyn0r\",\"type\":\"card\",\"data\":{\"card_name\":\"Content Masters\",\"col\":4}},{\"id\":\"9dBmFwGKS6\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"qRTpZK9024\",\"type\":\"card\",\"data\":{\"card_name\":\"Admission\",\"col\":4}},{\"id\":\"CcvHgLgyYi\",\"type\":\"card\",\"data\":{\"card_name\":\"Fees\",\"col\":4}},{\"id\":\"kydSuuZSdB\",\"type\":\"card\",\"data\":{\"card_name\":\"Schedule\",\"col\":4}},{\"id\":\"WGne39384b\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":4}},{\"id\":\"fQ0TQuXwz9\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessment\",\"col\":4}},{\"id\":\"shkmvB71Ov\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessment Reports\",\"col\":4}},{\"id\":\"ZWW4wtFwLa\",\"type\":\"card\",\"data\":{\"card_name\":\"Tools\",\"col\":4}},{\"id\":\"Y_MEmzWdEh\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"kPDXosF_36\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"M9f80RiBg-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"kjn-PeQqa1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student\",\"col\":3}},{\"id\":\"HkSo_TH74e\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instructor\",\"col\":3}},{\"id\":\"PCMoc9tc_K\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Program\",\"col\":3}},{\"id\":\"Xq6CSAeATl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course\",\"col\":3}},{\"id\":\"xxjcSj__5e\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"VkVspJGqYQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student Monthly Attendance Sheet\",\"col\":3}},{\"id\":\"vfDR1CThl5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Course Scheduling Tool\",\"col\":3}},{\"id\":\"25LD73fDQ5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student Attendance Tool\",\"col\":3}},{\"id\":\"syV1UYrgXd\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_iVVUE4qZL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Maestros y Reportes</b></span>\",\"col\":12}},{\"id\":\"WhCpeh8evz\",\"type\":\"card\",\"data\":{\"card_name\":\"Student and Instructor\",\"col\":4}},{\"id\":\"zuYoZvBO0_\",\"type\":\"card\",\"data\":{\"card_name\":\"Maestros\",\"col\":4}},{\"id\":\"3gGgyWyn0r\",\"type\":\"card\",\"data\":{\"card_name\":\"Maestros de contenido\",\"col\":4}},{\"id\":\"9dBmFwGKS6\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuraci\u00f3n\",\"col\":4}},{\"id\":\"qRTpZK9024\",\"type\":\"card\",\"data\":{\"card_name\":\"Admisi\u00f3n\",\"col\":4}},{\"id\":\"CcvHgLgyYi\",\"type\":\"card\",\"data\":{\"card_name\":\"Fees\",\"col\":4}},{\"id\":\"kydSuuZSdB\",\"type\":\"card\",\"data\":{\"card_name\":\"Schedule\",\"col\":4}},{\"id\":\"WGne39384b\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":4}},{\"id\":\"fQ0TQuXwz9\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessment\",\"col\":4}},{\"id\":\"shkmvB71Ov\",\"type\":\"card\",\"data\":{\"card_name\":\"Assessment Reports\",\"col\":4}},{\"id\":\"ZWW4wtFwLa\",\"type\":\"card\",\"data\":{\"card_name\":\"Tools\",\"col\":4}},{\"id\":\"ADNcVXKfbY\",\"type\":\"card\",\"data\":{\"card_name\":\"Documentos personalizados\",\"col\":4}}]",
  "creation": "2020-03-02 17:22:57.066401",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,14 +12,6 @@
  "is_hidden": 0,
  "label": "Education",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Content Masters",
-   "link_count": 0,
-   "onboard": 0,
-   "type": "Card Break"
-  },
   {
    "dependencies": "",
    "hidden": 0,
@@ -52,14 +44,6 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Settings",
-   "link_count": 0,
-   "onboard": 0,
-   "type": "Card Break"
   },
   {
    "dependencies": "",
@@ -126,14 +110,6 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Admission",
-   "link_count": 0,
-   "onboard": 0,
-   "type": "Card Break"
   },
   {
    "dependencies": "",
@@ -547,14 +523,6 @@
    "type": "Link"
   },
   {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Other Reports",
-   "link_count": 0,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
    "dependencies": "Program Enrollment",
    "hidden": 0,
    "is_query_report": 1,
@@ -562,6 +530,68 @@
    "link_count": 0,
    "link_to": "Student and Guardian Contact Details",
    "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maestros de contenido",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Art\u00edculo",
+   "link_count": 0,
+   "link_to": "Article",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "V\u00eddeo",
+   "link_count": 0,
+   "link_to": "Video",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cuestionario",
+   "link_count": 0,
+   "link_to": "Quiz",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Especialidades",
+   "link_count": 0,
+   "link_to": "Especialidades Formativas",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Certificados",
+   "link_count": 0,
+   "link_to": "Certificados de Profesionalidad",
+   "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   },
@@ -599,7 +629,7 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Acciones / Cursos",
+   "label": "Acciones Formativas",
    "link_count": 0,
    "link_to": "Course",
    "link_type": "DocType",
@@ -610,7 +640,7 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Tema",
+   "label": "M\u00f3dulo",
    "link_count": 0,
    "link_to": "Topic",
    "link_type": "DocType",
@@ -632,7 +662,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Student and Instructor",
-   "link_count": 6,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -693,18 +723,124 @@
    "type": "Link"
   },
   {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Admisi\u00f3n",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Centros de Formaci\u00f3n",
+   "label": "Estudiante Solicitante",
    "link_count": 0,
-   "link_to": "Room",
+   "link_to": "Student Applicant",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Admisi\u00f3n de Estudiantes",
+   "link_count": 0,
+   "link_to": "Student Admission",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Preinscripci\u00f3n al curso",
+   "link_count": 0,
+   "link_to": "Course Enrollment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuraci\u00f3n",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuraci\u00f3n de Educaci\u00f3n",
+   "link_count": 0,
+   "link_to": "Education Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Categor\u00eda estudiante",
+   "link_count": 0,
+   "link_to": "Student Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Nombre de Lote del Estudiante",
+   "link_count": 0,
+   "link_to": "Student Batch Name",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Escala de calificaci\u00f3n",
+   "link_count": 0,
+   "link_to": "Grading Scale",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "T\u00e9rmino acad\u00e9mico",
+   "link_count": 0,
+   "link_to": "Academic Term",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "A\u00f1o acad\u00e9mico",
+   "link_count": 0,
+   "link_to": "Academic Year",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-08-01 14:29:53.893628",
+ "modified": "2024-11-08 10:31:48.110720",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Education",
@@ -715,7 +851,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 11.0,
+ "sequence_id": 14.0,
  "shortcuts": [
   {
    "color": "Grey",

@@ -6,8 +6,6 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "job_applicant",
-  "job_offer",
   "employee_onboarding_template",
   "column_break_7",
   "company",
@@ -18,11 +16,12 @@
   "employee_name",
   "department",
   "designation",
-  "employee_grade",
-  "holiday_list",
+  "job_applicant",
   "column_break_13",
   "date_of_joining",
   "boarding_begins_on",
+  "holiday_list",
+  "employee_grade",
   "table_for_activity",
   "activities",
   "notify_users_by_email",
@@ -30,33 +29,19 @@
  ],
  "fields": [
   {
-   "fieldname": "job_applicant",
-   "fieldtype": "Link",
-   "label": "Job Applicant",
-   "options": "Job Applicant",
-   "reqd": 1
-  },
-  {
-   "fieldname": "job_offer",
-   "fieldtype": "Link",
-   "label": "Job Offer",
-   "options": "Job Offer",
-   "reqd": 1
-  },
-  {
    "fetch_from": "job_applicant.applicant_name",
    "fieldname": "employee_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
-   "label": "Employee Name",
-   "reqd": 1
+   "label": "Employee Name"
   },
   {
    "fieldname": "employee",
    "fieldtype": "Link",
    "label": "Employee",
    "options": "Employee",
-   "read_only": 1
+   "reqd": 1
   },
   {
    "fieldname": "date_of_joining",
@@ -70,13 +55,14 @@
    "default": "Pending",
    "fieldname": "boarding_status",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Status",
    "options": "Pending\nIn Process\nCompleted",
    "read_only": 1
   },
   {
    "allow_on_submit": 1,
-   "default": "0",
+   "default": "1",
    "fieldname": "notify_users_by_email",
    "fieldtype": "Check",
    "label": "Notify users by email"
@@ -92,10 +78,11 @@
    "options": "Employee Onboarding Template"
   },
   {
+   "default": "Grupo ATU",
    "fetch_from": "employee_onboarding_template.company",
    "fieldname": "company",
    "fieldtype": "Link",
-   "label": "Company",
+   "label": "Empresa",
    "options": "Company",
    "reqd": 1
   },
@@ -105,7 +92,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Department",
-   "options": "Department"
+   "options": "Department",
+   "reqd": 1
   },
   {
    "fetch_from": "employee_onboarding_template.designation",
@@ -113,14 +101,16 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Designation",
-   "options": "Designation"
+   "options": "Designation",
+   "reqd": 1
   },
   {
    "fetch_from": "employee_onboarding_template.employee_grade",
    "fieldname": "employee_grade",
    "fieldtype": "Link",
    "label": "Employee Grade",
-   "options": "Employee Grade"
+   "options": "Employee Grade",
+   "reqd": 1
   },
   {
    "fieldname": "project",
@@ -169,12 +159,20 @@
    "fieldname": "holiday_list",
    "fieldtype": "Link",
    "label": "Holiday List",
-   "options": "Holiday List"
+   "options": "Holiday List",
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_applicant",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "job applicant",
+   "options": "Job Applicant"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-27 13:09:39.939109",
+ "modified": "2024-11-04 11:13:48.193111",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "Employee Onboarding",

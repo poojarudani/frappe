@@ -10,11 +10,16 @@
   "first_name",
   "middle_name",
   "last_name",
+  "dni",
+  "course",
   "column_break_8",
   "naming_series",
   "application_date",
   "application_status",
   "program",
+  "employment_situation",
+  "observaciones",
+  "student_link",
   "section_break_xuzu",
   "student_email_id",
   "student_admission",
@@ -70,6 +75,7 @@
    "label": "Last Name"
   },
   {
+   "fetch_from": "acci\u00f3n_formativa.expediente",
    "fieldname": "program",
    "fieldtype": "Link",
    "in_filter": 1,
@@ -78,7 +84,7 @@
    "in_standard_filter": 1,
    "label": "Program",
    "options": "Program",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "default": "0",
@@ -118,8 +124,7 @@
    "fieldname": "academic_year",
    "fieldtype": "Link",
    "label": "Academic Year",
-   "options": "Academic Year",
-   "reqd": 1
+   "options": "Academic Year"
   },
   {
    "fieldname": "academic_term",
@@ -178,8 +183,9 @@
   },
   {
    "fieldname": "nationality",
-   "fieldtype": "Data",
-   "label": "Nationality"
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
   },
   {
    "fieldname": "home_address",
@@ -211,8 +217,9 @@
   },
   {
    "fieldname": "state",
-   "fieldtype": "Data",
-   "label": "State"
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "Provincias"
   },
   {
    "fieldname": "section_break_20",
@@ -289,12 +296,48 @@
    "fieldtype": "Link",
    "label": "Country",
    "options": "Country"
+  },
+  {
+   "fieldname": "dni",
+   "fieldtype": "Data",
+   "label": "DNI/NIF",
+   "reqd": 1
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Acci\u00f3n Formativa",
+   "options": "Course",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employment_situation",
+   "fieldtype": "Select",
+   "label": "Situaci\u00f3n Laboral",
+   "options": "\nDesempleado/a\nCuenta Ajena\nCuenta Propia (Aut\u00f3nomo)\nEmpresa"
+  },
+  {
+   "fieldname": "observaciones",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "student_link",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Estudiante",
+   "options": "Student"
   }
  ],
- "filters": [],
  "image_field": "image",
- "links": [],
- "modified": "2023-12-06 16:27:13.360469",
+ "links": [
+  {
+   "group": "Estudiante",
+   "link_doctype": "Student",
+   "link_fieldname": "student_applicant"
+  }
+ ],
+ "modified": "2024-11-28 10:21:17.660868",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Student Applicant",

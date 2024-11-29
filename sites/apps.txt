@@ -1,4 +1,7 @@
 frappe
+custom_education
+crm_custom
+chat
 integracion
 erpnext
 lms
@@ -6,6 +9,9 @@ education
 crm
 print_designer
 payments
+moodle_integration
 frappe_whatsapp
 wiki
+helpdesk
 hrms
+notification_bell

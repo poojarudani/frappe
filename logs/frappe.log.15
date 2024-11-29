@@ -1,3 +1,1755 @@
-2024-08-07 09:12:47,453 ERROR frappe New Exception collected in error log
+2024-11-22 10:07:45,669 ERROR frappe Failed to capture exception
 Site: erp.grupoatu.com
-Form Dict: {'doc': '{"name":"HR-OFF-2024-00141","owner":"luz.dolera@grupoatu.com","creation":"2024-08-02 09:19:24.035033","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":5,"custom_empleado":"21511493F","job_applicant":"laura.pastor@nuestrared.net","applicant_name":"LAURA TERESA PASTOR BOTELLA","applicant_email":"laura.pastor@nuestrared.net","custom_dninie":"21511493F","custom_no_seguridad_social":"03/1027291885","custom_fecha_de_nacimiento":"1970-01-01","custom_dirección_de_contacto":"laura.pastor@nuestrared.net","custom_direccion":"CL/ASTRONOMO COMAS SOLA 4 (03007) ALICANTE/ALACANT","custom_categoría_profesional":"Profesor/a","custom_discapacidad":0,"status":"Accepted","offer_date":"2024-08-02","custom_fecha_inicio":"2024-08-08","custom_fecha_fin":"2024-08-22","custom_necesaria_confirmación_de_baja":"No","designation":"Profesor/a Titulado/a","custom_tipo_de_contrato":"Fijo Discontinuo","company":"Academia Técnica Universitaria SL","centro_formacion":"300001262","custom_código_postal":"03007","custom_iban":"ES5721002363882200102869","custom_provincia":"Alicante/Alacant","custom_numero_de_movil":"629 51 08 86","job_offer_term_template":"Docentes Presencial/Aula Virtual","terms":"<div class=\\"ql-editor read-mode\\"><p><strong style=\\"color: rgb(230, 0, 0);\\"><u>LLAMAMIENTO </u></strong></p></div>","doctype":"Job Offer","registro_horas":[{"name":"r7i1svs2vn","owner":"luz.dolera@grupoatu.com","creation":"2024-08-02 09:19:24.035033","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":1,"mes":"Agosto","horas":50,"horas_extras":0,"parent":"HR-OFF-2024-00141","parentfield":"registro_horas","parenttype":"Job Offer","doctype":"Hoja de Contratacion Horas"}],"offer_terms":[{"name":"ql6pk1dj3s","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":1,"offer_term":"PLAN FORMATIVO","value":"Plan Comunidad Valenciana","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pjo87tc","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":2,"offer_term":"Curso","value":"SEAG026PO: GESTION DE RESIDUOS INDUSTRIALES","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pg25e7m","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":3,"offer_term":"Nº EXPEDIENTE","value":"FFS15/2023/139 5.3","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pi96p70","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":4,"offer_term":"Lugar de impartición","value":"ACADEMÍA TÉCNICA UNIVERSITARIA\\nC/LOS DOSCIENTOS, 8 esq C/GENERAL BONANZA, 1\\n03007. ALICANTE","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6p3o68r6","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":5,"offer_term":"Comienzo del contrato","value":"De 08/08/2024","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pjptfap","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":6,"offer_term":"Fin del contrato","value":"Hasta 22/08/2024","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6plkahj4","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":7,"offer_term":"Horario","value":"15:30 horas a 20:30 horas","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6p9baj2c","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":8,"offer_term":"Días de la semana","value":"Lunes a viernes","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6psqj2lp","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":9,"offer_term":"Horas mensuales","value":" Agosto 50h","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6pfig6t9","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":10,"offer_term":"Horas Totales","value":"50 HORAS","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6peg6koo","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":11,"offer_term":"Precio/hora/bruto","value":"23€h/brutos","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"},{"name":"ql6p2cl6fd","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-08-07 08:15:41.369665","modified_by":"vegap@grupoatu.com","docstatus":0,"idx":12,"offer_term":"Retención","value":"20%","parent":"HR-OFF-2024-00141","parentfield":"offer_terms","parenttype":"Job Offer","doctype":"Job Offer Term"}],"__onload":{"employee":""},"__last_sync_on":"2024-08-07T07:12:42.990Z"}', 'action': 'Submit', 'cmd': 'frappe.desk.form.save.savedocs'}
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,691 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,706 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,719 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,732 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,745 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,762 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,790 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,810 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,829 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,848 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,863 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,876 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,889 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,902 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,916 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,932 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,960 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,979 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:45,992 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,006 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,030 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,045 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,062 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,075 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,088 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,102 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,116 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,129 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,146 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,160 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,177 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,190 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,203 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,223 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,237 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,251 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,266 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,280 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,296 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,337 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,363 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,396 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,414 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,431 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,447 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,469 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,488 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,509 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,522 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,535 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,552 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,566 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,579 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,592 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,606 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,618 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,631 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,644 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,656 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,670 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,682 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,695 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,711 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,730 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,743 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,756 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,769 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,792 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,826 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,852 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,867 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,880 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,895 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,908 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,921 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,934 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,948 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,960 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,973 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,986 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:46,999 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,015 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,042 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,056 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,069 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,086 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,100 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,113 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,129 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,155 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,167 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,180 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,193 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,206 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,219 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,232 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,245 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,257 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,274 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,292 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,305 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,318 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,330 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,342 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,355 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,367 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,381 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,394 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,408 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,421 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,435 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,449 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,463 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,477 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,490 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,503 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,516 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,529 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,542 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,556 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,569 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,584 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,597 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,612 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,626 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,640 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,657 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,672 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,690 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,704 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,721 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,735 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,749 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:47,762 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound

@@ -22,6 +22,7 @@
   "company",
   "posting_date",
   "apply_tds",
+  "number",
   "2_add_edit_gl_entries",
   "accounts",
   "section_break99",
@@ -553,6 +554,12 @@
    "label": "Repost Required",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "number",
+   "fieldtype": "Data",
+   "label": "N\u00famero de Asiento"
   }
  ],
  "icon": "fa fa-file-text",
@@ -567,7 +574,7 @@
    "table_fieldname": "payment_entries"
   }
  ],
- "modified": "2023-11-23 12:11:04.128015",
+ "modified": "2024-11-05 13:19:45.041870",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Journal Entry",

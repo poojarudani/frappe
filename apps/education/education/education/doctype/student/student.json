@@ -16,38 +16,43 @@
   "last_name",
   "dni",
   "full_name",
+  "entity_type",
   "column_break_4",
   "naming_series",
   "joining_date",
   "user",
   "student_applicant",
   "image",
+  "entity_link",
   "section_break_7",
-  "student_email_id",
   "date_of_birth",
-  "blood_group",
-  "disability",
-  "column_break_3",
-  "student_mobile_number",
   "gender",
   "nationality",
+  "disability",
+  "blood_group",
+  "column_break_3",
+  "student_email_id",
   "phone_number",
+  "student_mobile_number",
+  "n\u00ba_seguridad_social",
+  "estudios_finalizados",
   "address_tab",
   "section_break_22",
   "address_line_1",
   "address_line_2",
   "postcode",
+  "municipio",
   "column_break_20",
   "city",
   "state",
   "country",
   "company_tab",
   "company",
-  "company_address",
-  "company_city",
-  "company_postcode",
   "company_cif",
   "company_niss",
+  "company_postcode",
+  "company_address",
+  "company_city",
   "relations_tab",
   "section_break_18",
   "guardians",
@@ -122,14 +127,15 @@
    "fieldname": "student_email_id",
    "fieldtype": "Data",
    "in_global_search": 1,
-   "label": "Student Email Address",
-   "unique": 1
+   "label": "Correo Electr\u00f3nico",
+   "reqd": 1
   },
   {
    "fieldname": "student_mobile_number",
    "fieldtype": "Data",
    "in_global_search": 1,
-   "label": "Student Mobile Number"
+   "label": "Tel\u00e9fono M\u00f3vil",
+   "reqd": 1
   },
   {
    "default": "Today",
@@ -158,6 +164,7 @@
   {
    "fieldname": "blood_group",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Blood Group",
    "options": "\nA+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-"
   },
@@ -168,13 +175,14 @@
   {
    "fieldname": "gender",
    "fieldtype": "Link",
-   "label": "Gender",
+   "label": "Sexo",
    "options": "Gender"
   },
   {
    "fieldname": "nationality",
-   "fieldtype": "Data",
-   "label": "Nationality"
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
   },
   {
    "fieldname": "student_applicant",
@@ -208,8 +216,9 @@
   },
   {
    "fieldname": "state",
-   "fieldtype": "Data",
-   "label": "State"
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "Provincias"
   },
   {
    "fieldname": "country",
@@ -277,6 +286,7 @@
   {
    "fieldname": "relations_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Relations"
   },
   {
@@ -321,7 +331,7 @@
    "default": "No",
    "fieldname": "disability",
    "fieldtype": "Select",
-   "label": "Disability",
+   "label": "Discapacidad",
    "options": "Yes\nNo",
    "sort_options": 1
   },
@@ -368,17 +378,52 @@
   {
    "fieldname": "phone_number",
    "fieldtype": "Data",
-   "label": "Phone Number"
+   "label": "Tel\u00e9fono"
   },
   {
    "fieldname": "dni",
    "fieldtype": "Data",
-   "label": "DNI"
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "DNI",
+   "length": 10,
+   "reqd": 1
   },
   {
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name"
+  },
+  {
+   "fieldname": "entity_type",
+   "fieldtype": "Select",
+   "label": "Tipo de Empresa",
+   "options": "\nGrupo\nCliente\nProveedor"
+  },
+  {
+   "fieldname": "entity_link",
+   "fieldtype": "Link",
+   "label": "Nombre de la Empresa",
+   "options": "Company"
+  },
+  {
+   "fieldname": "municipio",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Municipio"
+  },
+  {
+   "fieldname": "n\u00ba_seguridad_social",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "N\u00ba Seguridad Social"
+  },
+  {
+   "fieldname": "estudios_finalizados",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Estudios Finalizados"
   }
  ],
  "image_field": "image",
@@ -399,11 +444,6 @@
    "link_fieldname": "student"
   },
   {
-   "group": "Student Activity",
-   "link_doctype": "Student Group",
-   "link_fieldname": "student"
-  },
-  {
    "group": "Assessment",
    "link_doctype": "Assessment Result",
    "link_fieldname": "student"
@@ -417,9 +457,14 @@
    "group": "Attendance",
    "link_doctype": "Student Leave Application",
    "link_fieldname": "student"
+  },
+  {
+   "group": "Admission",
+   "link_doctype": "Student Applicant",
+   "link_fieldname": "student"
   }
  ],
- "modified": "2024-07-08 12:48:48.286126",
+ "modified": "2024-11-28 10:17:03.261550",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Student",

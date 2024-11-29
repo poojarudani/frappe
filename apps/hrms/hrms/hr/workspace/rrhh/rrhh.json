@@ -1,13 +1,8 @@
 {
  "charts": [],
- "content": "[{\"id\":\"ZlQqdqYNWE\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Pr\u00f3ximas Bajas\",\"col\":12}},{\"id\":\"W0mpNfO_31\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"S4LKDkMkR_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"t5fkPwzdF_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee\",\"col\":3}},{\"id\":\"qchGj8faO1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Application\",\"col\":3}},{\"id\":\"PU8Dg6ZUJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"HR Dashboard\",\"col\":3}},{\"id\":\"TSnSR-f4Q0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Recruitment Dashboard\",\"col\":3}},{\"id\":\"sfaMDGHPZj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Lifecycle Dashboard\",\"col\":3}},{\"id\":\"HB6b78Ggos\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance Dashboard\",\"col\":3}},{\"id\":\"OHagNsUQ_P\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Claims Dashboard\",\"col\":3}},{\"id\":\"jx-CipACoE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Puntos de Energ\u00eda\",\"col\":3}},{\"id\":\"szIJiqgdI7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"VZTAOOjLz5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"R13RYDLGpM\",\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":4}},{\"id\":\"aNGNYsEOs_\",\"type\":\"card\",\"data\":{\"card_name\":\"Employee\",\"col\":4}},{\"id\":\"YJULCisJzS\",\"type\":\"card\",\"data\":{\"card_name\":\"Leaves\",\"col\":4}},{\"id\":\"BYnReDKT1w\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"Fg5t2ibrGb\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":4}},{\"id\":\"iPBA40bXc5\",\"type\":\"card\",\"data\":{\"card_name\":\"Expense Claim\",\"col\":4}},{\"id\":\"QDxSjNQTyt\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"70HFlgWqtk\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"S4LKDkMkR_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Accesos Directos</b></span>\",\"col\":12}},{\"id\":\"t5fkPwzdF_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee\",\"col\":3}},{\"id\":\"qchGj8faO1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Application\",\"col\":3}},{\"id\":\"PU8Dg6ZUJb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"HR Dashboard\",\"col\":3}},{\"id\":\"AXIwjOYivK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incorporaci\u00f3n de RRHH\",\"col\":3}},{\"id\":\"OHagNsUQ_P\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Claims Dashboard\",\"col\":3}},{\"id\":\"jx-CipACoE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Puntos de Energ\u00eda\",\"col\":3}},{\"id\":\"43BNJOIJJX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Desincorporacion de RRHH\",\"col\":3}},{\"id\":\"4gAnZFhlp4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Hoja de contrataci\u00f3n\",\"col\":3}},{\"id\":\"szIJiqgdI7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"VZTAOOjLz5\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"R13RYDLGpM\",\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":4}},{\"id\":\"aNGNYsEOs_\",\"type\":\"card\",\"data\":{\"card_name\":\"Employee\",\"col\":4}},{\"id\":\"YJULCisJzS\",\"type\":\"card\",\"data\":{\"card_name\":\"Leaves\",\"col\":4}},{\"id\":\"BYnReDKT1w\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"Fg5t2ibrGb\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":4}},{\"id\":\"iPBA40bXc5\",\"type\":\"card\",\"data\":{\"card_name\":\"Expense Claim\",\"col\":4}},{\"id\":\"QDxSjNQTyt\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"id\":\"70HFlgWqtk\",\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
  "creation": "2020-03-02 15:48:58.322521",
- "custom_blocks": [
-  {
-   "custom_block_name": "Pr\u00f3ximas Bajas",
-   "label": "Pr\u00f3ximas Bajas"
-  }
- ],
+ "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -388,7 +383,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-08-27 11:10:22.510821",
+ "modified": "2024-11-04 10:30:01.398127",
  "modified_by": "Administrator",
  "module": "HR",
  "name": "RRHH",
@@ -399,8 +394,32 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 13.0,
+ "sequence_id": 16.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Hoja de contrataci\u00f3n",
+   "link_to": "Job Offer",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Desincorporacion de RRHH",
+   "link_to": "Employee Separation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Incorporaci\u00f3n de RRHH",
+   "link_to": "Employee Onboarding",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "format": "{} Open",
    "label": "HR Dashboard",
@@ -435,27 +454,6 @@
    "doc_view": "List",
    "label": "Expense Claims Dashboard",
    "link_to": "Expense Claims",
-   "type": "Dashboard"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Recruitment Dashboard",
-   "link_to": "Recruitment",
-   "type": "Dashboard"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Employee Lifecycle Dashboard",
-   "link_to": "Employee Lifecycle",
-   "type": "Dashboard"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Attendance Dashboard",
-   "link_to": "Attendance",
    "type": "Dashboard"
   }
  ],

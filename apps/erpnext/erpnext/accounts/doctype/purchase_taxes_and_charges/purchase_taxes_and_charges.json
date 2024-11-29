@@ -231,14 +231,13 @@
    "default": "0",
    "fieldname": "is_tax_withholding_account",
    "fieldtype": "Check",
-   "label": "Is Tax Withholding Account",
-   "read_only": 1
+   "label": "Is Tax Withholding Account"
   }
  ],
  "idx": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-08 19:51:36.678551",
+ "modified": "2024-09-12 17:39:21.207726",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Purchase Taxes and Charges",
@@ -247,5 +246,6 @@
  "permissions": [],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1
 }

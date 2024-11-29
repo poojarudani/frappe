@@ -1,1229 +1,979 @@
-2024-07-31 09:56:26,467 ERROR frappe Failed to run after request hook
+2024-11-19 07:58:38,564 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000078","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":0,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"07966691C","custom_tipo_de_contrato":"Fijo Discontinuo","tipo_actualizacion":"Reduccion","custom_estado_de_tramitacion":"Solicitado","designation":"Tutor/a","custom_provincia":"Salamanca","start_date":"2024-11-19","end_date":"2024-12-17","status":"Accepted","job_offer":"HR-OFF-2024-00216-3","custom_necesaria_confirmacion_de_baja":"Si","custom_nombre_del_empleado":"Eva María Amador Alonso","custom_dninie":"07966691C","custom_solicitante_de_empleo":"eva.maria.amador@grupoatu.com","custom_direccion":"CL/GLORIA FUERTES 7 (37192) CARRASCAL DE BARREGAS","custom_discapacidad":0,"custom_correo":"eva.maria.amador@grupoatu.com","custom_movil":"646423815","custom_seg_social":"37-1003001612","custom_nacimiento":"1973-06-13","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"objeto":"REDUCCIÓN FIN 5.303 - DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H.","applicant_name":"Eva María Amador Alonso","dni":"7966691C","letter_head":"Burgos ATU","doctype":"Modificaciones RRHH","registro_horas":[],"offer_terms":[{"name":"qg92l7sjcg","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":1,"offer_term":"Horario","value":"DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H","parent":"HR-ANX-2024-0000078","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"}],"__last_sync_on":"2024-11-19T07:58:34.819Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-19 08:00:24,975 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000086","owner":"raquel.herrero@grupoatu.com","creation":"2024-11-19 08:55:18.809388","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":0,"workflow_state":"Borrador","company":"Tierra más ecológica S COOP","employee":"7869259Q","custom_tipo_de_contrato":"Fijo Discontinuo","tipo_actualizacion":"Llamamiento","custom_estado_de_tramitacion":"Solicitado","designation":"Docente","custom_provincia":"Salamanca","start_date":"2024-11-20","end_date":"2024-11-29","status":"Esperando Respuesta","job_offer":"HR-OFF-2024-00377-1","custom_necesaria_confirmacion_de_baja":"No","custom_nombre_del_empleado":"M CARMEN BORREGO MUÑOZ","custom_dninie":"7869259Q","custom_solicitante_de_empleo":"emecarmen@gmail.com","custom_direccion":"CL/ABRAHAM ZACUT 11, 2ª D (37003) SALAMANCA","custom_cp":"37003","custom_discapacidad":0,"custom_correo":"emecarmen@gmail.com","custom_movil":"699 136 333","custom_seg_social":"37-0037588206","custom_nacimiento":"1967-11-28","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"objeto":"32 HORAS IMPARTICIÓN DE LA ACCIÓN FORMATIVA","applicant_name":"M CARMEN BORREGO MUÑOZ","dni":"7869259Q","template_terms":"Docentes Presencial/Aula Virtual","validated_by":"vegap@grupoatu.com","doctype":"Modificaciones RRHH","registro_horas":[{"name":"lb042lprga","owner":"raquel.herrero@grupoatu.com","creation":"2024-11-19 08:55:18.809388","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":1,"mes":"Noviembre","horas":32,"horas_extras":0,"parent":"HR-ANX-2024-0000086","parentfield":"registro_horas","parenttype":"Modificaciones RRHH","doctype":"Hoja de Contratacion Horas"}],"offer_terms":[{"name":"lb04ghmerd","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":1,"offer_term":"PLAN FORMATIVO","value":"PLAN FC SALAMANCA","parent":"HR-ANX-2024-0000086","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"},{"name":"lb04dendfc","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":2,"offer_term":"Curso","value":"SANP034PO - SALUD, NUTRICIÓN Y DIETETICA","parent":"HR-ANX-2024-0000086","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"},{"name":"lb04iurd0p","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":3,"offer_term":"Nº EXPEDIENTE","value":"E-2023-301357  2023/1326","parent":"HR-ANX-2024-0000086","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"},{"name":"lb0405o461","owner":"charo.pardo@grupoatu.com","creation":"2024-06-03 22:59:23.376079","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":4,"offer_term":"Lugar de impartición","value":"Centro/dirección/provincia","parent":"HR-ANX-2024-0000086","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"},{"name":"lb04gqj9o3","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":5,"offer_term":"Horario","value":"...horas a ... horas","parent":"HR-ANX-2024-0000086","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"},{"name":"lb049m1tal","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":6,"offer_term":"Días de la semana","value":"Lunes a viernes","parent":"HR-ANX-2024-0000086","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"},{"name":"lb04oij3o3","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":7,"offer_term":"Precio/hora/bruto","value":"... €h/brutos","parent":"HR-ANX-2024-0000086","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"},{"name":"lb04612civ","owner":"Administrator","creation":"2024-06-03 22:59:23.376079","modified":"2024-11-19 08:55:18.809388","modified_by":"raquel.herrero@grupoatu.com","docstatus":0,"idx":8,"offer_term":"Retención","value":"...%","parent":"HR-ANX-2024-0000086","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"}],"__last_sync_on":"2024-11-19T08:00:06.469Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-19 08:02:57,827 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000078","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":0,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"07966691C","custom_tipo_de_contrato":"Fijo Discontinuo","tipo_actualizacion":"Reduccion","custom_estado_de_tramitacion":"Solicitado","designation":"Tutor/a","custom_provincia":"Salamanca","start_date":"2024-11-19","end_date":"2024-12-17","status":"Accepted","job_offer":"HR-OFF-2024-00216-3","custom_necesaria_confirmacion_de_baja":"Si","custom_nombre_del_empleado":"Eva María Amador Alonso","custom_dninie":"07966691C","custom_solicitante_de_empleo":"eva.maria.amador@grupoatu.com","custom_direccion":"CL/GLORIA FUERTES 7 (37192) CARRASCAL DE BARREGAS","custom_discapacidad":0,"custom_correo":"eva.maria.amador@grupoatu.com","custom_movil":"646423815","custom_seg_social":"37-1003001612","custom_nacimiento":"1973-06-13","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"objeto":"REDUCCIÓN FIN 5.303 - DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H.","applicant_name":"Eva María Amador Alonso","dni":"7966691C","letter_head":"Burgos ATU","doctype":"Modificaciones RRHH","registro_horas":[],"offer_terms":[{"name":"qg92l7sjcg","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":1,"offer_term":"Horario","value":"DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H","parent":"HR-ANX-2024-0000078","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"}],"__last_sync_on":"2024-11-19T07:58:34.819Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-19 08:05:54,528 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000078","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":0,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"07966691C","custom_tipo_de_contrato":"Fijo Discontinuo","tipo_actualizacion":"Reduccion","custom_estado_de_tramitacion":"Solicitado","designation":"Tutor/a","custom_provincia":"Salamanca","start_date":"2024-11-19","end_date":"2024-12-17","status":"Accepted","job_offer":"HR-OFF-2024-00216-3","custom_necesaria_confirmacion_de_baja":"Si","custom_nombre_del_empleado":"Eva María Amador Alonso","custom_dninie":"07966691C","custom_solicitante_de_empleo":"eva.maria.amador@grupoatu.com","custom_direccion":"CL/GLORIA FUERTES 7 (37192) CARRASCAL DE BARREGAS","custom_discapacidad":0,"custom_correo":"eva.maria.amador@grupoatu.com","custom_movil":"646423815","custom_seg_social":"37-1003001612","custom_nacimiento":"1973-06-13","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"objeto":"REDUCCIÓN FIN 5.303 - DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H.","applicant_name":"Eva María Amador Alonso","dni":"7966691C","letter_head":"Burgos ATU","doctype":"Modificaciones RRHH","registro_horas":[],"offer_terms":[{"name":"qg92l7sjcg","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":1,"offer_term":"Horario","value":"DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H","parent":"HR-ANX-2024-0000078","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"}],"__last_sync_on":"2024-11-19T07:58:34.819Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-19 08:06:23,162 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000078","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":0,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"07966691C","custom_tipo_de_contrato":"Fijo Discontinuo","tipo_actualizacion":"Reduccion","custom_estado_de_tramitacion":"Solicitado","designation":"Tutor/a","custom_provincia":"Salamanca","start_date":"2024-11-19","end_date":"2024-12-17","status":"Accepted","job_offer":"HR-OFF-2024-00216-3","custom_necesaria_confirmacion_de_baja":"Si","custom_nombre_del_empleado":"Eva María Amador Alonso","custom_dninie":"07966691C","custom_solicitante_de_empleo":"eva.maria.amador@grupoatu.com","custom_direccion":"CL/GLORIA FUERTES 7 (37192) CARRASCAL DE BARREGAS","custom_discapacidad":0,"custom_correo":"eva.maria.amador@grupoatu.com","custom_movil":"646423815","custom_seg_social":"37-1003001612","custom_nacimiento":"1973-06-13","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"objeto":"REDUCCIÓN FIN 5.303 - DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H.","applicant_name":"Eva María Amador Alonso","dni":"7966691C","letter_head":"Burgos ATU","doctype":"Modificaciones RRHH","registro_horas":[],"offer_terms":[{"name":"qg92l7sjcg","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":1,"offer_term":"Horario","value":"DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H","parent":"HR-ANX-2024-0000078","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"}],"__last_sync_on":"2024-11-19T07:58:34.819Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-19 08:06:42,390 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000078","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":0,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"07966691C","custom_tipo_de_contrato":"Fijo Discontinuo","tipo_actualizacion":"Reduccion","custom_estado_de_tramitacion":"Solicitado","designation":"Tutor/a","custom_provincia":"Salamanca","start_date":"2024-11-19","end_date":"2024-12-17","status":"Accepted","job_offer":"HR-OFF-2024-00216-3","custom_necesaria_confirmacion_de_baja":"Si","custom_nombre_del_empleado":"Eva María Amador Alonso","custom_dninie":"07966691C","custom_solicitante_de_empleo":"eva.maria.amador@grupoatu.com","custom_direccion":"CL/GLORIA FUERTES 7 (37192) CARRASCAL DE BARREGAS","custom_discapacidad":0,"custom_correo":"eva.maria.amador@grupoatu.com","custom_movil":"646423815","custom_seg_social":"37-1003001612","custom_nacimiento":"1973-06-13","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"objeto":"REDUCCIÓN FIN 5.303 - DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H.","applicant_name":"Eva María Amador Alonso","dni":"7966691C","letter_head":"Burgos ATU","doctype":"Modificaciones RRHH","offer_terms":[{"name":"qg92l7sjcg","owner":"ana.calvo@grupoatu.com","creation":"2024-11-18 08:29:45.761452","modified":"2024-11-18 08:29:53.260312","modified_by":"ana.calvo@grupoatu.com","docstatus":0,"idx":1,"offer_term":"Horario","value":"DESDE EL 19/11/2024 REDUCIR 10 H/S  QUEDANDO UN CONTRATO 10H/S CON HORARIO DE L-V DE 15:00 A 17:00 H","parent":"HR-ANX-2024-0000078","parentfield":"offer_terms","parenttype":"Modificaciones RRHH","doctype":"Job Offer Term"}],"registro_horas":[],"__last_sync_on":"2024-11-19T08:06:34.494Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-19 08:15:32,125 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Student', 'docname': '65264825W', 'cmd': 'upload_file'}
+2024-11-19 08:15:53,832 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'is_private': '1', 'folder': 'Home/Attachments', 'doctype': 'Student', 'docname': '65264825W', 'cmd': 'upload_file'}
+2024-11-19 08:45:58,670 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76060'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-19 08:45:58,672 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76060'}", 'limit_page_length': 20}
+2024-11-19 10:08:06,324 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76375'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-19 10:08:06,325 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76375'}", 'limit_page_length': 20}
+2024-11-19 10:41:58,592 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76387'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-19 10:41:58,593 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76387'}", 'limit_page_length': 20}
+2024-11-19 11:37:34,224 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-19 11:37:34,226 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+2024-11-19 11:38:09,815 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-19 11:38:09,818 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+2024-11-19 11:39:00,236 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-19 11:39:00,238 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+2024-11-19 11:44:47,633 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"Prueba 453254352","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":20,"course":"prueba-PRUEBA -1","max_strength":0,"group_based_on":"Course","disabled":0,"student_group_name":"Prueba 453254352","academic_year":"2024","academic_term":"0","student_category":"0","student":"0","doctype":"Student Group","students":[{"name":"8qs0jhrtod","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":1,"student":"58104148F","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"8qs0vngof0","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":2,"student":"44782981A","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"8qs0lsshcu","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":3,"student":"20260041P","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"8qs0j01edf","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":4,"student":"71275521Q","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"8qs0tfan1s","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":5,"student":"51915637Z","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"}],"__last_sync_on":"2024-11-19T11:44:32.909Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-19 11:44:52,988 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"Prueba 453254352","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":20,"course":"prueba-PRUEBA -1","max_strength":0,"group_based_on":"Course","disabled":0,"student_group_name":"Prueba 453254352","academic_year":"2024","academic_term":"0","student_category":"0","student":"0","doctype":"Student Group","students":[{"name":"8qs0jhrtod","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":1,"student":"58104148F","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"8qs0vngof0","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":2,"student":"44782981A","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"8qs0lsshcu","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":3,"student":"20260041P","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"8qs0j01edf","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":4,"student":"71275521Q","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"8qs0tfan1s","owner":"developer@xappiens.com","creation":"2024-10-25 13:32:37.562871","modified":"2024-10-30 11:30:24.061051","modified_by":"developer@xappiens.com","docstatus":0,"idx":5,"student":"51915637Z","parent":"Prueba 453254352","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"}],"__last_sync_on":"2024-11-19T11:44:32.909Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-19 11:49:10,467 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-19 11:49:10,470 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+2024-11-19 12:06:29,941 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-19 12:06:29,943 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73512'}", 'limit_page_length': 20}
+2024-11-20 07:22:37,141 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"EDU-APP-2024-01680","owner":"ines.montero@grupoatu.com","creation":"2024-11-19 17:06:13.528267","modified":"2024-11-19 17:06:13.528267","modified_by":"ines.montero@grupoatu.com","docstatus":0,"idx":0,"first_name":"SOLAIMAN CHENTOUF","dni":"Z1582037X","course":"AF-PV-ARR-24-01","naming_series":"EDU-APP-.YYYY.-","application_date":"2024-11-19","application_status":"Approved","program":"EXP-PV-ARR-24-11","academic_year":"2024","paid":0,"student_email_id":"soulaiman89chentouf@gmail.com","student_mobile_number":"603607137.0","blood_group":"","address_line_1":"PINTOR GISBERT 64 1ºB","country":"España","employment_situation":"","title":"SOLAIMAN CHENTOUF","doctype":"Student Applicant","siblings":[],"guardians":[],"__last_sync_on":"2024-11-20T07:17:10.520Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 07:27:38,754 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-50350'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 07:27:38,757 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-50350'}", 'limit_page_length': 20}
+2024-11-20 07:59:28,015 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-27331'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 07:59:28,017 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-27331'}", 'limit_page_length': 20}
+2024-11-20 08:43:59,416 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
 Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
-    redirects = frappe.get_hooks("website_redirects")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
-    response = handle_exception(e)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
-    response = get_response("message", http_status_code=http_status_code)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
-    hooks = frappe.get_hooks()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-2024-07-31 09:56:28,202 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
-Site: erp.grupoatu.com
-Form Dict: {'routes': '[{"creation":"2024-07-31 09:56:16","route":"print/Job Offer/HR-OFF-2024-00134"}]'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-2024-07-31 09:56:28,206 ERROR frappe Failed to run after request hook
-Site: erp.grupoatu.com
-Form Dict: {'routes': '[{"creation":"2024-07-31 09:56:16","route":"print/Job Offer/HR-OFF-2024-00134"}]'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-2024-07-31 09:56:31,839 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-11-20 08:45:38,923 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
 Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-2024-07-31 09:56:31,844 ERROR frappe Failed to run after request hook
+2024-11-20 08:50:13,454 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
 Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
-    redirects = frappe.get_hooks("website_redirects")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
-    response = handle_exception(e)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
-    response = get_response("message", http_status_code=http_status_code)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
-    hooks = frappe.get_hooks()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-2024-07-31 09:56:33,401 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-11-20 08:50:20,305 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
 Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-2024-07-31 09:56:33,405 ERROR frappe Failed to run after request hook
+2024-11-20 08:50:20,393 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
 Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
-    redirects = frappe.get_hooks("website_redirects")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
-    response = handle_exception(e)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
-    response = get_response("message", http_status_code=http_status_code)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
-    hooks = frappe.get_hooks()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-2024-07-31 09:57:14,651 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 32)
+2024-11-20 08:50:20,904 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
 Form Dict: {}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-2024-07-31 09:57:14,658 ERROR frappe Failed to run after request hook
+2024-11-20 08:52:00,910 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
 Form Dict: {}
+2024-11-20 08:52:20,157 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-56179'}", 'limit_page_length': 20}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 08:52:20,159 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-56179'}", 'limit_page_length': 20}
+2024-11-20 08:55:49,090 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {}
+2024-11-20 08:56:36,702 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {}
+2024-11-20 09:00:03,641 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {}
+2024-11-20 09:00:03,902 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {}
+2024-11-20 09:00:04,144 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {}
+2024-11-20 09:00:04,183 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {}
+2024-11-20 09:00:04,221 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {}
+2024-11-20 09:00:04,260 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {}
+2024-11-20 09:06:50,155 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:07:52,788 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:08:16,831 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:10:06,438 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:10:06,600 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:10:06,818 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:10:06,864 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:10:06,909 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:10:06,952 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:10:06,989 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:10:07,026 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:12:58,767 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'{\r\n"user_id":_"': {'userid': ''}, 'cmd': 'log_incoming_data'}
+2024-11-20 09:15:10,773 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '[userid]', 'id': '[id]', 'user_email': '[email]', 'user_name': '[firstname]', 'user_lastname': '[lastname]\r\n', 'cmd': 'log_incoming_data'}
+2024-11-20 09:19:07,263 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '[userid]', 'id': '[id]', 'user_email': '[email]', 'user_name': '[firstname]', 'user_lastname': '[lastname]\r\n', 'cmd': 'log_incoming_data'}
+2024-11-20 09:19:39,569 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '[userid]', 'id': '[id]', 'user_email': '[email]', 'user_name': '[firstname]', 'user_lastname': '[lastname]\r\n', 'cmd': 'log_incoming_data'}
+2024-11-20 09:20:04,487 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '[userid]', 'id': '[id]', 'user_email': '[email]', 'user_name': '[firstname]', 'user_lastname': '[lastname]\r\n', 'cmd': 'log_incoming_data'}
+2024-11-20 09:20:04,532 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '[userid]', 'id': '[id]', 'user_email': '[email]', 'user_name': '[firstname]', 'user_lastname': '[lastname]\r\n', 'cmd': 'log_incoming_data'}
+2024-11-20 09:20:05,254 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '[userid]', 'id': '[id]', 'user_email': '[email]', 'user_name': '[firstname]', 'user_lastname': '[lastname]\r\n', 'cmd': 'log_incoming_data'}
+2024-11-20 09:20:25,806 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '[userid]', 'id': '[id]', 'user_email': '[email]', 'user_name': '[firstname]', 'user_lastname': '[lastname]\r\n', 'cmd': 'log_incoming_data'}
+2024-11-20 09:42:43,281 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'log_incoming_data'}
+2024-11-20 09:45:50,770 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'eventname': 'user_updated', 'user_updated_by': '37222', 'updated_user': '39373', 'ip_address': '5.225.0.149', 'origin': 'web', 'cmd': 'log_incoming_data'}
+2024-11-20 09:58:16,371 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_email': '{email}'}
+2024-11-20 10:16:20,959 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z0847861V', 'cmd': 'frappe.client.get'}
+2024-11-20 10:16:35,669 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z0847861V', 'cmd': 'frappe.client.get'}
+2024-11-20 10:17:13,028 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z0812522Y', 'cmd': 'frappe.client.get'}
+2024-11-20 10:17:38,751 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z1582037X', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:17:49,134 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '12345678Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:17:59,318 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71681952Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:18:00,369 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y9155412T', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:18:20,421 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"E‐2023‐300808-2023/981-1-00","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":0,"course":"E‐2023‐300808-2023/981-1","numero_incremento":"00","max_strength":0,"group_based_on":"","disabled":0,"academic_year":"2024","academic_term":"0","student_category":"0","student":"0","doctype":"Student Group","students":[{"name":"i4c2m3o8nt","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":1,"student":"09397599Y","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"i60hp5qe42","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":2,"student":"47758192A","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"i66r7fdi88","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":3,"student":"Z2360596L","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"i6e9dffm8n","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":4,"student":"Z1993344P","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"i6m44ks9rn","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":5,"student":"Z1192153E","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"i7vsv1vval","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":6,"student":"71681952Z","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"i8g08cb9mg","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":7,"student":"Z0719229R","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"i8o6dafdb1","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":8,"student":"Z1680399R","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"},{"name":"i92km2p797","owner":"natalia.tola@grupoatu.com","creation":"2024-11-20 11:07:33.226012","modified":"2024-11-20 11:15:49.222756","modified_by":"natalia.tola@grupoatu.com","docstatus":0,"idx":9,"student":"Y9925682T","parent":"E‐2023‐300808-2023/981-1-00","parentfield":"students","parenttype":"Student Group","doctype":"Estudiantes Grupo Estudiantes"}],"__last_sync_on":"2024-11-20T10:17:46.016Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:18:22,840 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-30231'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 10:18:22,843 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-30231'}", 'limit_page_length': 20}
+2024-11-20 10:18:25,087 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y4356683Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:18:27,054 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-30231'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
-    redirects = frappe.get_hooks("website_redirects")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 10:18:27,057 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-30231'}", 'limit_page_length': 20}
+2024-11-20 10:18:28,759 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y9155412T', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:18:32,239 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-30231'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 10:18:32,241 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-30231'}", 'limit_page_length': 20}
+2024-11-20 10:18:41,338 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z0812522Y', 'cmd': 'frappe.client.get'}
+2024-11-20 10:19:27,411 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '47758192A', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:20:08,278 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z0812522Y', 'cmd': 'frappe.client.get'}
+2024-11-20 10:20:11,881 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '47758192A', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:20:24,322 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z1442848V', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:20:59,480 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39373', 'cmd': 'log_incoming_data'}
+2024-11-20 10:22:01,379 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39143', 'cmd': 'log_incoming_data'}
+2024-11-20 10:24:12,971 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-tnsyotloog","__islocal":1,"__unsaved":1,"owner":"natalia.tola@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"MARIA CONCEPCION","full_name":"MARIA CONCEPCION FRANCH SANJURJO","last_name":"FRANCH SANJURJO","dni":"09399701S","date_of_birth":"1970-06-18","gender":"Mujer","student_email_id":"cfranch2003@yahoo.es","student_mobile_number":"648154898","address_line_1":"CL GONZALEZ BESADA, 17","city":"OVIEDO","state":"Asturias","postcode":"33007"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:25:03,872 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-tnsyotloog","__islocal":1,"__unsaved":1,"owner":"natalia.tola@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"MARIA CONCEPCION","full_name":"MARIA CONCEPCION FRANCH SANJURJO","last_name":"FRANCH SANJURJO","dni":"09399701S","date_of_birth":"1970-06-18","gender":"Mujer","student_email_id":"cfranch2003@yahoo.es","student_mobile_number":"648154898","address_line_1":"CL GONZALEZ BESADA, 17","city":"OVIEDO","state":"Asturias","postcode":"33007"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:25:19,422 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-tnsyotloog","__islocal":1,"__unsaved":1,"owner":"natalia.tola@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"MARIA CONCEPCION","full_name":"MARIA CONCEPCION FRANCH SANJURJO","last_name":"FRANCH SANJURJO","dni":"09399701S","date_of_birth":"1970-06-18","gender":"Mujer","student_email_id":"cfranch2003@yahoo.es","student_mobile_number":"648154898","address_line_1":"CL GONZALEZ BESADA, 17","city":"OVIEDO","state":"Asturias","postcode":"33007"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:25:25,540 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71681952Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:25:29,454 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '47758192A', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:26:30,152 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-tnsyotloog","__islocal":1,"__unsaved":1,"owner":"natalia.tola@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"MARIA CONCEPCION","full_name":"MARIA CONCEPCION FRANCH SANJURJO","last_name":"FRANCH SANJURJO","dni":"09399701S","date_of_birth":"1970-06-18","gender":"Mujer","student_email_id":"cfranch2003@yahoo.es","student_mobile_number":"648154898","address_line_1":"CL GONZALEZ BESADA, 17","city":"OVIEDO","state":"Asturias","postcode":"33007"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:27:35,679 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '47758192A', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:27:41,662 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y3734543R', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:27:54,256 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y7031019W', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:27:57,867 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y3734543R', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:28:06,892 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y3734543R', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:28:32,292 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-adngaujhyb","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia","student_email_id":"nolose67@gmail.com"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:28:36,889 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-adngaujhyb","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia","student_email_id":"nolose67@gmail.com"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:28:54,712 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-adngaujhyb","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia","student_email_id":"nolose67@gmail.com"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:29:09,943 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-adngaujhyb","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia","student_email_id":"nolose67@gmail.com"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:29:55,991 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-adngaujhyb","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia","student_email_id":"nolose67@gmail.com"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:30:45,348 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-xfhnfsaked","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_email_id":"nolose67@gmail.com","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:31:28,245 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-xfhnfsaked","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALIi","full_name":"ALIi LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_email_id":"nolose67@gmail.com","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:31:38,095 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-xfhnfsaked","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_email_id":"nolose67@gmail.com","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:31:40,482 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-xfhnfsaked","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_email_id":"nolose67@gmail.com","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2 PISO 1, GUADALUPE","state":"Murcia"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:32:13,456 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-xfhnfsaked","__islocal":1,"__unsaved":1,"owner":"francisco.lopez@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"ALI","full_name":"ALI LAKBIR","last_name":"LAKBIR","dni":"Z2238948H","date_of_birth":"1989-05-16","gender":"Hombre","student_email_id":"nolose67@gmail.com","student_mobile_number":"672531619","address_line_1":"C/PAZ Nº2","state":"Murcia"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:34:13,643 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student","name":"new-student-tnsyotloog","__islocal":1,"__unsaved":1,"owner":"natalia.tola@grupoatu.com","enabled":1,"entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-11-20","entity_link":"Academia Técnica Universitaria SL","blood_group":"","nationality":"España","disability":"No","custom_situation":"","country":"España","customer_group":"Todas las categorías de clientes","guardians":[],"siblings":[],"first_name":"MARIA CONCEPCION","full_name":"MARIA CONCEPCION FRANCH SANJURJO","last_name":"FRANCH SANJURJO","dni":"09399701S","date_of_birth":"1970-06-18","gender":"Mujer","student_email_id":"cfranch2003@yahoo.es","student_mobile_number":"648154898","address_line_1":"CL GONZALEZ BESADA, 17","city":"OVIEDO","state":"Asturias","postcode":"33007"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-20 10:34:46,552 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z0812522Y', 'cmd': 'frappe.client.get'}
+2024-11-20 10:35:29,335 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z0812522Y', 'cmd': 'frappe.client.get'}
+2024-11-20 10:35:45,108 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z0812522Y', 'cmd': 'frappe.client.get'}
+2024-11-20 10:40:09,893 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '12345678Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:40:53,341 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71681952Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:41:10,022 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '72750664P', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:41:25,406 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71698506P', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:41:46,469 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Z1535244E', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:41:49,312 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71681952Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:07,743 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y9352847A', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:09,540 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '47758192A', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:13,807 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71698506P', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:14,867 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71681952Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:17,014 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '12345678Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:20,961 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71681952Z', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:22,114 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71265423S', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:26,652 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y7984629D', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:29,411 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': 'Y7031019W', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:33,141 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '72750664P', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:35,866 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71289102G', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:44,526 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71265423S', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:49,334 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '13168573S', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:53,270 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '13166700M', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:42:53,305 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71286656L', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:43:33,978 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71269757W', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:43:42,464 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '13172283E', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:43:52,669 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71289102G', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:43:58,231 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '71286656L', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:44:03,240 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Student', 'name': '72750664P', 'cmd': 'frappe.desk.form.load.getdoc'}
+2024-11-20 10:46:50,774 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76663'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
-    response = handle_exception(e)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
-    response = get_response("message", http_status_code=http_status_code)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
-    hooks = frappe.get_hooks()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 10:46:50,776 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76663'}", 'limit_page_length': 20}
+2024-11-20 10:48:04,419 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '6786', 'cmd': 'log_incoming_data'}
+2024-11-20 10:48:26,690 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39373', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:23,036 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39373', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:23,330 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39373', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:23,417 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39373', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:23,491 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39143', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:23,566 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39373', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:23,641 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39373', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:23,930 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '6786', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:23,999 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '6786', 'cmd': 'log_incoming_data'}
+2024-11-20 10:50:24,380 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39373', 'cmd': 'log_incoming_data'}
+2024-11-20 11:09:06,776 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39419', 'cmd': 'log_incoming_data'}
+2024-11-20 11:10:09,514 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39143', 'cmd': 'log_incoming_data'}
+2024-11-20 11:10:10,292 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '6786', 'cmd': 'log_incoming_data'}
+2024-11-20 11:10:10,365 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '6786', 'cmd': 'log_incoming_data'}
+2024-11-20 11:10:10,803 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39419', 'cmd': 'log_incoming_data'}
+2024-11-20 11:11:09,170 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '16847', 'cmd': 'log_incoming_data'}
+2024-11-20 11:12:03,358 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '32326', 'cmd': 'log_incoming_data'}
+2024-11-20 11:13:54,056 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '276', 'cmd': 'log_incoming_data'}
+2024-11-20 11:14:13,466 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000122","owner":"Administrator","creation":"2024-11-20 12:14:02.171295","modified":"2024-11-20 12:14:05.183090","modified_by":"Administrator","docstatus":0,"idx":0,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"02323232F","custom_tipo_de_contrato":"Indefinido ordinario","tipo_actualizacion":"Llamamiento","custom_estado_de_tramitacion":"Solicitado","designation":"Derecho","custom_provincia":"Burgos","start_date":"2024-11-20","end_date":"2024-12-21","status":"Esperando Respuesta","job_offer":"HR-OFF-2024-01513","custom_necesaria_confirmacion_de_baja":"No","custom_nombre_del_empleado":"Prueba Test dos","custom_dninie":"02323232F","custom_solicitante_de_empleo":"prueba2@prueba.com","custom_discapacidad":0,"custom_correo":"prueba2@prueba.com","custom_movil":"666666666","custom_seg_social":"2323232444","custom_nacimiento":"2024-07-22","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"custom_iban":"edfrghtdgs31245","objeto":"test","applicant_name":"Prueba Test dos","dni":"02323232F","custom_solicited_by":"Administrator","custom_email_solicited":"xappiens@xappiens.com","doctype":"Modificaciones RRHH","registro_horas":[],"offer_terms":[],"__last_sync_on":"2024-11-20T11:14:04.385Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-20 11:17:48,145 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000122","owner":"Administrator","creation":"2024-11-20 12:14:02.171295","modified":"2024-11-20 12:14:05.183090","modified_by":"Administrator","docstatus":0,"idx":0,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"02323232F","custom_tipo_de_contrato":"Indefinido ordinario","tipo_actualizacion":"Llamamiento","custom_estado_de_tramitacion":"Solicitado","designation":"Derecho","custom_provincia":"Burgos","start_date":"2024-11-20","end_date":"2024-12-21","status":"Esperando Respuesta","job_offer":"HR-OFF-2024-01513","custom_necesaria_confirmacion_de_baja":"No","custom_nombre_del_empleado":"Prueba Test dos","custom_dninie":"02323232F","custom_solicitante_de_empleo":"prueba2@prueba.com","custom_discapacidad":0,"custom_correo":"prueba2@prueba.com","custom_movil":"666666666","custom_seg_social":"2323232444","custom_nacimiento":"2024-07-22","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"custom_iban":"edfrghtdgs31245","objeto":"test","applicant_name":"Prueba Test dos","dni":"02323232F","custom_solicited_by":"Administrator","custom_email_solicited":"xappiens@xappiens.com","doctype":"Modificaciones RRHH","registro_horas":[],"offer_terms":[],"__last_sync_on":"2024-11-20T11:17:30.802Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-20 11:20:05,068 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '6786', 'cmd': 'log_incoming_data'}
+2024-11-20 11:20:05,429 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '6786', 'cmd': 'log_incoming_data'}
+2024-11-20 11:20:05,708 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39419', 'cmd': 'log_incoming_data'}
+2024-11-20 11:20:05,783 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '16847', 'cmd': 'log_incoming_data'}
+2024-11-20 11:20:05,925 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '32326', 'cmd': 'log_incoming_data'}
+2024-11-20 11:20:06,007 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '276', 'cmd': 'log_incoming_data'}
+2024-11-20 11:30:09,596 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '6786', 'cmd': 'log_incoming_data'}
+2024-11-20 11:30:10,132 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39419', 'cmd': 'log_incoming_data'}
+2024-11-20 11:30:10,455 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '16847', 'cmd': 'log_incoming_data'}
+2024-11-20 11:30:10,535 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '32326', 'cmd': 'log_incoming_data'}
+2024-11-20 11:30:10,685 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '276', 'cmd': 'log_incoming_data'}
+2024-11-20 11:40:04,336 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39419', 'cmd': 'log_incoming_data'}
+2024-11-20 11:40:04,648 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '16847', 'cmd': 'log_incoming_data'}
+2024-11-20 11:40:04,938 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '32326', 'cmd': 'log_incoming_data'}
+2024-11-20 11:40:05,006 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '276', 'cmd': 'log_incoming_data'}
+2024-11-20 11:43:10,935 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '38731', 'cmd': 'log_incoming_data'}
+2024-11-20 11:44:39,071 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76700'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 11:44:39,074 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76700'}", 'limit_page_length': 20}
+2024-11-20 11:46:09,197 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-74055'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 11:46:09,199 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-74055'}", 'limit_page_length': 20}
+2024-11-20 11:48:41,535 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '38602', 'cmd': 'log_incoming_data'}
+2024-11-20 12:00:15,671 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000134","owner":"Administrator","creation":"2024-11-20 13:00:09.706440","modified":"2024-11-20 13:00:12.649295","modified_by":"Administrator","docstatus":0,"idx":0,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"02323232F","custom_tipo_de_contrato":"Indefinido ordinario","tipo_actualizacion":"Llamamiento","custom_estado_de_tramitacion":"Solicitado","designation":"Derecho","custom_provincia":"Burgos","start_date":"2024-11-20","end_date":"2024-12-07","status":"Esperando Respuesta","job_offer":"HR-OFF-2024-01513","custom_necesaria_confirmacion_de_baja":"No","custom_nombre_del_empleado":"Prueba Test dos","custom_dninie":"02323232F","custom_solicitante_de_empleo":"prueba2@prueba.com","custom_discapacidad":0,"custom_correo":"prueba2@prueba.com","custom_movil":"666666666","custom_seg_social":"2323232444","custom_nacimiento":"2024-07-22","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"custom_iban":"edfrghtdgs31245","objeto":"test","applicant_name":"Prueba Test dos","dni":"02323232F","custom_solicited_by":"Administrator","custom_email_solicited":"xappiens@xappiens.com","doctype":"Modificaciones RRHH","offer_terms":[],"registro_horas":[],"__last_sync_on":"2024-11-20T12:00:11.190Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-20 12:00:32,152 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '16847', 'cmd': 'log_incoming_data'}
+2024-11-20 12:00:32,514 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '32326', 'cmd': 'log_incoming_data'}
+2024-11-20 12:00:32,763 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '276', 'cmd': 'log_incoming_data'}
+2024-11-20 12:00:32,840 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '38731', 'cmd': 'log_incoming_data'}
+2024-11-20 12:00:32,912 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '38602', 'cmd': 'log_incoming_data'}
+2024-11-20 12:01:51,573 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000134","owner":"Administrator","creation":"2024-11-20 13:00:09.706440","modified":"2024-11-20 13:00:12.649295","modified_by":"Administrator","docstatus":0,"idx":3,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"02323232F","custom_tipo_de_contrato":"Indefinido ordinario","tipo_actualizacion":"Llamamiento","custom_estado_de_tramitacion":"Solicitado","designation":"Derecho","custom_provincia":"Burgos","start_date":"2024-11-20","end_date":"2024-12-07","status":"Esperando Respuesta","job_offer":"HR-OFF-2024-01513","custom_necesaria_confirmacion_de_baja":"No","custom_nombre_del_empleado":"Prueba Test dos","custom_dninie":"02323232F","custom_solicitante_de_empleo":"prueba2@prueba.com","custom_discapacidad":0,"custom_correo":"prueba2@prueba.com","custom_movil":"666666666","custom_seg_social":"2323232444","custom_nacimiento":"2024-07-22","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"custom_iban":"edfrghtdgs31245","objeto":"test","applicant_name":"Prueba Test dos","dni":"02323232F","custom_solicited_by":"Administrator","custom_email_solicited":"xappiens@xappiens.com","doctype":"Modificaciones RRHH","offer_terms":[],"registro_horas":[],"__last_sync_on":"2024-11-20T12:01:17.645Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-20 12:02:54,194 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'frappe.model.workflow.apply_workflow'}

@@ -1,830 +1,1092 @@
-2024-07-12 13:06:13,686 INFO ipython === bench console session ===
-2024-07-12 13:06:13,686 INFO ipython frappe.get_doc("Sales Invoice", "BATU/V/2400001").cancel()
-2024-07-12 13:06:13,686 INFO ipython === session end ===
-2024-07-12 13:21:11,689 INFO ipython === bench console session ===
-2024-07-12 13:21:11,689 INFO ipython === session end ===
-2024-07-15 13:32:08,263 INFO ipython === bench console session ===
-2024-07-15 13:32:08,264 INFO ipython from integracion.integracion.employee_status_update import update_employee_status, disable_inactive_employee_users
-2024-07-15 13:32:08,264 INFO ipython update_employee_status()
-2024-07-15 13:32:08,264 INFO ipython disable_inactive_employee_users()
-2024-07-15 13:32:08,264 INFO ipython === session end ===
-2024-07-24 14:17:32,377 INFO ipython === bench console session ===
-2024-07-24 14:17:32,377 INFO ipython import os
-import logging
-from urllib.parse import quote
-from office365.runtime.auth.user_credential import UserCredential
-from office365.sharepoint.client_context import ClientContext
-import frappe
+2024-11-14 08:12:36,571 INFO ipython === bench console session ===
+2024-11-14 08:12:36,572 INFO ipython def update_job_offer_states():
+    # Obtener todas las ofertas de trabajo con docstatus = 1 y workflow_state = "Validado"
+    job_offers = frappe.get_all("Job Offer", filters={"docstatus": 1, "workflow_state": "Validado"}, fields=["name", "custom_fecha_fin"])
 
-# Configurar el logger
-logger = logging.getLogger(__name__)
-handler = logging.FileHandler('/path/to/your/log/upload_sp.log')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-logger.setLevel(logging.INFO)
+    for job in job_offers:
+        doc = frappe.get_doc("Job Offer", job.name)
 
-def get_parent_folder_name(doctype, docname):
-    fields_to_check = ['company', 'empresa', 'custom_empresa', 'curso', 'proyecto', 'departamento']
-    logger.info(f"Obteniendo campos del documento {doctype} con nombre {docname}")
-    try:
-        related_doc = frappe.get_doc(doctype, docname)
-        logger.info(f"Campos del documento {doctype}: {related_doc.as_dict()}")
-        for field in fields_to_check:
-            if field in related_doc.as_dict():
-                logger.info(f"Campo {field} encontrado con valor {related_doc.get(field)}")
-                return related_doc.get(field)
-    except Exception as e:
-        logger.error(f"Error obteniendo el documento {doctype} con nombre {docname}: {e}")
-        return None
+        # Modificar temporalmente los campos obligatorios
+        mandatory_fields = [df for df in doc.meta.fields if df.reqd]
+        for df in mandatory_fields:
+            df.reqd = 0  # Desmarcar como obligatorio
 
-def create_folder_if_not_exists(ctx, site_relative_url, folder_relative_url):
-    try:
-        folder_full_relative_url = f"{site_relative_url}/{folder_relative_url}".strip('/')
-        logger.info(f"Ruta relativa {site_relative_url}")
-        logger.info(f"Ruta carpeta relativa {folder_relative_url}")
-        parent_folder_url = '/'.join(folder_full_relative_url.split('/')[:-1])
-        logger.info(f"Ruta padre relativa {parent_folder_url}")
-        logger.info(f"Comprobando existencia de carpeta en la ruta: /{folder_full_relative_url}")
-        try:
-            folder = ctx.web.get_folder_by_server_relative_url(f"/{folder_full_relative_url}")
-            ctx.execute_query()
-            logger.info(f"La carpeta ya existe: {folder_full_relative_url}")
-        except Exception as e:
-            logger.info(f"La carpeta no existe, procediendo a crearla. Error al comprobar existencia: {e}")
-            parent_folder = ctx.web.get_folder_by_server_relative_url(f"/{parent_folder_url}")
-            ctx.execute_query()
-            new_folder = parent_folder.folders.add(folder_full_relative_url.split('/')[-1]).execute_query()
-            logger.info(f"Carpeta creada: {new_folder.serverRelativeUrl}")
-    except Exception as e:
-        logger.error(f"Error creando carpeta en {folder_full_relative_url}: {e}")
+        # Truncar cualquier campo que exceda la longitud máxima
+        for field in doc.meta.fields:
+            if field.fieldtype in ["Data", "Text", "Small Text", "Long Text", "Code", "HTML"] and field.length:
+                value = doc.get(field.fieldname)
+                if value and len(value) > field.length:
+                    doc.set(field.fieldname, value[:field.length])
 
-def upload_file_to_sharepoint(file_doc):
-    logger.info(f"Procesando archivo: {file_doc.name}")
-    try:
-        file_path = frappe.get_site_path(file_doc.file_url.strip("/"))
-        logger.info(f"Archivo encontrado: {file_path}")
+        # Definir la acción basada en custom_fecha_fin
+        accion = "Validado a Alta" if str(doc.custom_fecha_fin) >= frappe.utils.nowdate() else "Solicitar Baja"
 
-        if not file_path or not os.path.isfile(file_path):
-            logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
-            return
+        # Obtener transiciones válidas para verificar si la acción es posible
+        from frappe.model.workflow import get_transitions, WorkflowTransitionError
+        transiciones = [t.action for t in get_transitions(doc)]
 
-        doctype_name = file_doc.attached_to_doctype
-        docname = file_doc.attached_to_name
-        user_email = 'erp@grupoatu.com'
-        user_password = 'D/888592322871uy'
+        # Validar si la acción está en las transiciones posibles
+        if accion in transiciones:
+            try:
+                frappe.model.workflow.apply_workflow(frappe.as_json(doc), accion)
 
-        try:
-            doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
-        except frappe.DoesNotExistError:
-            logger.error(f"No se encontró un documento para el doctype {doctype_name} en Bibliotecas SP. Terminando la ejecución.")
-            return
+                # Recargar y guardar el documento con ignore_version para evitar errores de timestamp
+                doc.reload()  # Recargar antes de guardar
+                doc.save(ignore_version=True)
 
-        parent_folder_full_url = doc_biblioteca.url_sp
-        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
+                # Imprimir el documento modificado
+                print(f"Documento {doc.name} modificado con estado '{accion}'")
 
-        start_idx = parent_folder_full_url.find('/sites/')
-        if start_idx == -1:
-            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
-            return
-        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
-        site_relative_url = parent_folder_full_url[start_idx:]
-        relative_path = parent_folder_full_url[start_idx + len('/sites/'):].lstrip('/')
-        logger.info(f"Ruta relativa calculada: {relative_path}")
-        logger.info(f"Conectando al contexto del sitio: {site_url}")
+            except frappe.PermissionError:
+                frappe.log_error(f"No se pudo aplicar '{accion}' en {doc.name} debido a permisos insuficientes.")
+            except WorkflowTransitionError as e:
+                frappe.log_error(f"Error de transición: {str(e)} en {doc.name} para '{accion}'")
+            except Exception as e:
+                if "TimestampMismatchError" in str(e):
+                    doc.reload()  # Recargar en caso de conflicto de timestamp
+                    doc.save(ignore_version=True)
+                    print(f"Documento {doc.name} modificado con estado '{accion}' tras recargar por conflicto de timestamp")
+                else:
+                    frappe.log_error(f"Error inesperado al guardar {doc.name}: {str(e)}")
 
-        credentials = UserCredential(user_email, user_password)
-        ctx = ClientContext(site_url).with_credentials(credentials)
+        # Restaurar los campos obligatorios
+        for df in mandatory_fields:
+            df.reqd = 1  # Restaurar como obligatorio
 
-        parent_folder_name = get_parent_folder_name(doctype_name, docname)
-        if not parent_folder_name:
-            logger.error(f"No se encontró el nombre de la carpeta padre para {doctype_name} con nombre {docname}")
-            return
-        parent_folder_name_encoded = quote(parent_folder_name)
-        logger.info(f"Nombre de la carpeta padre: {parent_folder_name}")
+    frappe.msgprint("Estados de las ofertas de trabajo actualizados según 'custom_fecha_fin'.")
+update_job_offer_states()
+2024-11-14 08:12:36,572 INFO ipython === session end ===
+2024-11-14 10:13:52,443 INFO ipython === bench console session ===
+2024-11-14 10:13:52,443 INFO ipython import frappe
 
-        first_folder_relative_url = f"{relative_path}/{parent_folder_name_encoded}".strip('/')
-        second_folder_relative_url = f"{first_folder_relative_url}/{docname}".strip('/')
-        logger.info(f"URL de la primera carpeta: {first_folder_relative_url}")
-        logger.info(f"URL completa de la carpeta del documento: {second_folder_relative_url}")
 
-        create_folder_if_not_exists(ctx, site_relative_url, first_folder_relative_url)
-        create_folder_if_not_exists(ctx, site_relative_url, second_folder_relative_url)
 
-        with open(file_path, 'rb') as file_content:
-            content = file_content.read()
+def update_invalid_records():
+    # Define los valores por defecto y opciones válidas
+    default_tipo = "Contrato"  # Puedes cambiarlo según prefieras
+    default_designation = "Aux. Admín."
+    lista_tipos = {"Contrato", "Llamamiento"}
 
-        file_name = os.path.basename(file_path)
-        second_folder_relative_url_trimmed = '/'.join(second_folder_relative_url.split('/')[1:])
-        file_url = f"/{second_folder_relative_url_trimmed}/{file_name}"
-        target_folder = ctx.web.get_folder_by_server_relative_url(f"{second_folder_relative_url_trimmed}")
 
-        ctx.execute_query()
 
-        try:
-            target_folder.upload_file(file_name, content).execute_query()
-            logger.info(f"Archivo subido: {file_url}")
-        except Exception as e:
-            logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
-        return file_url
-    except Exception as e:
-        logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
+    # Filtra y obtiene los registros de 'Job Offer' con docstatus=1 y workflow_state='Validado'
+    job_offers = frappe.get_all("Job Offer", 
+                                filters={"docstatus": 1, "workflow_state": "Validado"}, 
+                                fields=["name", "custom_tipo_de_hoja_de_contratacion", "designation", "custom_fecha_fin"])
 
-def process_all_files():
-    logger.info("Iniciando procesamiento de todos los archivos de tipo File.")
-    all_files = frappe.get_all('File', filters={'attached_to_doctype': ['is', 'set']}, fields=['name', 'attached_to_doctype'])
-    for file_entry in all_files:
-        try:
-            file_doc = frappe.get_doc('File', file_entry['name'])
-            upload_file_to_sharepoint(file_doc)
-        except Exception as e:
-            logger.error(f"Error procesando archivo {file_entry['name']}: {e}")
 
-if __name__ == "__main__":
-    process_all_files()
-2024-07-24 14:17:32,377 INFO ipython import os
-import logging
-from urllib.parse import quote
-from office365.runtime.auth.user_credential import UserCredential
-from office365.sharepoint.client_context import ClientContext
-import frappe
 
-# Configurar el logger
-logger = logging.getLogger(__name__)
-handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/upload_sp_ejec.log')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-logger.setLevel(logging.INFO)
+    # Recorre cada registro
+    for job_offer in job_offers:
+        tipo = job_offer.get('custom_tipo_de_hoja_de_contratacion')
+        puesto = job_offer.get('designation')
 
-def get_parent_folder_name(doctype, docname):
-    fields_to_check = ['company', 'empresa', 'custom_empresa', 'curso', 'proyecto', 'departamento']
-    logger.info(f"Obteniendo campos del documento {doctype} con nombre {docname}")
-    try:
-        related_doc = frappe.get_doc(doctype, docname)
-        logger.info(f"Campos del documento {doctype}: {related_doc.as_dict()}")
-        for field in fields_to_check:
-            if field in related_doc.as_dict():
-                logger.info(f"Campo {field} encontrado con valor {related_doc.get(field)}")
-                return related_doc.get(field)
-    except Exception as e:
-        logger.error(f"Error obteniendo el documento {doctype} con nombre {docname}: {e}")
-        return None
+        # Verifica si los campos son inválidos y necesita actualizarse
+        needs_update = False
 
-def create_folder_if_not_exists(ctx, site_relative_url, folder_relative_url):
-    try:
-        folder_full_relative_url = f"{site_relative_url}/{folder_relative_url}".strip('/')
-        logger.info(f"Ruta relativa {site_relative_url}")
-        logger.info(f"Ruta carpeta relativa {folder_relative_url}")
-        parent_folder_url = '/'.join(folder_full_relative_url.split('/')[:-1])
-        logger.info(f"Ruta padre relativa {parent_folder_url}")
-        logger.info(f"Comprobando existencia de carpeta en la ruta: /{folder_full_relative_url}")
-        try:
-            folder = ctx.web.get_folder_by_server_relative_url(f"/{folder_full_relative_url}")
-            ctx.execute_query()
-            logger.info(f"La carpeta ya existe: {folder_full_relative_url}")
-        except Exception as e:
-            logger.info(f"La carpeta no existe, procediendo a crearla. Error al comprobar existencia: {e}")
-            parent_folder = ctx.web.get_folder_by_server_relative_url(f"/{parent_folder_url}")
-            ctx.execute_query()
-            new_folder = parent_folder.folders.add(folder_full_relative_url.split('/')[-1]).execute_query()
-            logger.info(f"Carpeta creada: {new_folder.serverRelativeUrl}")
-    except Exception as e:
-        logger.error(f"Error creando carpeta en {folder_full_relative_url}: {e}")
+        # Validación de `custom_tipo_de_hoja_de_contratacion`
+        if not tipo or tipo not in lista_tipos:
+            job_offer['custom_tipo_de_hoja_de_contratacion'] = default_tipo
+            needs_update = True
 
-def upload_file_to_sharepoint(file_doc):
-    logger.info(f"Procesando archivo: {file_doc.name}")
-    try:
-        file_path = frappe.get_site_path(file_doc.file_url.strip("/"))
-        logger.info(f"Archivo encontrado: {file_path}")
 
-        if not file_path or not os.path.isfile(file_path):
-            logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
-            return
 
-        doctype_name = file_doc.attached_to_doctype
-        docname = file_doc.attached_to_name
-        user_email = 'erp@grupoatu.com'
-        user_password = 'D/888592322871uy'
+        # Validación de `designation`
+        if not puesto or not frappe.db.exists('Designation', puesto):
+            job_offer['designation'] = default_designation
+            needs_update = True
 
-        try:
-            doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
-        except frappe.DoesNotExistError:
-            logger.error(f"No se encontró un documento para el doctype {doctype_name} en Bibliotecas SP. Terminando la ejecución.")
-            return
 
-        parent_folder_full_url = doc_biblioteca.url_sp
-        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
 
-        start_idx = parent_folder_full_url.find('/sites/')
-        if start_idx == -1:
-            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
-            return
-        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
-        site_relative_url = parent_folder_full_url[start_idx:]
-        relative_path = parent_folder_full_url[start_idx + len('/sites/'):].lstrip('/')
-        logger.info(f"Ruta relativa calculada: {relative_path}")
-        logger.info(f"Conectando al contexto del sitio: {site_url}")
+        # Si necesita actualización, guarda el cambio en la base de datos
+        if needs_update:
+            try:
+                # Carga el documento para actualizar
+                doc = frappe.get_doc("Job Offer", job_offer["name"])
+                doc.custom_tipo_de_hoja_de_contratacion = job_offer['custom_tipo_de_hoja_de_contratacion']
+                doc.designation = job_offer['designation']
+                doc.save()
+                frappe.db.commit()  # Confirma los cambios en la base de datos
+                print(f"Registro actualizado: {job_offer['name']}")
+            except Exception as e:
+                print(f"Error al actualizar el registro {job_offer['name']}: {e}")
+                frappe.db.rollback()  # Revierte en caso de error
 
-        credentials = UserCredential(user_email, user_password)
-        ctx = ClientContext(site_url).with_credentials(credentials)
 
-        parent_folder_name = get_parent_folder_name(doctype_name, docname)
-        if not parent_folder_name:
-            logger.error(f"No se encontró el nombre de la carpeta padre para {doctype_name} con nombre {docname}")
-            return
-        parent_folder_name_encoded = quote(parent_folder_name)
-        logger.info(f"Nombre de la carpeta padre: {parent_folder_name}")
-
-        first_folder_relative_url = f"{relative_path}/{parent_folder_name_encoded}".strip('/')
-        second_folder_relative_url = f"{first_folder_relative_url}/{docname}".strip('/')
-        logger.info(f"URL de la primera carpeta: {first_folder_relative_url}")
-        logger.info(f"URL completa de la carpeta del documento: {second_folder_relative_url}")
-
-        create_folder_if_not_exists(ctx, site_relative_url, first_folder_relative_url)
-        create_folder_if_not_exists(ctx, site_relative_url, second_folder_relative_url)
-
-        with open(file_path, 'rb') as file_content:
-            content = file_content.read()
-
-        file_name = os.path.basename(file_path)
-        second_folder_relative_url_trimmed = '/'.join(second_folder_relative_url.split('/')[1:])
-        file_url = f"/{second_folder_relative_url_trimmed}/{file_name}"
-        target_folder = ctx.web.get_folder_by_server_relative_url(f"{second_folder_relative_url_trimmed}")
-
-        ctx.execute_query()
-
-        try:
-            target_folder.upload_file(file_name, content).execute_query()
-            logger.info(f"Archivo subido: {file_url}")
-        except Exception as e:
-            logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
-        return file_url
-    except Exception as e:
-        logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
-
-def process_all_files():
-    logger.info("Iniciando procesamiento de todos los archivos de tipo File.")
-    all_files = frappe.get_all('File', filters={'attached_to_doctype': ['is', 'set']}, fields=['name', 'attached_to_doctype'])
-    for file_entry in all_files:
-        try:
-            file_doc = frappe.get_doc('File', file_entry['name'])
-            upload_file_to_sharepoint(file_doc)
-        except Exception as e:
-            logger.error(f"Error procesando archivo {file_entry['name']}: {e}")
-
-if __name__ == "__main__":
-    process_all_files()
-import os
-import logging
-from urllib.parse import quote
-from office365.runtime.auth.user_credential import UserCredential
-from office365.sharepoint.client_context import ClientContext
-import frappe
-
-# Configurar el logger
-logger = logging.getLogger(__name__)
-handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/upload_sp_ejec.log')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-logger.setLevel(logging.INFO)
-
-def get_parent_folder_name(doctype, docname):
-    fields_to_check = ['company', 'empresa', 'custom_empresa', 'curso', 'proyecto', 'departamento']
-    logger.info(f"Obteniendo campos del documento {doctype} con nombre {docname}")
-    try:
-        related_doc = frappe.get_doc(doctype, docname)
-        logger.info(f"Campos del documento {doctype}: {related_doc.as_dict()}")
-        for field in fields_to_check:
-            if field in related_doc.as_dict():
-                logger.info(f"Campo {field} encontrado con valor {related_doc.get(field)}")
-                return related_doc.get(field)
-    except Exception as e:
-        logger.error(f"Error obteniendo el documento {doctype} con nombre {docname}: {e}")
-        return None
-
-def create_folder_if_not_exists(ctx, site_relative_url, folder_relative_url):
-    try:
-        folder_full_relative_url = f"{site_relative_url}/{folder_relative_url}".strip('/')
-        logger.info(f"Ruta relativa {site_relative_url}")
-        logger.info(f"Ruta carpeta relativa {folder_relative_url}")
-        parent_folder_url = '/'.join(folder_full_relative_url.split('/')[:-1])
-        logger.info(f"Ruta padre relativa {parent_folder_url}")
-        logger.info(f"Comprobando existencia de carpeta en la ruta: /{folder_full_relative_url}")
-        try:
-            folder = ctx.web.get_folder_by_server_relative_url(f"/{folder_full_relative_url}")
-            ctx.execute_query()
-            logger.info(f"La carpeta ya existe: {folder_full_relative_url}")
-        except Exception as e:
-            logger.info(f"La carpeta no existe, procediendo a crearla. Error al comprobar existencia: {e}")
-            parent_folder = ctx.web.get_folder_by_server_relative_url(f"/{parent_folder_url}")
-            ctx.execute_query()
-            new_folder = parent_folder.folders.add(folder_full_relative_url.split('/')[-1]).execute_query()
-            logger.info(f"Carpeta creada: {new_folder.serverRelativeUrl}")
-    except Exception as e:
-        logger.error(f"Error creando carpeta en {folder_full_relative_url}: {e}")
-
-def upload_file_to_sharepoint(file_doc):
-    logger.info(f"Procesando archivo: {file_doc.name}")
-    try:
-        file_path = frappe.get_site_path(file_doc.file_url.strip("/"))
-        logger.info(f"Archivo encontrado: {file_path}")
-
-        if not file_path or not os.path.isfile(file_path):
-            logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
-            return
-
-        doctype_name = file_doc.attached_to_doctype
-        docname = file_doc.attached_to_name
-        user_email = 'erp@grupoatu.com'
-        user_password = 'D/888592322871uy'
-
-        try:
-            doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
-        except frappe.DoesNotExistError:
-            logger.error(f"No se encontró un documento para el doctype {doctype_name} en Bibliotecas SP. Terminando la ejecución.")
-            return
-
-        parent_folder_full_url = doc_biblioteca.url_sp
-        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
-
-        start_idx = parent_folder_full_url.find('/sites/')
-        if start_idx == -1:
-            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
-            return
-        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
-        site_relative_url = parent_folder_full_url[start_idx:]
-        relative_path = parent_folder_full_url[start_idx + len('/sites/'):].lstrip('/')
-        logger.info(f"Ruta relativa calculada: {relative_path}")
-        logger.info(f"Conectando al contexto del sitio: {site_url}")
-
-        credentials = UserCredential(user_email, user_password)
-        ctx = ClientContext(site_url).with_credentials(credentials)
-
-        parent_folder_name = get_parent_folder_name(doctype_name, docname)
-        if not parent_folder_name:
-            logger.error(f"No se encontró el nombre de la carpeta padre para {doctype_name} con nombre {docname}")
-            return
-        parent_folder_name_encoded = quote(parent_folder_name)
-        logger.info(f"Nombre de la carpeta padre: {parent_folder_name}")
-
-        first_folder_relative_url = f"{relative_path}/{parent_folder_name_encoded}".strip('/')
-        second_folder_relative_url = f"{first_folder_relative_url}/{docname}".strip('/')
-        logger.info(f"URL de la primera carpeta: {first_folder_relative_url}")
-        logger.info(f"URL completa de la carpeta del documento: {second_folder_relative_url}")
-
-        create_folder_if_not_exists(ctx, site_relative_url, first_folder_relative_url)
-        create_folder_if_not_exists(ctx, site_relative_url, second_folder_relative_url)
-
-        with open(file_path, 'rb') as file_content:
-            content = file_content.read()
-
-        file_name = os.path.basename(file_path)
-        second_folder_relative_url_trimmed = '/'.join(second_folder_relative_url.split('/')[1:])
-        file_url = f"/{second_folder_relative_url_trimmed}/{file_name}"
-        target_folder = ctx.web.get_folder_by_server_relative_url(f"{second_folder_relative_url_trimmed}")
-
-        ctx.execute_query()
-
-        try:
-            target_folder.upload_file(file_name, content).execute_query()
-            logger.info(f"Archivo subido: {file_url}")
-        except Exception as e:
-            logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
-        return file_url
-    except Exception as e:
-        logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
-
-def process_all_files():
-    logger.info("Iniciando procesamiento de todos los archivos de tipo File.")
-    all_files = frappe.get_all('File', filters={'attached_to_doctype': ['is', 'set']}, fields=['name', 'attached_to_doctype'])
-    for file_entry in all_files:
-        try:
-            file_doc = frappe.get_doc('File', file_entry['name'])
-            upload_file_to_sharepoint(file_doc)
-        except Exception as e:
-            logger.error(f"Error procesando archivo {file_entry['name']}: {e}")
-
-if __name__ == "__main__":
-    process_all_files()
-2024-07-24 14:17:32,378 INFO ipython import os
-import logging
-from urllib.parse import quote
-from office365.runtime.auth.user_credential import UserCredential
-from office365.sharepoint.client_context import ClientContext
-import frappe
-
-# Configurar el logger
-logger = logging.getLogger(__name__)
-handler = logging.FileHandler('/home/frappe/frappe-bench/apps/integracion/integracion/integracion/logs/upload_sp_ejec.log')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levellevel)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-logger.setLevel(logging.INFO)
-
-def get_parent_folder_name(doctype, docname):
-    fields_to_check = ['company', 'empresa', 'custom_empresa', 'curso', 'proyecto', 'departamento']
-    logger.info(f"Obteniendo campos del documento {doctype} con nombre {docname}")
-    try:
-        related_doc = frappe.get_doc(doctype, docname)
-        logger.info(f"Campos del documento {doctype}: {related_doc.as_dict()}")
-        for field in fields_to_check:
-            if field in related_doc.as_dict():
-                logger.info(f"Campo {field} encontrado con valor {related_doc.get(field)}")
-                return related_doc.get(field)
-    except Exception as e:
-        logger.error(f"Error obteniendo el documento {doctype} con nombre {docname}: {e}")
-        return None
-
-def create_folder_if_not_exists(ctx, site_relative_url, folder_relative_url):
-    try:
-        folder_full_relative_url = f"{site_relative_url}/{folder_relative_url}".strip('/')
-        logger.info(f"Ruta relativa {site_relative_url}")
-        logger.info(f"Ruta carpeta relativa {folder_relative_url}")
-        parent_folder_url = '/'.join(folder_full_relative_url.split('/')[:-1])
-        logger.info(f"Ruta padre relativa {parent_folder_url}")
-        logger.info(f"Comprobando existencia de carpeta en la ruta: /{folder_full_relative_url}")
-        try:
-            folder = ctx.web.get_folder_by_server_relative_url(f"/{folder_full_relative_url}")
-            ctx.execute_query()
-            logger.info(f"La carpeta ya existe: {folder_full_relative_url}")
-        except Exception as e:
-            logger.info(f"La carpeta no existe, procediendo a crearla. Error al comprobar existencia: {e}")
-            parent_folder = ctx.web.get_folder_by_server_relative_url(f"/{parent_folder_url}")
-            ctx.execute_query()
-            new_folder = parent_folder.folders.add(folder_full_relative_url.split('/')[-1]).execute_query()
-            logger.info(f"Carpeta creada: {new_folder.serverRelativeUrl}")
-    except Exception as e:
-        logger.error(f"Error creando carpeta en {folder_full_relative_url}: {e}")
-
-def upload_file_to_sharepoint(file_doc):
-    logger.info(f"Procesando archivo: {file_doc.name}")
-    try:
-        file_path = frappe.get_site_path(file_doc.file_url.strip("/"))
-        logger.info(f"Archivo encontrado: {file_path}")
-
-        if not file_path or not os.path.isfile(file_path):
-            logger.error(f"El archivo no existe o no se proporcionó una ruta válida: {file_path}")
-            return
-
-        doctype_name = file_doc.attached_to_doctype
-        docname = file_doc.attached_to_name
-        user_email = 'erp@grupoatu.com'
-        user_password = 'D/888592322871uy'
-
-        try:
-            doc_biblioteca = frappe.get_doc('Bibliotecas SP', doctype_name)
-        except frappe.DoesNotExistError:
-            logger.error(f"No se encontró un documento para el doctype {doctype_name} en Bibliotecas SP. Terminando la ejecución.")
-            return
-
-        parent_folder_full_url = doc_biblioteca.url_sp
-        logger.info(f"URL de la carpeta padre: {parent_folder_full_url}")
-
-        start_idx = parent_folder_full_url.find('/sites/')
-        if start_idx == -1:
-            logger.error("La URL no contiene '/sites/'. No se puede calcular la ruta relativa.")
-            return
-        site_url = parent_folder_full_url[:start_idx + len('/sites/') + parent_folder_full_url[start_idx + len('/sites/'):].find('/')]
-        site_relative_url = parent_folder_full_url[start_idx:]
-        relative_path = parent_folder_full_url[start_idx + len('/sites/'):].lstrip('/')
-        logger.info(f"Ruta relativa calculada: {relative_path}")
-        logger.info(f"Conectando al contexto del sitio: {site_url}")
-
-        credentials = UserCredential(user_email, user_password)
-        ctx = ClientContext(site_url).with_credentials(credentials)
-
-        parent_folder_name = get_parent_folder_name(doctype_name, docname)
-        if not parent_folder_name:
-            logger.error(f"No se encontró el nombre de la carpeta padre para {doctype_name} con nombre {docname}")
-            return
-        parent_folder_name_encoded = quote(parent_folder_name)
-        logger.info(f"Nombre de la carpeta padre: {parent_folder_name}")
-
-        first_folder_relative_url = f"{relative_path}/{parent_folder_name_encoded}".strip('/')
-        second_folder_relative_url = f"{first_folder_relative_url}/{docname}".strip('/')
-        logger.info(f"URL de la primera carpeta: {first_folder_relative_url}")
-        logger.info(f"URL completa de la carpeta del documento: {second_folder_relative_url}")
-
-        create_folder_if_not_exists(ctx, site_relative_url, first_folder_relative_url)
-        create_folder_if_not_exists(ctx, site_relative_url, second_folder_relative_url)
-
-        with open(file_path, 'rb') as file_content:
-            content = file_content.read()
-
-        file_name = os.path.basename(file_path)
-        second_folder_relative_url_trimmed = '/'.join(second_folder_relative_url.split('/')[1:])
-        file_url = f"/{second_folder_relative_url_trimmed}/{file_name}"
-        target_folder = ctx.web.get_folder_by_server_relative_url(f"{second_folder_relative_url_trimmed}")
-
-        logger.info(f"Verificando existencia de carpeta destino: {second_folder_relative_url_trimmed}")
-        ctx.execute_query()
-
-        try:
-            logger.info(f"Subiendo archivo {file_name} a {second_folder_relative_url_trimmed}")
-            target_folder.upload_file(file_name, content).execute_query()
-            logger.info(f"Archivo subido: {file_url}")
-        except Exception as e:
-            logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
-        return file_url
-    except Exception as e:
-        logger.error(f"Error al subir archivo a SharePoint: {str(e)}")
-
-def process_all_files():
-    logger.info("Iniciando procesamiento de todos los archivos de tipo File.")
-    all_files = frappe.get_all('File', filters={'attached_to_doctype': ['is', 'set']}, fields=['name', 'attached_to_doctype'])
-    for file_entry in all_files:
-        try:
-            logger.info(f"Procesando archivo: {file_entry['name']} con doctype {file_entry['attached_to_doctype']}")
-            file_doc = frappe.get_doc('File', file_entry['name'])
-            upload_file_to_sharepoint(file_doc)
-        except Exception as e:
-            logger.error(f"Error procesando archivo {file_entry['name']}: {e}")
-
-if __name__ == "__main__":
-    process_all_files()
-2024-07-24 14:17:32,378 INFO ipython === session end ===
-2024-08-21 06:17:52,467 INFO ipython === bench console session ===
-2024-08-21 06:17:52,468 INFO ipython def remove_quotes_from_course_name_and_code():
-    # Consulta todos los registros de Course
-    courses = frappe.get_all('Course', fields=['name', 'code'])
-
-    for course in courses:
-        # Elimina comillas del campo name y code
-        clean_name = course['name'].replace('"', '')
-        clean_code = course['code'].replace('"', '')
-
-        # Actualiza el documento si alguno de los campos fue modificado
-        if clean_name != course['name'] or clean_code != course['code']:
-            frappe.db.set_value('Course', course['name'], 'name', clean_name)
-            frappe.db.set_value('Course', course['name'], 'code', clean_code)
-
-    frappe.db.commit()
 
 # Ejecuta la función
-remove_quotes_from_course_name_and_code()
-2024-08-21 06:17:52,468 INFO ipython def remove_quotes_from_course_name_and_code():
-    # Consulta todos los registros de Course
-    courses = frappe.get_all('Course', fields=['name', 'code'])
+update_invalid_records()
+2024-11-14 10:13:52,444 INFO ipython import frappe
 
-    for course in courses:
-        # Verifica si los campos no son None antes de reemplazar
-        clean_name = course['name'].replace('"', '') if course['name'] is not None else None
-        clean_code = course['code'].replace('"', '') if course['code'] is not None else None
 
-        # Actualiza el documento si alguno de los campos fue modificado
-        if (clean_name is not None and clean_name != course['name']) or (clean_code is not None and clean_code != course['code']):
-            if clean_name is not None:
-                frappe.db.set_value('Course', course['name'], 'name', clean_name)
-            if clean_code is not None:
-                frappe.db.set_value('Course', course['name'], 'code', clean_code)
 
-    frappe.db.commit()
+def update_invalid_records():
+    default_tipo = "Contrato"  # Puedes cambiarlo según prefieras
+    default_designation = "Aux. Admín."
+    lista_tipos = {"Contrato", "Llamamiento"}
+
+
+
+    # Filtra y obtiene los registros de 'Job Offer' con docstatus=1 y workflow_state='Validado'
+    job_offers = frappe.get_all("Job Offer", 
+                                filters={"docstatus": 1, "workflow_state": "Validado"}, 
+                                fields=["name", "custom_tipo_de_hoja_de_contratacion", "designation", "custom_fecha_fin"])
+
+
+
+    # Recorre cada registro
+    for job_offer in job_offers:
+        tipo = job_offer.get('custom_tipo_de_hoja_de_contratacion')
+        puesto = job_offer.get('designation')
+
+        # Verifica si los campos son inválidos y necesita actualizarse
+        needs_update = False
+
+        # Validación de `custom_tipo_de_hoja_de_contratacion`
+        if not tipo or tipo not in lista_tipos:
+            job_offer['custom_tipo_de_hoja_de_contratacion'] = default_tipo
+            needs_update = True
+
+
+
+        # Validación de `designation`
+        if not puesto or not frappe.db.exists('Designation', puesto):
+            job_offer['designation'] = default_designation
+            needs_update = True
+
+
+
+        # Si necesita actualización, guarda el cambio en la base de datos
+        if needs_update:
+            try:
+                # Carga el documento para actualizar
+                doc = frappe.get_doc("Job Offer", job_offer["name"])
+                doc.custom_tipo_de_hoja_de_contratacion = job_offer['custom_tipo_de_hoja_de_contratacion']
+                doc.designation = job_offer['designation']
+                doc.save()
+                frappe.db.commit()  # Confirma los cambios en la base de datos
+                print(f"Registro actualizado: {job_offer['name']}")
+            except Exception as e:
+                print(f"Error al actualizar el registro {job_offer['name']}: {e}")
+                frappe.db.rollback()  # Revierte en caso de error
+
+
 
 # Ejecuta la función
-remove_quotes_from_course_name_and_code()
-2024-08-21 06:17:52,469 INFO ipython def remove_quotes_from_course_name_and_code():
-    # Consulta todos los registros de Course
-    courses = frappe.get_all('Course', fields=['name', 'code'])
-    
-    modified_count = 0  # Contador de cursos modificados
+update_invalid_records()
+2024-11-14 10:13:52,444 INFO ipython import frappe
 
-    for course in courses:
-        # Verifica si los campos no son None antes de reemplazar
-        clean_name = course['name'].replace('"', '') if course['name'] is not None else None
-        clean_code = course['code'].replace('"', '') if course['code'] is not None else None
+def update_invalid_records():
+    # Define los valores por defecto y opciones válidas
+    default_tipo = "Contrato"  # Puedes cambiarlo según prefieras
+    default_designation = "Aux. Admin." 
+    lista_tipos = {"Contrato", "Llamamiento"}
 
-        # Actualiza el documento si alguno de los campos fue modificado
-        if (clean_name is not None and clean_name != course['name']) or (clean_code is not None and clean_code != course['code']):
-            if clean_name is not None:
-                frappe.db.set_value('Course', course['name'], 'name', clean_name)
-            if clean_code is not None:
-                frappe.db.set_value('Course', course['name'], 'code', clean_code)
-            
-            modified_count += 1  # Incrementa el contador si se modifica algún curso
+    # Filtra y obtiene los registros de 'Job Offer' con docstatus=1 y workflow_state='Validado'
+    job_offers = frappe.get_all("Job Offer", 
+                                filters={"docstatus": 1, "workflow_state": "Validado"}, 
+                                fields=["name", "custom_tipo_de_hoja_de_contratacion", "designation", "custom_fecha_fin"])
 
-    frappe.db.commit()
-    
-    print(f"Número de cursos modificados: {modified_count}")
-
-# Ejecuta la función
-remove_quotes_from_course_name_and_code()
-2024-08-21 06:17:52,469 INFO ipython === session end ===
-2024-08-21 14:04:52,757 INFO ipython === bench console session ===
-2024-08-21 14:04:52,758 INFO ipython from integracion.integracion.invoice_from_email import invoice_from_email
-
-
-# Ejecutar la función con datos de prueba('Test Subject', 'Test Content', 'test@example.com', None)
-2024-08-21 14:04:52,758 INFO ipython from integracion.integracion.invoice_from_email import invoice_from_email 
-
-# Ejecutar la función con datos de prueba
-invoice_from_email('Test Subject', 'Test Content', 'test@example.com', None)
-2024-08-21 14:04:52,758 INFO ipython === session end ===
-2024-08-22 10:03:42,252 INFO ipython === bench console session ===
-2024-08-22 10:03:42,253 INFO ipython import csv
-from frappe import _
-
-# Ruta al archivo CSV
-csv_file_path = "/home/frappe/frappe-bench/importacion/burgos_atu.csv"
-
-# Nombre de la compañía
-company_name = "Burgos atu SL"
-company_abbr = frappe.get_value("Company", company_name, "abbr")
-
-# Leer el archivo CSV
-with open(csv_file_path, mode='r', encoding='utf-8') as file:
-    csv_reader = csv.DictReader(file)
-    
-    # Contador para limitar a las primeras 10 cuentas
-    count = 0
-    
-    for row in csv_reader:
-        if count >= 10:
-            break
-
-        account_number = row['account_number']
-        account_name = row['account_name']
-
-        # Crear el nombre completo de la cuenta
-        account_full_name = f"{account_number} - {account_name} - {company_abbr}"
-
-        # Verificar si la cuenta ya existe
-        if frappe.db.exists("Account", {"account_number": account_number, "company": company_name}):
-            print(f"La cuenta ya existe: {account_full_name}. Saltando creación.")
-            continue
-
-        # Inicialmente asumimos que la cuenta no tiene padre
-        parent_account = None
-
-        # Recorrer los dígitos de la cuenta para encontrar la cuenta padre
-        for i in range(1, len(account_number) + 1):
-            parent_account_candidate = account_number[:i]
-            # Buscar la cuenta grupo que coincida con el prefijo actual
-            possible_parent_account = frappe.db.exists(
-                "Account",
-                {
-                    "account_number": parent_account_candidate,
-                    "company": company_name,
-                    "is_group": 1
-                }
-            )
-            if possible_parent_account:
-                parent_account = possible_parent_account  # Machacar con la cuenta grupo más específica
-
-        # Si se encontró un padre, traer tipo de root y tipo de reporte de la cuenta principal
-        if parent_account:
-            parent_account_doc = frappe.get_doc("Account", parent_account)
-            root_type = parent_account_doc.root_type
-            report_type = parent_account_doc.report_type
-        else:
-            root_type = "Liability"  # Asume un tipo por defecto si no se encuentra un padre
-            report_type = "Balance Sheet"  # Asume un tipo por defecto si no se encuentra un padre
-
-        # Mostrar información y pedir confirmación
-        print(f"Preparado para añadir la cuenta: {account_full_name}")
-        print(f"  - Número de cuenta: {account_number}")
-        print(f"  - Nombre de cuenta: {account_name}")
-        print(f"  - Cuenta padre: {parent_account if parent_account else 'Ninguna'}")
-        print(f"  - Root Type: {root_type}")
-        print(f"  - Report Type: {report_type}")
+    # Recorre cada registro
+    for job_offer in job_offers:
+        tipo = job_offer.get('custom_tipo_de_hoja_de_contratacion')
+        puesto = job_offer.get('designation')
         
-        confirm = input("¿Desea añadir esta cuenta? (S/N): ").strip().upper()
-        if confirm != 'S':
-            print(f"Cuenta omitida: {account_full_name}")
-            continue
+        # Verifica si los campos son inválidos y necesita actualizarse
+        needs_update = False
+        
+        # Validación de `custom_tipo_de_hoja_de_contratacion`
+        if not tipo or tipo not in lista_tipos:
+            job_offer['custom_tipo_de_hoja_de_contratacion'] = default_tipo
+            needs_update = True
 
-        # Crear la cuenta
-        account_doc = frappe.get_doc({
-            "doctype": "Account",
-            "company": company_name,
-            "parent_account": parent_account if parent_account else "",
-            "account_number": account_number,
-            "account_name": account_name,
-            "root_type": root_type,
-            "report_type": report_type,
-            "is_group": 0,  # Asume que la nueva cuenta no es un grupo
-        })
+        # Validación de `designation`
+        if not puesto or not frappe.db.exists('Designation', puesto):
+            job_offer['designation'] = default_designation
+            needs_update = True
 
+        # Si necesita actualización, guarda el cambio en la base de datos
+        if needs_update:
+            try:
+                # Carga el documento para actualizar
+                doc = frappe.get_doc("Job Offer", job_offer["name"])
+                doc.custom_tipo_de_hoja_de_contratacion = job_offer['custom_tipo_de_hoja_de_contratacion']
+                doc.designation = job_offer['designation']
+                doc.save()
+                frappe.db.commit()  # Confirma los cambios en la base de datos
+                print(f"Registro actualizado: {job_offer['name']}")
+            except Exception as e:
+                print(f"Error al actualizar el registro {job_offer['name']}: {e}")
+                frappe.db.rollback()  # Revierte en caso de error
+
+# Ejecuta la función
+update_invalid_records()
+2024-11-14 10:13:52,444 INFO ipython izar el registro HR-OFF-2024-06664:  Not allowed to change Puesto after submission from Profesor/a Titular to Aux. Admín.
+Error al actualizar el registro HR-OFF-2024-06665:  Not allowed to change Puesto after submission from Profesor/a Titular to Aux. Admín.
+Error al actualizar el registro HR-OFF-2024-06666:  Not allowed to change Puesto after submission from Profesor/a Titular to Aux. Admín.
+Error al actualizar el registro HR-OFF-2024-06667:  Not allowed to change Puesto after submission from Profesor/a Titular to Aux. Admín.
+Error al actualizar el registro HR-OFF-2024-06668:  Not allowed to change Puesto after submission from Profesor/a Titular to Aux. Admín.
+2024-11-14 10:13:52,444 INFO ipython import frappe
+
+def update_invalid_records():
+    # Define los valores por defecto y opciones válidas
+    default_tipo = "Contrato"  # Puedes cambiarlo según prefieras
+    default_designation = "Aux. Admin." 
+    lista_tipos = {"Contrato", "Llamamiento"}
+
+    # Filtra y obtiene los registros de 'Job Offer' con docstatus=1 y workflow_state='Validado'
+    job_offers = frappe.get_all("Job Offer", 
+                                filters={"docstatus": 1, "workflow_state": "Validado"}, 
+                                fields=["name", "custom_tipo_de_hoja_de_contratacion", "designation", "custom_fecha_fin"])
+
+    # Recorre cada registro
+    for job_offer in job_offers:
+        tipo = job_offer.get('custom_tipo_de_hoja_de_contratacion')
+        puesto = job_offer.get('designation')
+        
+        # Verifica si los campos son inválidos y necesita actualizarse
+        needs_update = False
+        
+        # Validación de `custom_tipo_de_hoja_de_contratacion`
+        if not tipo or tipo not in lista_tipos:
+            job_offer['custom_tipo_de_hoja_de_contratacion'] = default_tipo
+            needs_update = True
+
+        # Validación de `designation`
+        if not puesto or not frappe.db.exists('Designation', puesto):
+            job_offer['designation'] = default_designation
+            needs_update = True
+
+        # Si necesita actualización, guarda el cambio en la base de datos
+        if needs_update:
+            try:
+                # Carga el documento para actualizar
+                doc = frappe.get_doc("Job Offer", job_offer["name"])
+                doc.custom_tipo_de_hoja_de_contratacion = job_offer['custom_tipo_de_hoja_de_contratacion']
+                doc.designation = job_offer['designation']
+                doc.save()
+                frappe.db.commit()  # Confirma los cambios en la base de datos
+                print(f"Registro actualizado: {job_offer['name']}")
+            except Exception as e:
+                print(f"Error al actualizar el registro {job_offer['name']}: {e}")
+                frappe.db.rollback()  # Revierte en caso de error
+
+# Ejecuta la función
+update_invalid_records()
+2024-11-14 10:13:52,444 INFO ipython import frappe
+
+def update_invalid_records():
+    # Define los valores por defecto y opciones válidas
+    default_tipo = "Contrato"  # Puedes cambiarlo según prefieras
+    default_designation = "Aux. Admin." 
+    lista_tipos = {"Contrato", "Llamamiento"}
+
+    # Filtra y obtiene los registros de 'Job Offer' con docstatus=1 y workflow_state='Validado'
+    job_offers = frappe.get_all("Job Offer", 
+                                filters={"docstatus": 1, "workflow_state": "Validado"}, 
+                                fields=["name", "custom_tipo_de_hoja_de_contratacion", "designation", "custom_fecha_fin"])
+
+    # Recorre cada registro
+    for job_offer in job_offers:
+        tipo = job_offer.get('custom_tipo_de_hoja_de_contratacion')
+        puesto = job_offer.get('designation')
+        
+        # Verifica si los campos son inválidos y necesita actualizarse
+        needs_update = False
+        
+        # Validación de `custom_tipo_de_hoja_de_contratacion`
+        if not tipo or tipo not in lista_tipos:
+            frappe.db.set_value("Job Offer", job_offer["name"], "custom_tipo_de_hoja_de_contratacion", default_tipo)
+            needs_update = True
+
+        # Validación de `designation`
+        if not puesto or not frappe.db.exists('Designation', puesto):
+            frappe.db.set_value("Job Offer", job_offer["name"], "designation", default_designation)
+            needs_update = True
+
+        # Confirma en la base de datos si hubo una actualización
+        if needs_update:
+            try:
+                frappe.db.commit()  # Confirma los cambios en la base de datos
+                print(f"Registro actualizado: {job_offer['name']}")
+            except Exception as e:
+                print(f"Error al actualizar el registro {job_offer['name']}: {e}")
+                frappe.db.rollback()  # Revierte en caso de error
+
+# Ejecuta la función
+update_invalid_records()
+2024-11-14 10:13:52,444 INFO ipython === session end ===
+2024-11-14 11:21:38,707 INFO ipython === bench console session ===
+2024-11-14 11:21:38,708 INFO ipython === session end ===
+2024-11-14 12:04:20,384 INFO ipython === bench console session ===
+2024-11-14 12:04:20,385 INFO ipython import frappe
+ 
+def delete_files_by_name():
+    # Lista de nombres de archivo extraídos de los errores
+    nombres_archivos = [
+        "MediavillaCorralCarlosCurriculumVitae.pdf",
+        "CV Beatriz FernÃ¡ndez.pdf",
+        "curriculum vitae Dioni.pdf",
+        "Currículum vitae Dalila_Hamdi.pdf",
+        "NIE_DH.pdf",
+        "CV Sara Sanz.pdf",
+        "DNI_FERNANDEZ FUENTES, IRATXE.pdf",
+        "CVMONTAÑA333225.pdf",
+        "1.DNI MSB.pdf",
+        "ARROYO, MARÍA JESÚS_DNI65fd4a.pdf",
+        "Mariam_Martinez Tabernero_CV (3).PDF",
+        "DNI MARIAN MARTINEZ TABERNERO.pdf",
+        "CV Luis Olmo _2024.pdf",
+        "DNIc2b97b.pdf",
+        "cv FRANCISCO PÉREZ VERA 2024.pdf",
+        "CURRÍCULUM NIEVES CAÑADAS GONZALEZ.pdf",
+        "CV RAQUEL CUENCA_MODELO ATU_2023.pdf"
+    ]
+ 
+    # Recorre cada nombre de archivo
+    for nombre_archivo in nombres_archivos:
         try:
-            account_doc.insert(ignore_permissions=True)
-            frappe.db.commit()
-            print(f"Cuenta creada: {account_full_name}")
-        except frappe.DuplicateEntryError:
-            print(f"Cuenta ya existente: {account_full_name}")
+            # Construye y ejecuta la consulta SQL para eliminar archivos específicos
+            frappe.db.sql("""
+                DELETE FROM `tabFile` 
+                WHERE `attached_to_doctype` = 'Job Offer' 
+                AND `file_url` LIKE %s
+            """, (f"%{nombre_archivo}%",))
+            frappe.db.commit()  # Confirma la eliminación en la base de datos
+            print(f"Archivo eliminado: {nombre_archivo}")
         except Exception as e:
-            print(f"Error creando la cuenta {account_full_name}: {e}")
-
-        count += 1
-2024-08-22 10:03:42,254 INFO ipython import csv
-from frappe import _
-
-# Ruta al archivo CSV
-csv_file_path = "/home/frappe/frappe-bench/importacion/burgos_atu.csv"
-
-# Nombre de la compañía
-company_name = "Burgos atu SL"
-company_abbr = frappe.get_value("Company", company_name, "abbr")
-
-# Lista para almacenar los detalles de las cuentas creadas
-created_accounts = []
-
-# Leer el archivo CSV
-with open(csv_file_path, mode='r', encoding='utf-8') as file:
-    csv_reader = csv.DictReader(file)
-    
-    for row in csv_reader:
-        account_number = row['account_number']
-        account_name = row['account_name']
-
-        # Crear el nombre completo de la cuenta
-        account_full_name = f"{account_number} - {account_name} - {company_abbr}"
-
-        # Verificar si la cuenta ya existe
-        if frappe.db.exists("Account", {"account_number": account_number, "company": company_name}):
-            print(f"La cuenta ya existe: {account_full_name}. Saltando creación.")
+            print(f"Error al eliminar el archivo {nombre_archivo}: {e}")
+            frappe.db.rollback()  # Revierte en caso de error
+ 
+# Ejecuta la función
+delete_files_by_name()
+2024-11-14 12:04:20,385 INFO ipython === session end ===
+2024-11-14 12:45:06,199 INFO ipython === bench console session ===
+2024-11-14 12:45:06,201 INFO ipython 
+import frappe
+ 
+def add_zero_to_dni():
+    # Lista de DNI/NIE extraídos de los errores
+    dni_nie_list = [
+        "7876634P",
+        "9341295Y",
+        "7858631Z",
+        "Y8296141D",
+        "9329858T",
+        "9337249P",
+        "3450244Z",
+        "9312584E"
+    ]
+ 
+    for dni in dni_nie_list:
+        # Verifica si el valor es un NIE (si empieza con una letra)
+        if dni[0].isalpha():
+            print(f"Saltando NIE: {dni}")
             continue
+ 
+        # Añade un "0" al inicio del DNI
+        new_dni = "0" + dni
+ 
+        # Actualiza el registro correspondiente en la base de datos
+        try:
+            # Filtra el registro en la tabla `Employee` o la correspondiente
+            frappe.db.sql("""
+                UPDATE `tabEmployee` 
+                SET `custom_dninie_id` = %s 
+                WHERE `custom_dninie_id` = %s
+            """, (new_dni, dni))
+            frappe.db.commit()  # Confirma la actualización en la base de datos
+            print(f"Actualizado {dni} a {new_dni}")
+        except Exception as e:
+            print(f"Error al actualizar {dni}: {e}")
+            frappe.db.rollback()  # Revierte en caso de error
+ 
+# Ejecuta la función
+add_zero_to_dni()
+2024-11-14 12:45:06,201 INFO ipython === session end ===
+2024-11-14 13:17:34,374 INFO ipython === bench console session ===
+2024-11-14 13:17:34,374 INFO ipython === session end ===
+2024-11-16 03:22:15,863 INFO ipython === bench console session ===
+2024-11-16 03:22:15,863 INFO ipython === session end ===
+2024-11-21 10:23:43,712 INFO ipython === bench console session ===
+2024-11-21 10:23:43,713 INFO ipython import frappe
+import pandas as pd
+from frappe.utils.file_manager import save_file
 
-        # Inicialmente asumimos que la cuenta no tiene padre
-        parent_account = None
+def export_expense_claim_summary():
+    # Query para obtener los datos necesarios de Expense Claim
+    expense_claims = frappe.db.get_all(
+        'Expense Claim',
+        fields=['employee', 'employee_name', 'custom_dninie_Id', 'company', 'expense_claim_type', 'total_claimed_amount'],
+        filters={'docstatus': 1}  # Solo los documentos aprobados
+    )
 
-        # Recorrer los dígitos de la cuenta para encontrar la cuenta padre
-        for i in range(1, len(account_number) + 1):
-            parent_account_candidate = account_number[:i]
-            # Buscar la cuenta grupo que coincida con el prefijo actual
-            possible_parent_account = frappe.db.exists(
-                "Account",
-                {
-                    "account_number": parent_account_candidate,
-                    "company": company_name,
-                    "is_group": 1
-                }
+    if not expense_claims:
+        frappe.throw("No se encontraron registros de Expense Claim aprobados.")
+
+    # Convertir los resultados a un DataFrame de Pandas
+    df = pd.DataFrame(expense_claims)
+
+    # Reemplazar `custom_dninie_Id` con `name` si está vacío
+    df['dni'] = df['custom_dninie_Id'].fillna(df['employee'])
+
+    # Agrupar por empleado y tipo de gasto, sumando los totales
+    grouped_df = df.groupby(['employee', 'employee_name', 'dni', 'company', 'expense_claim_type'], as_index=False).agg({
+        'total_claimed_amount': 'sum'
+    })
+
+    # Pivotar los datos para tener una columna por cada tipo de gasto
+    pivot_df = grouped_df.pivot(
+        index=['employee', 'employee_name', 'dni', 'company'],
+        columns='expense_claim_type',
+        values='total_claimed_amount'
+    ).reset_index()
+
+    # Reemplazar NaN con 0 para las columnas de gastos
+    pivot_df.fillna(0, inplace=True)
+
+    # Crear el archivo Excel
+    file_name = "Expense_Claim_Summary.xlsx"
+    file_path = frappe.utils.get_site_path("public", "files", file_name)
+
+    pivot_df.to_excel(file_path, index=False)
+
+    # Guardar el archivo en el sistema de archivos de Frappe
+    save_file(
+        file_name,
+        open(file_path, 'rb').read(),
+        dt=None,
+        dn=None,
+        is_private=0
+    )
+
+    frappe.msgprint(f"Archivo generado correctamente: {file_path}")
+
+# Llamar a la función
+export_expense_claim_summary()
+2024-11-21 10:23:43,713 INFO ipython === session end ===
+2024-11-21 10:35:47,471 INFO ipython === bench console session ===
+2024-11-21 10:35:47,471 INFO ipython import frappe
+import pandas as pd
+from frappe.utils.file_manager import save_file
+
+def get_company_from_job_offer():
+    """
+    Mapea el DNI de los empleados con la empresa correspondiente,
+    basado en el estado de contratación en Job Offer.
+    """
+    job_offers = frappe.db.sql("""
+        SELECT
+            jo.custom_dninie AS dni,
+            jo.company,
+            jo.status,
+            jo.custom_fecha_fin
+        FROM
+            `tabJob Offer` jo
+        WHERE
+            jo.docstatus = 1
+    """, as_dict=True)
+
+    # Crear un mapeo DNI -> Empresa
+    employee_company_map = {}
+    job_offers_df = pd.DataFrame(job_offers)
+
+    if not job_offers_df.empty:
+        for dni, group in job_offers_df.groupby('dni'):
+            group = group.sort_values(
+                by=['status', 'custom_fecha_fin'], 
+                ascending=[False, False]  # Alta primero, Baja con fecha más reciente
             )
-            if possible_parent_account:
-                parent_account = possible_parent_account  # Machacar con la cuenta grupo más específica
+            selected_row = group.iloc[0]
+            employee_company_map[dni] = selected_row['company']
 
-        # Si se encontró un padre, traer tipo de root y tipo de reporte de la cuenta principal
-        if parent_account:
-            parent_account_doc = frappe.get_doc("Account", parent_account)
-            root_type = parent_account_doc.root_type
-            report_type = parent_account_doc.report_type
+    return employee_company_map
 
-        # Crear la cuenta
-        account_doc = frappe.get_doc({
-            "doctype": "Account",
-            "company": company_name,
-            "parent_account": parent_account if parent_account else "",
-            "account_number": account_number,
-            "account_name": account_name,
-            "root_type": root_type,
-            "report_type": report_type,
-            "is_group": 0,  # Asume que la nueva cuenta no es un grupo
-        })
+def export_expense_claim_summary():
+    # Obtener datos de Expense Claim
+    expense_claims = frappe.db.get_all(
+        'Expense Claim',
+        fields=['employee', 'expense_claim_type', 'total_claimed_amount'],
+        filters={'docstatus': 1}  # Solo documentos aprobados
+    )
 
-        try:
-            account_doc.insert(ignore_permissions=True)
-            frappe.db.commit()
-            print(f"Cuenta creada: {account_full_name}")
+    if not expense_claims:
+        frappe.throw("No se encontraron registros de Expense Claim aprobados.")
 
-            # Añadir detalles a la lista de cuentas creadas
-            created_accounts.append({
-                "account_number": account_number,
-                "account_name": account_name,
-                "parent_account": parent_account_doc.name if parent_account else "Ninguna"
-            })
-        except frappe.DuplicateEntryError:
-            print(f"Cuenta ya existente: {account_full_name}")
-        except Exception as e:
-            print(f"Error creando la cuenta {account_full_name}: {e}")
+    # Obtener datos de los empleados
+    employees = frappe.db.get_all(
+        'Employee',
+        fields=['name as employee', 'employee_name', 'custom_dninie_Id as dni']
+    )
 
-# Mostrar resumen de cuentas creadas
-print("\nResumen de cuentas creadas:")
-for account in created_accounts:
-    print(f"  - {account['account_number']} - {account['account_name']} (Padre: {account['parent_account']})")
-2024-08-22 10:03:42,254 INFO ipython === session end ===
-2024-08-22 10:16:00,965 INFO ipython === bench console session ===
-2024-08-22 10:16:00,965 INFO ipython # Obtener todas las hojas de contratación
-job_offers = frappe.get_all('Job Offer', filters={}, fields=['name', 'custom_dninie', 'custom_empleado'])
+    # Convertir a DataFrames
+    expense_claims_df = pd.DataFrame(expense_claims)
+    employees_df = pd.DataFrame(employees)
 
-# Recorrer cada hoja de contratación
-for job_offer in job_offers:
-    # Inicialmente, se asume que no se ha encontrado un empleado
-    employee_exists = False
-    
-    # Comprobar si existe un empleado con el mismo custom_dninie
-    if job_offer.custom_dninie:
-        employee_exists = frappe.db.exists('Employee', {'custom_dninie_id': job_offer.custom_dninie})
-    
-    # Si no se encontró por custom_dninie, comprobar si el empleado en custom_empleado existe
-    if not employee_exists and job_offer.custom_empleado:
-        employee_exists = frappe.db.exists('Employee', {'name': job_offer.custom_empleado})
-    
-    # Si se encontró un empleado, actualizar custom_tiene_empleado a 1
-    if employee_exists:
-        frappe.db.set_value('Job Offer', job_offer.name, 'custom_tiene_empleado', 1)
+    # Mapeo DNI -> Empresa desde Job Offer
+    employee_company_map = get_company_from_job_offer()
+    employees_df['company'] = employees_df['dni'].map(employee_company_map)
+
+    # Unir datos de Expense Claim con detalles del empleado
+    merged_df = expense_claims_df.merge(employees_df, on='employee', how='left')
+
+    # Agrupar por empleado y tipo de gasto
+    grouped_df = merged_df.groupby(['employee', 'employee_name', 'dni', 'company', 'expense_claim_type'], as_index=False).agg({
+        'total_claimed_amount': 'sum'
+    })
+
+    # Pivotar los datos para que cada tipo de gasto sea una columna
+    pivot_df = grouped_df.pivot(
+        index=['employee', 'employee_name', 'dni', 'company'],
+        columns='expense_claim_type',
+        values='total_claimed_amount'
+    ).reset_index()
+
+    # Reemplazar NaN con 0 en las columnas de gastos
+    pivot_df.fillna(0, inplace=True)
+
+    # Crear el archivo Excel
+    file_name = "Expense_Claim_Summary.xlsx"
+    file_path = frappe.utils.get_site_path("public", "files", file_name)
+
+    pivot_df.to_excel(file_path, index=False)
+
+    # Guardar el archivo en el sistema de archivos de Frappe
+    save_file(
+        file_name,
+        open(file_path, 'rb').read(),
+        dt=None,
+        dn=None,
+        is_private=0
+    )
+
+    frappe.msgprint(f"Archivo generado correctamente: {file_path}")
+
+# Llamar a la función
+export_expense_claim_summary()
+2024-11-21 10:35:47,471 INFO ipython === session end ===
+2024-11-21 10:40:06,099 INFO ipython === bench console session ===
+2024-11-21 10:40:06,100 INFO ipython import frappe
+import pandas as pd
+from frappe.utils.file_manager import save_file
+
+def get_company_from_job_offer():
+    """
+    Mapea el DNI de los empleados con la empresa correspondiente,
+    basado en el estado de contratación en Job Offer.
+    """
+    job_offers = frappe.db.sql("""
+        SELECT
+            jo.custom_dninie AS dni,
+            jo.company,
+            jo.status,
+            jo.custom_fecha_fin
+        FROM
+            `tabJob Offer` jo
+        WHERE
+            jo.docstatus = 1
+    """, as_dict=True)
+
+    # Crear un mapeo DNI -> Empresa
+    employee_company_map = {}
+    job_offers_df = pd.DataFrame(job_offers)
+
+    if not job_offers_df.empty:
+        for dni, group in job_offers_df.groupby('dni'):
+            group = group.sort_values(
+                by=['status', 'custom_fecha_fin'], 
+                ascending=[False, False]  # Alta primero, Baja con fecha más reciente
+            )
+            selected_row = group.iloc[0]
+            employee_company_map[dni] = selected_row['company']
+
+    return employee_company_map
+
+def export_expense_claim_summary():
+    # Obtener datos de Expense Claim y sus detalles desde Expense Claim Detail
+    expense_claim_details = frappe.db.sql("""
+        SELECT
+            ec.employee,
+            ec_detail.expense_type AS expense_claim_type,  -- Asegúrate de que este sea el nombre correcto del campo
+            ec_detail.amount AS total_claimed_amount
+        FROM
+            `tabExpense Claim Detail` ec_detail
+        INNER JOIN
+            `tabExpense Claim` ec
+        ON
+            ec_detail.parent = ec.name
+        WHERE
+            ec.docstatus = 0
+    """, as_dict=True)
+
+    if not expense_claim_details:
+        frappe.throw("No se encontraron registros de Expense Claim en borrador.")
+
+    # Validar datos antes de convertir a DataFrame
+    if not isinstance(expense_claim_details, list) or not all(isinstance(row, dict) for row in expense_claim_details):
+        frappe.throw("Los datos de Expense Claim Detail no tienen el formato esperado.")
+
+    # Convertir a DataFrame
+    try:
+        expense_claims_df = pd.DataFrame(expense_claim_details)
+    except Exception as e:
+        frappe.throw(f"Error al convertir los datos de Expense Claim a DataFrame: {str(e)}")
+
+    # Obtener datos de los empleados
+    employees = frappe.db.get_all(
+        'Employee',
+        fields=['name as employee', 'employee_name', 'custom_dninie_Id as dni']
+    )
+
+    # Convertir datos de empleados a DataFrame
+    employees_df = pd.DataFrame(employees)
+
+    # Mapeo DNI -> Empresa desde Job Offer
+    employee_company_map = get_company_from_job_offer()
+    employees_df['company'] = employees_df['dni'].map(employee_company_map)
+
+    # Validar datos de empleados antes de unirlos
+    if employees_df.empty:
+        frappe.throw("No se encontraron registros de empleados.")
+
+    # Unir datos de Expense Claim con detalles del empleado
+    merged_df = expense_claims_df.merge(employees_df, on='employee', how='left')
+
+    # Agrupar por empleado y tipo de gasto
+    grouped_df = merged_df.groupby(['employee', 'employee_name', 'dni', 'company', 'expense_claim_type'], as_index=False).agg({
+        'total_claimed_amount': 'sum'
+    })
+
+    # Pivotar los datos para que cada tipo de gasto sea una columna
+    pivot_df = grouped_df.pivot(
+        index=['employee', 'employee_name', 'dni', 'company'],
+        columns='expense_claim_type',
+        values='total_claimed_amount'
+    ).reset_index()
+
+    # Reemplazar NaN con 0 en las columnas de gastos
+    pivot_df.fillna(0, inplace=True)
+
+    # Crear el archivo Excel
+    file_name = "Expense_Claim_Summary.xlsx"
+    file_path = frappe.utils.get_site_path("public", "files", file_name)
+
+    try:
+        pivot_df.to_excel(file_path, index=False)
+    except Exception as e:
+        frappe.throw(f"Error al generar el archivo Excel: {str(e)}")
+
+    # Guardar el archivo en el sistema de archivos de Frappe
+    save_file(
+        file_name,
+        open(file_path, 'rb').read(),
+        dt=None,
+        dn=None,
+        is_private=0
+    )
+
+    frappe.msgprint(f"Archivo generado correctamente: {file_path}")
+
+# Llamar a la función
+export_expense_claim_summary()
+2024-11-21 10:40:06,102 INFO ipython === session end ===
+2024-11-21 10:44:49,300 INFO ipython === bench console session ===
+2024-11-21 10:44:49,300 INFO ipython import frappe
+import pandas as pd
+from frappe.utils.file_manager import save_file
+
+def get_company_from_job_offer():
+    """
+    Mapea el DNI de los empleados con la empresa correspondiente,
+    basado en el estado de contratación en Job Offer.
+    """
+    job_offers = frappe.db.sql("""
+        SELECT
+            jo.custom_dninie AS dni,
+            jo.company,
+            jo.status,
+            jo.custom_fecha_fin
+        FROM
+            `tabJob Offer` jo
+        WHERE
+            jo.docstatus = 1
+    """, as_dict=True)
+
+    # Crear un mapeo DNI -> Empresa
+    employee_company_map = {}
+    if job_offers:
+        job_offers_df = pd.DataFrame(job_offers)
+
+        for dni, group in job_offers_df.groupby('dni'):
+            group = group.sort_values(
+                by=['status', 'custom_fecha_fin'], 
+                ascending=[False, False]  # Alta primero, Baja con fecha más reciente
+            )
+            selected_row = group.iloc[0]
+            employee_company_map[dni] = selected_row['company']
+
+    return employee_company_map
+
+def export_expense_claim_summary():
+    # Obtener datos de Expense Claim y sus detalles desde Expense Claim Detail
+    expense_claim_details = frappe.db.sql("""
+        SELECT
+            ec.employee,
+            ec_detail.expense_type AS expense_claim_type,
+            ec_detail.amount AS total_claimed_amount
+        FROM
+            `tabExpense Claim Detail` ec_detail
+        INNER JOIN
+            `tabExpense Claim` ec
+        ON
+            ec_detail.parent = ec.name
+        WHERE
+            ec.docstatus = 0
+    """, as_dict=True)
+
+    if not expense_claim_details:
+        frappe.throw("No se encontraron registros de Expense Claim en borrador.")
+
+    # Asegurar que los datos sean válidos
+    if not isinstance(expense_claim_details, list) or not all(isinstance(row, dict) for row in expense_claim_details):
+        frappe.throw("Los datos de Expense Claim Detail no tienen el formato esperado.")
+
+    # Limpiar y convertir datos a DataFrame
+    clean_data = [row for row in expense_claim_details if row]
+    expense_claims_df = pd.DataFrame(clean_data)
+
+    # Obtener datos de los empleados
+    employees = frappe.db.get_all(
+        'Employee',
+        fields=['name as employee', 'employee_name', 'custom_dninie_Id as dni']
+    )
+
+    # Convertir datos de empleados a DataFrame
+    if not employees:
+        frappe.throw("No se encontraron registros de empleados.")
+    employees_df = pd.DataFrame(employees)
+
+    # Mapeo DNI -> Empresa desde Job Offer
+    employee_company_map = get_company_from_job_offer()
+    employees_df['company'] = employees_df['dni'].map(employee_company_map)
+
+    # Validar datos antes de unir
+    if employees_df.empty or expense_claims_df.empty:
+        frappe.throw("No hay suficientes datos para procesar.")
+
+    # Unir datos de Expense Claim con detalles del empleado
+    merged_df = expense_claims_df.merge(employees_df, on='employee', how='left')
+
+    # Agrupar por empleado y tipo de gasto
+    grouped_df = merged_df.groupby(['employee', 'employee_name', 'dni', 'company', 'expense_claim_type'], as_index=False).agg({
+        'total_claimed_amount': 'sum'
+    })
+
+    # Pivotar los datos para que cada tipo de gasto sea una columna
+    if grouped_df.empty:
+        frappe.throw("No hay datos agrupados para generar el informe.")
+    pivot_df = grouped_df.pivot(
+        index=['employee', 'employee_name', 'dni', 'company'],
+        columns='expense_claim_type',
+        values='total_claimed_amount'
+    ).reset_index()
+
+    # Reemplazar NaN con 0 en las columnas de gastos
+    pivot_df.fillna(0, inplace=True)
+
+    # Crear el archivo Excel
+    file_name = "Expense_Claim_Summary.xlsx"
+    file_path = frappe.utils.get_site_path("public", "files", file_name)
+
+    try:
+        pivot_df.to_excel(file_path, index=False)
+    except Exception as e:
+        frappe.throw(f"Error al generar el archivo Excel: {str(e)}")
+
+    # Guardar el archivo en el sistema de archivos de Frappe
+    save_file(
+        file_name,
+        open(file_path, 'rb').read(),
+        dt=None,
+        dn=None,
+        is_private=0
+    )
+
+    frappe.msgprint(f"Archivo generado correctamente: {file_path}")
+
+# Llamar a la función
+export_expense_claim_summary()
+2024-11-21 10:44:49,300 INFO ipython import frappe
+import pandas as pd
+from frappe.utils.file_manager import save_file
+
+def get_company_from_job_offer():
+    """
+    Mapea el DNI de los empleados con la empresa correspondiente,
+    basado en el estado de contratación en Job Offer.
+    """
+    job_offers = frappe.db.sql("""
+        SELECT
+            jo.custom_dninie AS dni,
+            jo.company,
+            jo.status,
+            jo.custom_fecha_fin
+        FROM
+            `tabJob Offer` jo
+        WHERE
+            jo.docstatus = 1
+    """, as_dict=True)
+
+    # Crear un mapeo DNI -> Empresa
+    employee_company_map = {}
+    if job_offers:
+        job_offers_df = pd.DataFrame(job_offers)
+
+        for dni, group in job_offers_df.groupby('dni'):
+            group = group.sort_values(
+                by=['status', 'custom_fecha_fin'], 
+                ascending=[False, False]  # Alta primero, Baja con fecha más reciente
+            )
+            selected_row = group.iloc[0]
+            employee_company_map[dni] = selected_row['company']
+
+    return employee_company_map
+
+def export_expense_claim_summary():
+    # Obtener datos de Expense Claim y sus detalles desde Expense Claim Detail
+    expense_claim_details = frappe.db.sql("""
+        SELECT
+            ec.employee,
+            ec_detail.expense_type AS expense_claim_type,
+            ec_detail.amount AS total_claimed_amount
+        FROM
+            `tabExpense Claim Detail` ec_detail
+        INNER JOIN
+            `tabExpense Claim` ec
+        ON
+            ec_detail.parent = ec.name
+        WHERE
+            ec.docstatus = 0
+    """, as_dict=True)
+
+    if not expense_claim_details:
+        print("No se encontraron registros de Expense Claim en borrador.")
+        return
+
+    # Validar y limpiar datos
+    clean_data = [row for row in expense_claim_details if row]
+    if not clean_data:
+        print("Los datos de Expense Claim están vacíos o mal formateados.")
+        return
+
+    expense_claims_df = pd.DataFrame(clean_data)
+
+    # Obtener datos de los empleados
+    employees = frappe.db.get_all(
+        'Employee',
+        fields=['name as employee', 'employee_name', 'custom_dninie_Id as dni']
+    )
+
+    if not employees:
+        print("No se encontraron registros de empleados.")
+        return
+
+    employees_df = pd.DataFrame(employees)
+
+    # Mapeo DNI -> Empresa desde Job Offer
+    employee_company_map = get_company_from_job_offer()
+    employees_df['company'] = employees_df['dni'].map(employee_company_map)
+
+    # Validar datos antes de unir
+    if employees_df.empty or expense_claims_df.empty:
+        print("No hay suficientes datos para procesar.")
+        return
+
+    # Unir datos de Expense Claim con detalles del empleado
+    merged_df = expense_claims_df.merge(employees_df, on='employee', how='left')
+
+    # Agrupar por empleado y tipo de gasto
+    grouped_df = merged_df.groupby(['employee', 'employee_name', 'dni', 'company', 'expense_claim_type'], as_index=False).agg({
+        'total_claimed_amount': 'sum'
+    })
+
+    # Pivotar los datos para que cada tipo de gasto sea una columna
+    if grouped_df.empty:
+        print("No hay datos agrupados para generar el informe.")
+        return
+
+    pivot_df = grouped_df.pivot(
+        index=['employee', 'employee_name', 'dni', 'company'],
+        columns='expense_claim_type',
+        values='total_claimed_amount'
+    ).reset_index()
+
+    # Reemplazar NaN con 0 en las columnas de gastos
+    pivot_df.fillna(0, inplace=True)
+
+    # Crear el archivo Excel
+    file_name = "Expense_Claim_Summary.xlsx"
+    file_path = frappe.utils.get_site_path("public", "files", file_name)
+
+    try:
+        pivot_df.to_excel(file_path, index=False)
+        print(f"Archivo generado correctamente en: {file_path}")
+    except Exception as e:
+        print(f"Error al generar el archivo Excel: {str(e)}")
+
+# Ejecutar la función
+export_expense_claim_summary()
+2024-11-21 10:44:49,301 INFO ipython === session end ===
+2024-11-28 12:52:31,962 INFO ipython === bench console session ===
+2024-11-28 12:52:31,963 INFO ipython import frappe
+from datetime import datetime
+
+# Obtener la fecha actual
+today = datetime.now().date()
+
+# Filtrar las transacciones bancarias creadas hoy por el usuario 'Administrator'
+bank_transactions = frappe.get_all(
+    "Bank Transaction",
+    filters={
+        "creation": [">=", f"{today} 00:00:00"],
+        "creation": ["<=", f"{today} 23:59:59"],
+        "owner": "Administrator"
+    },
+    fields=["name", "creation"]
+)
+
+# Eliminar las transacciones encontradas
+for transaction in bank_transactions:
+    try:
+        frappe.delete_doc("Bank Transaction", transaction["name"])
+        print(f"Eliminado: {transaction['name']} creado en {transaction['creation']}")
+    except Exception as e:
+        print(f"Error al eliminar {transaction['name']}: {e}")
 
 # Confirmar los cambios
 frappe.db.commit()
+print(f"Total eliminados: {len(bank_transactions)}")
+2024-11-28 12:52:31,964 INFO ipython import frappe
+from datetime import datetime
 
-print("Actualización completada.")
-2024-08-22 10:16:00,966 INFO ipython === session end ===
+# Obtener la fecha actual
+today = datetime.now().date()
+
+# Filtrar transacciones bancarias creadas hoy
+bank_transactions_count = frappe.db.count(
+    "Bank Transaction",
+    filters={
+        "creation": [">=", f"{today} 00:00:00"],
+        "creation": ["<=", f"{today} 23:59:59"]
+    }
+)
+
+print(f"Total de transacciones bancarias creadas hoy: {bank_transactions_count}")
+2024-11-28 12:52:31,964 INFO ipython === session end ===
+2024-11-28 12:57:43,531 INFO ipython === bench console session ===
+2024-11-28 12:57:43,531 INFO ipython import frappe
+from datetime import datetime
+
+# Obtener la fecha actual
+today = datetime.now().date()
+
+# Filtrar transacciones bancarias creadas hoy
+bank_transactions_count = frappe.db.count(
+    "Bank Transaction",
+    filters={
+        "creation": [">=", f"{today} 00:00:00"],
+        "creation": ["<=", f"{today} 23:59:59"]
+    }
+)
+
+print(f"Total de transacciones bancarias creadas hoy: {bank_transactions_count}")
+2024-11-28 12:57:43,531 INFO ipython import frappe
+from datetime import datetime
+
+# Obtener la fecha actual
+today = datetime.now().date()
+
+# Filtrar transacciones bancarias creadas hoy
+bank_transactions_count = frappe.db.count(
+    "Bank Transaction",
+    filters={
+        "creation": [">=", f"{today} 00:00:00"], 
+    }
+)
+
+print(f"Total de transacciones bancarias creadas hoy: {bank_transactions_count}")
+2024-11-28 12:57:43,532 INFO ipython import frappe
+from datetime import datetime
+
+# Obtener la fecha actual
+today = datetime.now().date()
+
+# Filtrar las transacciones bancarias creadas hoy por 'Administrator'
+bank_transactions = frappe.get_all(
+    "Bank Transaction",
+    filters={
+        "creation": [">=", f"{today} 00:00:00"]
+        "owner": "Administrator"
+    },
+    fields=["name", "docstatus", "creation"]
+)
+
+# Procesar las transacciones encontradas
+for transaction in bank_transactions:
+    try:
+        # Obtener el documento completo
+        doc = frappe.get_doc("Bank Transaction", transaction["name"])
+        
+        # Cancelar si está enviado (Submitted)
+        if doc.docstatus == 1:  # Estado enviado
+            doc.cancel()
+            print(f"Cancelado: {transaction['name']} creado en {transaction['creation']}")
+
+        # Eliminar el documento
+        frappe.delete_doc("Bank Transaction", transaction["name"])
+        print(f"Eliminado: {transaction['name']} creado en {transaction['creation']}")
+        
+    except Exception as e:
+        print(f"Error al procesar {transaction['name']}: {e}")
+
+# Confirmar los cambios
+frappe.db.commit()
+print(f"Total procesados: {len(bank_transactions)}")
+2024-11-28 12:57:43,532 INFO ipython import frappe
+from datetime import datetime
+
+# Obtener la fecha actual
+today = datetime.now().date()
+
+# Filtrar las transacciones bancarias creadas hoy por 'Administrator'
+bank_transactions = frappe.get_all(
+    "Bank Transaction",
+    filters={
+        "creation": [">=", f"{today} 00:00:00"],
+        "owner": "Administrator"
+    },
+    fields=["name", "docstatus", "creation"]
+)
+
+# Procesar las transacciones encontradas
+for transaction in bank_transactions:
+    try:
+        # Obtener el documento completo
+        doc = frappe.get_doc("Bank Transaction", transaction["name"])
+        
+        # Cancelar si está enviado (Submitted)
+        if doc.docstatus == 1:  # Estado enviado
+            doc.cancel()
+            print(f"Cancelado: {transaction['name']} creado en {transaction['creation']}")
+
+        # Eliminar el documento
+        frappe.delete_doc("Bank Transaction", transaction["name"])
+        print(f"Eliminado: {transaction['name']} creado en {transaction['creation']}")
+        
+    except Exception as e:
+        print(f"Error al procesar {transaction['name']}: {e}")
+
+# Confirmar los cambios
+frappe.db.commit()
+print(f"Total procesados: {len(bank_transactions)}")
+2024-11-28 12:57:43,532 INFO ipython === session end ===

@@ -96,15 +96,15 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Rule",
-   "options": "Round Robin\nLoad Balancing\nBased on Field",
+   "options": "Todos\nNo Asignado\nRound Robin\nLoad Balancing\nBased on Field",
    "reqd": 1
   },
   {
-   "depends_on": "eval: doc.rule !== 'Based on Field'",
+   "depends_on": "eval: doc.rule !== 'Based on Field' && doc.rule !== 'Not Asigned'",
    "fieldname": "users",
    "fieldtype": "Table MultiSelect",
    "label": "Users",
-   "mandatory_depends_on": "eval: doc.rule !== 'Based on Field'",
+   "mandatory_depends_on": "eval: doc.rule !== 'Based on Field' && doc.rule !== 'Not Asigned'",
    "options": "Assignment Rule User"
   },
   {
@@ -154,10 +154,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-07-16 22:51:35.505575",
+ "modified": "2024-09-30 12:45:58.512306",
  "modified_by": "Administrator",
  "module": "Automation",
  "name": "Assignment Rule",
+ "naming_rule": "Set by user",
  "owner": "Administrator",
  "permissions": [
   {
@@ -175,5 +176,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1
 }

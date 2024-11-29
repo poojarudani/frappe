@@ -274,7 +274,6 @@
    "reqd": 1
   },
   {
-   "depends_on": "paid_to",
    "fieldname": "paid_to_account_currency",
    "fieldtype": "Link",
    "label": "Account Currency (To)",
@@ -778,7 +777,7 @@
    "table_fieldname": "payment_entries"
   }
  ],
- "modified": "2024-04-11 11:25:07.366347",
+ "modified": "2024-10-17 11:29:44.704990",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Payment Entry",

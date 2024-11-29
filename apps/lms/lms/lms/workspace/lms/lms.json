@@ -145,8 +145,8 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-16 06:14:44.572456",
- "modified_by": "tania@grupoatu.com",
+ "modified": "2024-11-04 09:44:15.784967",
+ "modified_by": "Administrator",
  "module": "LMS",
  "name": "LMS",
  "number_cards": [],
@@ -155,7 +155,7 @@
  "public": 1,
  "quick_lists": [],
  "roles": [],
- "sequence_id": 12.0,
+ "sequence_id": 15.0,
  "shortcuts": [
   {
    "color": "Grey",

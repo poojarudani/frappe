@@ -42,12 +42,12 @@
    "fieldname": "tipo_linea",
    "fieldtype": "Select",
    "label": "Tipo de L\u00ednea",
-   "options": "Voz\nDatos\nCentralita"
+   "options": "Voz\nDatos\nCentralita\nTalkDesk"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-01 11:56:33.170055",
+ "modified": "2024-11-26 14:48:51.477997",
  "modified_by": "Administrator",
  "module": "Telephony",
  "name": "Cellular Lines",

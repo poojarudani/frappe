@@ -65,7 +65,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-08-20 13:21:35.105575",
+ "modified": "2024-11-04 09:44:17.385390",
  "modified_by": "Administrator",
  "module": "Payroll",
  "name": "N\u00f3minas",
@@ -76,7 +76,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 26.0,
+ "sequence_id": 29.0,
  "shortcuts": [
   {
    "label": "Dashboard",

@@ -2,6 +2,7 @@
  "actions": [],
  "allow_copy": 1,
  "allow_import": 1,
+ "allow_rename": 1,
  "creation": "2013-01-30 12:49:46",
  "description": "Heads (or groups) against which Accounting Entries are made and balances are maintained.",
  "doctype": "DocType",
@@ -189,7 +190,7 @@
  "idx": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2024-07-05 15:57:59.394757",
+ "modified": "2024-09-05 09:53:05.740907",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Account",
@@ -244,7 +245,7 @@
    "write": 1
   }
  ],
- "search_fields": "account_number",
+ "search_fields": "account_number, company",
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "ASC",

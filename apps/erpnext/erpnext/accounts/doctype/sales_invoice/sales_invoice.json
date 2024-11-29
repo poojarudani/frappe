@@ -2194,9 +2194,14 @@
    "group": "Reference",
    "link_doctype": "POS Invoice",
    "link_fieldname": "consolidated_invoice"
+  },
+  {
+   "group": "Correcciones",
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "amended_from"
   }
  ],
- "modified": "2024-07-05 16:00:20.540547",
+ "modified": "2024-10-15 12:40:27.054558",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Sales Invoice",

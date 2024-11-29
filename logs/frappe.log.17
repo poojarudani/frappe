@@ -1,190 +1,1541 @@
-2024-07-31 09:56:33,121 ERROR frappe Failed to run after request hook
+2024-11-20 12:04:10,546 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-ANX-2024-0000134","owner":"Administrator","creation":"2024-11-20 13:00:09.706440","modified":"2024-11-20 13:00:12.649295","modified_by":"Administrator","docstatus":0,"idx":3,"workflow_state":"Solicitado","company":"Academia Técnica Universitaria SL","employee":"02323232F","custom_tipo_de_contrato":"Indefinido ordinario","tipo_actualizacion":"Llamamiento","custom_estado_de_tramitacion":"Solicitado","designation":"Derecho","custom_provincia":"Burgos","start_date":"2024-11-20","end_date":"2024-12-07","status":"Esperando Respuesta","job_offer":"HR-OFF-2024-01513","custom_necesaria_confirmacion_de_baja":"No","custom_nombre_del_empleado":"Prueba Test dos","custom_dninie":"02323232F","custom_solicitante_de_empleo":"prueba2@prueba.com","custom_discapacidad":0,"custom_correo":"prueba2@prueba.com","custom_movil":"666666666","custom_seg_social":"2323232444","custom_nacimiento":"2024-07-22","custom_firmado":0,"custom_firmar":0,"custom_comun":0,"custom_iban":"edfrghtdgs31245","objeto":"test","applicant_name":"Prueba Test dos","dni":"02323232F","custom_solicited_by":"Administrator","custom_email_solicited":"xappiens@xappiens.com","doctype":"Modificaciones RRHH","offer_terms":[],"registro_horas":[],"__last_sync_on":"2024-11-20T12:01:17.645Z"}', 'action': 'Tramitar', 'cmd': 'frappe.model.workflow.apply_workflow'}
+2024-11-20 12:07:13,770 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '35243', 'cmd': 'log_incoming_data'}
+2024-11-20 12:10:11,746 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '38731', 'cmd': 'log_incoming_data'}
+2024-11-20 12:10:12,126 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '38602', 'cmd': 'log_incoming_data'}
+2024-11-20 12:10:12,449 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '35243', 'cmd': 'log_incoming_data'}
+2024-11-20 12:16:58,860 ERROR frappe Could not take error snapshot: min() arg is an empty sequence
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39462', 'cmd': 'log_incoming_data'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/integracion/student_override.py", line 166, in log_incoming_data
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 172, in load_from_db
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 645, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 610, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 561, in _raise_exception
+    raise exc
+frappe.exceptions.DoesNotExistError: Moodle User 39462 no encontrado
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
+    response = frappe.api.handle(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
+    return fn(*args, **newargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/integracion/student_override.py", line 221, in log_incoming_data
+TypeError: log_error() got multiple values for argument 'title'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 54, in log_error
+    traceback = frappe.as_unicode(traceback or frappe.get_traceback(with_context=True))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 484, in get_traceback
+    return get_traceback(with_context=with_context)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/__init__.py", line 299, in get_traceback
+    tb = "\n".join(trace_list)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 170, in _iter_lines
+    min_indent = min(len(line) - len(line.lstrip(' ')) for line in code_lines)
+ValueError: min() arg is an empty sequence
+2024-11-20 12:20:07,554 ERROR frappe Could not take error snapshot: min() arg is an empty sequence
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39462', 'cmd': 'log_incoming_data'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/integracion/student_override.py", line 166, in log_incoming_data
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 172, in load_from_db
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 645, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 610, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 561, in _raise_exception
+    raise exc
+frappe.exceptions.DoesNotExistError: Moodle User 39462 no encontrado
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
+    response = frappe.api.handle(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
+    return fn(*args, **newargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/integracion/student_override.py", line 221, in log_incoming_data
+TypeError: log_error() got multiple values for argument 'title'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 54, in log_error
+    traceback = frappe.as_unicode(traceback or frappe.get_traceback(with_context=True))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 484, in get_traceback
+    return get_traceback(with_context=with_context)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/__init__.py", line 299, in get_traceback
+    tb = "\n".join(trace_list)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 170, in _iter_lines
+    min_indent = min(len(line) - len(line.lstrip(' ')) for line in code_lines)
+ValueError: min() arg is an empty sequence
+2024-11-20 12:30:07,984 ERROR frappe Could not take error snapshot: min() arg is an empty sequence
+Site: erp.grupoatu.com
+Form Dict: {'user_id': '39462', 'cmd': 'log_incoming_data'}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/integracion/student_override.py", line 166, in log_incoming_data
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
+    doc = frappe.model.document.get_doc(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 85, in get_doc
+    return controller(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 172, in load_from_db
+    frappe.throw(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 645, in throw
+    msgprint(
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 610, in msgprint
+    _raise_exception()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 561, in _raise_exception
+    raise exc
+frappe.exceptions.DoesNotExistError: Moodle User 39462 no encontrado
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 110, in application
+    response = frappe.api.handle(request)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/__init__.py", line 49, in handle
+    data = endpoint(**arguments)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/api/v1.py", line 36, in handle_rpc_call
+    return frappe.handler.handle()
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 49, in handle
+    data = execute_cmd(cmd)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/handler.py", line 85, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1761, in call
+    return fn(*args, **newargs)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/typing_validations.py", line 31, in wrapper
+    return func(*args, **kwargs)
+  File "/home/frappe/frappe-bench/apps/integracion/integracion/integracion/student_override.py", line 221, in log_incoming_data
+TypeError: log_error() got multiple values for argument 'title'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 54, in log_error
+    traceback = frappe.as_unicode(traceback or frappe.get_traceback(with_context=True))
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 484, in get_traceback
+    return get_traceback(with_context=with_context)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/__init__.py", line 299, in get_traceback
+    tb = "\n".join(trace_list)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/traceback_with_variables/core.py", line 170, in _iter_lines
+    min_indent = min(len(line) - len(line.lstrip(' ')) for line in code_lines)
+ValueError: min() arg is an empty sequence
+2024-11-20 12:38:16,820 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76726'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-20 12:38:16,821 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76726'}", 'limit_page_length': 20}
+2024-11-20 12:46:57,215 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'args': '{"job_applicant":"santiagomelgarpuente@gmail.com","status":"Accepted"}', 'cmd': 'hrms.hr.doctype.interview.interview.update_job_applicant_status'}
+2024-11-20 12:46:58,684 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'args': '{"job_applicant":"santiagomelgarpuente@gmail.com","status":"Accepted"}', 'cmd': 'hrms.hr.doctype.interview.interview.update_job_applicant_status'}
+2024-11-20 12:46:59,522 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'args': '{"job_applicant":"santiagomelgarpuente@gmail.com","status":"Accepted"}', 'cmd': 'hrms.hr.doctype.interview.interview.update_job_applicant_status'}
+2024-11-20 15:05:44,123 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Attendance', 'fields': '["`tabAttendance`.`name`","`tabAttendance`.`owner`","`tabAttendance`.`creation`","`tabAttendance`.`modified`","`tabAttendance`.`modified_by`","`tabAttendance`.`_user_tags`","`tabAttendance`.`_comments`","`tabAttendance`.`_assign`","`tabAttendance`.`_liked_by`","`tabAttendance`.`docstatus`","`tabAttendance`.`idx`","`tabAttendance`.`employee_name`","`tabAttendance`.`working_hours`","`tabAttendance`.`status`","`tabAttendance`.`attendance_date`","`tabAttendance`.`custom_hora_de_entrada`","`tabAttendance`.`custom_hora_de_salida`"]', 'filters': '[["Attendance","docstatus","=","0"],["Attendance","status","=","Present"]]', 'order_by': '`tabAttendance`.`start` asc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2024-11-21 07:01:31,771 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-60571'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-21 07:01:31,773 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-60571'}", 'limit_page_length': 20}
+2024-11-21 07:01:41,842 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-60571'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-21 07:01:41,844 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-60571'}", 'limit_page_length': 20}
+2024-11-21 07:50:30,726 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76765'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-21 07:50:30,728 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76765'}", 'limit_page_length': 20}
+2024-11-21 08:02:54,015 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'cmd': 'moodle_integration.scripts.moodle_user_sync.process_moodle_user_data'}
+2024-11-21 08:14:14,000 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"J4515345T","owner":"developer@xappiens.com","creation":"2024-10-17 12:12:52.174801","modified":"2024-11-20 13:20:07.425267","modified_by":"developer@xappiens.com","docstatus":0,"idx":29,"enabled":1,"first_name":"PRUEBA","last_name":"5123","dni":"J4515345T","custom_no_seguridad_social":"12345678ABC2","full_name":"PRUEBA 5123","entity_type":"","naming_series":"EDU-STU-.YYYY.-.########","joining_date":"2024-10-17","customer":"PRUEBA 42342","entity_link":"Academia Técnica Universitaria SL","date_of_birth":"2000-01-01","blood_group":"","nationality":"España","disability":"No","student_email_id":"prueba4231123@xappiensmail.com","student_mobile_number":"658741277","custom_situation":"Desempleado/a","country":"España","customer_group":"Todas las categorías de clientes","student_name":"PRUEBA 5123","doctype":"Student","siblings":[],"guardians":[],"__last_sync_on":"2024-11-21T08:14:04.618Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-21 08:25:36,441 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-42073'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-21 08:25:36,443 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-42073'}", 'limit_page_length': 20}
+2024-11-21 08:32:11,645 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76149'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-21 08:32:11,647 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76149'}", 'limit_page_length': 20}
+2024-11-21 08:41:48,120 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76768'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-21 08:41:48,121 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76768'}", 'limit_page_length': 20}
+2024-11-22 07:11:35,295 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73516'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 07:11:35,297 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73516'}", 'limit_page_length': 20}
+2024-11-22 07:13:37,208 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73516'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 07:13:37,210 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73516'}", 'limit_page_length': 20}
+2024-11-22 07:14:28,866 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73516'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 07:14:28,868 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73516'}", 'limit_page_length': 20}
+2024-11-22 07:15:14,891 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73516'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 07:15:14,893 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-73516'}", 'limit_page_length': 20}
+2024-11-22 08:07:42,634 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76953'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 08:07:42,636 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76953'}", 'limit_page_length': 20}
+2024-11-22 08:13:12,210 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-EMP-SEP-2024-00024","owner":"marisag@grupoatu.com","creation":"2024-11-22 09:13:08.178907","modified":"2024-11-22 09:13:08.178907","modified_by":"marisag@grupoatu.com","docstatus":0,"idx":0,"employee":"35106355Y","employee_name":"MARIA ASUNCION  NIETO BARRIONUEVO","department":"E.O.I. - GA","designation":"Docente","employee_grade":"Docente","company":"Grupo ATU","boarding_status":"Pending","resignation_letter_date":null,"boarding_begins_on":"2024-11-22","project":null,"custom_termina_contrato_el":"2024-11-22","employee_separation_template":null,"notify_users_by_email":0,"exit_interview":null,"amended_from":null,"doctype":"Employee Separation","activities":[{"name":"4omasdu3l1","owner":"marisag@grupoatu.com","creation":"2024-11-22 09:13:08.178907","modified":"2024-11-22 09:13:08.178907","modified_by":"marisag@grupoatu.com","docstatus":0,"idx":1,"activity_name":"deshabilitar usuario","hd_team":"TI","user":null,"role":null,"begin_on":0,"duration":0,"task":null,"task_weight":0,"required_for_employee_creation":0,"state":null,"description":null,"parent":"HR-EMP-SEP-2024-00024","parentfield":"activities","parenttype":"Employee Separation","doctype":"Employee Boarding Activity","__unsaved":1},{"name":"4omamaicve","owner":"marisag@grupoatu.com","creation":"2024-11-22 09:13:08.178907","modified":"2024-11-22 09:13:08.178907","modified_by":"marisag@grupoatu.com","docstatus":0,"idx":2,"activity_name":"eliminar cuentas de correo y teams  mariaasuncion.nieto@grupoatu.com","hd_team":"TI","user":null,"role":null,"begin_on":0,"duration":0,"task":null,"task_weight":0,"required_for_employee_creation":0,"state":null,"description":null,"parent":"HR-EMP-SEP-2024-00024","parentfield":"activities","parenttype":"Employee Separation","doctype":"Employee Boarding Activity","__unsaved":1}],"__last_sync_on":"2024-11-22T08:13:09.683Z"}', 'action': 'Submit', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-22 08:13:27,023 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"name":"HR-EMP-SEP-2024-00024","owner":"marisag@grupoatu.com","creation":"2024-11-22 09:13:08.178907","modified":"2024-11-22 09:13:08.178907","modified_by":"marisag@grupoatu.com","docstatus":0,"idx":0,"employee":"35106355Y","employee_name":"MARIA ASUNCION  NIETO BARRIONUEVO","department":"E.O.I. - GA","designation":"Docente","employee_grade":"Docente","company":"Grupo ATU","boarding_status":"Pending","resignation_letter_date":null,"boarding_begins_on":"2024-11-22","project":null,"custom_termina_contrato_el":"2024-11-22","employee_separation_template":null,"notify_users_by_email":0,"exit_interview":null,"amended_from":null,"doctype":"Employee Separation","activities":[{"name":"4omasdu3l1","owner":"marisag@grupoatu.com","creation":"2024-11-22 09:13:08.178907","modified":"2024-11-22 09:13:08.178907","modified_by":"marisag@grupoatu.com","docstatus":0,"idx":1,"activity_name":"deshabilitar usuario","hd_team":"TI","user":null,"role":null,"begin_on":0,"duration":0,"task":null,"task_weight":0,"required_for_employee_creation":0,"state":null,"description":null,"parent":"HR-EMP-SEP-2024-00024","parentfield":"activities","parenttype":"Employee Separation","doctype":"Employee Boarding Activity","__unsaved":1},{"name":"4omamaicve","owner":"marisag@grupoatu.com","creation":"2024-11-22 09:13:08.178907","modified":"2024-11-22 09:13:08.178907","modified_by":"marisag@grupoatu.com","docstatus":0,"idx":2,"activity_name":"eliminar cuentas de correo y teams  mariaasuncion.nieto@grupoatu.com","hd_team":"TI","user":null,"role":null,"begin_on":0,"duration":0,"task":null,"task_weight":0,"required_for_employee_creation":0,"state":null,"description":null,"parent":"HR-EMP-SEP-2024-00024","parentfield":"activities","parenttype":"Employee Separation","doctype":"Employee Boarding Activity","__unsaved":1}],"__last_sync_on":"2024-11-22T08:13:09.683Z"}', 'action': 'Submit', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-22 08:26:27,670 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 08:26:27,671 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+2024-11-22 08:26:30,088 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 08:26:30,090 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+2024-11-22 08:26:36,270 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 08:26:36,273 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+2024-11-22 08:26:39,277 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 08:26:39,279 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+2024-11-22 08:26:46,235 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 08:26:46,237 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76992'}", 'limit_page_length': 20}
+2024-11-22 08:29:10,009 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76993'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 08:29:10,010 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76993'}", 'limit_page_length': 20}
+2024-11-22 08:29:17,330 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76993'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 08:29:17,331 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76993'}", 'limit_page_length': 20}
+2024-11-22 09:06:09,975 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-75275'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 09:06:09,976 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-75275'}", 'limit_page_length': 20}
+2024-11-22 09:35:08,445 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77018'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-22 09:35:08,449 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77018'}", 'limit_page_length': 20}
+2024-11-22 10:07:42,385 ERROR frappe Failed to capture exception
 Site: erp.grupoatu.com
 Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,876 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 191, in init_request
-    frappe.local.http_request = HTTPRequest()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 42, in __init__
-    self.set_session()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 76, in set_session
-    frappe.local.login_manager = LoginManager()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 118, in __init__
-    self.make_session(resume=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 204, in make_session
-    frappe.local.session_obj = Session(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 209, in __init__
-    self.resume()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/sessions.py", line 277, in resume
-    validate_ip_address(self.user)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/auth.py", line 430, in validate_ip_address
-    frappe.get_cached_value("User", user, user_fields, as_dict=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1260, in get_cached_value
-    doc = get_cached_doc(doctype, name)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1203, in get_cached_doc
-    doc = get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,888 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,901 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
-    endpoint, renderer_instance = path_resolver.resolve()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
-    resolve_redirect(self.path, request.query_string)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
-    redirects = frappe.get_hooks("website_redirects")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,913 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,925 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 128, in application
-    response = handle_exception(e)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 391, in handle_exception
-    response = get_response("message", http_status_code=http_status_code)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/serve.py", line 28, in get_response
-    response = ErrorPage(exception=e).render()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 84, in render
-    html = self.get_html()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/utils.py", line 523, in cache_html_decorator
-    html = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 92, in get_html
-    self.init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 14, in init_context
-    super().init_context()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/page_renderers/base_template_page.py", line 15, in init_context
-    self.context.update(get_website_settings())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/website/doctype/website_settings/website_settings.py", line 172, in get_website_settings
-    hooks = frappe.get_hooks()
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,937 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,949 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 32
-    s2^u^%MdGESf
-         ^
-SyntaxError: invalid syntax
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,962 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,974 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:42,986 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,001 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,015 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,029 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,042 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,056 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,070 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,084 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,098 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,111 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,125 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,141 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,155 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,169 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,182 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,196 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,209 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,223 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,235 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,249 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,264 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,279 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,294 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,308 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,322 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,345 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,358 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,372 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,393 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,415 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,437 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,460 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,481 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,503 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,530 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,550 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,570 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,590 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,611 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,630 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,645 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,659 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,673 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,690 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,709 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound
+2024-11-22 10:07:43,727 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 116, in capture_exception
+    set_scope(scope)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/local.py", line 490, in _get_current_object
+    raise RuntimeError(unbound_message) from None
+RuntimeError: object is not bound

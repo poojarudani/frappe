@@ -1,387 +1,311 @@
-2024-08-23 11:21:20,636 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 28)
+2024-11-27 14:02:24,955 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'sid': 'a72267cb1160aaaff294bf90fceba92562a133690f8dd75c297b085a'}
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student Group","name":"new-student-group-xpaylywzuk","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","students":[{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-zsmkcjrgbl","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":1,"student":"45479755S","group_roll_number":1,"student_name":"MARIA CARMEN ROMERO LLONCH"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-hxihvwjfvl","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":2,"student":"50065260X","group_roll_number":2,"student_name":"MARIA DE LA LUZ FERRER MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-sowuhpaywa","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":3,"student":"51255343G","group_roll_number":3,"student_name":"ROSARIO PILAR GAMARRA ALPACA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-bxvlawcklw","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":4,"student":"71363711R","group_roll_number":4,"student_name":"ADRIANA  MOLINERO  MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-yigzwwjyqg","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":5,"student":"75812577T","group_roll_number":5,"student_name":"EVA MARIA ACOSTA GOMEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-xjehulsvnu","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":6,"student":"77942956G","group_roll_number":6,"student_name":"IRMA ESPERANZA PERAZA HERRERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-gpnwabwocb","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":7,"student":"79352688C","group_roll_number":7,"student_name":"RODRIGO GUERRERO PLAZA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-xggoylcsoc","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":8,"student":"X6207279Q","group_roll_number":8,"student_name":"AHMED MESROUR"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-opholbnjxn","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":9,"student":"Y1140543X","group_roll_number":9,"student_name":"HUDA ABDO NAEIM ALI"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-druqcnxsmu","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":10,"student":"Y1409527T","group_roll_number":10,"student_name":"NANCY MIRANDA DE LA CRUZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-mvcrsxohho","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":11,"student":"Y3224613G","group_roll_number":11,"student_name":"SCHEMS EDDINE KHECHINE"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-hjavtgevxo","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":12,"student":"Y6120768E","group_roll_number":12,"student_name":"SABAH BANOUN"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-duokvckxnh","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":13,"student":"Y9260629S","group_roll_number":13,"student_name":"ADRIANNYS ANDREA  DELGADO CABRERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-vqtccfpqih","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":14,"student":"Z0480792M","group_roll_number":14,"student_name":"YURLIANI STEPHANIE RAMIREZ MORALES"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-utxfuxbipj","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":15,"student":"Z1086342B","group_roll_number":15,"student_name":"JUAN CARLOS  ARTEAGA FLORES"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-ukzilnvnyi","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":16,"student":"Z1090518R","group_roll_number":16,"student_name":"ADELA EDITH  RAMIREZ DE ARTEAGA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-exfaidwhto","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":17,"student":"Z1402375R","group_roll_number":17,"student_name":"ZENAIDA PERNIA DE BALAGUERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-sqwravrtlz","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":18,"student":"Z1409527T","group_roll_number":18,"student_name":"NANCY MIRANDA DE LA CRUZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-rdkyrpeoqi","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":19,"student":"Z1604076S","group_roll_number":19,"student_name":"SANDY DAYANA HERRERA MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-kpukgotjpx","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"new-student-group-xpaylywzuk","parentfield":"students","parenttype":"Student Group","idx":20,"student":"Z2118198H","group_roll_number":20,"student_name":"CORINA  CHANZAPA GEBOL"}],"course":"556_RSKC23/00089_0589-1","numero_incremento":"02"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-27 14:08:34,766 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student Group","name":"new-student-group-lcwyyrhwxx","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","disabled":0,"students":[{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-jsswaydmad","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":1,"student":"45479755S","group_roll_number":1,"student_name":"MARIA CARMEN ROMERO LLONCH"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-omgwfcsfic","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":2,"student":"50065260X","group_roll_number":2,"student_name":"MARIA DE LA LUZ FERRER MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-cxuuschfry","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":3,"student":"51255343G","group_roll_number":3,"student_name":"ROSARIO PILAR GAMARRA ALPACA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-pqmhrqmwjc","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":4,"student":"71363711R","group_roll_number":4,"student_name":"ADRIANA  MOLINERO  MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-geghjshgyd","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":5,"student":"75812577T","group_roll_number":5,"student_name":"EVA MARIA ACOSTA GOMEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-czzxfwvmnm","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":6,"student":"77942956G","group_roll_number":6,"student_name":"IRMA ESPERANZA PERAZA HERRERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-onlbrzhmlk","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":7,"student":"79352688C","group_roll_number":7,"student_name":"RODRIGO GUERRERO PLAZA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-niiwgzptxv","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":8,"student":"X6207279Q","group_roll_number":8,"student_name":"AHMED MESROUR"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-xhhwethnea","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":9,"student":"Y1140543X","group_roll_number":9,"student_name":"HUDA ABDO NAEIM ALI"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-ymudtsfjsn","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":10,"student":"Y1409527T","group_roll_number":10,"student_name":"NANCY MIRANDA DE LA CRUZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-utlsaoovkd","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":11,"student":"Y3224613G","group_roll_number":11,"student_name":"SCHEMS EDDINE KHECHINE"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-wxfvixyhhr","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":12,"student":"Y6120768E","group_roll_number":12,"student_name":"SABAH BANOUN"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-pmqzyvjclq","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":13,"student":"Y9260629S","group_roll_number":13,"student_name":"ADRIANNYS ANDREA  DELGADO CABRERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-uvjrtsgcio","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":14,"student":"Z0480792M","group_roll_number":14,"student_name":"YURLIANI STEPHANIE RAMIREZ MORALES"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-novgntimmy","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":15,"student":"Z1086342B","group_roll_number":15,"student_name":"JUAN CARLOS  ARTEAGA FLORES"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-sbglhamhdq","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":16,"student":"Z1090518R","group_roll_number":16,"student_name":"ADELA EDITH  RAMIREZ DE ARTEAGA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-ziahvaofwk","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":17,"student":"Z1402375R","group_roll_number":17,"student_name":"ZENAIDA PERNIA DE BALAGUERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-jjqsmyrwer","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":18,"student":"Z1409527T","group_roll_number":18,"student_name":"NANCY MIRANDA DE LA CRUZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-jpqbbmwdoy","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":19,"student":"Z1604076S","group_roll_number":19,"student_name":"SANDY DAYANA HERRERA MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-vchdmotqii","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-lcwyyrhwxx","parentfield":"students","parenttype":"Student Group","idx":20,"student":"Z2118198H","group_roll_number":20,"student_name":"CORINA  CHANZAPA GEBOL"}],"course":"556_RSKC23/00089_0589-1","numero_incremento":"02"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-27 14:12:31,309 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Student Group","name":"new-student-group-xnbtltaqni","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","group_based_on":"Course","disabled":0,"students":[{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-dccnepyvlt","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":1,"student":"45479755S","group_roll_number":1,"student_name":"MARIA CARMEN ROMERO LLONCH"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-vpfrugiwbf","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":2,"student":"50065260X","group_roll_number":2,"student_name":"MARIA DE LA LUZ FERRER MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-wtiecunqcg","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":3,"student":"51255343G","group_roll_number":3,"student_name":"ROSARIO PILAR GAMARRA ALPACA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-juzcftvvnb","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":4,"student":"71363711R","group_roll_number":4,"student_name":"ADRIANA  MOLINERO  MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-maavdjeuga","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":5,"student":"75812577T","group_roll_number":5,"student_name":"EVA MARIA ACOSTA GOMEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-ynhntbflii","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":6,"student":"77942956G","group_roll_number":6,"student_name":"IRMA ESPERANZA PERAZA HERRERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-wsbkkxzzrm","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":7,"student":"79352688C","group_roll_number":7,"student_name":"RODRIGO GUERRERO PLAZA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-sllkppiqcl","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":8,"student":"X6207279Q","group_roll_number":8,"student_name":"AHMED MESROUR"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-pjhwkmmfvp","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":9,"student":"Y1140543X","group_roll_number":9,"student_name":"HUDA ABDO NAEIM ALI"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-vnbqfighdx","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":10,"student":"Y1409527T","group_roll_number":10,"student_name":"NANCY MIRANDA DE LA CRUZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-pdeicypoaa","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":11,"student":"Y3224613G","group_roll_number":11,"student_name":"SCHEMS EDDINE KHECHINE"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-xjuuljzadd","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":12,"student":"Y6120768E","group_roll_number":12,"student_name":"SABAH BANOUN"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-eqzeabznqu","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":13,"student":"Y9260629S","group_roll_number":13,"student_name":"ADRIANNYS ANDREA  DELGADO CABRERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-ezsfdkjzhe","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":14,"student":"Z0480792M","group_roll_number":14,"student_name":"YURLIANI STEPHANIE RAMIREZ MORALES"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-xkdxbebsij","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":15,"student":"Z1086342B","group_roll_number":15,"student_name":"JUAN CARLOS  ARTEAGA FLORES"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-nszquxielj","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":16,"student":"Z1090518R","group_roll_number":16,"student_name":"ADELA EDITH  RAMIREZ DE ARTEAGA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-nrkepbqkto","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":17,"student":"Z1402375R","group_roll_number":17,"student_name":"ZENAIDA PERNIA DE BALAGUERA"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-twwvflnxig","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":18,"student":"Z1409527T","group_roll_number":18,"student_name":"NANCY MIRANDA DE LA CRUZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-uqyqkjgglb","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":19,"student":"Z1604076S","group_roll_number":19,"student_name":"SANDY DAYANA HERRERA MARTINEZ"},{"docstatus":0,"doctype":"Estudiantes Grupo Estudiantes","name":"new-estudiantes-grupo-estudiantes-mguhgwbdne","__islocal":1,"__unsaved":1,"owner":"scriptor@xappiens.com","parent":"new-student-group-xnbtltaqni","parentfield":"students","parenttype":"Student Group","idx":20,"student":"Z2118198H","group_roll_number":20,"student_name":"CORINA  CHANZAPA GEBOL"}],"course":"556_RSKC23/00089_0589-1","numero_incremento":"02"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-27 14:18:35,087 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'doctype': 'Course', 'fields': '["`tabCourse`.`name`","`tabCourse`.`code`","`tabCourse`.`group`","`tabCourse`.`course_name`","`tabCourse`.`start_date`","`tabCourse`.`end_date`","`tabCourse`.`23_percent`","`tabCourse`.`hours`","`tabCourse`.`virtual_class`","`tabCourse`.`custom_plan`","`tabCourse`.`expediente`","`tabCourse`.`department`","`tabCourse`.`plan_type`"]', 'filters': '[["Course","custom_modalidad","=","Teleformación"],["Course","custom_horario_inicio","=",null]]', 'order_by': '`tabCourse`.`modified` desc', 'start': '0', 'page_length': '2500', 'view': 'Report', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2024-11-28 07:31:03,566 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'format': 'PDF', 'filters': '{"company":"María Ángeles Alonso de la Fuente","filter_based_on":"Date Range","period_start_date":"2024-01-01","period_end_date":"2024-06-30","from_fiscal_year":"2024","to_fiscal_year":"2024","periodicity":"Yearly","cost_center":[],"project":[],"selected_view":"Report","accumulated_values":1,"include_default_book_entries":1}', 'cmd': 'integracion.utils.export_balance_sheet.export_balance_sheet'}
+2024-11-28 07:31:27,473 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'format': 'PDF', 'filters': '{"company":"María Ángeles Alonso de la Fuente","filter_based_on":"Date Range","period_start_date":"2024-01-01","period_end_date":"2024-06-30","from_fiscal_year":"2024","to_fiscal_year":"2024","periodicity":"Yearly","cost_center":[],"project":[],"selected_view":"Report","accumulated_values":1,"include_default_book_entries":1}', 'cmd': 'integracion.utils.export_balance_sheet.export_balance_sheet'}
+2024-11-28 07:33:06,269 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'format': 'PDF', 'filters': '{"company":"María Ángeles Alonso de la Fuente","filter_based_on":"Date Range","period_start_date":"2024-01-01","period_end_date":"2024-06-30","from_fiscal_year":"2024","to_fiscal_year":"2024","periodicity":"Yearly","cost_center":[],"project":[],"selected_view":"Report","accumulated_values":1,"include_default_book_entries":1}', 'cmd': 'integracion.utils.export_balance_sheet.export_balance_sheet'}
+2024-11-28 07:47:49,976 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76585'}", 'limit_page_length': 20}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
-    for before_request_task in frappe.get_hooks("before_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-28 07:47:49,978 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-76585'}", 'limit_page_length': 20}
+2024-11-28 08:05:19,170 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-05852'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-28 08:05:19,173 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-05852'}", 'limit_page_length': 20}
+2024-11-28 08:52:07,882 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77645'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
-2024-08-23 11:21:20,646 ERROR frappe Failed to run after request hook
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-28 08:52:07,884 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'sid': 'a72267cb1160aaaff294bf90fceba92562a133690f8dd75c297b085a'}
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77645'}", 'limit_page_length': 20}
+2024-11-28 09:16:37,774 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77852'}", 'limit_page_length': 20}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
-2024-08-23 11:21:21,261 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 28)
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-28 09:16:37,776 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'sid': 'a72267cb1160aaaff294bf90fceba92562a133690f8dd75c297b085a'}
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77852'}", 'limit_page_length': 20}
+2024-11-28 09:28:39,292 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77852'}", 'limit_page_length': 20}
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
-    for before_request_task in frappe.get_hooks("before_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-28 09:28:39,293 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77852'}", 'limit_page_length': 20}
+2024-11-28 10:14:38,947 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'name':'FCRM-LEAD-2024-73472'}", 'limit_page_length': 20}
+2024-11-28 10:15:14,803 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'name':'FCRM-LEAD-2024-73472'}", 'limit_page_length': 20}
+2024-11-28 10:19:03,249 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'name':'FCRM-LEAD-2024-73472'}", 'limit_page_length': 20}
+2024-11-28 10:19:41,042 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'name':'FCRM-LEAD-2024-73472'}", 'limit_page_length': 20}
+2024-11-28 10:22:06,948 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'name':'FCRM-LEAD-2024-73472'}", 'limit_page_length': 20}
+2024-11-28 10:22:36,171 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'name':'FCRM-LEAD-2024-73472'}", 'limit_page_length': 20}
+2024-11-28 10:27:40,805 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77753'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-28 10:27:40,807 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77753'}", 'limit_page_length': 20}
+2024-11-28 10:32:44,053 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'name':'FCRM-LEAD-2024-73472'}", 'limit_page_length': 20}
+2024-11-28 10:33:09,245 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'name':'FCRM-LEAD-2024-73472'}", 'limit_page_length': 20}
+2024-11-28 11:49:02,081 ERROR frappe Failed to capture exception
+Site: erp.grupoatu.com
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77894'}", 'limit_page_length': 20}
+Traceback (most recent call last):
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 611, in get_json
+    rv = self.json_module.loads(data)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
-2024-08-23 11:21:21,265 ERROR frappe Failed to run after request hook
+  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 121, in capture_exception
+    scope.set_context("JSON Body", frappe.request.json)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 558, in json
+    return self.get_json()
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 620, in get_json
+    rv = self.on_json_loading_failed(e)
+  File "/home/frappe/frappe-bench/env/lib/python3.10/site-packages/werkzeug/wrappers/request.py", line 645, in on_json_loading_failed
+    raise BadRequest(f"Failed to decode JSON object: {e}")
+werkzeug.exceptions.BadRequest: 400 Bad Request: Failed to decode JSON object: Expecting value: line 1 column 1 (char 0)
+2024-11-28 11:49:02,083 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'sid': 'a72267cb1160aaaff294bf90fceba92562a133690f8dd75c297b085a'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
-2024-08-23 11:21:38,640 ERROR frappe Could not take error snapshot: invalid syntax (hooks.py, line 28)
+Form Dict: {'filters': "{'lead_id':'CRM-LEAD-2024-77894'}", 'limit_page_length': 20}
+2024-11-28 12:56:55,442 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Job Offer', 'filters': '{"status":["=","Accepted"]}', 'fields': '[]', 'distinct': 'false'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 95, in application
-    init_request(request)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 193, in init_request
-    for before_request_task in frappe.get_hooks("before_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
-    log_error(title=str(exception), defer_insert=True)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
-    error_log = frappe.get_doc(
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1329, in get_doc
-    doc = frappe.model.document.get_doc(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
-    controller = get_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 70, in get_controller
-    site_controllers[doctype] = import_controller(doctype)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/model/base_document.py", line 88, in import_controller
-    class_overrides = frappe.get_hooks("override_doctype_class")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
-2024-08-23 11:21:38,643 ERROR frappe Failed to run after request hook
+Form Dict: {'doctype': 'List Filter', 'name': '84oq8hb0vj', 'cmd': 'frappe.client.delete'}
+2024-11-28 18:49:38,898 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Job Offer', 'filters': '{"status":["=","Accepted"]}', 'fields': '[]', 'distinct': 'false'}
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 55, in wrapper
-    return frappe.local.request_cache[func][args_key]
-KeyError: 5740354900026072187
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 142, in application
-    run_after_request_hooks(request, response)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/app.py", line 157, in run_after_request_hooks
-    for after_request_task in frappe.get_hooks("after_request"):
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1637, in get_hooks
-    hooks = _dict(_load_app_hooks())
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
-    return_val = func(*args, **kwargs)
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1606, in _load_app_hooks
-    app_hooks = get_module(f"{app}.hooks")
-  File "/home/frappe/frappe-bench/apps/frappe/frappe/__init__.py", line 1472, in get_module
-    return importlib.import_module(modulename)
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/frappe/frappe-bench/apps/integracion/integracion/hooks.py", line 28
-    "integracion.integracion.generate_c34_venta": "integracion.integracion.generate_c34.generate_c34_venta",,
-                                                                                                            ^
-SyntaxError: invalid syntax
-2024-08-26 13:54:06,812 ERROR frappe New Exception collected in error log
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Employee","name":"new-employee-bhzztszqcl","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","naming_series":"HR-EMP-.YYYY.-.########","status":"Active","company":"Grupo ATU","create_user_permission":1,"custom_historial_altas":[],"custom_historial_contrataciones":[],"prefered_contact_email":"","unsubscribed":0,"current_accommodation_type":"","permanent_accommodation_type":"","custom_código":"","salary_currency":"EUR","salary_mode":"Bank","custom_cuentas":[],"marital_status":"","custom_sit_familiar":"","blood_group":"","custom_nivel_de_discapacidad":"SIN DISCAPACIDAD","custom_nacionalidad":"España","education":[],"external_work_history":[],"internal_work_history":[],"leave_encashed":"","gender":"Hombre","date_of_birth":"2024-11-28","date_of_retirement":"2091-11-28","first_name":"prueba instructor","payroll_cost_center":null,"department":"Castilla y León - GA","leave_approver":"tania@grupoatu.com","holiday_list":"Burgos","custom_dninie":"40821391W"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-28 18:51:28,961 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'docnames': '["ACC-PINV-2024-00030"]', 'cmd': 'integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper'}
-2024-08-26 13:54:18,329 ERROR frappe New Exception collected in error log
+Form Dict: {'doc': '{"name":"prueba2@prueba.com","owner":"luis.bocos@grupoatu.com","creation":"2024-10-10 12:34:07.341495","modified":"2024-11-25 12:09:17.057529","modified_by":"bego@sbm.es","docstatus":0,"idx":0,"enabled":1,"crm_user_created":0,"email":"prueba2@prueba.com","first_name":"Prueba","middle_name":"Test","last_name":"dos","full_name":"Prueba dos","username":"prueba_2","country":"España","verify_terms":0,"language":"es","time_zone":"Europe/Madrid","user_category":"","send_welcome_email":1,"unsubscribed":0,"role_profile_name":"Instructor","gender":"Hombre","birth_date":"2024-07-22","looking_for_job":0,"profile_complete":0,"hide_private":0,"attire":"Casual Wear","collaboration":"Individual Work","role":"Clearly Defined Role","location_preference":"Travel","time":"Flexible Time","company_type":"Corporate Organization","mute_sounds":0,"desk_theme":"Light","new_password":"","logout_all_sessions":1,"reset_password_key":"895370f1dd0fc871124947fe16129bf9926db60019d45af2e74a795ca28a276b","last_reset_password_key_generated_on":"2024-10-10 12:34:59.550765","document_follow_notify":0,"document_follow_frequency":"Daily","follow_created_documents":0,"follow_commented_documents":0,"follow_liked_documents":0,"follow_assigned_documents":0,"follow_shared_documents":0,"thread_notify":1,"send_me_a_copy":0,"allowed_in_mentions":1,"simultaneous_sessions":2,"login_after":0,"user_type":"System User","login_before":0,"bypass_restrict_ip_check_if_2fa_enabled":0,"onboarding_status":"{}","doctype":"User","block_modules":[],"preferred_industries":[],"skill":[],"certification":[],"work_experience":[],"defaults":[],"user_emails":[],"social_logins":[{"name":"pi1udnbo7h","owner":"luis.bocos@grupoatu.com","creation":"2024-10-10 12:34:07.876361","modified":"2024-11-25 12:09:17.057529","modified_by":"bego@sbm.es","docstatus":0,"idx":1,"provider":"frappe","userid":"d5d20aaa5f2de3b8e8769ac98d472725ea75f08","parent":"prueba2@prueba.com","parentfield":"social_logins","parenttype":"User","doctype":"User Social Login"}],"roles":[{"docstatus":0,"doctype":"Has Role","name":"new-has-role-nzzgkjtekg","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"prueba2@prueba.com","parentfield":"roles","parenttype":"User","idx":1,"role":"Asistencia"},{"docstatus":0,"doctype":"Has Role","name":"new-has-role-fmfbrgzgiv","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"prueba2@prueba.com","parentfield":"roles","parenttype":"User","idx":2,"role":"Employee Self Service"},{"docstatus":0,"doctype":"Has Role","name":"new-has-role-qgjxnwqcgb","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"prueba2@prueba.com","parentfield":"roles","parenttype":"User","idx":3,"role":"Instructor"},{"docstatus":0,"doctype":"Has Role","name":"new-has-role-ctspnjjksv","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"prueba2@prueba.com","parentfield":"roles","parenttype":"User","idx":4,"role":"Employee"},{"docstatus":0,"doctype":"Has Role","name":"new-has-role-yzkgzkcskj","__islocal":1,"__unsaved":1,"owner":"developer@xappiens.com","parent":"prueba2@prueba.com","parentfield":"roles","parenttype":"User","idx":5,"role":"Inbox User"}],"preferred_functions":[],"education":[],"internship":[],"__onload":{"all_modules":["Accounts","Assets","Automation","Bulk Transaction","Buying","CRM","Communication","Contacts","Core","Custom","Custom Education","Desk","ERPNext Integrations","Education","Email","FCRM","Frappe Chat","Frappe Whatsapp","Geo","HR","Helpdesk","Integracion","Integrations","Job","LMS","Maintenance","Manufacturing","Moodle Integration","Notification Bell","Payroll","Portal","Print Designer","Printing","Projects","Quality Management","Regional","Selling","Setup","Social","Stock","Subcontracting","Support","Telephony","Utilities","Website","Wiki","Workflow","XAPPIENS"]},"__last_sync_on":"2024-11-28T18:51:15.550Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-11-29 08:07:56,312 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'docnames': '["ACC-PINV-2024-00030"]', 'cmd': 'integracion.integracion.sii.sii_integracion.enviar_facturas_recibidas_wrapper'}
-2024-08-27 11:06:49,742 ERROR frappe New Exception collected in error log
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"new-student-group-njybziayfp"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 08:08:16,530 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00567', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
-2024-08-27 11:07:06,607 ERROR frappe New Exception collected in error log
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"new-student-group-njybziayfp"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 08:30:48,926 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00567', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
-2024-08-27 11:07:17,115 ERROR frappe New Exception collected in error log
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"AF-PB-FOD-24-03-1-00"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 08:32:03,832 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00566', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
-2024-08-27 11:07:17,598 ERROR frappe New Exception collected in error log
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"AF-PB-FOD-24-03-1-00"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 08:54:35,820 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Purchase Invoice', 'docname': 'ACC-PINV-2024-00566', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
-2024-08-27 11:07:45,081 ERROR frappe New Exception collected in error log
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"new-student-group-nlbbsqzksr"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 08:55:01,972 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Sales Invoice', 'docname': 'BATU/AL/2400003-2', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
-2024-08-27 11:07:45,177 ERROR frappe New Exception collected in error log
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"AF-PB-FOD-24-03-1-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 08:55:13,374 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Sales Invoice', 'docname': 'BATU/AL/2400003-2', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
-2024-08-27 11:08:03,786 ERROR frappe New Exception collected in error log
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"AF-PB-FOD-24-03-1-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:04:24,359 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Job Offer', 'docname': 'HR-OFF-2024-00187', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
-2024-08-27 11:08:03,866 ERROR frappe New Exception collected in error log
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"Este curso de prueba","student_group":"Este curso de prueba-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:04:40,553 ERROR frappe New Exception collected in error log
 Site: erp.grupoatu.com
-Form Dict: {'doctype': 'Job Offer', 'docname': 'HR-OFF-2024-00187', 'cmd': 'integracion.integracion.subir_archivo_sp.get_sharepoint_structure'}
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"Este curso de prueba","student_group":"Este curso de prueba-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:06:59,824 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"AF-PB-FOD-24-03-1-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:07:04,756 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"AF-PB-FOD-24-03-1-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:07:25,901 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"AF-PB-FOD-24-03-1-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:10:14,311 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PB-FOD-24-03-1","student_group":"AF-PB-FOD-24-03-1-"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:22:18,598 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PV-BON-24-48-1","student_group":"AF-PV-BON-24-48-1-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:22:19,443 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PV-BON-24-48-1","student_group":"AF-PV-BON-24-48-1-01"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:25:02,567 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PV-BON-24-48-1","student_group":"new-student-group-sbafohaleb"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:25:03,367 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PV-BON-24-48-1","student_group":"new-student-group-sbafohaleb"}', 'cmd': 'frappe.desk.search.search_link'}
+2024-11-29 09:26:50,263 ERROR frappe New Exception collected in error log
+Site: erp.grupoatu.com
+Form Dict: {'txt': '', 'doctype': 'Student', 'ignore_user_permissions': '0', 'reference_doctype': 'Estudiantes Grupo Estudiantes', 'page_length': '10', 'query': 'education.education.doctype.student_group.student_group.fetch_students', 'filters': '{"course":"AF-PV-BON-24-48-1","student_group":"AF-PV-BON-24-48-1-03"}', 'cmd': 'frappe.desk.search.search_link'}

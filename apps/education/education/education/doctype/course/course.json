@@ -7,7 +7,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
+  "detalles_tab",
   "course_name",
   "code",
   "group",
@@ -19,27 +19,34 @@
   "state",
   "hours",
   "applicant",
+  "moodle_course_code",
+  "export_data",
   "column_break_tflc",
   "description",
   "start_date",
   "23_percent",
   "end_date",
   "responsible",
-  "section_break_6",
-  "topics",
+  "nivel_estudios",
+  "plan_type",
+  "abreviatura_categoria",
+  "numero_incremento",
+  "year",
   "assessment_tab",
   "assessment",
   "default_grading_scale",
   "assessment_criteria",
   "city",
-  "connections_tab"
+  "connections_tab",
+  "tab_4_tab"
  ],
  "fields": [
   {
    "fieldname": "course_name",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Course Name"
+   "label": "Course Name",
+   "reqd": 1
   },
   {
    "fieldname": "department",
@@ -48,16 +55,6 @@
    "in_standard_filter": 1,
    "label": "Department",
    "options": "Department"
-  },
-  {
-   "fieldname": "section_break_6",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "topics",
-   "fieldtype": "Table",
-   "label": "Topics",
-   "options": "Course Topic"
   },
   {
    "fieldname": "hero_image",
@@ -141,11 +138,10 @@
    "options": "\nPlanificado\nEn Curso\nAnulado\nPrevisto\nEjecutado\nIncidentado"
   },
   {
-   "default": "No",
    "fieldname": "virtual_class",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Virtual Classroom",
-   "options": "No\nYes"
+   "options": "Moodle Instance"
   },
   {
    "fieldname": "responsible",
@@ -175,15 +171,55 @@
    "label": "Applicant"
   },
   {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Series",
-   "options": ".{expediente}.-.{code}.-.{group}."
+   "fieldname": "detalles_tab",
+   "fieldtype": "Tab Break",
+   "label": "Detalles"
+  },
+  {
+   "fieldname": "moodle_course_code",
+   "fieldtype": "Data",
+   "label": "Codigo del Curso de Moodle"
+  },
+  {
+   "fieldname": "nivel_estudios",
+   "fieldtype": "Link",
+   "label": "Nivel de Estudios",
+   "options": "Nivel Estudios"
+  },
+  {
+   "fieldname": "tab_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tab 4"
+  },
+  {
+   "fieldname": "plan_type",
+   "fieldtype": "Data",
+   "label": "Tipo de Plan"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "A\u00f1o"
+  },
+  {
+   "fieldname": "abreviatura_categoria",
+   "fieldtype": "Data",
+   "label": "Abreviatura Plan Formativo"
+  },
+  {
+   "fieldname": "export_data",
+   "fieldtype": "Button",
+   "label": "Exportar Datos"
+  },
+  {
+   "fieldname": "numero_incremento",
+   "fieldtype": "Data",
+   "label": "Numero Expediente"
   }
  ],
  "image_field": "hero_image",
  "links": [],
- "modified": "2024-08-23 10:34:18.248747",
+ "modified": "2024-11-18 12:12:13.324469",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Course",

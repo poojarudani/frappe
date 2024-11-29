@@ -107,5 +107,65 @@
         "required": [],
         "idx": 11,
         "version": "1.2.0"
+    },
+    "chat": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "d6ff7fcec0626b3f217d11bf4376f86c4f374d50",
+            "branch": "main"
+        },
+        "required": [],
+        "idx": 12,
+        "version": "0.0.1"
+    },
+    "helpdesk": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "2ac7c615e117aa8c9b1de94eca11e57a2cdb5e66",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 13,
+        "version": "0.10.0"
+    },
+    "crm_custom": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "a3d859b215ba13c382e39da11889b738a81e26e2",
+            "branch": "main"
+        },
+        "required": [],
+        "idx": 14,
+        "version": "0.0.1"
+    },
+    "custom_education": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "9895ac6b1c9b1dbabf5699f49574b3f5ef80ce8d",
+            "branch": "main"
+        },
+        "required": [],
+        "idx": 15,
+        "version": "0.0.1"
+    },
+    "notification_bell": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "9242172e4389735ab0dad0dac812150f75c66c7c",
+            "branch": "main"
+        },
+        "required": [],
+        "idx": 16,
+        "version": "0.0.2"
+    },
+    "moodle_integration": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "c6cceb242eeab4af999b3e3615265125ae335e84",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 17,
+        "version": "0.0.1"
     }
 }

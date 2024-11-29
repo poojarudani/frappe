@@ -105,7 +105,7 @@ global_search_doctypes = {
 
 # fixed route to education setup
 domains = {
-	"Education": "education.education.setup",
+	#"Education": "education.education.setup",
 }
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -197,6 +197,39 @@ after_install = "education.install.after_install"
 # 		"on_trash": "method"
 # 	}
 # }
+
+doc_events = {
+    "Course": {
+        "on_update": [
+            #"education.custom_scripts.moodle_sync.sync_moodle_course",
+            #"education.custom_scripts.moodle_sync.sync_students_to_moodle_users"
+        ],
+        "on_trash": [
+            "education.custom_scripts.course_utils.before_delete_course",
+            #"education.custom_scripts.moodle_sync.delete_moodle_course_entry"
+        ]
+    },
+    "Room": {
+        "after_insert": "education.custom_scripts.room_utils.create_sharepoint_folder"
+    },
+	"Student": {
+        #"on_update": "education.custom_scripts.moodle_sync.sync_moodle_user_on_student_update",
+        #"on_trash": "education.custom_scripts.moodle_sync.delete_moodle_user_on_student_deletion"
+	},
+#    "Student Group": {
+#        # Sincroniza estudiantes cuando se actualiza un grupo de estudiantes
+#        "on_update": "education.custom_scripts.student_group_utils.update_course_students"
+#    },
+#    "Grupo Estudiantes Curso": {
+#        # Elimina estudiantes del curso si un grupo es eliminado de la lista en el curso
+#        "on_trash": "education.custom_scripts.course_utils.remove_group_students_from_course"
+#    },
+    "Student Applicant": {
+        "on_update": "education.custom_scripts.student_applicant_utils.sync_student_applicants",
+        "on_submit": "education.custom_scripts.student_applicant_utils.sync_student_applicants"
+    }
+}
+
 
 # Scheduled Tasks
 # ---------------

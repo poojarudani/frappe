@@ -235,8 +235,7 @@
    "label": "Gender",
    "oldfieldname": "gender",
    "oldfieldtype": "Select",
-   "options": "Gender",
-   "reqd": 1
+   "options": "Gender"
   },
   {
    "fieldname": "date_of_birth",
@@ -251,8 +250,7 @@
    "fieldtype": "Date",
    "label": "Date of Joining",
    "oldfieldname": "date_of_joining",
-   "oldfieldtype": "Date",
-   "reqd": 1
+   "oldfieldtype": "Date"
   },
   {
    "allow_in_quick_entry": 1,
@@ -838,7 +836,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2024-07-29 13:15:15.619934",
+ "modified": "2024-09-09 00:27:24.916124",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
@@ -882,6 +880,7 @@
  ],
  "search_fields": "employee_name",
  "show_name_in_global_search": 1,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

@@ -1,13 +1,15 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:plan",
+ "autoname": "format:{plan}",
  "creation": "2024-06-19 18:49:27.132998",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_ewe4",
-  "plan"
+  "plan",
+  "abreviatura",
+  "plan_type"
  ],
  "fields": [
   {
@@ -22,15 +24,33 @@
    "label": "Nombre del Plan",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "abreviatura",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Abreviatura",
+   "length": 3,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "plan_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tipo de plan",
+   "length": 2,
+   "options": "PB\nPV",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 08:45:22.439160",
+ "modified": "2024-11-07 09:49:20.482909",
  "modified_by": "Administrator",
  "module": "Education",
  "name": "Planes",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

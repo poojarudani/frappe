@@ -36,6 +36,7 @@ class CustomizeForm(Document):
 		from frappe.core.doctype.doctype_link.doctype_link import DocTypeLink
 		from frappe.core.doctype.doctype_state.doctype_state import DocTypeState
 		from frappe.custom.doctype.customize_form_field.customize_form_field import CustomizeFormField
+		from frappe.model.document import Document
 		from frappe.types import DF
 
 		actions: DF.Table[DocTypeAction]
@@ -59,6 +60,7 @@ class CustomizeForm(Document):
 		make_attachments_public: DF.Check
 		max_attachments: DF.Int
 		naming_rule: DF.Literal["", "Set by user", "By fieldname", "By \"Naming Series\" field", "Expression", "Expression (old style)", "Random", "By script"]
+		prueba: DF.Table[Document]
 		queue_in_background: DF.Check
 		quick_entry: DF.Check
 		search_fields: DF.Data | None
